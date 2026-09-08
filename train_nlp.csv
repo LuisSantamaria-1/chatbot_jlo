@@ -1,0 +1,577 @@
+query,intent
+que onda,saludo
+como saco cita para la vacuna,fuera_de_dominio
+quiero techar mi casa y necesito el permiso,T_010
+que onda por favor,saludo
+me interesa saber como saco mi licencia de edificacion,T_010
+quiero saber el resultado del sorteo de la tinka,fuera_de_dominio
+quiero sacar licencia por cambio de giro comercial,T_002
+kiero sacar cita en essalud,fuera_de_dominio
+quiero formalizar mi negocio de venta de ropa deportiva,T_003
+estaba pensando en poner una jugueria,T_003
+en que plazo sale la respuesta,consultar_plazo
+cuanto duele el tramite por favor,consultar_costo
+como solicito duplicado de licencia en la muni,T_005
+requisitos de la muni pa bodega en casa,T_004
+hola te escribo por una consulta,saludo
+demora mucho eso amigo,consultar_plazo
+quiero abrir mi bodega y sacar el permiso mas rapido posible,T_004
+cuanto sale en total por favor,consultar_costo
+que necesito para que mi bodega no me multen,T_004
+puedes pensar,charla_casual
+hola alo hay atencion,saludo
+te gusta el futbol,charla_casual
+cuanto tarda el duplicado de la licencia,T_005
+cuanto de plata necesito para eso amigo,consultar_costo
+como tramito el permiso de construccion a,T_010
+quiero renovar mi dni azul a electronico,fuera_de_dominio
+bueno gracias me retiro ya,despedida
+q necesito pa abrir mi bodega al toke,T_004
+estaba pensando en cambiar el rubro de mi local,T_002
+necesito el expediente de mi calle,T_001
+quiero recuperar mi licencia municipal q se me perdio por favor,T_005
+cuanto es lo que se abona,consultar_costo
+q necesito para sacar licencia de riesgo bajo amigo,T_003
+cuanto esta ese tramite,consultar_costo
+pasos para la licencia provisional de bodega amigo,T_004
+mi negocio cambio de actividad y necesito actualizarlo,T_002
+cuanto me va a costar,consultar_costo
+necesito licencia para una tienda de accesorios de celular,T_003
+el proceso es inmediato o toma dias,consultar_plazo
+licencia gratis para bodegueros q piden amigo,T_004
+cuantos dias habiles son por favor,consultar_plazo
+kiero cambiar el tipo de negocio en mi licencia,T_002
+gracias por la paciencia adios,despedida
+muy amable hasta luego,despedida
+kiero el permiso de bodega rapido por favor,T_004
+kiero sacar otra vez mi licencia pq la perdi,T_005
+cuantos dias habiles son,consultar_plazo
+cuanto cobran por darme copias certificadas,T_001
+sabes jugar ajedrez,charla_casual
+voy a poner un segundo nivel de material noble,T_010
+quiero q me den copia de unos planos antiguos,T_001
+cual es el precio por favor amigo,consultar_costo
+puedes soñar,charla_casual
+quiero ver el expediente tecnico de una obra publica,T_001
+tienes amigos,charla_casual
+como matriculo a mi hijo en el colegio,fuera_de_dominio
+como hago si quiero cambiar de rubro,T_002
+hay q pagar algo en la muni,consultar_costo
+estoy pensando en pedir una copia de un documento municipal,T_001
+dime el costo de eso amigo,consultar_costo
+quiero que mi restaurante ahora funcione como panaderia,T_002
+hay un monto fijo para esto,consultar_costo
+licencia para abrir una tienda de articulos de limpieza,T_003
+kiero construir mi casa q docmentos presento amigo,T_010
+precio del tramite,consultar_costo
+como tramito mi licencia de local chico amigo,T_003
+hey amigo,saludo
+en cuantos dias habiles me responden,consultar_plazo
+como hago si quiero cambiar de rubro amigo,T_002
+te caen bien los reclamos de la gente,charla_casual
+quiero poner mi bodeguita q papeles llevo,T_004
+como pago el recibo de ensa por internet,fuera_de_dominio
+q necesito para actualizar mi licencia a otro giro,T_002
+muchisimas gracias hasta luego,despedida
+donde veo quien gano el partido de alianza ayer,fuera_de_dominio
+como hago para sacar mi brevete amigo,fuera_de_dominio
+q papeles piden pa un negocio de riesgo bajo por favor,T_003
+hola req para licencia de obra menor,T_010
+info sobre el cambio de giro de licencia,T_002
+como hago para pagar mi recibo de luz por favor,fuera_de_dominio
+como funcionas,charla_casual
+hola señor,saludo
+quiero modificar el rubro de mi local comercial,T_002
+hola tardes,saludo
+necesito que me entreguen el informe tecnico de una inspeccion,T_001
+licencia para edificar mi terreno modalidad a por favor,T_010
+quiero saber que tramite hago para edificar en un lote nuevo,T_010
+mi tienda de abarrotes se va a convertir en ferreteria,T_002
+mi bodega no tiene licencia y quiero regularizarla ya,T_004
+necesito leer un documento publico como hago,T_001
+hay tarifa para este tramite,consultar_costo
+quiero vender otra cosa en mi local q hago por favor,T_002
+q presento para que me cambien el giro,T_002
+a como esta el permiso,consultar_costo
+como tramito acceso a la informacion,T_001
+quiero abrir una bodega en mi cochera,T_004
+trabajas aqui,charla_casual
+necesito el tramite expres para mi bodega nueva,T_004
+a que hora atienden en la municipalidad,fuera_de_dominio
+quiero sacar mi licencia municipal de riesgo bajo,T_003
+q necesito para viajar a españa,fuera_de_dominio
+req para poner una bodega en mi jato,T_004
+como pago el recibo de ensa por internet amigo,fuera_de_dominio
+quisiera saber como saco el permiso rapido para mi bodega,T_004
+quiero que mi tienda deje de ser bazar y sea libreria,T_002
+como me afilio a essalud,fuera_de_dominio
+me pueden dar copia de un contrato municipal,T_001
+me caes bien,charla_casual
+cuantos dias tengo que esperar,consultar_plazo
+necesito permiso para tumbar una pared interior,T_010
+q papeles piden pa un negocio de riesgo bajo,T_003
+perdi el permiso de mi local quiero duplicado,T_005
+donde veo los requisitos para negocio pequeño,T_003
+requisitos pa cambiar de giro mi tienda por favor,T_002
+pasos para la licencia provisional de bodega,T_004
+cuanto esta ese tramite por favor,consultar_costo
+cuanto demora en resolverse mi solicitud,consultar_plazo
+q documentos piden pa cambiar el giro de mi empresa por favor,T_002
+antes tenia una peluqueria y ahora sera una farmacia,T_002
+a que hora juega la seleccion peruana,fuera_de_dominio
+q llevo pa que me den un nuevo carton de licencia,T_005
+quiero abrir una libreria q licencia saco,T_003
+hola respondeme porfa,saludo
+tengo pensado solicitar el expediente de mi calle,T_001
+q documentos piden para hacer un cerco perimetrico,T_010
+hola oye,saludo
+me gustaria saber que necesito para la licencia de construccion,T_010
+tiempo aproximado de entrega por favor,consultar_plazo
+cuando puedo recoger el documento,consultar_plazo
+hola estas ahi,saludo
+me dices el precio porfa,consultar_costo
+donde pido el informe de una obra,T_001
+hay un tiempo aproximado de espera,consultar_plazo
+en cuanto tiempo sale,consultar_plazo
+te aburres de responder siempre lo mismo,charla_casual
+cual es el tiempo de espera amigo,consultar_plazo
+chau,despedida
+hola como estas amigo,saludo
+buenas tardesito,saludo
+como averiguo cuanto se gasto en la pista de mi calle,T_001
+q doc llevo pa formalizar mi negocio de barrio,T_003
+y cuanto se paga,consultar_costo
+como te llamas,charla_casual
+que necesito para una tienda de mascotas chica,T_003
+cual es el horario de atencion de mesa de partes,fuera_de_dominio
+nesecito permiso pa construir en mi lote,T_010
+hey,saludo
+requisitos para licencia provisional bodegas,T_004
+perfecto asi queda gracias,despedida
+q piden para la licencia de edificacion modalidad a,T_010
+vale muchas gracias adios,despedida
+cuantos dias se demoran,consultar_plazo
+estoy pensando en construir un segundo piso en mi casa,T_010
+precio de la bodega,T_004
+q necesito para viajar a españa por favor,fuera_de_dominio
+como hago para pagar mi recibo de luz,fuera_de_dominio
+dime el costo de eso,consultar_costo
+cuanto tarda en salir el permiso,consultar_plazo
+licencia gratis para bodegueros q piden,T_004
+quisiera saber que debo presentar para una solicitud de informacion,T_001
+tengo pensado poner una bodega en la sala de mi casa,T_004
+cuanto tengo q esperar,consultar_plazo
+necesito q me faciliten un doc de la muni,T_001
+gracias hasta pronto,despedida
+tienes vacaciones alguna vez,charla_casual
+me duele la cabeza q pastilla tomo por favor,fuera_de_dominio
+buenas quiero preguntar algo,saludo
+quiero formalizar un puesto de venta de calzado,T_003
+donde queda la oficina de la reniec,fuera_de_dominio
+tengo pensado sacar otra copia de mi licencia extraviada,T_005
+quiero sacar permiso para construir mi jato,T_010
+que se necesita para la licencia de construccion a,T_010
+como descargo peliculas gratis,fuera_de_dominio
+como pido la licencia provisional de mi tienda,T_004
+quiero sacar licencia pa mi casita,T_010
+quiero el permiso rapido para mi bodeguita,T_004
+quiero abrir un puesto de venta de ropa en el mercado,T_003
+extravie mi licencia comercial tramite de duplicado por favor,T_005
+me interesa saber como reemplazo mi carton de licencia,T_005
+todo bien,charla_casual
+cual es el valor a pagar por favor,consultar_costo
+como saco mi certificado de antecedentes penales,fuera_de_dominio
+quisiera informarme sobre la licencia provisional de bodega,T_004
+tramites para abrir mi tienda sin problemas,T_003
+necesito reponer mi licencia porque se me cayo al rio,T_005
+como se llama tu creador,charla_casual
+cuanto cuesta el duplicado de la licencia,T_005
+quisiera informarme sobre el cambio de giro de mi tienda,T_002
+como inicio el tramite de edificacion modalidad a,T_010
+donde compro entradas para un concierto,fuera_de_dominio
+sabes bailar,charla_casual
+quiero hacer seguimiento a mi expediente,fuera_de_dominio
+que tal por favor,saludo
+te gustaria ser humano,charla_casual
+ok gracias eso era todo,despedida
+cual es el costo amigo,consultar_costo
+hasta cuando tengo que esperar,consultar_plazo
+kiero el permiso de bodega rapido,T_004
+kiero hacer una ampliacion en mi jato q licencia saco,T_010
+extravie mi licencia comercial tramite de duplicado,T_005
+como obtengo el permiso rapido para bodega por favor,T_004
+hasta pronto gracias por la informacion,despedida
+donde solicito el tupa de la municipalidad,T_001
+como saco el permiso de bodega sin tanto papeleo,T_004
+donde renuevo mi licencia de conducir,fuera_de_dominio
+necesito saber cuanto cuesta,consultar_costo
+y cuanto se paga amigo,consultar_costo
+necesito el permiso para hacer una loza deportiva,T_010
+como saco copia de mi licencia q se extravio,T_005
+info para tramitar duplicado de licencia,T_005
+necesito el permiso de la muni para mi tiendita,T_003
+cuantos dias habiles demora la respuesta,consultar_plazo
+hablas otros idiomas,charla_casual
+como te va,charla_casual
+buenas,saludo
+nesecito permiso pa construir en mi lote amigo,T_010
+como consigo un nuevo certificado si perdi el original,T_005
+la licencia de mi negocio se quemo en un incendio pequeño,T_005
+ya con eso me voy gracias,despedida
+muchas gracias,despedida
+que piden para darme duplicado del permiso amigo,T_005
+cuentame un chiste,charla_casual
+cuanto de plata necesito para eso,consultar_costo
+estoy pensando en abrir una bodega que necesito,T_004
+que dia es hoy,charla_casual
+quisiera informarme sobre la licencia para un bazar,T_003
+hola leonardito amigo,saludo
+buenas noches amigo,saludo
+pasos para obtener licencia de riesgo bajo,T_003
+gracias adios,despedida
+requisitos para abrir un local de fotocopias,T_003
+como formalizo mi bodega con la nueva ley por favor,T_004
+como hago valer mi derecho de acceso a la info,T_001
+hola buenas,saludo
+permiso municipal para local de riesgo bajo amigo,T_003
+cuanto sale en total,consultar_costo
+como hago para reclamar en indecopi,fuera_de_dominio
+eres una persona real,charla_casual
+es gratis o tiene costo por favor,consultar_costo
+gracias por atenderme adios,despedida
+que puedes hacer,charla_casual
+necesito otra licencia porque la anterior se deterioro,T_005
+permiso para cambiar de giro en la muni,T_002
+q necesito para sacar licencia de riesgo bajo,T_003
+quien te hizo,charla_casual
+cuanto se cancela en ventanilla,consultar_costo
+cuanto duele el tramite,consultar_costo
+licencia de funcionamiento pa negocio pequeño,T_003
+gracias cuidate,despedida
+plazo maximo para q me den eso,consultar_plazo
+tramite de bodega provisional cuanto demora,T_004
+como solicito duplicado de licencia en la muni amigo,T_005
+licencia de edificacion a porfa,T_010
+que tal,saludo
+quisiera informarme sobre el permiso de obra modalidad a,T_010
+hay q pagar algo en la muni por favor,consultar_costo
+duermes de noche,charla_casual
+requisitos pa cambiar de giro mi tienda,T_002
+gracias ya no tengo mas preguntas,despedida
+requisitos pa ver un expediente de la alcaldia,T_001
+cuanto esta el tramite de cambio de giro amigo,T_002
+quien te programo,charla_casual
+kiero saber mi puntaje de infocorp,fuera_de_dominio
+gracias por resolver mi consulta,despedida
+que tiempo tarda el tramite amigo,consultar_plazo
+cual es el costo,consultar_costo
+bye gracias,despedida
+que piden para edificar una vivienda unifamiliar,T_010
+cual es tu color favorito,charla_casual
+mi local va a dejar de ser bodega para ser un salon de eventos,T_002
+necesito el permiso de la muni para mi tiendita por favor,T_003
+q formato lleno para licencia provisional de bodega,T_004
+ya no necesito nada mas gracias,despedida
+como obtengo el permiso rapido para bodega,T_004
+perfecto muchas gracias buen dia,despedida
+documentos pa la licencia de construccion de mi casa,T_010
+hola a todos,saludo
+hola leonardito,saludo
+kiero saber de la licencia gratis de bodega,T_004
+necesito levantar un pisito mas en mi casa como hago por favor,T_010
+requisitos para abrir una libreria de utiles escolares,T_003
+me gustaria saber que necesito para solicitar informacion publica,T_001
+info para sacar licencia nivel riesgo bajo amigo,T_003
+hola q tal,saludo
+demora mucho eso,consultar_plazo
+y eso en cuanto sale por favor,consultar_plazo
+quiero sacar permiso pa abrir una tiendita por favor,T_003
+que tiempo tarda el tramite,consultar_plazo
+kiero una informacion publica de la municipalidad,T_001
+kiero pedir el duplicado de mi permiso,T_005
+cual es el importe a pagar,consultar_costo
+licencia para edificar mi terreno modalidad a,T_010
+cuando me entregan el documento por favor,consultar_plazo
+cuanto se demora normalmente esto,consultar_plazo
+tengo pensado poner una bodega en mi casa,T_004
+tiempo aproximado de entrega,consultar_plazo
+mi hijo boto sin querer el carton de mi licencia,T_005
+mi licencia tiene manchas de agua y no se lee bien,T_005
+voy a cambiar mi botica a ferreteria como hago,T_002
+mi local paso de ser cyber a ser una veterinaria,T_002
+donde queda mesa de partes,fuera_de_dominio
+req para licencia de mi negocio pequeño,T_003
+me pueden decir cuando estara listo,consultar_plazo
+q me recomiendas para el dolor de estomago,fuera_de_dominio
+estoy pensando en sacar un duplicado de mi licencia,T_005
+puedes enamorarte,charla_casual
+perdi el permiso de mi local quiero duplicado por favor,T_005
+q debo presentar para pedir info a la muni amigo,T_001
+es en el dia o demora,consultar_plazo
+kiero una informacion publica de la municipalidad por favor,T_001
+como hago pa pedir documentos a la muni amigo,T_001
+necesito permiso para instalar un techo de calamina nuevo,T_010
+eso es todo gracias,despedida
+me gustaria saber que necesito para sacar mi licencia de negocio pequeño,T_003
+de donde eres,charla_casual
+como saco licencia provisional pa bodega amigo,T_004
+donde queda la oficina de la reniec por favor,fuera_de_dominio
+tienes sentimientos,charla_casual
+estaba pensando en solicitar una copia de una ordenanza,T_001
+cuanto esta el kilo de limon en el mercado,fuera_de_dominio
+me interesa saber como paso de restaurante a bodega,T_002
+requisitos para solicitar un nuevo certificado de licencia,T_005
+cuanto tiempo debo esperar la aprobacion,consultar_plazo
+estaba pensando en abrir una bodega en mi cochera,T_004
+como andas,charla_casual
+cuanto esta el kilo de limon en el mercado por favor,fuera_de_dominio
+como estas,charla_casual
+presente un documento la semana pasada que paso con eso,fuera_de_dominio
+eres una inteligencia artificial,charla_casual
+pa cuando estaria listo,consultar_plazo
+listo ya me quedo claro gracias,despedida
+necesito una constancia de no adeudo municipal,T_001
+me interesa saber como abro un negocio de riesgo bajo,T_003
+como hago pa pedir documentos a la muni,T_001
+buenos dias,saludo
+a que hora abre el banco de la nacion,fuera_de_dominio
+quiero sacar permiso para construir mi jato por favor,T_010
+nos vemos,despedida
+cuanto tardan en resolver esto,consultar_plazo
+es gratis o tiene costo,consultar_costo
+se me extravio la licencia en la mudanza del negocio,T_005
+cuanto piden pagar en caja,consultar_costo
+hola espero me puedas ayudar,saludo
+como saco permiso para una heladeria pequeña,T_003
+al toque sale o demora amigo,consultar_plazo
+mi tienda de electrodomesticos ahora sera una carniceria,T_002
+quiero vender otra cosa en mi local q hago,T_002
+gracias eso necesitaba saber nomas,despedida
+se daño mi certificado de licencia quiero otro por favor,T_005
+cuanto cobran por darme copias certificadas por favor,T_001
+hola espero estes bien,saludo
+quiero solicitar copias de una resolucion antigua por favor,T_001
+cual es tu comida favorita,charla_casual
+listo,despedida
+kiero cambiar el tipo de negocio en mi licencia amigo,T_002
+pasos para pedir duplicado de licencia amigo,T_005
+listo con eso me basta gracias adios,despedida
+me pueden dar copia de un contrato municipal por favor,T_001
+quiero recuperar mi licencia municipal q se me perdio,T_005
+cuanto me sale hacer el tramite,consultar_costo
+hola que tal,saludo
+cual es el clima para mañana,fuera_de_dominio
+me pueden facilitar el acta de una sesion de consejo,T_001
+me robaron mi carton de licencia q hago por favor,T_005
+como preparo un lomo saltado jugoso,fuera_de_dominio
+necesito levantar un pisito mas en mi casa como hago,T_010
+cuando queda resuelto el tramite,consultar_plazo
+digame el costo pe,consultar_costo
+no encuentro mi licencia por ningun lado que hago,T_005
+perfecto muchas gracias adios,despedida
+requisitos pa ver un expediente de la alcaldia amigo,T_001
+necesito leer un documento publico como hago por favor,T_001
+gracias eso resuelve mi duda adios,despedida
+que bien explicas,charla_casual
+q documentos presento para licencia provisional de bodega,T_004
+cuanto es el pago que debo hacer,consultar_costo
+cual es el tipo de cambio del dolar hoy,fuera_de_dominio
+cuanto me cuesta sacar eso por favor,consultar_costo
+quisiera informarme sobre el duplicado de mi permiso,T_005
+cuanto tiempo demora,consultar_plazo
+necesito el expediente de mi calle por favor,T_001
+req para sacar copia de una ordenanza,T_001
+demora regular o es rapido,consultar_plazo
+digame el plazo porfa,consultar_plazo
+info para sacar licencia nivel riesgo bajo,T_003
+me duele la cabeza q pastilla tomo,fuera_de_dominio
+hola,saludo
+quiero abrir una bodega en mi cochera por favor,T_004
+saludos,saludo
+cuanto debo cancelar,consultar_costo
+como tramito mi licencia de local chico,T_003
+muchas gracias por tu ayuda,despedida
+quisiera saber que documentos piden para modalidad a,T_010
+te canso con tantas preguntas,charla_casual
+quiero copia del reglamento interno de la municipalidad,T_001
+cuanto me cobran por ese documento,consultar_costo
+cuanto tiempo toma la evaluacion,consultar_plazo
+necesito sacar informacion de la municipalidad,T_001
+eres util,charla_casual
+licencia de funcionamiento pa negocio pequeño amigo,T_003
+cuanto debo pagar en total,consultar_costo
+como paso de restaurante a bodega en mi local por favor,T_002
+hola bot,saludo
+quiero un duplicado de mi licencia de funcionamiento,T_005
+que documentos pide la muni para un minimarket chico,T_003
+quiero sacar copias de un tramite pasado por favor,T_001
+muy buenos dias,saludo
+buen dia,saludo
+cuanto cuesta el permiso de cambio de rubro,T_002
+cuantos años tienes,charla_casual
+estaba pensando en pedir un duplicado porque me lo robaron,T_005
+buen dia por favor,saludo
+hola que tal por favor,saludo
+info para pedir papeles a mesa de partes por favor,T_001
+a como esta el permiso por favor,consultar_costo
+hay forma de pedir los planos de una obra municipal,T_001
+kuesta sacar un duplicado,T_005
+bueno gracias hasta otra,despedida
+hola quiero hacer una consulta,saludo
+sabes cantar,charla_casual
+hola buen dia,saludo
+sacar copia de un documento de la municipalidad,T_001
+te gusta tu trabajo,charla_casual
+quiero saber si hay un permiso temporal para bodegas,T_004
+pa cambiar de rubro q papeles llevo,T_002
+hola muni por favor,saludo
+quiero ampliar mi vivienda con un cuarto adicional,T_010
+cuantas semanas demora esto,consultar_plazo
+chau nos vemos luego,despedida
+hola muni,saludo
+voy a poner otro negocio en el mismo local,T_002
+quiero abrir una bodega chiquita cerca del colegio,T_004
+nesecito licencia por cambio de giro amigo,T_002
+como saco licencia provisional pa bodega,T_004
+holis,saludo
+debo pagar derecho de tramite,consultar_costo
+pasos para pedir duplicado de licencia,T_005
+requisitos para licencia de construccion modalidad a,T_010
+gracias eso resolvia todas mis dudas,despedida
+gracias ahi quedamos,despedida
+y eso cuanto vale,consultar_costo
+hasta la proxima,despedida
+como saco un certificado de zonificacion de mi predio,T_001
+cuantos dias tengo que esperar por favor,consultar_plazo
+buenas noches,saludo
+como veo el estado de mi expediente,fuera_de_dominio
+para que sirves,charla_casual
+tengo una bodega funcionando sin papeles que hago,T_004
+quiero sacar la licencia temporal de bodega,T_004
+muy agradecido hasta pronto,despedida
+tengo pensado formalizar mi negocio pequeño,T_003
+me dicen cuanto cuesta por favor,consultar_costo
+perdi la resolucion de mi negocio como pido copia,T_005
+quiero pedir informacion a la municipalidad,T_001
+kiero sacar otra vez mi licencia pq la perdi por favor,T_005
+quiero formalizar mi negocio pequeño q hago por favor,T_003
+mi licencia esta ilegible por el sol necesito otra copia,T_005
+hola amigo,saludo
+como paso de restaurante a bodega en mi local,T_002
+kiero construir mi casa q docmentos presento,T_010
+como denuncio un robo en la comisaria amigo,fuera_de_dominio
+voy a cambiar el rubro de mi negocio q tramite hago amigo,T_002
+cuanto me cuesta sacar eso,consultar_costo
+que papeles llevo a la muni para construir mi casa,T_010
+eres humano,charla_casual
+quiero sacar mi pasaporte q me piden,fuera_de_dominio
+tramite para sacar licencia de bodega provisional amigo,T_004
+kuanto tiempo demora el permiso de mi tiendita,T_003
+en cuantos dias me lo dan amigo,consultar_plazo
+cuales son los pasos para sacar la licencia de construccion,T_010
+estoy pensando en abrir una tiendita en mi barrio,T_003
+me pueden decir los req para cambiar giro de negocio,T_002
+donde puedo recargar mi tarjeta del metropolitano,fuera_de_dominio
+quiero formalizar mi negocio pequeño q hago,T_003
+q documentos piden para hacer un cerco perimetrico amigo,T_010
+como tramito acceso a la informacion amigo,T_001
+donde puedo sacar copias fotostaticas cerca de aqui,fuera_de_dominio
+listo perfecto muchas gracias,despedida
+requisitos para licencia provisional bodegas amigo,T_004
+tengo pensado levantar una habitacion mas en mi casa,T_010
+eres divertido,charla_casual
+adios,despedida
+quiero renovar mi dni azul a electronico amigo,fuera_de_dominio
+eso demanda algun costo,consultar_costo
+sabes cocinar,charla_casual
+voy a construir una tienda pegada a mi casa,T_010
+cual seria el precio a cancelar,consultar_costo
+como abro legalmente una cafeteria pequeña,T_003
+como preparo un lomo saltado jugoso amigo,fuera_de_dominio
+de que material estas hecho,charla_casual
+necesito el formato para pedir duplicado de licencia,T_005
+informacion sobre la licencia de edificacion modalidad a,T_010
+nesecito permiso pa mi bodega en casa,T_004
+cuanto se demora en salir aprobado,consultar_plazo
+kiero sacar permiso de funcionamiento pa mi negocio,T_003
+ya esta,despedida
+pasos para solicitar cambio de giro en la muni,T_002
+paso de vender ropa a ofrecer servicios de internet,T_002
+y eso en cuanto sale,consultar_plazo
+tarifa de ese tramite,consultar_costo
+se me perdio mi licencia municipal como saco otra,T_005
+mi licencia se maltrato mucho y ya no se lee necesito otra,T_005
+hay un tiempo limite para la respuesta,consultar_plazo
+que tal todo,charla_casual
+necesito licencia para hacer un cerco en mi terreno,T_010
+como abro un bazar en mi barrio por favor,T_003
+cual es el plazo de atencion,consultar_plazo
+que hora es,charla_casual
+alo,saludo
+que piden para darme duplicado del permiso,T_005
+muchas gracias me quedo claro todo,despedida
+cuando me entregan el documento,consultar_plazo
+tengo el carton de mi licencia partido en dos como lo cambio,T_005
+estoy pensando en cambiar el giro de mi negocio,T_002
+q piden para la licencia de edificacion modalidad a amigo,T_010
+cual es tu nombre,charla_casual
+como abro un bazar en mi barrio,T_003
+nos vemos gracias por todo,despedida
+quiero techar mi casa y necesito el permiso por favor,T_010
+quiero poner mi bodeguita q papeles llevo por favor,T_004
+q necesito para actualizar mi licencia a otro giro por favor,T_002
+me gustaria saber que necesito para cambiar de rubro,T_002
+buenas tardes por favor,saludo
+donde pido el padron de contribuyentes de mi zona,T_001
+a q hora dan el bono en el banco de la nacion por favor,fuera_de_dominio
+ya,despedida
+gracias que tengas buen dia,despedida
+mi tienda de ropa ahora va a vender celulares que hago,T_002
+quiero solicitar copias de una resolucion antigua,T_001
+ok perfecto gracias chau,despedida
+quiero que conste que mi negocio ahora es otro rubro,T_002
+tramite para vender otros productos en mi local,T_002
+hola me ayudas,saludo
+requisitos para variar el giro de mi negocio amigo,T_002
+gracias por la ayuda me retiro,despedida
+donde pido el informe de una obra amigo,T_001
+esta bien asi gracias y hasta luego,despedida
+gracias,despedida
+como hago para votar en las elecciones,fuera_de_dominio
+en cuantos dias me lo dan,consultar_plazo
+al toque sale o demora,consultar_plazo
+pasame la receta del ceviche norteño,fuera_de_dominio
+quiero permiso para un local de venta de flores,T_003
+quiero sacar permiso pa abrir una tiendita,T_003
+hola necesito informacion,saludo
+quiero un duplicado de mi licencia de funcionamiento amigo,T_005
+antes vendia zapatos y ahora quiero vender muebles,T_002
+que se necesita para la licencia de construccion a amigo,T_010
+tramite para sacar licencia de bodega provisional,T_004
+se me perdio mi licencia municipal como saco otra por favor,T_005
+req para sacar duplicado de licencia amigo,T_005
+me interesa saber que documentos piden para mi bodeguita,T_004
+kiero hacer un cambio de giro cuanto demora,T_002
+cuanto me cobran por ese documento amigo,consultar_costo
+cuanto me cobran por la licencia de riesgo bajo,T_003
+como solicito la resolucion de alcaldia,T_001
+como hago pa sacar mi permiso de obra en la muni por favor,T_010
+voy a construir un cuarto de servicio en mi terreno,T_010
+como saco el certificado de posesion de mi terreno,T_001
+gracias nos vemos pronto,despedida
+como hago pa sacar mi permiso de obra en la muni,T_010
+en que fecha me lo entregan,consultar_plazo
+quiero saber que se necesita para construir un garaje,T_010
+saludos cordiales,saludo
+alo por favor,saludo
+gracias eso era chau,despedida
+me gustaria saber que hago porque perdi mi licencia,T_005
+info sobre licencia provisional para bodegueros,T_004
+kiero saber mi puntaje de infocorp por favor,fuera_de_dominio
+me interesa saber que tramite hago para pedir informacion a la muni,T_001
+muy buenas,saludo
+nesecito permiso pa mi bodega en casa por favor,T_004
+quien te creo,charla_casual
+quiero modificar el rubro de mi local comercial por favor,T_002
+eso tiene costo o es sin pago,consultar_costo
+quiero poner una peluqueria pequeña como saco licencia,T_003

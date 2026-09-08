@@ -1,0 +1,603 @@
+version: "3.1"
+
+nlu:
+- intent: T_001
+  examples: |
+    - necesito el expediente de mi calle
+    - cuanto cobran por darme copias certificadas
+    - quiero q me den copia de unos planos antiguos
+    - quiero ver el expediente tecnico de una obra publica
+    - estoy pensando en pedir una copia de un documento municipal
+    - necesito que me entreguen el informe tecnico de una inspeccion
+    - necesito leer un documento publico como hago
+    - como tramito acceso a la informacion
+    - me pueden dar copia de un contrato municipal
+    - tengo pensado solicitar el expediente de mi calle
+    - donde pido el informe de una obra
+    - como averiguo cuanto se gasto en la pista de mi calle
+    - quisiera saber que debo presentar para una solicitud de informacion
+    - necesito q me faciliten un doc de la muni
+    - donde solicito el tupa de la municipalidad
+    - como hago valer mi derecho de acceso a la info
+    - requisitos pa ver un expediente de la alcaldia
+    - me gustaria saber que necesito para solicitar informacion publica
+    - kiero una informacion publica de la municipalidad
+    - q debo presentar para pedir info a la muni amigo
+    - kiero una informacion publica de la municipalidad por favor
+    - como hago pa pedir documentos a la muni amigo
+    - estaba pensando en solicitar una copia de una ordenanza
+    - necesito una constancia de no adeudo municipal
+    - como hago pa pedir documentos a la muni
+    - cuanto cobran por darme copias certificadas por favor
+    - quiero solicitar copias de una resolucion antigua por favor
+    - me pueden dar copia de un contrato municipal por favor
+    - me pueden facilitar el acta de una sesion de consejo
+    - requisitos pa ver un expediente de la alcaldia amigo
+    - necesito leer un documento publico como hago por favor
+    - necesito el expediente de mi calle por favor
+    - req para sacar copia de una ordenanza
+    - quiero copia del reglamento interno de la municipalidad
+    - necesito sacar informacion de la municipalidad
+    - quiero sacar copias de un tramite pasado por favor
+    - info para pedir papeles a mesa de partes por favor
+    - hay forma de pedir los planos de una obra municipal
+    - sacar copia de un documento de la municipalidad
+    - como saco un certificado de zonificacion de mi predio
+    - quiero pedir informacion a la municipalidad
+    - como tramito acceso a la informacion amigo
+    - donde pido el padron de contribuyentes de mi zona
+    - quiero solicitar copias de una resolucion antigua
+    - donde pido el informe de una obra amigo
+    - como solicito la resolucion de alcaldia
+    - como saco el certificado de posesion de mi terreno
+    - me interesa saber que tramite hago para pedir informacion a la muni
+- intent: T_002
+  examples: |
+    - quiero sacar licencia por cambio de giro comercial
+    - estaba pensando en cambiar el rubro de mi local
+    - mi negocio cambio de actividad y necesito actualizarlo
+    - kiero cambiar el tipo de negocio en mi licencia
+    - como hago si quiero cambiar de rubro
+    - quiero que mi restaurante ahora funcione como panaderia
+    - como hago si quiero cambiar de rubro amigo
+    - q necesito para actualizar mi licencia a otro giro
+    - info sobre el cambio de giro de licencia
+    - quiero modificar el rubro de mi local comercial
+    - mi tienda de abarrotes se va a convertir en ferreteria
+    - quiero vender otra cosa en mi local q hago por favor
+    - q presento para que me cambien el giro
+    - quiero que mi tienda deje de ser bazar y sea libreria
+    - requisitos pa cambiar de giro mi tienda por favor
+    - q documentos piden pa cambiar el giro de mi empresa por favor
+    - antes tenia una peluqueria y ahora sera una farmacia
+    - quisiera informarme sobre el cambio de giro de mi tienda
+    - permiso para cambiar de giro en la muni
+    - requisitos pa cambiar de giro mi tienda
+    - cuanto esta el tramite de cambio de giro amigo
+    - mi local va a dejar de ser bodega para ser un salon de eventos
+    - voy a cambiar mi botica a ferreteria como hago
+    - mi local paso de ser cyber a ser una veterinaria
+    - me interesa saber como paso de restaurante a bodega
+    - mi tienda de electrodomesticos ahora sera una carniceria
+    - quiero vender otra cosa en mi local q hago
+    - kiero cambiar el tipo de negocio en mi licencia amigo
+    - como paso de restaurante a bodega en mi local por favor
+    - cuanto cuesta el permiso de cambio de rubro
+    - pa cambiar de rubro q papeles llevo
+    - voy a poner otro negocio en el mismo local
+    - nesecito licencia por cambio de giro amigo
+    - como paso de restaurante a bodega en mi local
+    - voy a cambiar el rubro de mi negocio q tramite hago amigo
+    - me pueden decir los req para cambiar giro de negocio
+    - pasos para solicitar cambio de giro en la muni
+    - paso de vender ropa a ofrecer servicios de internet
+    - estoy pensando en cambiar el giro de mi negocio
+    - q necesito para actualizar mi licencia a otro giro por favor
+    - me gustaria saber que necesito para cambiar de rubro
+    - mi tienda de ropa ahora va a vender celulares que hago
+    - quiero que conste que mi negocio ahora es otro rubro
+    - tramite para vender otros productos en mi local
+    - requisitos para variar el giro de mi negocio amigo
+    - antes vendia zapatos y ahora quiero vender muebles
+    - kiero hacer un cambio de giro cuanto demora
+    - quiero modificar el rubro de mi local comercial por favor
+- intent: T_003
+  examples: |
+    - quiero formalizar mi negocio de venta de ropa deportiva
+    - estaba pensando en poner una jugueria
+    - q necesito para sacar licencia de riesgo bajo amigo
+    - necesito licencia para una tienda de accesorios de celular
+    - licencia para abrir una tienda de articulos de limpieza
+    - como tramito mi licencia de local chico amigo
+    - q papeles piden pa un negocio de riesgo bajo por favor
+    - quiero sacar mi licencia municipal de riesgo bajo
+    - q papeles piden pa un negocio de riesgo bajo
+    - donde veo los requisitos para negocio pequeño
+    - quiero abrir una libreria q licencia saco
+    - q doc llevo pa formalizar mi negocio de barrio
+    - que necesito para una tienda de mascotas chica
+    - quiero formalizar un puesto de venta de calzado
+    - quiero abrir un puesto de venta de ropa en el mercado
+    - tramites para abrir mi tienda sin problemas
+    - necesito el permiso de la muni para mi tiendita
+    - quisiera informarme sobre la licencia para un bazar
+    - pasos para obtener licencia de riesgo bajo
+    - requisitos para abrir un local de fotocopias
+    - permiso municipal para local de riesgo bajo amigo
+    - q necesito para sacar licencia de riesgo bajo
+    - licencia de funcionamiento pa negocio pequeño
+    - necesito el permiso de la muni para mi tiendita por favor
+    - requisitos para abrir una libreria de utiles escolares
+    - info para sacar licencia nivel riesgo bajo amigo
+    - quiero sacar permiso pa abrir una tiendita por favor
+    - req para licencia de mi negocio pequeño
+    - me gustaria saber que necesito para sacar mi licencia de negocio pequeño
+    - me interesa saber como abro un negocio de riesgo bajo
+    - como saco permiso para una heladeria pequeña
+    - info para sacar licencia nivel riesgo bajo
+    - como tramito mi licencia de local chico
+    - licencia de funcionamiento pa negocio pequeño amigo
+    - que documentos pide la muni para un minimarket chico
+    - tengo pensado formalizar mi negocio pequeño
+    - quiero formalizar mi negocio pequeño q hago por favor
+    - kuanto tiempo demora el permiso de mi tiendita
+    - estoy pensando en abrir una tiendita en mi barrio
+    - quiero formalizar mi negocio pequeño q hago
+    - como abro legalmente una cafeteria pequeña
+    - kiero sacar permiso de funcionamiento pa mi negocio
+    - como abro un bazar en mi barrio por favor
+    - como abro un bazar en mi barrio
+    - quiero permiso para un local de venta de flores
+    - quiero sacar permiso pa abrir una tiendita
+    - cuanto me cobran por la licencia de riesgo bajo
+    - quiero poner una peluqueria pequeña como saco licencia
+- intent: T_004
+  examples: |
+    - requisitos de la muni pa bodega en casa
+    - quiero abrir mi bodega y sacar el permiso mas rapido posible
+    - que necesito para que mi bodega no me multen
+    - q necesito pa abrir mi bodega al toke
+    - pasos para la licencia provisional de bodega amigo
+    - licencia gratis para bodegueros q piden amigo
+    - kiero el permiso de bodega rapido por favor
+    - quiero poner mi bodeguita q papeles llevo
+    - mi bodega no tiene licencia y quiero regularizarla ya
+    - quiero abrir una bodega en mi cochera
+    - necesito el tramite expres para mi bodega nueva
+    - req para poner una bodega en mi jato
+    - quisiera saber como saco el permiso rapido para mi bodega
+    - pasos para la licencia provisional de bodega
+    - requisitos para licencia provisional bodegas
+    - precio de la bodega
+    - licencia gratis para bodegueros q piden
+    - tengo pensado poner una bodega en la sala de mi casa
+    - como pido la licencia provisional de mi tienda
+    - quiero el permiso rapido para mi bodeguita
+    - quisiera informarme sobre la licencia provisional de bodega
+    - kiero el permiso de bodega rapido
+    - como obtengo el permiso rapido para bodega por favor
+    - como saco el permiso de bodega sin tanto papeleo
+    - estoy pensando en abrir una bodega que necesito
+    - como formalizo mi bodega con la nueva ley por favor
+    - tramite de bodega provisional cuanto demora
+    - q formato lleno para licencia provisional de bodega
+    - como obtengo el permiso rapido para bodega
+    - kiero saber de la licencia gratis de bodega
+    - tengo pensado poner una bodega en mi casa
+    - como saco licencia provisional pa bodega amigo
+    - estaba pensando en abrir una bodega en mi cochera
+    - q documentos presento para licencia provisional de bodega
+    - quiero abrir una bodega en mi cochera por favor
+    - quiero saber si hay un permiso temporal para bodegas
+    - quiero abrir una bodega chiquita cerca del colegio
+    - como saco licencia provisional pa bodega
+    - tengo una bodega funcionando sin papeles que hago
+    - quiero sacar la licencia temporal de bodega
+    - tramite para sacar licencia de bodega provisional amigo
+    - requisitos para licencia provisional bodegas amigo
+    - nesecito permiso pa mi bodega en casa
+    - quiero poner mi bodeguita q papeles llevo por favor
+    - tramite para sacar licencia de bodega provisional
+    - me interesa saber que documentos piden para mi bodeguita
+    - info sobre licencia provisional para bodegueros
+    - nesecito permiso pa mi bodega en casa por favor
+- intent: T_005
+  examples: |
+    - como solicito duplicado de licencia en la muni
+    - cuanto tarda el duplicado de la licencia
+    - quiero recuperar mi licencia municipal q se me perdio por favor
+    - kiero sacar otra vez mi licencia pq la perdi
+    - perdi el permiso de mi local quiero duplicado
+    - q llevo pa que me den un nuevo carton de licencia
+    - tengo pensado sacar otra copia de mi licencia extraviada
+    - extravie mi licencia comercial tramite de duplicado por favor
+    - me interesa saber como reemplazo mi carton de licencia
+    - necesito reponer mi licencia porque se me cayo al rio
+    - cuanto cuesta el duplicado de la licencia
+    - extravie mi licencia comercial tramite de duplicado
+    - como saco copia de mi licencia q se extravio
+    - info para tramitar duplicado de licencia
+    - como consigo un nuevo certificado si perdi el original
+    - la licencia de mi negocio se quemo en un incendio pequeño
+    - que piden para darme duplicado del permiso amigo
+    - necesito otra licencia porque la anterior se deterioro
+    - como solicito duplicado de licencia en la muni amigo
+    - kiero pedir el duplicado de mi permiso
+    - mi hijo boto sin querer el carton de mi licencia
+    - mi licencia tiene manchas de agua y no se lee bien
+    - estoy pensando en sacar un duplicado de mi licencia
+    - perdi el permiso de mi local quiero duplicado por favor
+    - requisitos para solicitar un nuevo certificado de licencia
+    - se me extravio la licencia en la mudanza del negocio
+    - se daño mi certificado de licencia quiero otro por favor
+    - pasos para pedir duplicado de licencia amigo
+    - quiero recuperar mi licencia municipal q se me perdio
+    - me robaron mi carton de licencia q hago por favor
+    - no encuentro mi licencia por ningun lado que hago
+    - quisiera informarme sobre el duplicado de mi permiso
+    - quiero un duplicado de mi licencia de funcionamiento
+    - estaba pensando en pedir un duplicado porque me lo robaron
+    - kuesta sacar un duplicado
+    - pasos para pedir duplicado de licencia
+    - perdi la resolucion de mi negocio como pido copia
+    - kiero sacar otra vez mi licencia pq la perdi por favor
+    - mi licencia esta ilegible por el sol necesito otra copia
+    - necesito el formato para pedir duplicado de licencia
+    - se me perdio mi licencia municipal como saco otra
+    - mi licencia se maltrato mucho y ya no se lee necesito otra
+    - que piden para darme duplicado del permiso
+    - tengo el carton de mi licencia partido en dos como lo cambio
+    - quiero un duplicado de mi licencia de funcionamiento amigo
+    - se me perdio mi licencia municipal como saco otra por favor
+    - req para sacar duplicado de licencia amigo
+    - me gustaria saber que hago porque perdi mi licencia
+- intent: T_010
+  examples: |
+    - quiero techar mi casa y necesito el permiso
+    - me interesa saber como saco mi licencia de edificacion
+    - como tramito el permiso de construccion a
+    - voy a poner un segundo nivel de material noble
+    - kiero construir mi casa q docmentos presento amigo
+    - hola req para licencia de obra menor
+    - licencia para edificar mi terreno modalidad a por favor
+    - quiero saber que tramite hago para edificar en un lote nuevo
+    - necesito permiso para tumbar una pared interior
+    - q documentos piden para hacer un cerco perimetrico
+    - me gustaria saber que necesito para la licencia de construccion
+    - nesecito permiso pa construir en mi lote
+    - q piden para la licencia de edificacion modalidad a
+    - estoy pensando en construir un segundo piso en mi casa
+    - quiero sacar permiso para construir mi jato
+    - que se necesita para la licencia de construccion a
+    - quiero sacar licencia pa mi casita
+    - como inicio el tramite de edificacion modalidad a
+    - kiero hacer una ampliacion en mi jato q licencia saco
+    - necesito el permiso para hacer una loza deportiva
+    - nesecito permiso pa construir en mi lote amigo
+    - licencia de edificacion a porfa
+    - quisiera informarme sobre el permiso de obra modalidad a
+    - que piden para edificar una vivienda unifamiliar
+    - documentos pa la licencia de construccion de mi casa
+    - necesito levantar un pisito mas en mi casa como hago por favor
+    - licencia para edificar mi terreno modalidad a
+    - necesito permiso para instalar un techo de calamina nuevo
+    - quiero sacar permiso para construir mi jato por favor
+    - necesito levantar un pisito mas en mi casa como hago
+    - quisiera saber que documentos piden para modalidad a
+    - quiero ampliar mi vivienda con un cuarto adicional
+    - requisitos para licencia de construccion modalidad a
+    - kiero construir mi casa q docmentos presento
+    - que papeles llevo a la muni para construir mi casa
+    - cuales son los pasos para sacar la licencia de construccion
+    - q documentos piden para hacer un cerco perimetrico amigo
+    - tengo pensado levantar una habitacion mas en mi casa
+    - voy a construir una tienda pegada a mi casa
+    - informacion sobre la licencia de edificacion modalidad a
+    - necesito licencia para hacer un cerco en mi terreno
+    - q piden para la licencia de edificacion modalidad a amigo
+    - quiero techar mi casa y necesito el permiso por favor
+    - que se necesita para la licencia de construccion a amigo
+    - como hago pa sacar mi permiso de obra en la muni por favor
+    - voy a construir un cuarto de servicio en mi terreno
+    - como hago pa sacar mi permiso de obra en la muni
+    - quiero saber que se necesita para construir un garaje
+- intent: charla_casual
+  examples: |
+    - puedes pensar
+    - te gusta el futbol
+    - sabes jugar ajedrez
+    - puedes soñar
+    - tienes amigos
+    - te caen bien los reclamos de la gente
+    - como funcionas
+    - trabajas aqui
+    - me caes bien
+    - te aburres de responder siempre lo mismo
+    - como te llamas
+    - tienes vacaciones alguna vez
+    - todo bien
+    - como se llama tu creador
+    - sabes bailar
+    - te gustaria ser humano
+    - hablas otros idiomas
+    - como te va
+    - cuentame un chiste
+    - que dia es hoy
+    - eres una persona real
+    - que puedes hacer
+    - quien te hizo
+    - duermes de noche
+    - quien te programo
+    - cual es tu color favorito
+    - puedes enamorarte
+    - de donde eres
+    - tienes sentimientos
+    - como andas
+    - como estas
+    - eres una inteligencia artificial
+    - cual es tu comida favorita
+    - que bien explicas
+    - te canso con tantas preguntas
+    - eres util
+    - cuantos años tienes
+    - sabes cantar
+    - te gusta tu trabajo
+    - para que sirves
+    - eres humano
+    - eres divertido
+    - sabes cocinar
+    - de que material estas hecho
+    - que tal todo
+    - que hora es
+    - cual es tu nombre
+    - quien te creo
+- intent: consultar_costo
+  examples: |
+    - cuanto duele el tramite por favor
+    - cuanto sale en total por favor
+    - cuanto de plata necesito para eso amigo
+    - cuanto es lo que se abona
+    - cuanto esta ese tramite
+    - cuanto me va a costar
+    - cual es el precio por favor amigo
+    - hay q pagar algo en la muni
+    - dime el costo de eso amigo
+    - hay un monto fijo para esto
+    - precio del tramite
+    - hay tarifa para este tramite
+    - a como esta el permiso
+    - cuanto esta ese tramite por favor
+    - me dices el precio porfa
+    - y cuanto se paga
+    - dime el costo de eso
+    - cual es el valor a pagar por favor
+    - cual es el costo amigo
+    - necesito saber cuanto cuesta
+    - y cuanto se paga amigo
+    - cuanto de plata necesito para eso
+    - cuanto sale en total
+    - es gratis o tiene costo por favor
+    - cuanto se cancela en ventanilla
+    - cuanto duele el tramite
+    - hay q pagar algo en la muni por favor
+    - cual es el costo
+    - cual es el importe a pagar
+    - es gratis o tiene costo
+    - cuanto piden pagar en caja
+    - cuanto me sale hacer el tramite
+    - digame el costo pe
+    - cuanto es el pago que debo hacer
+    - cuanto me cuesta sacar eso por favor
+    - cuanto debo cancelar
+    - cuanto me cobran por ese documento
+    - cuanto debo pagar en total
+    - a como esta el permiso por favor
+    - debo pagar derecho de tramite
+    - y eso cuanto vale
+    - me dicen cuanto cuesta por favor
+    - cuanto me cuesta sacar eso
+    - eso demanda algun costo
+    - cual seria el precio a cancelar
+    - tarifa de ese tramite
+    - cuanto me cobran por ese documento amigo
+    - eso tiene costo o es sin pago
+- intent: consultar_plazo
+  examples: |
+    - en que plazo sale la respuesta
+    - demora mucho eso amigo
+    - el proceso es inmediato o toma dias
+    - cuantos dias habiles son por favor
+    - cuantos dias habiles son
+    - en cuantos dias habiles me responden
+    - cuantos dias tengo que esperar
+    - cuanto demora en resolverse mi solicitud
+    - tiempo aproximado de entrega por favor
+    - cuando puedo recoger el documento
+    - hay un tiempo aproximado de espera
+    - en cuanto tiempo sale
+    - cual es el tiempo de espera amigo
+    - cuantos dias se demoran
+    - cuanto tarda en salir el permiso
+    - cuanto tengo q esperar
+    - hasta cuando tengo que esperar
+    - cuantos dias habiles demora la respuesta
+    - plazo maximo para q me den eso
+    - que tiempo tarda el tramite amigo
+    - demora mucho eso
+    - y eso en cuanto sale por favor
+    - que tiempo tarda el tramite
+    - cuando me entregan el documento por favor
+    - cuanto se demora normalmente esto
+    - tiempo aproximado de entrega
+    - me pueden decir cuando estara listo
+    - es en el dia o demora
+    - cuanto tiempo debo esperar la aprobacion
+    - pa cuando estaria listo
+    - cuanto tardan en resolver esto
+    - al toque sale o demora amigo
+    - cuando queda resuelto el tramite
+    - cuanto tiempo demora
+    - demora regular o es rapido
+    - digame el plazo porfa
+    - cuanto tiempo toma la evaluacion
+    - cuantas semanas demora esto
+    - cuantos dias tengo que esperar por favor
+    - en cuantos dias me lo dan amigo
+    - cuanto se demora en salir aprobado
+    - y eso en cuanto sale
+    - hay un tiempo limite para la respuesta
+    - cual es el plazo de atencion
+    - cuando me entregan el documento
+    - en cuantos dias me lo dan
+    - al toque sale o demora
+    - en que fecha me lo entregan
+- intent: despedida
+  examples: |
+    - bueno gracias me retiro ya
+    - gracias por la paciencia adios
+    - muy amable hasta luego
+    - muchisimas gracias hasta luego
+    - chau
+    - perfecto asi queda gracias
+    - vale muchas gracias adios
+    - gracias hasta pronto
+    - ok gracias eso era todo
+    - hasta pronto gracias por la informacion
+    - ya con eso me voy gracias
+    - muchas gracias
+    - gracias adios
+    - gracias por atenderme adios
+    - gracias cuidate
+    - gracias ya no tengo mas preguntas
+    - gracias por resolver mi consulta
+    - bye gracias
+    - ya no necesito nada mas gracias
+    - perfecto muchas gracias buen dia
+    - eso es todo gracias
+    - listo ya me quedo claro gracias
+    - nos vemos
+    - gracias eso necesitaba saber nomas
+    - listo
+    - listo con eso me basta gracias adios
+    - perfecto muchas gracias adios
+    - gracias eso resuelve mi duda adios
+    - muchas gracias por tu ayuda
+    - bueno gracias hasta otra
+    - chau nos vemos luego
+    - gracias eso resolvia todas mis dudas
+    - gracias ahi quedamos
+    - hasta la proxima
+    - muy agradecido hasta pronto
+    - listo perfecto muchas gracias
+    - adios
+    - ya esta
+    - muchas gracias me quedo claro todo
+    - nos vemos gracias por todo
+    - ya
+    - gracias que tengas buen dia
+    - ok perfecto gracias chau
+    - gracias por la ayuda me retiro
+    - esta bien asi gracias y hasta luego
+    - gracias
+    - gracias nos vemos pronto
+    - gracias eso era chau
+- intent: fuera_de_dominio
+  examples: |
+    - como saco cita para la vacuna
+    - quiero saber el resultado del sorteo de la tinka
+    - kiero sacar cita en essalud
+    - quiero renovar mi dni azul a electronico
+    - como matriculo a mi hijo en el colegio
+    - como pago el recibo de ensa por internet
+    - donde veo quien gano el partido de alianza ayer
+    - como hago para sacar mi brevete amigo
+    - como hago para pagar mi recibo de luz por favor
+    - a que hora atienden en la municipalidad
+    - q necesito para viajar a españa
+    - como pago el recibo de ensa por internet amigo
+    - como me afilio a essalud
+    - a que hora juega la seleccion peruana
+    - cual es el horario de atencion de mesa de partes
+    - q necesito para viajar a españa por favor
+    - como hago para pagar mi recibo de luz
+    - me duele la cabeza q pastilla tomo por favor
+    - donde queda la oficina de la reniec
+    - como descargo peliculas gratis
+    - como saco mi certificado de antecedentes penales
+    - donde compro entradas para un concierto
+    - quiero hacer seguimiento a mi expediente
+    - donde renuevo mi licencia de conducir
+    - como hago para reclamar en indecopi
+    - kiero saber mi puntaje de infocorp
+    - donde queda mesa de partes
+    - q me recomiendas para el dolor de estomago
+    - donde queda la oficina de la reniec por favor
+    - cuanto esta el kilo de limon en el mercado
+    - cuanto esta el kilo de limon en el mercado por favor
+    - presente un documento la semana pasada que paso con eso
+    - a que hora abre el banco de la nacion
+    - cual es el clima para mañana
+    - como preparo un lomo saltado jugoso
+    - cual es el tipo de cambio del dolar hoy
+    - me duele la cabeza q pastilla tomo
+    - como veo el estado de mi expediente
+    - como denuncio un robo en la comisaria amigo
+    - quiero sacar mi pasaporte q me piden
+    - donde puedo recargar mi tarjeta del metropolitano
+    - donde puedo sacar copias fotostaticas cerca de aqui
+    - quiero renovar mi dni azul a electronico amigo
+    - como preparo un lomo saltado jugoso amigo
+    - a q hora dan el bono en el banco de la nacion por favor
+    - como hago para votar en las elecciones
+    - pasame la receta del ceviche norteño
+    - kiero saber mi puntaje de infocorp por favor
+- intent: saludo
+  examples: |
+    - que onda
+    - que onda por favor
+    - hola te escribo por una consulta
+    - hola alo hay atencion
+    - hey amigo
+    - hola señor
+    - hola tardes
+    - hola respondeme porfa
+    - hola oye
+    - hola estas ahi
+    - hola como estas amigo
+    - buenas tardesito
+    - hey
+    - buenas quiero preguntar algo
+    - que tal por favor
+    - buenas
+    - hola leonardito amigo
+    - buenas noches amigo
+    - hola buenas
+    - que tal
+    - hola a todos
+    - hola leonardito
+    - hola q tal
+    - buenos dias
+    - hola espero me puedas ayudar
+    - hola espero estes bien
+    - hola que tal
+    - hola
+    - saludos
+    - hola bot
+    - muy buenos dias
+    - buen dia
+    - buen dia por favor
+    - hola que tal por favor
+    - hola quiero hacer una consulta
+    - hola buen dia
+    - hola muni por favor
+    - hola muni
+    - holis
+    - buenas noches
+    - hola amigo
+    - alo
+    - buenas tardes por favor
+    - hola me ayudas
+    - hola necesito informacion
+    - saludos cordiales
+    - alo por favor
+    - muy buenas

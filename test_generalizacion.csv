@@ -1,0 +1,85 @@
+query,intent_esperado
+hay alguna manera de ver los documentos que tiene la muni sobre mi calle,T_001
+quisiera que me den una copia de un oficio que mande el año pasado,T_001
+como saco una copia certificada de un tramite anterior,T_001
+necesito el numero de expediente de algo que presente hace tiempo,T_001
+se puede pedir informacion sobre gastos de la municipalidad,T_001
+quiero ver los documentos publicos de una obra en mi cuadra,T_001
+como hago una solicitud para que me entreguen cierta informacion municipal,T_001
+mi restaurante lo voy a convertir en un minimarket que hago,T_002
+tengo una ferreteria y ahora quiero vender ropa en el mismo local,T_002
+quiero cambiar la actividad economica registrada de mi negocio,T_002
+mi local esta registrado como panaderia pero ahora es una farmacia,T_002
+necesito actualizar el rubro de mi empresa ante la muni,T_002
+voy a dejar de hacer copias y ahora sera una cabina de internet,T_002
+como hago para que mi negocio figure con otro giro,T_002
+quiero formalizar un pequeño salon de belleza que necesito,T_003
+voy a abrir una peluqueria en mi casa que tramite hago,T_003
+tengo pensado poner una boutique de ropa chiquita,T_003
+necesito licencia para una polleria pequeña que estoy armando,T_003
+quiero sacar permiso para una jugueria en la esquina de mi casa,T_003
+estoy por abrir un pequeño taller de costura que requisitos piden,T_003
+como saco licencia para un local chico de venta de celulares,T_003
+voy a abrir una bodega en la cochera de mi casa que necesito,T_004
+quiero poner una bodega pequeña para vender abarrotes que tramite hago,T_004
+tengo una bodega sin licencia que debo presentar para regularizarla,T_004
+como saco el permiso rapido para mi bodega de barrio,T_004
+necesito papeles para abrir mi bodega este mes,T_004
+quiero legalizar mi bodeguita antes de que me multen,T_004
+que necesito para que mi bodega funcione legal,T_004
+se me rompio el carton de mi licencia como saco otro,T_005
+mi licencia de funcionamiento se mojo y ya no se lee bien,T_005
+perdi los papeles de mi negocio necesito que me den otros,T_005
+me robaron la cartera con mi licencia adentro que hago,T_005
+mi licencia esta deteriorada necesito una nueva copia,T_005
+extravie mi permiso de funcionamiento hace unas semanas,T_005
+como reemplazo mi licencia que ya no tengo,T_005
+quiero ampliar mi casa hacia el segundo piso que tramite es,T_010
+voy a construir una cochera nueva en mi terreno,T_010
+necesito permiso para remodelar la fachada de mi casa,T_010
+estoy por edificar una vivienda en un terreno que compre,T_010
+quiero saber que pide la muni para construir un cuarto extra,T_010
+voy a hacer una ampliacion de mi casa este año,T_010
+necesito la licencia para levantar un muro perimetrico,T_010
+hola buenas tardes,saludo
+que tal como estas,saludo
+buenos dias quisiera consultar algo,saludo
+hola hay alguien ahi,saludo
+buenas necesito ayuda,saludo
+hola disculpa,saludo
+saludos podrias ayudarme,saludo
+muchas gracias por todo hasta luego,despedida
+ok gracias eso era todo lo que necesitaba,despedida
+bueno gracias asi quedamos entonces,despedida
+perfecto muchas gracias nos vemos,despedida
+gracias por la info que tengas buen dia,despedida
+vale gracias hasta la proxima,despedida
+ya esta gracias por tu ayuda,despedida
+cuantos años tienes robot,charla_casual
+de que esta hecho tu cerebro,charla_casual
+tienes nombre o solo te dicen bot,charla_casual
+te gusta trabajar aqui jaja,charla_casual
+eres humano o una maquina,charla_casual
+sabes contar chistes,charla_casual
+sabes ingles ademas de español,charla_casual
+donde queda el mercado central de la muni,fuera_de_dominio
+me pueden comunicar con el alcalde,fuera_de_dominio
+como averiguo el estado de un reclamo que puse en el libro de reclamaciones,fuera_de_dominio
+donde pago el impuesto predial,fuera_de_dominio
+quiero saber si hay recojo de basura mañana,fuera_de_dominio
+como consigo trabajo en la municipalidad,fuera_de_dominio
+cual es el correo de la oficina de recursos humanos,fuera_de_dominio
+tiene algun costo este tramite,consultar_costo
+cuanto tengo que pagar por esto,consultar_costo
+es gratis o me van a cobrar,consultar_costo
+cual es el monto que debo abonar,consultar_costo
+hay que pagar alguna tasa,consultar_costo
+cuanto sale sacar esto,consultar_costo
+me pueden decir el precio del tramite,consultar_costo
+en cuanto tiempo me entregan esto,consultar_plazo
+cuantos dias demora el proceso,consultar_plazo
+para cuando estaria listo,consultar_plazo
+cuanto se tarda en aprobar,consultar_plazo
+hay una fecha estimada de respuesta,consultar_plazo
+cuanto tiempo toma todo el tramite,consultar_plazo
+en que plazo maximo me responden,consultar_plazo

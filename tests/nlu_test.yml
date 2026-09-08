@@ -1,0 +1,171 @@
+version: "3.1"
+
+nlu:
+- intent: T_001
+  examples: |
+    - requisitos para solicitar acceso a la informacion publica
+    - quisiera informarme sobre como pedir copias certificadas
+    - necesito que me den el reporte de gastos del año pasado
+    - req para sacar copia de una ordenanza amigo
+    - como solicito la resolucion de alcaldia amigo
+    - quiero informacion sobre normas municipales
+    - q formato lleno para pedir informacion
+    - info para pedir papeles a mesa de partes
+    - hay algun formulario para pedir informacion presupuestal
+    - quiero el historial de licencias otorgadas en mi cuadra
+    - quiero sacar copias de un tramite pasado
+    - q debo presentar para pedir info a la muni
+- intent: T_002
+  examples: |
+    - voy a cambiar el rubro de mi negocio q tramite hago
+    - mi negocio de comida rapida ahora sera una lavanderia
+    - tramite para vender otros productos en mi local por favor
+    - tengo pensado cambiar el tipo de negocio que tengo
+    - requisitos para variar el giro de mi negocio
+    - quisiera saber que tramite hago para cambiar de giro
+    - voy a poner otro negocio en el mismo local por favor
+    - como modifico el giro de mi negocio
+    - cuanto esta el tramite de cambio de giro
+    - nesecito licencia por cambio de giro
+    - q documentos piden pa cambiar el giro de mi empresa
+    - permiso para cambiar de giro en la muni amigo
+- intent: T_003
+  examples: |
+    - cuanto cuesta la licencia pa una jugueria
+    - quisiera saber que se necesita para abrir un negocio pequeño
+    - kiero licencia de funcionamiento para mi tienda
+    - req para licencia de mi negocio pequeño amigo
+    - requisitos para abrir un minimarket
+    - requisitos pa licencia de funcionamiento basica
+    - permiso municipal para local de riesgo bajo
+    - como obtengo licencia para un local chiquito
+    - requisitos para abrir un minimarket por favor
+    - kiero licencia de funcionamiento para mi tienda amigo
+    - cuanto cuesta la licencia pa una jugueria por favor
+    - quiero abrir una libreria q licencia saco por favor
+- intent: T_004
+  examples: |
+    - quiero el permiso rapido para mi bodeguita por favor
+    - q documentos presento para licencia provisional de bodega amigo
+    - como formalizo mi bodega con la nueva ley
+    - necesito legalizar rapido mi bodega antes de fin de mes
+    - licencia de funcionamiento provisional pa bodeguitas
+    - quiero sacar permiso de bodega temporal
+    - quiero abrir una bodega y necesito los requisitos minimos
+    - info sobre licencia provisional para bodegueros amigo
+    - req para poner una bodega en mi jato por favor
+    - cuanto cuesta la licencia para bodega
+    - me dan licencia rapida si abro una bodega
+    - me gustaria saber que necesito para abrir una bodega
+- intent: T_005
+  examples: |
+    - donde tramito el duplicado de mi licencia de funcionamiento
+    - cuanto cuesta el duplicado de la licencia amigo
+    - como saco copia de mi licencia q se extravio amigo
+    - necesito una copia de mi licencia de funcionamiento por favor
+    - como hago si se me quemo mi licencia del local
+    - se daño mi certificado de licencia quiero otro
+    - me robaron mi carton de licencia q hago
+    - req para sacar duplicado de licencia
+    - me robaron los papeles del negocio quiero duplicado
+    - quisiera saber que necesito si perdi mi licencia
+    - necesito una copia de mi licencia de funcionamiento
+    - me cambie de casa y no encuentro los papeles de mi licencia
+- intent: T_010
+  examples: |
+    - como inicio el tramite de edificacion modalidad a amigo
+    - hola req para licencia de obra menor por favor
+    - estaba pensando en construir mi casa este año
+    - requisitos para licencia de construccion modalidad a amigo
+    - quiero hacer una terraza nueva en mi azotea
+    - voy a levantar una pared de contencion en mi terreno
+    - requisitos para modalidad A de edificacion
+    - quiero saber los requisitos para edificar un local comercial pequeño
+    - tramites para edificacion tipo a
+    - licencia de edificacion a porfa por favor
+    - informacion sobre la licencia de edificacion modalidad a por favor
+    - necesito iniciar el tramite de licencia de edificacion
+- intent: charla_casual
+  examples: |
+    - tienes emociones de verdad
+    - que opinas del futbol peruano
+    - eres inteligente
+    - eres muy amable
+    - cual es tu pelicula favorita
+    - eres de la municipalidad
+    - cuentame algo curioso
+    - sabes de todo o solo de tramites
+    - eres el mismo bot de siempre
+    - buen trabajo
+    - eres un robot
+    - cuanto sabes
+- intent: consultar_costo
+  examples: |
+    - cual es el precio por favor
+    - cuanto debo llevar de dinero
+    - el tramite genera algun pago
+    - ese tramite tiene algun cobro
+    - cuanto cuesta hacer esto en la muni
+    - me confirman el costo del tramite
+    - cuanto tengo que desembolsar
+    - cuanto hay que abonar
+    - cual es el valor a pagar
+    - me van a cobrar por sacar eso
+    - q precio tiene ese tramite
+    - precio del tramite amigo
+- intent: consultar_plazo
+  examples: |
+    - hay fecha exacta de entrega
+    - para cuando me lo tienen
+    - cual es el plazo de atencion por favor
+    - pa cuando estaria listo amigo
+    - cuanto se demoran en darme eso por favor
+    - en cuanto tiempo sale amigo
+    - cuanto se demoran en darme eso
+    - y en que tiempo lo aprueban
+    - cual es el tiempo de espera
+    - cuanto tiempo demora por favor
+    - el tramite se resuelve rapido o no
+    - en que momento me avisan que esta listo
+- intent: despedida
+  examples: |
+    - chau chau
+    - esta bien gracias por la informacion
+    - gracias por todo que estes bien
+    - vale gracias
+    - esta perfecto gracias me despido
+    - eso es todo por hoy gracias
+    - hasta luego
+    - gracias amigo nos vemos
+    - listo gracias
+    - bueno muchas gracias hasta luego
+    - gracias por tu tiempo adios
+    - eso era todo lo que necesitaba gracias
+- intent: fuera_de_dominio
+  examples: |
+    - como hago para bloquear mi celular robado
+    - quiero cancelar mi tarjeta de credito bcp
+    - como denuncio un robo en la comisaria
+    - donde veo quien gano el partido de alianza ayer por favor
+    - pasame la receta del ceviche norteño amigo
+    - como hago para sacar mi brevete
+    - donde pago mi recibo de claro
+    - hasta que hora atienden hoy
+    - a q hora dan el bono en el banco de la nacion
+    - quiero sacar mi pasaporte q me piden amigo
+    - cuanto cuesta un pasaje en combi
+    - donde queda el hospital mas cercano
+- intent: saludo
+  examples: |
+    - buenas amigo
+    - hola perdon la molestia
+    - hola noches
+    - que hay de nuevo
+    - buenas tardes
+    - hola como estas
+    - buen dia disculpa la hora
+    - buenos dias amigo
+    - hola gusto saludarte
+    - hola por favor
+    - buenisimos dias
+    - saludos amigo

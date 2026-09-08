@@ -1,0 +1,22 @@
+# Entornos virtuales
+.venv/
+venv/
+ENV/
+env/
+
+# Archivos de caché de Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Base de datos SQLite (se regenera con `python database.py`)
+*.db
+municipal.db
+
+# Archivos del sistema y de editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log

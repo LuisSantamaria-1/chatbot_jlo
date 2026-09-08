@@ -1,0 +1,60 @@
+version: "3.1"
+
+nlu:
+- intent: T_001
+  examples: |
+    - ps quisiera consultar unos documentos antiguos de la muni no se como se pide
+    - oye la muni me puede dar copia de un tramite viejo que hice hace años
+
+- intent: T_002
+  examples: |
+    - mi bodega ahora va a ser una peluqueria que tengo que hacer
+    - voy a dejar de vender abarrotes y quiero poner una farmacia en el mismo local
+
+- intent: T_003
+  examples: |
+    - voy a montar una tienda de abarrotes chiquita necesito papeles
+    - kiero sakar mi lisensia pa mi tiendita xd
+
+- intent: T_004
+  examples: |
+    - hay una forma rapida de sacar permiso para mi tienda de la esquina
+    - nose q docs necesito pa mi bodega bro
+
+- intent: T_005
+  examples: |
+    - se me traspapelo el carnet de mi licencia como hago para otro
+    - cuanto me kobran x el duplicado altoke
+
+- intent: T_010
+  examples: |
+    - voy a tumbar una pared y hacer un cuarto nuevo que tramite es
+    - quiero techar mi segundo piso que necesito para eso
+
+- intent: saludo
+  examples: |
+    - buenas alguien me puede ayudar
+    - q tal como andamos por aca
+
+- intent: despedida
+  examples: |
+    - listo eso nomas era muchas gracias bot
+    - ok perfecto ahi quedamos entonces
+
+- intent: charla_casual
+  examples: |
+    - oye y tu comes o solo respondes
+    - jajaja eres un robot de verdad
+
+- intent: fuera_de_dominio
+  examples: |
+    - quiero saber si ya salio mi resultado del sat
+    - me pueden pasar el numero de mesa de partes
+
+- intent: consultar_costo
+  examples: |
+    - y esto me va a salir gratis o tengo que pagar algo
+
+- intent: consultar_plazo
+  examples: |
+    - en cuantos dias mas o menos me lo entregan
