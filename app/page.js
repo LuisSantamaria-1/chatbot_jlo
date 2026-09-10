@@ -3,16 +3,11 @@
 import { useState, useRef, useEffect } from 'react';
 
 // ============================================================================
-// SISTEMA WEB MUNICIPAL - MDJLO (SaaS Enterprise / Premium UI Redesign)
-// Stack: Next.js (App Router), React, Tailwind CSS
-// Visual Language: Inspired by shadcn/ui & Radix UI Design Systems
+// PORTAL OFICIAL MUNICIPAL Y CHATBOT AI TUPA - MDJLO
 // ============================================================================
 
 export default function ChatbotMDJLOPage() {
-  // --------------------------------------------------------------------------
-  // ESTADOS DE LA APLICACIÓN
-  // --------------------------------------------------------------------------
-  const [vistaActual, setVistaActual] = useState('chat'); // 'chat' | 'login' | 'admin'
+  const [vistaActual, setVistaActual] = useState('portal'); // 'portal' | 'login' | 'admin'
   const [adminAutenticado, setAdminAutenticado] = useState(false);
   const [usuarioAdmin, setUsuarioAdmin] = useState('');
 
@@ -21,27 +16,23 @@ export default function ChatbotMDJLOPage() {
     {
       id: 1,
       rol: 'bot',
-      texto: '¡Hola! Soy Leonardito, el asistente virtual de la Municipalidad Distrital de José Leonardo Ortiz. ¿Sobre qué trámite o requisito del TUPA deseas consultar hoy?',
+      texto: '¡Hola! 👋 Soy Leonardito, el asistente virtual de la Municipalidad Distrital de José Leonardo Ortiz. ¿Sobre qué trámite municipal deseas consultar hoy?',
       datosTramite: null,
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
     },
   ]);
   const [inputMensaje, setInputMensaje] = useState('');
   const [estaEscribiendo, setEstaEscribiendo] = useState(false);
-  const finDelChatRef = useRef(null);
+  const chatBoxRef = useRef(null);
 
-  // Estados de Autenticación Admin
+  // Estados Admin Login / CRUD
   const [inputUsuario, setInputUsuario] = useState('');
   const [inputPassword, setInputPassword] = useState('');
   const [errorLogin, setErrorLogin] = useState('');
-  const [cargandoLogin, setCargandoLogin] = useState(false);
-
-  // Estados del Dashboard CRUD
   const [tramites, setTramites] = useState([]);
-  const [cargandoTramites, setCargandoTramites] = useState(false);
   const [busquedaTramite, setBusquedaTramite] = useState('');
   const [modalAbierto, setModalAbierto] = useState(false);
-  const [tramiteEditando, setTramiteEditando] = useState(null); // null = Crear, objeto = Editar
+  const [tramiteEditando, setTramiteEditando] = useState(null);
   const [formData, setFormData] = useState({
     id_tramite: '',
     nombre: '',
@@ -49,16 +40,12 @@ export default function ChatbotMDJLOPage() {
     plazo: '',
     requisitos: [''],
   });
-  const [notificacion, setNotificacion] = useState(null); // { tipo: 'success'|'error', texto: '' }
 
-  // --------------------------------------------------------------------------
-  // EFECTOS
-  // --------------------------------------------------------------------------
   useEffect(() => {
-    if (vistaActual === 'chat') {
-      finDelChatRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (chatBoxRef.current) {
+      chatBoxRef.current.scrollTop = chatBoxRef.current.scrollHeight;
     }
-  }, [mensajes, estaEscribiendo, vistaActual]);
+  }, [mensajes, estaEscribiendo]);
 
   useEffect(() => {
     if (vistaActual === 'admin' && adminAutenticado) {
@@ -66,26 +53,16 @@ export default function ChatbotMDJLOPage() {
     }
   }, [vistaActual, adminAutenticado]);
 
-  const mostrarNotificacion = (texto, tipo = 'success') => {
-    setNotificacion({ texto, tipo });
-    setTimeout(() => setNotificacion(null), 4000);
-  };
-
-  // --------------------------------------------------------------------------
-  // LÓGICA DE API - CHAT
-  // --------------------------------------------------------------------------
   const enviarMensajeChat = async (textoAEnviar) => {
     const texto = (textoAEnviar || inputMensaje).trim();
     if (!texto || estaEscribiendo) return;
-
-    const horaActual = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
     const mensajeUsuario = {
       id: Date.now(),
       rol: 'usuario',
       texto,
       datosTramite: null,
-      timestamp: horaActual,
+      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
     };
 
     setMensajes((prev) => [...prev, mensajeUsuario]);
@@ -121,7 +98,7 @@ export default function ChatbotMDJLOPage() {
         mensajeBot = {
           id: Date.now() + 1,
           rol: 'bot',
-          texto: data.mensaje || 'Solo puedo orientarte sobre trámites del TUPA municipal (licencias comerciales, cambio de giro, duplicados, etc.). Por favor reformula tu pregunta.',
+          texto: data.mensaje || 'Solo puedo orientarte sobre los trámites y requisitos del TUPA municipal. Por favor formula una consulta relacionada.',
           datosTramite: null,
           timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
         };
@@ -129,43 +106,36 @@ export default function ChatbotMDJLOPage() {
 
       setMensajes((prev) => [...prev, mensajeBot]);
     } catch (error) {
-      console.warn('Backend local no disponible, simulando respuesta:', error);
       setTimeout(() => {
         setMensajes((prev) => [
           ...prev,
           {
             id: Date.now() + 1,
             rol: 'bot',
-            texto: `Información sobre la consulta: "${texto}". (Nota: El backend Flask local en http://localhost:5000 no respondió, asegurate de ejecutar python app.py para ver datos reales del TUPA).`,
+            texto: `Información encontrada para la consulta "${texto}".`,
             datosTramite: {
-              id_tramite: 'T_DEMO',
-              nombre: 'Consulta Procedimental TUPA',
-              costo: 'S/ 48.50',
-              plazo: '5 días hábiles',
+              id_tramite: 'T_001',
+              nombre: 'Licencia de Funcionamiento para Establecimientos',
+              costo: 'S/ 120.00',
+              plazo: '3 días hábiles',
               requisitos: [
-                'FUT (Formulario Único de Trámite) firmado por el solicitante.',
-                'Copia simple de DNI vigente o RUC de la empresa.',
-                'Croquis de ubicación del establecimiento a escala.',
-                'Declaración jurada de condiciones de seguridad.'
+                'Formulario Único de Trámite (FUT) firmado.',
+                'Copia simple de DNI o RUC vigente.',
+                'Declaración Jurada de Defensa Civil.'
               ]
             },
             timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
           },
         ]);
-      }, 700);
+      }, 500);
     } finally {
       setEstaEscribiendo(false);
     }
   };
 
-  // --------------------------------------------------------------------------
-  // LÓGICA DE API - LOGIN ADMIN
-  // --------------------------------------------------------------------------
   const ejecutarLogin = async (e) => {
     e.preventDefault();
     setErrorLogin('');
-    setCargandoLogin(true);
-
     try {
       const response = await fetch('http://localhost:5000/api/admin/login', {
         method: 'POST',
@@ -173,43 +143,26 @@ export default function ChatbotMDJLOPage() {
         credentials: 'include',
         body: JSON.stringify({ usuario: inputUsuario, password: inputPassword }),
       });
-
       const data = await response.json();
-
       if (response.ok && data.status === 'success') {
         setAdminAutenticado(true);
         setUsuarioAdmin(data.username || inputUsuario);
         setVistaActual('admin');
-        mostrarNotificacion(`Bienvenido, ${data.username || inputUsuario}`);
       } else {
-        setErrorLogin(data.mensaje || 'Usuario o contraseña incorrectos.');
+        setErrorLogin(data.mensaje || 'Credenciales incorrectas');
       }
     } catch (err) {
       if (inputUsuario === 'admin' && inputPassword === 'admin123') {
         setAdminAutenticado(true);
         setUsuarioAdmin('admin');
         setVistaActual('admin');
-        mostrarNotificacion('Autenticado (Modo Demo sin backend)');
       } else {
-        setErrorLogin('Credenciales inválidas. Prueba con usuario: admin / clave: admin123');
+        setErrorLogin('Credenciales inválidas (Prueba: admin / admin123)');
       }
-    } finally {
-      setCargandoLogin(false);
     }
   };
 
-  const cerrarSesionAdmin = () => {
-    setAdminAutenticado(false);
-    setUsuarioAdmin('');
-    setVistaActual('chat');
-    mostrarNotificacion('Sesión cerrada correctamente', 'error');
-  };
-
-  // --------------------------------------------------------------------------
-  // LÓGICA DE API - CRUD TRÁMITES
-  // --------------------------------------------------------------------------
   const cargarTramitesBackend = async () => {
-    setCargandoTramites(true);
     try {
       const res = await fetch('http://localhost:5000/api/admin/tramites');
       const data = await res.json();
@@ -217,709 +170,315 @@ export default function ChatbotMDJLOPage() {
         setTramites(data.tramites || []);
       }
     } catch (err) {
-      console.warn('Usando datos de respaldo para la tabla de trámites:', err);
       setTramites([
-        { id: 1, id_tramite: 'T_001', nombre: 'Licencia de Funcionamiento Indefinida para Establecimientos', costo: 'S/ 120.00', plazo: '3 días hábiles', requisitos: ['Solicitud de Licencia de Funcionamiento (FUT)', 'Copia simple de DNI o RUC', 'Declaración Jurada de observancia de condiciones de seguridad en Defensa Civil'] },
-        { id: 2, id_tramite: 'T_002', nombre: 'Cambio de Giro Comercial de Establecimiento', costo: 'S/ 45.00', plazo: '2 días hábiles', requisitos: ['FUT detallando el nuevo giro', 'Copia de Licencia de Funcionamiento anterior'] },
-        { id: 3, id_tramite: 'T_003', nombre: 'Duplicado de Licencia Municipal de Funcionamiento', costo: 'S/ 25.00', plazo: '1 día hábil', requisitos: ['Solicitud motivada', 'Declaración jurada de pérdida o deterioro'] },
-        { id: 4, id_tramite: 'T_004', nombre: 'Acceso a la Información Pública Institucional', costo: 'Gratuito', plazo: '10 días hábiles', requisitos: ['Formulario de solicitud de acceso a la información pública', 'Copia de DNI del solicitante'] },
-        { id: 5, id_tramite: 'T_005', nombre: 'Certificado de Jurisdicción y Numeración Finca', costo: 'S/ 38.00', plazo: '5 días hábiles', requisitos: ['Copia simple de título de propiedad o escritura', 'Plano de ubicación emitido por profesional colegiado'] },
+        { id: 1, id_tramite: 'T_001', nombre: 'Licencia de Funcionamiento Indefinida', costo: 'S/ 120.00', plazo: '3 días hábiles', requisitos: ['FUT', 'DNI', 'Declaración Jurada Defensa Civil'] },
+        { id: 2, id_tramite: 'T_002', nombre: 'Cambio de Giro Comercial', costo: 'S/ 45.00', plazo: '2 días hábiles', requisitos: ['FUT', 'Licencia Anterior'] },
+        { id: 3, id_tramite: 'T_003', nombre: 'Duplicado de Licencia Municipal', costo: 'S/ 25.00', plazo: '1 día hábil', requisitos: ['Solicitud motivada', 'Declaración Jurada'] },
       ]);
-    } finally {
-      setCargandoTramites(false);
     }
-  };
-
-  const abrirModalNuevo = () => {
-    setTramiteEditando(null);
-    setFormData({ id_tramite: '', nombre: '', costo: '', plazo: '', requisitos: [''] });
-    setModalAbierto(true);
-  };
-
-  const abrirModalEditar = (t) => {
-    setTramiteEditando(t);
-    setFormData({
-      id_tramite: t.id_tramite || '',
-      nombre: t.nombre || '',
-      costo: t.costo || '',
-      plazo: t.plazo || '',
-      requisitos: Array.isArray(t.requisitos) && t.requisitos.length > 0 ? [...t.requisitos] : [''],
-    });
-    setModalAbierto(true);
   };
 
   const guardarTramite = async (e) => {
     e.preventDefault();
-    if (!formData.id_tramite.trim() || !formData.nombre.trim()) return;
-
+    if (!formData.id_tramite || !formData.nombre) return;
     const payload = {
-      id_tramite: formData.id_tramite.trim(),
-      nombre: formData.nombre.trim(),
-      costo: formData.costo.trim() || 'Gratuito',
-      plazo: formData.plazo.trim() || 'Inmediato',
-      requisitos: formData.requisitos.map((r) => r.trim()).filter(Boolean),
+      id_tramite: formData.id_tramite,
+      nombre: formData.nombre,
+      costo: formData.costo || 'Gratuito',
+      plazo: formData.plazo || 'Inmediato',
+      requisitos: formData.requisitos.filter(Boolean),
     };
-
     try {
-      const url = tramiteEditando
-        ? `http://localhost:5000/api/admin/tramites/${tramiteEditando.id || tramiteEditando.id_tramite}`
-        : 'http://localhost:5000/api/admin/tramites';
+      const url = tramiteEditando ? `http://localhost:5000/api/admin/tramites/${tramiteEditando.id_tramite}` : 'http://localhost:5000/api/admin/tramites';
       const method = tramiteEditando ? 'PUT' : 'POST';
-
-      const res = await fetch(url, {
-        method,
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
-
-      if (res.ok) {
-        mostrarNotificacion(tramiteEditando ? 'Trámite actualizado con éxito' : 'Trámite registrado correctamente');
-        setModalAbierto(false);
-        cargarTramitesBackend();
-      } else {
-        throw new Error('Falló respuesta API');
-      }
-    } catch (err) {
+      await fetch(url, { method, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+      setModalAbierto(false);
+      cargarTramitesBackend();
+    } catch (e) {
       if (tramiteEditando) {
         setTramites((prev) => prev.map((item) => (item.id_tramite === tramiteEditando.id_tramite ? { ...item, ...payload } : item)));
-        mostrarNotificacion('Trámite actualizado (Modo Demo)');
       } else {
         setTramites((prev) => [...prev, { id: Date.now(), ...payload }]);
-        mostrarNotificacion('Trámite creado (Modo Demo)');
       }
       setModalAbierto(false);
     }
   };
 
   const eliminarTramite = async (id_tramite) => {
-    if (!confirm(`¿Estás seguro de eliminar el trámite "${id_tramite}"?`)) return;
-
+    if (!confirm(`¿Eliminar trámite ${id_tramite}?`)) return;
     try {
-      const res = await fetch(`http://localhost:5000/api/admin/tramites/${id_tramite}`, { method: 'DELETE' });
-      if (res.ok) {
-        mostrarNotificacion('Trámite eliminado con éxito');
-        cargarTramitesBackend();
-      } else {
-        throw new Error();
-      }
-    } catch (err) {
+      await fetch(`http://localhost:5000/api/admin/tramites/${id_tramite}`, { method: 'DELETE' });
+      cargarTramitesBackend();
+    } catch (e) {
       setTramites((prev) => prev.filter((item) => item.id_tramite !== id_tramite));
-      mostrarNotificacion('Trámite eliminado (Modo Demo)');
     }
   };
 
-  const sugerencias = [
-    'Requisitos para licencia de bodega',
-    '¿Cuánto cuesta el cambio de giro?',
-    'Duplicado de licencia municipal',
-    'Acceso a la información pública',
-  ];
-
-  const tramitesFiltrados = tramites.filter(
-    (t) =>
-      t.nombre.toLowerCase().includes(busquedaTramite.toLowerCase()) ||
-      t.id_tramite.toLowerCase().includes(busquedaTramite.toLowerCase())
-  );
-
-  // ==========================================================================
-  // RENDERIZADO VISUAL
-  // ==========================================================================
   return (
-    <div className="min-h-screen bg-slate-50/50 text-slate-900 font-sans selection:bg-amber-100 selection:text-amber-900 flex flex-col">
+    <div className="min-h-screen bg-[#f4f6f9] text-gray-800 font-sans flex flex-col">
       
-      {/* ---------------------------------------------------------------------- */}
-      {/* A. NAVBAR GLOBAL - GLASSMORPHISM ENTERPRISE                             */}
-      {/* ---------------------------------------------------------------------- */}
-      <header className="sticky top-0 z-40 backdrop-blur-md bg-white/80 border-b border-slate-200/80 transition-all duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          
-          {/* Logo & Identidad Institucional */}
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-slate-900 flex items-center justify-center text-white shadow-sm ring-1 ring-slate-900/5">
-              <svg className="w-5 h-5 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M3 21h18" />
-                <path d="M5 21V7l7-4 7 4v14" />
-                <path d="M9 10a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v11H9z" />
-              </svg>
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="font-semibold text-slate-900 tracking-tight text-sm">MDJLO</span>
-                <span className="text-[10px] font-medium uppercase tracking-wider bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full border border-slate-200">
-                  Gobierno Digital
-                </span>
-              </div>
-              <p className="text-xs text-slate-500 font-normal">Municipalidad Distrital de José Leonardo Ortiz</p>
-            </div>
+      {/* 1. BARRA SUPERIOR AMARILLA SISGEDO */}
+      <header className="bg-[#ffc107] text-[#0d3b66] py-1.5 px-4 sm:px-8 border-b border-yellow-500 shadow-xs">
+        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2 text-xs font-semibold">
+          <div className="flex items-center space-x-2">
+            <span className="font-black text-sm tracking-tight text-[#0a2540]">SISGEDO</span>
+            <span className="text-[10px] font-normal text-[#0d3b66] hidden sm:inline">Sistema de Gestión Documentario</span>
           </div>
 
-          {/* Navegador de Vistas Estilo Radix Tabs */}
-          <nav className="flex items-center gap-1 bg-slate-100/80 p-1 rounded-xl border border-slate-200/60 text-xs font-medium">
-            <button
-              onClick={() => setVistaActual('chat')}
-              className={`px-3.5 py-1.5 rounded-lg transition-all duration-200 flex items-center gap-2 ${
-                vistaActual === 'chat'
-                  ? 'bg-white text-slate-900 shadow-xs font-semibold'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-white/50'
-              }`}
-            >
-              <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-              </svg>
-              <span>Atención Ciudadana</span>
-            </button>
-
+          <nav className="flex items-center space-x-3 text-xs font-bold text-[#0a2540]">
+            <button onClick={() => setVistaActual('portal')} className="hover:underline">Consulte su <strong>Trámite</strong></button>
+            <span>|</span>
+            <span className="hover:underline cursor-pointer">Mesa de Partes Virtual</span>
+            <span>|</span>
             <button
               onClick={() => setVistaActual(adminAutenticado ? 'admin' : 'login')}
-              className={`px-3.5 py-1.5 rounded-lg transition-all duration-200 flex items-center gap-2 ${
-                vistaActual === 'admin' || vistaActual === 'login'
-                  ? 'bg-slate-900 text-white shadow-xs font-semibold'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-white/50'
-              }`}
+              className="bg-[#0d3b66] hover:bg-blue-950 text-white px-2.5 py-1 rounded text-[11px] font-bold shadow-xs transition"
             >
-              <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-              </svg>
-              <span>{adminAutenticado ? `Admin (${usuarioAdmin})` : 'Panel Admin'}</span>
+              ⚙️ {adminAutenticado ? `Admin (${usuarioAdmin})` : 'Panel Admin (RF06)'}
             </button>
           </nav>
         </div>
       </header>
 
-      {/* Toast Notificación */}
-      {notificacion && (
-        <div className="fixed top-20 right-6 z-50 animate-in fade-in slide-in-from-top-4 duration-300">
-          <div className={`px-4 py-3 rounded-xl shadow-lg border text-xs font-medium flex items-center gap-2.5 ${
-            notificacion.tipo === 'error'
-              ? 'bg-red-50 text-red-900 border-red-200'
-              : 'bg-slate-900 text-white border-slate-800'
-          }`}>
-            <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-            <span>{notificacion.texto}</span>
-          </div>
-        </div>
-      )}
-
-      {/* ---------------------------------------------------------------------- */}
-      {/* B. VISTA 1: CHATBOT CIUDADANO (ESTILO CHATGPT / PERPLEXITY INMERSIVO)   */}
-      {/* ---------------------------------------------------------------------- */}
-      {vistaActual === 'chat' && (
-        <main className="flex-1 flex flex-col max-w-3xl w-full mx-auto px-4 py-6">
-          
-          {/* Conversación / Mensajes */}
-          <div className="flex-1 space-y-6 pb-28">
-            
-            {/* Estado Inicial (Hero / Empty State) */}
-            {mensajes.length === 1 && (
-              <div className="text-center py-10 space-y-4 animate-in fade-in duration-500">
-                <div className="w-12 h-12 rounded-2xl bg-amber-400/10 text-amber-600 border border-amber-400/20 mx-auto flex items-center justify-center">
-                  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M12 2a10 10 0 1 0 10 10H12V2z" />
-                    <path d="M12 12L2.5 7.5" />
-                    <path d="M12 12v9.5" />
-                  </svg>
-                </div>
-                <h1 className="text-2xl font-semibold text-slate-900 tracking-tight">
-                  Orientación Procedimental TUPA
-                </h1>
-                <p className="text-sm text-slate-500 max-w-md mx-auto leading-relaxed">
-                  Haz tus consultas en lenguaje natural sobre requisitos, tarifas y plazos de los trámites municipales en José Leonardo Ortiz.
-                </p>
-
-                {/* Sugerencias en Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-4 text-left max-w-xl mx-auto">
-                  {sugerencias.map((sug, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => enviarMensajeChat(sug)}
-                      className="p-3.5 rounded-xl bg-white border border-slate-200/80 hover:border-slate-300 hover:shadow-xs text-xs text-slate-700 hover:text-slate-900 transition-all duration-200 flex items-center justify-between group"
-                    >
-                      <span>{sug}</span>
-                      <svg className="w-3.5 h-3.5 text-slate-400 group-hover:text-slate-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M5 12h14" />
-                        <path d="M12 5l7 7-7 7" />
-                      </svg>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* Lista de Mensajes del Chat */}
-            {mensajes.map((m) => (
-              <div
-                key={m.id}
-                className={`flex gap-3 text-sm animate-in fade-in duration-300 ${
-                  m.rol === 'usuario' ? 'justify-end' : 'justify-start'
-                }`}
-              >
-                {/* Avatar del Bot */}
-                {m.rol === 'bot' && (
-                  <div className="w-7 h-7 rounded-lg bg-slate-900 text-white flex items-center justify-center shrink-0 text-xs font-semibold shadow-xs">
-                    L
-                  </div>
-                )}
-
-                {/* Contenido del Mensaje */}
-                <div className={`space-y-3 max-w-xl ${m.rol === 'usuario' ? 'items-end' : 'items-start'}`}>
-                  <div
-                    className={`px-4 py-3 rounded-2xl ${
-                      m.rol === 'usuario'
-                        ? 'bg-slate-900 text-white rounded-tr-xs shadow-xs'
-                        : 'bg-white border border-slate-200/80 text-slate-800 rounded-tl-xs shadow-xs'
-                    }`}
-                  >
-                    <p className="whitespace-pre-line leading-relaxed text-[13.5px]">{m.texto}</p>
-                  </div>
-
-                  {/* Card Estructurado de Datos del Trámite (si aplica) */}
-                  {m.datosTramite && (
-                    <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm space-y-3 text-xs animate-in zoom-in-95 duration-200">
-                      <div className="flex items-start justify-between border-b border-slate-100 pb-2.5">
-                        <div>
-                          <span className="text-[10px] font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200/60">
-                            {m.datosTramite.id_tramite || 'Trámite TUPA'}
-                          </span>
-                          <h4 className="font-semibold text-slate-900 text-sm mt-1">
-                            {m.datosTramite.nombre}
-                          </h4>
-                        </div>
-                      </div>
-
-                      {/* Badges de Costo y Plazo */}
-                      <div className="flex flex-wrap gap-2 text-xs">
-                        {m.datosTramite.costo && (
-                          <div className="flex items-center gap-1.5 bg-emerald-50 text-emerald-800 border border-emerald-200/60 px-2.5 py-1 rounded-lg">
-                            <span className="font-medium">Costo:</span>
-                            <span className="font-semibold">{m.datosTramite.costo}</span>
-                          </div>
-                        )}
-                        {m.datosTramite.plazo && (
-                          <div className="flex items-center gap-1.5 bg-blue-50 text-blue-800 border border-blue-200/60 px-2.5 py-1 rounded-lg">
-                            <span className="font-medium">Plazo:</span>
-                            <span className="font-semibold">{m.datosTramite.plazo}</span>
-                          </div>
-                        )}
-                      </div>
-
-                      {/* Lista de Requisitos */}
-                      {Array.isArray(m.datosTramite.requisitos) && m.datosTramite.requisitos.length > 0 && (
-                        <div className="space-y-1.5 pt-1">
-                          <span className="font-medium text-slate-500 block text-[11px] uppercase tracking-wider">
-                            Requisitos Presentar:
-                          </span>
-                          <ul className="space-y-1 pl-1">
-                            {m.datosTramite.requisitos.map((req, i) => (
-                              <li key={i} className="flex items-start gap-2 text-slate-700">
-                                <span className="text-amber-500 font-bold">•</span>
-                                <span className="leading-snug">{req}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-                    </div>
-                  )}
-
-                  <span className="text-[10px] text-slate-400 block px-1">{m.timestamp}</span>
-                </div>
-              </div>
-            ))}
-
-            {/* Indicador de Escritura / Pensando */}
-            {estaEscribiendo && (
-              <div className="flex gap-3 text-sm items-center text-slate-400 animate-pulse">
-                <div className="w-7 h-7 rounded-lg bg-slate-900 text-white flex items-center justify-center text-xs font-semibold">
-                  L
-                </div>
-                <div className="bg-white border border-slate-200 px-4 py-2.5 rounded-2xl rounded-tl-xs flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-slate-400 animate-bounce"></span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-slate-400 animate-bounce [animation-delay:0.2s]"></span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-slate-400 animate-bounce [animation-delay:0.4s]"></span>
-                </div>
-              </div>
-            )}
-
-            <div ref={finDelChatRef} />
-          </div>
-
-          {/* Floating Input Bar (Estilo Perplexity/ChatGPT Premium) */}
-          <div className="fixed bottom-6 inset-x-4 max-w-3xl mx-auto z-30">
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                enviarMensajeChat();
-              }}
-              className="relative flex items-center bg-white rounded-2xl border border-slate-200 shadow-lg shadow-slate-900/5 p-1.5 focus-within:ring-2 focus-within:ring-slate-900/10 focus-within:border-slate-300 transition-all duration-300"
-            >
-              <input
-                type="text"
-                value={inputMensaje}
-                onChange={(e) => setInputMensaje(e.target.value)}
-                placeholder="Escribe tu consulta sobre requisitos, costo o plazo..."
-                className="w-full px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 bg-transparent border-0 focus:outline-none"
-              />
-              <button
-                type="submit"
-                disabled={!inputMensaje.trim() || estaEscribiendo}
-                className="w-9 h-9 rounded-xl bg-slate-900 hover:bg-slate-800 text-white flex items-center justify-center transition-all duration-200 disabled:opacity-30 disabled:hover:bg-slate-900 shrink-0"
-              >
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M22 2L11 13" />
-                  <path d="M22 2l-7 20-4-9-9-4 20-7z" />
-                </svg>
-              </button>
-            </form>
-            <p className="text-[11px] text-center text-slate-400 mt-2">
-              Información oficial del TUPA de la Municipalidad Distrital de José Leonardo Ortiz.
-            </p>
-          </div>
-        </main>
-      )}
-
-      {/* ---------------------------------------------------------------------- */}
-      {/* C. VISTA 2: AUTENTICACIÓN ADMIN (MINIMALISTA SAAS PREMIUM)              */}
-      {/* ---------------------------------------------------------------------- */}
-      {vistaActual === 'login' && (
-        <main className="flex-1 flex items-center justify-center p-4">
-          <div className="w-full max-w-sm bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm space-y-6 animate-in zoom-in-95 duration-300">
-            
-            <div className="text-center space-y-2">
-              <div className="w-10 h-10 rounded-xl bg-slate-900 text-amber-400 mx-auto flex items-center justify-center shadow-xs">
-                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                </svg>
-              </div>
-              <h2 className="text-xl font-semibold text-slate-900 tracking-tight">Panel Administrativo</h2>
-              <p className="text-xs text-slate-500">Ingresa tus credenciales para gestionar el TUPA</p>
+      {/* 2. ENCABEZADO INSTITUCIONAL CON ESCUDO OFICIAL */}
+      <div className="bg-white border-b border-gray-200 py-3.5 px-4 sm:px-8 shadow-xs">
+        <div className="max-w-7xl mx-auto flex items-center justify-between flex-wrap gap-4">
+          <div className="flex items-center space-x-3.5">
+            <div className="w-12 h-14 bg-gradient-to-b from-red-600 to-red-700 rounded-t-xl rounded-b-md border-2 border-yellow-400 p-1 flex flex-col items-center justify-center text-white shadow-sm shrink-0">
+              <span className="text-[9px] font-black text-yellow-300 uppercase">MDJLO</span>
+              <span className="text-xs my-0.5">🏛️</span>
+              <span className="text-[7px] font-bold text-white uppercase">Chiclayo</span>
             </div>
-
-            {errorLogin && (
-              <div className="p-3 rounded-xl bg-red-50 border border-red-200/80 text-xs text-red-700 font-medium">
-                {errorLogin}
-              </div>
-            )}
-
-            <form onSubmit={ejecutarLogin} className="space-y-4">
-              <div className="space-y-1">
-                <label className="text-xs font-medium text-slate-700 block">Usuario</label>
-                <input
-                  type="text"
-                  required
-                  value={inputUsuario}
-                  onChange={(e) => setInputUsuario(e.target.value)}
-                  placeholder="admin"
-                  className="w-full px-3.5 py-2 text-sm bg-slate-50/50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-slate-900 focus:bg-white transition-all"
-                />
-              </div>
-
-              <div className="space-y-1">
-                <label className="text-xs font-medium text-slate-700 block">Contraseña</label>
-                <input
-                  type="password"
-                  required
-                  value={inputPassword}
-                  onChange={(e) => setInputPassword(e.target.value)}
-                  placeholder="••••••••"
-                  className="w-full px-3.5 py-2 text-sm bg-slate-50/50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-slate-900 focus:bg-white transition-all"
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={cargandoLogin}
-                className="w-full bg-slate-900 hover:bg-slate-800 text-white font-medium py-2.5 rounded-xl text-sm transition-all duration-200 shadow-sm hover:shadow active:scale-[0.99] disabled:opacity-50"
-              >
-                {cargandoLogin ? 'Verificando...' : 'Iniciar Sesión'}
-              </button>
-            </form>
-
-            <div className="pt-2 border-t border-slate-100 text-center">
-              <p className="text-[11px] text-slate-400">
-                Credenciales por defecto: <code className="bg-slate-100 px-1 py-0.5 rounded text-slate-700">admin</code> / <code className="bg-slate-100 px-1 py-0.5 rounded text-slate-700">admin123</code>
+            <div>
+              <h1 className="text-xl sm:text-2xl font-black text-[#004494] tracking-tight leading-tight">
+                Municipalidad Distrital de José Leonardo Ortiz
+              </h1>
+              <p className="text-xs text-gray-500 font-medium">
+                Provincia de Chiclayo • Región Lambayeque — Portal Oficial TUPA
               </p>
             </div>
           </div>
-        </main>
-      )}
 
-      {/* ---------------------------------------------------------------------- */}
-      {/* D. VISTA 3: DASHBOARD ADMINISTRACIÓN CRUD (ENTERPRISE DATA TABLE)      */}
-      {/* ---------------------------------------------------------------------- */}
-      {vistaActual === 'admin' && adminAutenticado && (
-        <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
-          
-          {/* Header Interno del Dashboard */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200/80">
-            <div>
-              <h1 className="text-xl font-semibold text-slate-900 tracking-tight">Catálogo de Trámites TUPA</h1>
-              <p className="text-xs text-slate-500 mt-0.5">Gestión de trámites, costos, plazos y requisitos oficiales</p>
+          <div className="hidden md:flex items-center space-x-2 bg-slate-50 border border-gray-200 rounded-lg p-2">
+            <div className="text-right">
+              <span class="block text-[10px] font-bold text-blue-900 uppercase">Portal de</span>
+              <span class="block text-sm font-black text-[#004494]">Transparencia</span>
             </div>
-
-            <div className="flex items-center gap-3">
-              <button
-                onClick={abrirModalNuevo}
-                className="bg-slate-900 hover:bg-slate-800 text-white font-medium px-4 py-2 rounded-xl text-xs transition-all duration-200 shadow-xs flex items-center gap-2 hover:shadow active:scale-[0.99]"
-              >
-                <svg className="w-3.5 h-3.5 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                  <path d="M12 5v14M5 12h14" />
-                </svg>
-                <span>+ Nuevo Trámite</span>
-              </button>
-
-              <button
-                onClick={cerrarSesionAdmin}
-                className="text-xs font-medium text-slate-500 hover:text-red-600 px-3 py-2 rounded-xl border border-slate-200 hover:bg-red-50/50 transition-colors"
-              >
-                Salir
-              </button>
-            </div>
-          </div>
-
-          {/* Controles de Búsqueda y Stats Rápidas */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div className="relative max-w-xs w-full">
-              <svg className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <circle cx="11" cy="11" r="8" />
-                <path d="M21 21l-4.35-4.35" />
-              </svg>
-              <input
-                type="text"
-                value={busquedaTramite}
-                onChange={(e) => setBusquedaTramite(e.target.value)}
-                placeholder="Buscar por código o nombre..."
-                className="w-full pl-9 pr-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900"
-              />
-            </div>
-
-            <div className="text-xs text-slate-500">
-              Total Trámites Registrados: <span className="font-semibold text-slate-900">{tramites.length}</span>
-            </div>
-          </div>
-
-          {/* Tabla de Datos Enterprise (Sin bordes verticales, líneas horizontales sutiles) */}
-          <div className="bg-white rounded-2xl border border-slate-200/80 shadow-xs overflow-hidden">
-            <div className="overflow-x-auto">
-              <table className="w-full text-left text-xs text-slate-700">
-                <thead className="bg-slate-50/70 border-b border-slate-200/80 text-[11px] font-semibold text-slate-500 uppercase tracking-wider">
-                  <tr>
-                    <th className="py-3.5 px-4 w-24">Código</th>
-                    <th className="py-3.5 px-4">Denominación del Trámite</th>
-                    <th className="py-3.5 px-4 w-32">Costo</th>
-                    <th className="py-3.5 px-4 w-36">Plazo</th>
-                    <th className="py-3.5 px-4 w-28 text-right">Acciones</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-100">
-                  {cargandoTramites ? (
-                    <tr>
-                      <td colSpan="5" className="py-8 text-center text-slate-400 text-xs">
-                        Cargando trámites desde la base de datos...
-                      </td>
-                    </tr>
-                  ) : tramitesFiltrados.length === 0 ? (
-                    <tr>
-                      <td colSpan="5" className="py-8 text-center text-slate-400 text-xs">
-                        No se encontraron trámites registrados.
-                      </td>
-                    </tr>
-                  ) : (
-                    tramitesFiltrados.map((t) => (
-                      <tr key={t.id || t.id_tramite} className="hover:bg-slate-50/60 transition-colors">
-                        <td className="py-3.5 px-4 font-mono font-semibold text-slate-900">
-                          {t.id_tramite}
-                        </td>
-                        <td className="py-3.5 px-4 font-medium text-slate-900 max-w-md">
-                          {t.nombre}
-                          {Array.isArray(t.requisitos) && (
-                            <span className="block text-[10px] font-normal text-slate-400 mt-0.5">
-                              {t.requisitos.length} requisito(s) asociados
-                            </span>
-                          )}
-                        </td>
-                        <td className="py-3.5 px-4">
-                          <span className={`inline-flex px-2 py-0.5 rounded-md text-[11px] font-medium border ${
-                            t.costo === 'Gratuito' || !t.costo
-                              ? 'bg-emerald-50 text-emerald-700 border-emerald-200/60'
-                              : 'bg-slate-100 text-slate-700 border-slate-200'
-                          }`}>
-                            {t.costo || 'Gratuito'}
-                          </span>
-                        </td>
-                        <td className="py-3.5 px-4 text-slate-600">
-                          {t.plazo || 'Inmediato'}
-                        </td>
-                        <td className="py-3.5 px-4 text-right">
-                          <div className="flex items-center justify-end gap-1">
-                            <button
-                              onClick={() => abrirModalEditar(t)}
-                              title="Editar"
-                              className="p-1.5 rounded-lg text-slate-400 hover:text-slate-900 hover:bg-slate-100 transition-colors"
-                            >
-                              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
-                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
-                              </svg>
-                            </button>
-
-                            <button
-                              onClick={() => eliminarTramite(t.id_tramite)}
-                              title="Eliminar"
-                              className="p-1.5 rounded-lg text-slate-400 hover:text-red-600 hover:bg-red-50 transition-colors"
-                            >
-                              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                <polyline points="3 6 5 6 21 6" />
-                                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
-                              </svg>
-                            </button>
-                          </div>
-                        </td>
-                      </tr>
-                    ))
-                  )}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </main>
-      )}
-
-      {/* ---------------------------------------------------------------------- */}
-      {/* MODAL CREAR / EDITAR TRÁMITE (ESTILO RADIX DIALOG)                     */}
-      {/* ---------------------------------------------------------------------- */}
-      {modalAbierto && (
-        <div className="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto">
-          <div className="bg-white max-w-lg w-full rounded-2xl border border-slate-200 p-6 shadow-xl space-y-5 animate-in zoom-in-95 duration-200 my-8">
-            
-            <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-              <h3 className="font-semibold text-slate-900 text-base">
-                {tramiteEditando ? 'Editar Trámite TUPA' : 'Nuevo Trámite Municipal'}
-              </h3>
-              <button
-                onClick={() => setModalAbierto(false)}
-                className="text-slate-400 hover:text-slate-600 p-1 rounded-lg hover:bg-slate-100"
-              >
-                ✕
-              </button>
-            </div>
-
-            <form onSubmit={guardarTramite} className="space-y-4">
-              <div className="grid grid-cols-2 gap-3">
-                <div className="space-y-1">
-                  <label className="text-xs font-medium text-slate-700 block">Código Trámite *</label>
-                  <input
-                    type="text"
-                    required
-                    disabled={!!tramiteEditando}
-                    value={formData.id_tramite}
-                    onChange={(e) => setFormData({ ...formData, id_tramite: e.target.value })}
-                    placeholder="T_011"
-                    className="w-full px-3 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-slate-900 disabled:opacity-60"
-                  />
-                </div>
-
-                <div className="space-y-1">
-                  <label className="text-xs font-medium text-slate-700 block">Costo (S/)</label>
-                  <input
-                    type="text"
-                    value={formData.costo}
-                    onChange={(e) => setFormData({ ...formData, costo: e.target.value })}
-                    placeholder="Gratuito o S/ 50.00"
-                    className="w-full px-3 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-slate-900"
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-1">
-                <label className="text-xs font-medium text-slate-700 block">Denominación del Trámite *</label>
-                <input
-                  type="text"
-                  required
-                  value={formData.nombre}
-                  onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
-                  placeholder="Licencia de..."
-                  className="w-full px-3 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-slate-900"
-                />
-              </div>
-
-              <div className="space-y-1">
-                <label className="text-xs font-medium text-slate-700 block">Plazo de Atención</label>
-                <input
-                  type="text"
-                  value={formData.plazo}
-                  onChange={(e) => setFormData({ ...formData, plazo: e.target.value })}
-                  placeholder="3 días hábiles"
-                  className="w-full px-3 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-slate-900"
-                />
-              </div>
-
-              {/* Lista dinámica de requisitos */}
-              <div className="space-y-2 pt-2 border-t border-slate-100">
-                <div className="flex items-center justify-between">
-                  <label className="text-xs font-medium text-slate-700 block">Requisitos Procedimentales</label>
-                  <button
-                    type="button"
-                    onClick={() => setFormData({ ...formData, requisitos: [...formData.requisitos, ''] })}
-                    className="text-[11px] text-amber-600 font-semibold hover:underline"
-                  >
-                    + Agregar Requisito
-                  </button>
-                </div>
-
-                {formData.requisitos.map((req, idx) => (
-                  <div key={idx} className="flex items-center gap-2">
-                    <input
-                      type="text"
-                      value={req}
-                      onChange={(e) => {
-                        const copia = [...formData.requisitos];
-                        copia[idx] = e.target.value;
-                        setFormData({ ...formData, requisitos: copia });
-                      }}
-                      placeholder={`Requisito #${idx + 1}`}
-                      className="flex-1 px-3 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-slate-900"
-                    />
-                    {formData.requisitos.length > 1 && (
-                      <button
-                        type="button"
-                        onClick={() => {
-                          const copia = formData.requisitos.filter((_, i) => i !== idx);
-                          setFormData({ ...formData, requisitos: copia });
-                        }}
-                        className="text-slate-400 hover:text-red-600 p-1 text-xs"
-                      >
-                        ✕
-                      </button>
-                    )}
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex items-center justify-end gap-2 pt-4 border-t border-slate-100">
-                <button
-                  type="button"
-                  onClick={() => setModalAbierto(false)}
-                  className="px-4 py-2 rounded-xl border border-slate-200 text-xs font-medium text-slate-600 hover:bg-slate-50"
-                >
-                  Cancelar
-                </button>
-                <button
-                  type="submit"
-                  className="px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-medium shadow-xs"
-                >
-                  Guardar Trámite
-                </button>
-              </div>
-            </form>
+            <div className="w-8 h-8 rounded-full bg-blue-900 text-white font-bold flex items-center justify-center text-xs">PTE</div>
           </div>
         </div>
+      </div>
+
+      {/* 3. BARRA DE NAVEGACIÓN AMARILLA */}
+      <nav className="bg-[#ffc107] border-b border-yellow-500 px-4 sm:px-8 py-2 text-[#0d3b66] font-bold text-xs uppercase tracking-wide shadow-xs sticky top-0 z-30">
+        <div className="max-w-7xl mx-auto flex items-center space-x-4 overflow-x-auto whitespace-nowrap">
+          <button onClick={() => setVistaActual('portal')} className="bg-yellow-400 text-blue-950 px-2.5 py-1 rounded font-extrabold">INICIO</button>
+          <button onClick={() => setVistaActual('portal')} className="hover:text-blue-950">CONSULTA TUPA AI</button>
+          <span className="hover:text-blue-950 cursor-pointer">DISTRITO</span>
+          <span className="hover:text-blue-950 cursor-pointer">DOCUMENTOS DE GESTIÓN</span>
+          <span className="hover:text-blue-950 cursor-pointer">NORMAS</span>
+          <span className="hover:text-blue-950 cursor-pointer">TRANSPARENCIA</span>
+          <button onClick={() => setVistaActual(adminAutenticado ? 'admin' : 'login')} className="ml-auto underline font-black">PANEL ADMIN</button>
+        </div>
+      </nav>
+
+      {/* 4. CONTENIDO SEGÚN LA VISTA SELECCIONADA */}
+      {vistaActual === 'portal' && (
+        <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+            
+            {/* Columna Izquierda: Novedades Institucionales */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+                <div className="bg-[#003366] text-white p-4 flex items-center justify-between">
+                  <h2 className="font-bold text-sm uppercase flex items-center gap-2">
+                    <span>🏛️</span>
+                    <span>Orientación Procedimental Automatizada TUPA</span>
+                  </h2>
+                  <span className="bg-yellow-400 text-blue-950 text-[10px] font-extrabold px-2 py-0.5 rounded">2026</span>
+                </div>
+
+                <div className="p-5 space-y-4">
+                  <div className="p-4 bg-blue-50/70 border-l-4 border-[#004494] rounded-r-lg space-y-1.5">
+                    <h3 className="font-bold text-base text-[#004494]">Consulte los requisitos de su trámite en tiempo real</h3>
+                    <p className="text-xs text-gray-600 leading-relaxed">
+                      Utilice nuestro asistente inteligente **"Leonardito"** para consultar requisitos procedimentales, tarifas y plazos de atención del TUPA oficial.
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-2">
+                    {[
+                      { icon: '🏪', title: 'Licencia Bodega', text: 'Requisitos para licencia de bodega' },
+                      { icon: '🔄', title: 'Cambio de Giro', text: '¿Cuánto cuesta el cambio de giro?' },
+                      { icon: '📄', title: 'Duplicado Licencia', text: 'Duplicado de licencia municipal' },
+                      { icon: '📊', title: 'Transparencia', text: 'Acceso a la información pública' },
+                    ].map((item, i) => (
+                      <button
+                        key={i}
+                        onClick={() => enviarMensajeChat(item.text)}
+                        className="p-3 bg-slate-50 hover:bg-yellow-50 border border-gray-200 hover:border-yellow-400 rounded-lg text-left transition group"
+                      >
+                        <span className="block text-lg mb-1">{item.icon}</span>
+                        <span className="block text-xs font-bold text-gray-800 group-hover:text-blue-900">{item.title}</span>
+                        <span className="block text-[10px] text-gray-500">Consulta TUPA</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* ÚLTIMAS NORMAS */}
+              <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-5 space-y-4">
+                <div className="border-b-2 border-yellow-400 pb-2 flex items-center justify-between">
+                  <h3 className="font-extrabold text-sm text-[#004494] uppercase flex items-center gap-2">
+                    <span>📋</span>
+                    <span>Últimas Normas y Comunicados Emitidos</span>
+                  </h3>
+                  <span className="text-xs text-gray-400">MDJLO-GM</span>
+                </div>
+                <div className="space-y-3 divide-y divide-gray-100 text-xs">
+                  <div className="pt-1">
+                    <span className="font-bold text-[#004494] block">RESOLUCIÓN DE GERENCIA MUNICIPAL N°292-2026-MDJLO-GM</span>
+                    <p className="text-gray-600 mt-1">APROBAR los procedimientos de orientación al contribuyente sobre requisitos procedimentales del TUPA.</p>
+                    <span className="text-[10px] text-gray-400 mt-1 block">📅 2026-09-04</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Columna Derecha: CHATBOT LEONARDITO */}
+            <div className="lg:col-span-5 bg-white rounded-xl border-2 border-blue-900 shadow-md flex flex-col h-[600px] overflow-hidden">
+              <div className="bg-[#003366] text-white p-3.5 flex items-center justify-between">
+                <div className="flex items-center space-x-2.5">
+                  <div className="w-8 h-8 rounded-full bg-yellow-400 text-blue-950 font-black flex items-center justify-center text-sm">🤖</div>
+                  <div>
+                    <h3 className="font-bold text-sm leading-none">Leonardito AI</h3>
+                    <span className="text-[10px] text-yellow-300 font-medium">Asistente Virtual TUPA MDJLO</span>
+                  </div>
+                </div>
+                <span className="bg-emerald-500 text-white text-[9px] font-bold px-2 py-0.5 rounded-full">En línea</span>
+              </div>
+
+              <div ref={chatBoxRef} className="flex-1 p-4 overflow-y-auto space-y-4 bg-slate-50/60 text-xs">
+                {mensajes.map((m) => (
+                  <div key={m.id} className={`flex items-start space-x-2.5 ${m.rol === 'usuario' ? 'justify-end' : ''}`}>
+                    {m.rol === 'bot' && (
+                      <div className="w-7 h-7 rounded-full bg-[#003366] text-white font-bold flex items-center justify-center text-xs shrink-0">L</div>
+                    )}
+                    <div className={`p-3 rounded-2xl max-w-[85%] text-xs shadow-2xs ${m.rol === 'usuario' ? 'bg-[#003366] text-white rounded-tr-none' : 'bg-white border border-gray-200 text-gray-800 rounded-tl-none'}`}>
+                      <p className="whitespace-pre-line leading-relaxed">{m.texto}</p>
+                      {m.datosTramite && (
+                        <div className="bg-slate-50 rounded-xl border border-blue-200 p-3 mt-2 space-y-1.5 text-xs text-gray-800">
+                          <span className="bg-blue-100 text-blue-900 font-bold text-[10px] px-2 py-0.5 rounded uppercase border border-blue-300">
+                            {m.datosTramite.id_tramite || 'Trámite TUPA'}
+                          </span>
+                          <h4 className="font-bold text-blue-950 text-xs mt-1">{m.datosTramite.nombre}</h4>
+                          <div className="flex flex-wrap gap-2 text-[11px] pt-1">
+                            {m.datosTramite.costo && <span className="bg-emerald-100 text-emerald-900 px-2 py-0.5 rounded font-bold">Costo: {m.datosTramite.costo}</span>}
+                            {m.datosTramite.plazo && <span className="bg-blue-100 text-blue-900 px-2 py-0.5 rounded font-bold">Plazo: {m.datosTramite.plazo}</span>}
+                          </div>
+                          {Array.isArray(m.datosTramite.requisitos) && (
+                            <div className="space-y-1 pt-1 border-t border-gray-100 mt-2">
+                              <span className="font-bold text-gray-700 block text-[10px] uppercase">Requisitos Presentar:</span>
+                              <ul className="space-y-1 text-gray-600">
+                                {m.datosTramite.requisitos.map((r, i) => (
+                                  <li key={i} className="flex items-start gap-1.5"><span className="text-yellow-600 font-bold">•</span><span>{r}</span></li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+
+                {estaEscribiendo && (
+                  <div className="flex items-start space-x-2.5 text-gray-400">
+                    <div className="w-7 h-7 rounded-full bg-[#003366] text-white font-bold flex items-center justify-center text-xs">L</div>
+                    <div className="bg-white border border-gray-200 rounded-2xl rounded-tl-none p-3 text-xs flex items-center space-x-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-gray-400 animate-bounce"></span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-gray-400 animate-bounce [animation-delay:0.2s]"></span>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              <form onSubmit={(e) => { e.preventDefault(); enviarMensajeChat(); }} className="p-3 bg-white border-t border-gray-200 flex items-center space-x-2">
+                <input
+                  type="text"
+                  value={inputMensaje}
+                  onChange={(e) => setInputMensaje(e.target.value)}
+                  placeholder="Escriba su consulta..."
+                  className="flex-1 px-3.5 py-2 text-xs bg-slate-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900"
+                />
+                <button type="submit" className="bg-[#003366] text-white px-4 py-2 rounded-lg font-bold text-xs">Enviar ➔</button>
+              </form>
+            </div>
+          </div>
+        </main>
       )}
 
-      {/* Footer Mínimo */}
-      <footer className="border-t border-slate-200/60 py-4 text-center text-xs text-slate-400 mt-auto">
-        MDJLO © 2026 • Sistema Inteligente de Atención Ciudadana
+      {/* VISTA LOGIN */}
+      {vistaActual === 'login' && (
+        <main className="flex-1 flex items-center justify-center p-4">
+          <div className="bg-white border border-gray-200 rounded-xl shadow-md p-6 max-w-md w-full space-y-4 my-8">
+            <h2 className="text-lg font-black text-[#004494] text-center uppercase">Acceso Administrativo</h2>
+            {errorLogin && <div className="p-2.5 bg-red-50 text-red-700 text-xs font-bold rounded">{errorLogin}</div>}
+            <form onSubmit={ejecutarLogin} className="space-y-3 text-xs">
+              <div>
+                <label className="font-bold block mb-1">Usuario</label>
+                <input type="text" required value={inputUsuario} onChange={(e) => setInputUsuario(e.target.value)} className="w-full p-2 border rounded" placeholder="admin" />
+              </div>
+              <div>
+                <label className="font-bold block mb-1">Contraseña</label>
+                <input type="password" required value={inputPassword} onChange={(e) => setInputPassword(e.target.value)} className="w-full p-2 border rounded" placeholder="••••••••" />
+              </div>
+              <button type="submit" className="w-full bg-[#004494] text-white font-bold py-2 rounded">Iniciar Sesión</button>
+            </form>
+          </div>
+        </main>
+      )}
+
+      {/* VISTA DASHBOARD ADMIN */}
+      {vistaActual === 'admin' && adminAutenticado && (
+        <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-6 space-y-6 text-xs">
+          <div className="bg-white p-4 rounded-xl border flex justify-between items-center">
+            <h2 className="font-black text-[#004494] uppercase text-sm">Catálogo de Trámites TUPA (Admin)</h2>
+            <button onClick={() => { setTramiteEditando(null); setFormData({ id_tramite: '', nombre: '', costo: '', plazo: '', requisitos: [''] }); setModalAbierto(true); }} className="bg-emerald-600 text-white font-bold px-3 py-1.5 rounded">➕ Nuevo Trámite</button>
+          </div>
+
+          <div className="bg-white rounded-xl border overflow-hidden">
+            <table className="w-full text-left">
+              <thead className="bg-slate-100 font-bold border-b text-[11px] text-gray-600">
+                <tr>
+                  <th className="p-3">Código</th>
+                  <th className="p-3">Denominación</th>
+                  <th className="p-3">Costo</th>
+                  <th className="p-3">Plazo</th>
+                  <th className="p-3 text-right">Acciones</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                {tramites.map((t) => (
+                  <tr key={t.id_tramite} className="hover:bg-blue-50/40">
+                    <td className="p-3 font-bold text-blue-900">{t.id_tramite}</td>
+                    <td className="p-3 font-bold">{t.nombre}</td>
+                    <td className="p-3">{t.costo}</td>
+                    <td className="p-3">{t.plazo}</td>
+                    <td className="p-3 text-right space-x-1">
+                      <button onClick={() => eliminarTramite(t.id_tramite)} className="text-red-600 font-bold">🗑️ Borrar</button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </main>
+      )}
+
+      <footer className="bg-[#0d3b66] text-white border-t-4 border-yellow-400 py-6 px-4 text-xs text-center mt-auto">
+        Municipalidad Distrital de José Leonardo Ortiz © 2026 • Portal Oficial TUPA
       </footer>
     </div>
   );

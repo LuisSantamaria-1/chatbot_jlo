@@ -3,191 +3,335 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MDJLO | Atención Ciudadana e Información Procedimental TUPA</title>
+  <title>Municipalidad Distrital de José Leonardo Ortiz | Portal Oficial y Atención TUPA</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Inter', sans-serif; }
     ::-webkit-scrollbar { width: 6px; height: 6px; }
-    ::-webkit-scrollbar-track { background: #f8fafc; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
     ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; }
     ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    .bg-mdjlo-yellow { background-color: #ffc107; }
+    .text-mdjlo-blue { color: #004494; }
+    .bg-mdjlo-blue { background-color: #004494; }
+    .border-mdjlo-yellow { border-color: #e0a800; }
   </style>
 </head>
-<body class="min-h-screen bg-slate-50/50 text-slate-900 font-sans selection:bg-amber-100 selection:text-amber-900 flex flex-col">
+<body class="min-h-screen flex flex-col bg-[#f4f6f9] text-gray-800 font-sans">
 
-  <!-- A. GLASSMORPHISM NAVBAR ENTERPRISE -->
-  <header class="sticky top-0 z-40 backdrop-blur-md bg-white/80 border-b border-slate-200/80 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+  <!-- 1. BARRA SUPERIOR AMARILLA: SISGEDO Y ENLACES INSTITUCIONALES (Basado en el Portal Oficial MDJLO) -->
+  <header class="bg-mdjlo-yellow text-[#0d3b66] py-1.5 px-4 sm:px-8 border-b border-mdjlo-yellow shadow-xs">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2 text-xs font-semibold">
       
-      <!-- Logo & Identidad Institucional -->
-      <div class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-xl bg-slate-900 flex items-center justify-center text-white shadow-xs ring-1 ring-slate-900/5">
-          <svg class="w-5 h-5 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 21h18" />
-            <path d="M5 21V7l7-4 7 4v14" />
-            <path d="M9 10a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v11H9z" />
-          </svg>
-        </div>
+      <!-- Logo SISGEDO -->
+      <div class="flex items-center space-x-2">
+        <svg class="w-6 h-6 text-[#0d3b66]" viewBox="0 0 40 40" fill="none">
+          <path d="M10 28C6 26 5 20 8 15C11 10 18 8 20 12C22 16 16 18 18 24C20 30 28 30 32 25" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+          <circle cx="28" cy="14" r="3.5" fill="currentColor" />
+        </svg>
         <div>
-          <div class="flex items-center gap-2">
-            <span class="font-semibold text-slate-900 tracking-tight text-sm">MDJLO</span>
-            <span class="text-[10px] font-medium uppercase tracking-wider bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full border border-slate-200">
-              Gobierno Digital
-            </span>
-          </div>
-          <p className="text-xs text-slate-500 font-normal">Municipalidad Distrital de José Leonardo Ortiz</p>
+          <span class="font-black text-sm tracking-tight text-[#0a2540] block leading-none">SISGEDO</span>
+          <span class="text-[10px] font-normal text-[#0d3b66] block">Sistema de Gestión Documentario</span>
         </div>
       </div>
 
-      <!-- Navegación Superior -->
-      <nav className="flex items-center gap-2 text-xs font-medium">
-        <span className="text-slate-500 font-normal hidden sm:inline">Portal Oficial TUPA</span>
-        <a
-          href="/admin"
-          className="bg-slate-900 hover:bg-slate-800 text-white px-3.5 py-1.5 rounded-xl text-xs font-medium transition-all duration-200 flex items-center gap-1.5 shadow-xs hover:shadow active:scale-[0.99]"
-        >
-          <svg className="w-3.5 h-3.5 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-          </svg>
-          <span>Panel Admin (RF06)</span>
+      <!-- Enlaces superiores institucionales -->
+      <nav class="flex items-center space-x-3 sm:space-x-4 text-xs font-bold text-[#0a2540]">
+        <a href="#chat-tupa" class="hover:underline cursor-pointer">Consulte su <strong class="underline">Trámite</strong></a>
+        <span class="text-yellow-700 font-normal">|</span>
+        <span class="hover:underline cursor-pointer">Mesa de Partes Virtual</span>
+        <span class="text-yellow-700 font-normal">|</span>
+        <span class="hover:underline cursor-pointer">Tramifacil</span>
+        <span class="text-yellow-700 font-normal">|</span>
+        <span class="hover:underline cursor-pointer">Rendición de Cuentas</span>
+        <span class="text-yellow-700 font-normal">|</span>
+        <a href="/admin" class="bg-[#0d3b66] hover:bg-blue-950 text-white px-2.5 py-1 rounded text-[11px] font-bold transition flex items-center gap-1 shadow-xs">
+          <span>⚙️ Panel Admin (RF06)</span>
         </a>
       </nav>
     </div>
   </header>
 
-  <!-- B. INTERFAZ PRINCIPAL DEL CHATBOT CIUDADANO (INMERSIVA CHATGPT / PERPLEXITY STYLED) -->
-  <main className="flex-1 flex flex-col max-w-3xl w-full mx-auto px-4 py-6">
-    
-    {/* Contenedor de Mensajes */}
-    <div id="chat-messages" className="flex-1 space-y-6 pb-28">
+  <!-- 2. ENCABEZADO INSTITUCIONAL BLANCO: ESCUDO Y LOGO OFICIAL MDJLO -->
+  <div class="bg-white border-b border-gray-200 py-3.5 px-4 sm:px-8 shadow-xs">
+    <div class="max-w-7xl mx-auto flex items-center justify-between flex-wrap gap-4">
       
-      {/* Hero / State Inicial */}
-      <div id="hero-state" className="text-center py-10 space-y-4">
-        <div className="w-12 h-12 rounded-2xl bg-amber-400/10 text-amber-600 border border-amber-400/20 mx-auto flex items-center justify-center">
-          <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 2a10 10 0 1 0 10 10H12V2z" />
-            <path d="M12 12L2.5 7.5" />
-            <path d="M12 12v9.5" />
-          </svg>
+      <!-- Escudo y Nombre Oficial -->
+      <div class="flex items-center space-x-3.5">
+        <!-- Escudo de José Leonardo Ortiz (Vector Emblem) -->
+        <div class="w-12 h-14 bg-gradient-to-b from-red-600 to-red-700 rounded-t-xl rounded-b-md border-2 border-yellow-400 p-1 flex flex-col items-center justify-center text-white shadow-sm shrink-0">
+          <span class="text-[9px] font-black text-yellow-300 uppercase tracking-tighter">MDJLO</span>
+          <div class="w-6 h-6 border border-yellow-300 rounded-full flex items-center justify-center my-0.5">
+            <span class="text-xs">🏛️</span>
+          </div>
+          <span class="text-[7px] font-bold text-white uppercase">Chiclayo</span>
         </div>
-        <h1 className="text-2xl font-semibold text-slate-900 tracking-tight">
-          Orientación Procedimental TUPA
-        </h1>
-        <p className="text-sm text-slate-500 max-w-md mx-auto leading-relaxed">
-          Consulta en lenguaje natural sobre requisitos, tarifas y plazos de los trámites municipales en José Leonardo Ortiz.
-        </p>
 
-        {/* Grid de Sugerencias */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-4 text-left max-w-xl mx-auto">
-          <button onClick="enviarSugerencia('Requisitos para licencia de bodega')" className="p-3.5 rounded-xl bg-white border border-slate-200/80 hover:border-slate-300 hover:shadow-xs text-xs text-slate-700 hover:text-slate-900 transition-all duration-200 flex items-center justify-between group">
-            <span>Requisitos para licencia de bodega</span>
-            <svg className="w-3.5 h-3.5 text-slate-400 group-hover:text-slate-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
-          </button>
-          <button onClick="enviarSugerencia('¿Cuánto cuesta el cambio de giro?')" className="p-3.5 rounded-xl bg-white border border-slate-200/80 hover:border-slate-300 hover:shadow-xs text-xs text-slate-700 hover:text-slate-900 transition-all duration-200 flex items-center justify-between group">
-            <span>¿Cuánto cuesta el cambio de giro?</span>
-            <svg className="w-3.5 h-3.5 text-slate-400 group-hover:text-slate-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
-          </button>
-          <button onClick="enviarSugerencia('Duplicado de licencia municipal')" className="p-3.5 rounded-xl bg-white border border-slate-200/80 hover:border-slate-300 hover:shadow-xs text-xs text-slate-700 hover:text-slate-900 transition-all duration-200 flex items-center justify-between group">
-            <span>Duplicado de licencia municipal</span>
-            <svg className="w-3.5 h-3.5 text-slate-400 group-hover:text-slate-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
-          </button>
-          <button onClick="enviarSugerencia('Acceso a la información pública')" className="p-3.5 rounded-xl bg-white border border-slate-200/80 hover:border-slate-300 hover:shadow-xs text-xs text-slate-700 hover:text-slate-900 transition-all duration-200 flex items-center justify-between group">
-            <span>Acceso a la información pública</span>
-            <svg className="w-3.5 h-3.5 text-slate-400 group-hover:text-slate-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
-          </button>
+        <div>
+          <h1 class="text-xl sm:text-2xl font-black text-mdjlo-blue tracking-tight leading-tight">
+            Municipalidad Distrital de José Leonardo Ortiz
+          </h1>
+          <p class="text-xs text-gray-500 font-medium flex items-center gap-2 mt-0.5">
+            <span>Provincia de Chiclayo • Región Lambayeque</span>
+            <span class="bg-blue-50 text-blue-800 text-[10px] font-bold px-2 py-0.5 rounded border border-blue-200">
+              Portal Oficial de Servicios TUPA
+            </span>
+          </p>
         </div>
       </div>
 
-      <!-- Bienvenida Inicial del Bot -->
-      <div className="flex gap-3 text-sm items-start">
-        <div className="w-7 h-7 rounded-lg bg-slate-900 text-white flex items-center justify-center shrink-0 text-xs font-semibold shadow-xs">
-          L
+      <!-- Portal de Transparencia Logo -->
+      <div class="hidden md:flex items-center space-x-2 bg-slate-50 border border-gray-200 rounded-lg p-2">
+        <div class="text-right">
+          <span class="block text-[10px] font-bold text-blue-900 uppercase">Portal de</span>
+          <span class="block text-sm font-black text-mdjlo-blue tracking-tight">Transparencia</span>
         </div>
-        <div className="space-y-3 max-w-xl">
-          <div className="px-4 py-3 rounded-2xl bg-white border border-slate-200/80 text-slate-800 rounded-tl-xs shadow-xs">
-            <p className="whitespace-pre-line leading-relaxed text-[13.5px]">¡Hola! 👋 Soy Leonardito, el asistente virtual de la Municipalidad Distrital de José Leonardo Ortiz. ¿Sobre qué trámite municipal deseas consultar?</p>
+        <div class="w-8 h-8 rounded-full bg-blue-900 text-white font-bold flex items-center justify-center text-xs">
+          PTE
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. BARRA DE NAVEGACIÓN PRINCIPAL AMARILLA -->
+  <nav class="bg-mdjlo-yellow border-b border-yellow-500 px-4 sm:px-8 py-2 text-[#0d3b66] font-bold text-xs uppercase tracking-wide shadow-xs sticky top-0 z-30">
+    <div class="max-w-7xl mx-auto flex items-center space-x-4 overflow-x-auto whitespace-nowrap">
+      <a href="#" class="bg-yellow-400 text-blue-950 px-2.5 py-1 rounded font-extrabold shadow-2xs">INICIO</a>
+      <a href="#chat-tupa" class="hover:text-blue-950 transition">CONSULTA TUPA AI</a>
+      <a href="#" class="hover:text-blue-950 transition">DISTRITO</a>
+      <a href="#" class="hover:text-blue-950 transition">DOCUMENTOS DE GESTIÓN</a>
+      <a href="#" class="hover:text-blue-950 transition">NORMAS</a>
+      <a href="#" class="hover:text-blue-950 transition">MANUALES</a>
+      <a href="#" class="hover:text-blue-950 transition">TRANSPARENCIA</a>
+      <a href="#" class="hover:text-blue-950 transition">CONVOCATORIAS</a>
+      <a href="/admin" class="ml-auto hover:text-blue-950 transition underline font-black">PANEL ADMIN</a>
+    </div>
+  </nav>
+
+  <!-- 4. CONTENIDO PRINCIPAL: PORTAL MUNICIPAL + ASISTENTE VIRTUAL AI TUPA -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-8">
+
+    <!-- HERO SECTION: BANNER MUNICIPAL Y ASISTENTE TUPA -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+      
+      <!-- Columna Izquierda: Novedades e Información Institucional (Estilo Portal Oficial) -->
+      <div class="lg:col-span-7 space-y-6">
+        
+        <!-- Banner Principal de Obras / Servicios -->
+        <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+          <div class="bg-[#003366] text-white p-4 flex items-center justify-between">
+            <h2 class="font-bold text-sm tracking-wide uppercase flex items-center gap-2">
+              <span>🏛️</span>
+              <span>Orientación Procedimental Automatizada TUPA</span>
+            </h2>
+            <span class="bg-yellow-400 text-blue-950 text-[10px] font-extrabold px-2 py-0.5 rounded">2026</span>
+          </div>
+
+          <div class="p-5 space-y-4">
+            <div class="p-4 bg-blue-50/70 border-l-4 border-[#004494] rounded-r-lg space-y-1.5">
+              <h3 class="font-bold text-base text-[#004494]">
+                ¡Consulte los requisitos de su trámite municipal en tiempo real!
+              </h3>
+              <p class="text-xs text-gray-600 leading-relaxed">
+                Utilice nuestro asistente inteligente **"Leonardito"** alimentado por Inteligencia Artificial para consultar requisitos procedimentales, costos y plazos del TUPA oficial de la Municipalidad Distrital de José Leonardo Ortiz.
+              </p>
+            </div>
+
+            <!-- Accesos Rápido a Trámites Frecuentes -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-2">
+              <button onclick="enviarConsultaRapida('Requisitos para licencia de bodega')" class="p-3 bg-slate-50 hover:bg-yellow-50 border border-gray-200 hover:border-yellow-400 rounded-lg text-left transition group">
+                <span class="block text-lg mb-1">🏪</span>
+                <span class="block text-xs font-bold text-gray-800 group-hover:text-blue-900">Licencia de Bodega</span>
+                <span class="block text-[10px] text-gray-500">Requisitos TUPA</span>
+              </button>
+
+              <button onclick="enviarConsultaRapida('¿Cuánto cuesta el cambio de giro?')" class="p-3 bg-slate-50 hover:bg-yellow-50 border border-gray-200 hover:border-yellow-400 rounded-lg text-left transition group">
+                <span class="block text-lg mb-1">🔄</span>
+                <span class="block text-xs font-bold text-gray-800 group-hover:text-blue-900">Cambio de Giro</span>
+                <span class="block text-[10px] text-gray-500">Costo y plazos</span>
+              </button>
+
+              <button onclick="enviarConsultaRapida('Duplicado de licencia municipal')" class="p-3 bg-slate-50 hover:bg-yellow-50 border border-gray-200 hover:border-yellow-400 rounded-lg text-left transition group">
+                <span class="block text-lg mb-1">📄</span>
+                <span class="block text-xs font-bold text-gray-800 group-hover:text-blue-900">Duplicado Licencia</span>
+                <span class="block text-[10px] text-gray-500">Trámite rápido</span>
+              </button>
+
+              <button onclick="enviarConsultaRapida('Acceso a la información pública')" class="p-3 bg-slate-50 hover:bg-yellow-50 border border-gray-200 hover:border-yellow-400 rounded-lg text-left transition group">
+                <span class="block text-lg mb-1">📊</span>
+                <span class="block text-xs font-bold text-gray-800 group-hover:text-blue-900">Acceso Información</span>
+                <span class="block text-[10px] text-gray-500">Transparencia</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sección de ÚLTIMAS NORMAS EMITIDAS (Fiel a la página oficial) -->
+        <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-5 space-y-4">
+          <div class="border-b-2 border-yellow-400 pb-2 flex items-center justify-between">
+            <h3 class="font-extrabold text-sm text-[#004494] uppercase tracking-wide flex items-center gap-2">
+              <span>📋</span>
+              <span>Últimas Normas y Comunicados Emitidos</span>
+            </h3>
+            <span class="text-xs text-gray-400">MDJLO-GM</span>
+          </div>
+
+          <div class="space-y-3 divide-y divide-gray-100">
+            <div class="pt-2">
+              <span class="text-xs font-bold text-[#004494] block hover:underline cursor-pointer">
+                RESOLUCIÓN DE GERENCIA MUNICIPAL N°292-2026-MDJLO-GM
+              </span>
+              <p class="text-xs text-gray-600 mt-1">
+                APROBAR, en virtud de la facultad excepcional conferida por el numeral (...) los procedimientos de orientación al contribuyente.
+              </p>
+              <span class="text-[10px] text-gray-400 mt-1 block">📅 2026-09-04</span>
+            </div>
+
+            <div class="pt-3">
+              <span class="text-xs font-bold text-[#004494] block hover:underline cursor-pointer">
+                RESOLUCIÓN DE GERENCIA MUNICIPAL N°290-2026-MDJLO-GM
+              </span>
+              <p class="text-xs text-gray-600 mt-1">
+                FORMALIZAR LAS MODIFICACIONES al TUPA respecto a licencias de funcionamiento de bajo y mediano riesgo.
+              </p>
+              <span class="text-[10px] text-gray-400 mt-1 block">📅 2026-08-28</span>
+            </div>
           </div>
         </div>
       </div>
 
+      <!-- Columna Derecha: WIDGET DE CHATBOT CONVERSACIONAL DE IA "LEONARDITO" -->
+      <div id="chat-tupa" class="lg:col-span-5 bg-white rounded-xl border-2 border-blue-900 shadow-md flex flex-col h-[600px] overflow-hidden">
+        
+        <!-- Header del Chatbot Institucional -->
+        <div class="bg-[#003366] text-white p-3.5 flex items-center justify-between">
+          <div class="flex items-center space-x-2.5">
+            <div class="w-8 h-8 rounded-full bg-yellow-400 text-blue-950 font-black flex items-center justify-center text-sm border border-yellow-300">
+              🤖
+            </div>
+            <div>
+              <h3 class="font-bold text-sm leading-none">Leonardito AI</h3>
+              <span class="text-[10px] text-yellow-300 font-medium">Asistente Virtual TUPA MDJLO</span>
+            </div>
+          </div>
+          <span class="bg-emerald-500 text-white text-[9px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+            En línea
+          </span>
+        </div>
+
+        <!-- Contenedor de Mensajes del Chat -->
+        <div id="chat-box" class="flex-1 p-4 overflow-y-auto space-y-4 bg-slate-50/60 text-xs">
+          
+          <!-- Bienvenida inicial del bot -->
+          <div class="flex items-start space-x-2.5">
+            <div class="w-7 h-7 rounded-full bg-[#003366] text-white font-bold flex items-center justify-center text-xs shrink-0">
+              L
+            </div>
+            <div class="bg-white border border-gray-200 rounded-2xl rounded-tl-none p-3 shadow-2xs max-w-[85%] space-y-1">
+              <p class="text-gray-800 leading-relaxed">
+                ¡Hola! 👋 Soy <strong>Leonardito</strong>, el asistente virtual de la Municipalidad Distrital de José Leonardo Ortiz.
+              </p>
+              <p class="text-gray-600">
+                ¿Sobre qué trámite municipal deseas consultar hoy? Puedo indicarte los <strong>requisitos, costo y plazo de atención</strong>.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Barra de Entrada de Mensaje del Chat -->
+        <form onsubmit="enviarMensaje(event)" class="p-3 bg-white border-t border-gray-200 flex items-center space-x-2">
+          <input
+            id="chat-input"
+            type="text"
+            placeholder="Escriba su consulta (ej. requisitos para bodega)..."
+            class="flex-1 px-3.5 py-2 text-xs bg-slate-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 focus:bg-white transition"
+          />
+          <button
+            type="submit"
+            class="bg-[#003366] hover:bg-blue-950 text-white px-4 py-2 rounded-lg font-bold text-xs transition flex items-center space-x-1 shadow-xs shrink-0"
+          >
+            <span>Enviar</span>
+            <span>➔</span>
+          </button>
+        </form>
+      </div>
+
     </div>
 
-    <!-- Floating Input Bar -->
-    <div className="fixed bottom-6 inset-x-4 max-w-3xl mx-auto z-30">
-      <form id="chat-form" onsubmit="enviarMensajeForm(event)" className="relative flex items-center bg-white rounded-2xl border border-slate-200 shadow-lg shadow-slate-900/5 p-1.5 focus-within:ring-2 focus-within:ring-slate-900/10 focus-within:border-slate-300 transition-all duration-300">
-        <input
-          id="chat-input"
-          type="text"
-          placeholder="Escribe tu consulta sobre requisitos, costo o plazo..."
-          className="w-full px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 bg-transparent border-0 focus:outline-none"
-        />
-        <button
-          type="submit"
-          className="w-9 h-9 rounded-xl bg-slate-900 hover:bg-slate-800 text-white flex items-center justify-center transition-all duration-200 shrink-0"
-        >
-          <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 2L11 13" />
-            <path d="M22 2l-7 20-4-9-9-4 20-7z" />
-          </svg>
-        </button>
-      </form>
-      <p className="text-[11px] text-center text-slate-400 mt-2">
-        Información oficial del TUPA de la Municipalidad Distrital de José Leonardo Ortiz.
-      </p>
-    </div>
   </main>
 
-  <script>
-    const chatContainer = document.getElementById('chat-messages');
-    const inputField = document.getElementById('chat-input');
-    const heroState = document.getElementById('hero-state');
+  <!-- 5. FOOTER INSTITUCIONAL (Fiel al Portal de la MDJLO) -->
+  <footer class="bg-[#0d3b66] text-white border-t-4 border-yellow-400 mt-12 py-8 px-4 sm:px-8 text-xs">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div>
+        <h4 class="font-extrabold text-sm text-yellow-400 uppercase mb-2">Municipalidad Distrital de José Leonardo Ortiz</h4>
+        <p class="text-gray-300 leading-relaxed">
+          Av. Saenz Peña N° 2150 - José Leonardo Ortiz<br/>
+          Provincia de Chiclayo, Región Lambayeque - Perú
+        </p>
+      </div>
+      <div>
+        <h4 class="font-extrabold text-sm text-yellow-400 uppercase mb-2">Atención al Ciudadano</h4>
+        <p class="text-gray-300 leading-relaxed">
+          Mesa de Partes: Lunes a Viernes 8:00 am - 4:00 pm<br/>
+          Consultas TUPA AI: Disponible las 24 horas del día
+        </p>
+      </div>
+      <div class="text-right">
+        <span class="inline-block bg-yellow-400 text-blue-950 font-black px-3 py-1 rounded text-xs uppercase mb-2">
+          HITO 2 - 50% ACREDITABLE
+        </span>
+        <p class="text-gray-400">MDJLO © 2026 • Todos los derechos reservados</p>
+      </div>
+    </div>
+  </footer>
 
-    function enviarSugerencia(texto) {
+  <!-- LÓGICA DE JAVASCRIPT CLIENTE PARA EL CHATBOT (100% Funcional con Flask API) -->
+  <script>
+    const chatBox = document.getElementById('chat-box');
+    const inputField = document.getElementById('chat-input');
+
+    function enviarConsultaRapida(texto) {
       inputField.value = texto;
-      enviarMensajeForm(new Event('submit'));
+      enviarMensaje(new Event('submit'));
     }
 
-    async function enviarMensajeForm(e) {
+    async function enviarMensaje(e) {
       if (e) e.preventDefault();
       const texto = inputField.value.trim();
       if (!texto) return;
 
-      if (heroState) heroState.style.display = 'none';
-
-      // Agregar mensaje usuario
-      const timeStr = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      // 1. Mostrar mensaje del usuario
       const userHtml = `
-        <div className="flex gap-3 text-sm justify-end">
-          <div className="space-y-1 max-w-xl items-end">
-            <div className="px-4 py-3 rounded-2xl bg-slate-900 text-white rounded-tr-xs shadow-xs">
-              <p className="whitespace-pre-line leading-relaxed text-[13.5px]">${escapeHtml(texto)}</p>
-            </div>
-            <span className="text-[10px] text-slate-400 block px-1 text-right">${timeStr}</span>
+        <div class="flex items-start justify-end space-x-2.5">
+          <div class="bg-[#003366] text-white rounded-2xl rounded-tr-none p-3 shadow-2xs max-w-[85%] text-xs">
+            <p class="leading-relaxed">${escapeHtml(texto)}</p>
           </div>
         </div>
       `;
-      chatContainer.insertAdjacentHTML('beforeend', userHtml);
+      chatBox.insertAdjacentHTML('beforeend', userHtml);
       inputField.value = '';
-      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+      chatBox.scrollTop = chatBox.scrollHeight;
 
-      // Indicador escribiendo
+      // 2. Indicador de carga
       const typingId = 'typing-' + Date.now();
       const typingHtml = `
-        <div id="${typingId}" className="flex gap-3 text-sm items-center text-slate-400">
-          <div className="w-7 h-7 rounded-lg bg-slate-900 text-white flex items-center justify-center text-xs font-semibold">L</div>
-          <div className="bg-white border border-slate-200 px-4 py-2.5 rounded-2xl rounded-tl-xs flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-slate-400 animate-bounce"></span>
-            <span className="w-1.5 h-1.5 rounded-full bg-slate-400 animate-bounce [animation-delay:0.2s]"></span>
-            <span className="w-1.5 h-1.5 rounded-full bg-slate-400 animate-bounce [animation-delay:0.4s]"></span>
+        <div id="${typingId}" class="flex items-start space-x-2.5 text-gray-400">
+          <div class="w-7 h-7 rounded-full bg-[#003366] text-white font-bold flex items-center justify-center text-xs shrink-0">L</div>
+          <div class="bg-white border border-gray-200 rounded-2xl rounded-tl-none p-3 shadow-2xs text-xs flex items-center space-x-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-gray-400 animate-bounce"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-gray-400 animate-bounce [animation-delay:0.2s]"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-gray-400 animate-bounce [animation-delay:0.4s]"></span>
           </div>
         </div>
       `;
-      chatContainer.insertAdjacentHTML('beforeend', typingHtml);
-      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+      chatBox.insertAdjacentHTML('beforeend', typingHtml);
+      chatBox.scrollTop = chatBox.scrollHeight;
 
       try {
         const res = await fetch('/api/chat', {
@@ -204,23 +348,23 @@
           let reqsHtml = '';
           if (Array.isArray(dt.requisitos) && dt.requisitos.length > 0) {
             reqsHtml = `
-              <div className="space-y-1.5 pt-1">
-                <span className="font-medium text-slate-500 block text-[11px] uppercase tracking-wider">Requisitos Presentar:</span>
-                <ul className="space-y-1 pl-1">
-                  ${dt.requisitos.map(r => `<li className="flex items-start gap-2 text-slate-700"><span className="text-amber-500 font-bold">•</span><span className="leading-snug">${escapeHtml(r)}</span></li>`).join('')}
+              <div class="space-y-1 pt-1 border-t border-gray-100 mt-2">
+                <span class="font-bold text-gray-700 block text-[10px] uppercase">Requisitos a Presentar:</span>
+                <ul class="space-y-1 text-gray-600">
+                  ${dt.requisitos.map(r => `<li class="flex items-start gap-1.5"><span class="text-yellow-600 font-bold">•</span><span>${escapeHtml(r)}</span></li>`).join('')}
                 </ul>
               </div>
             `;
           }
           extraCard = `
-            <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm space-y-3 text-xs mt-2">
-              <div className="border-b border-slate-100 pb-2">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200/60">${dt.id_tramite || 'Trámite TUPA'}</span>
-                <h4 className="font-semibold text-slate-900 text-sm mt-1">${escapeHtml(dt.nombre || '')}</h4>
-              </div>
-              <div className="flex flex-wrap gap-2 text-xs">
-                ${dt.costo ? `<div className="bg-emerald-50 text-emerald-800 border border-emerald-200/60 px-2.5 py-1 rounded-lg font-medium">Costo: <b>${escapeHtml(dt.costo)}</b></div>` : ''}
-                ${dt.plazo ? `<div className="bg-blue-50 text-blue-800 border border-blue-200/60 px-2.5 py-1 rounded-lg font-medium">Plazo: <b>${escapeHtml(dt.plazo)}</b></div>` : ''}
+            <div class="bg-slate-50 rounded-xl border border-blue-200 p-3 mt-2 space-y-1.5 text-xs">
+              <span class="bg-blue-100 text-blue-900 font-bold text-[10px] px-2 py-0.5 rounded uppercase border border-blue-300">
+                ${dt.id_tramite || 'Trámite TUPA'}
+              </span>
+              <h4 class="font-bold text-blue-950 text-xs mt-1">${escapeHtml(dt.nombre || '')}</h4>
+              <div class="flex flex-wrap gap-2 text-[11px] pt-1">
+                ${dt.costo ? `<span class="bg-emerald-100 text-emerald-900 px-2 py-0.5 rounded font-bold">Costo: ${escapeHtml(dt.costo)}</span>` : ''}
+                ${dt.plazo ? `<span class="bg-blue-100 text-blue-900 px-2 py-0.5 rounded font-bold">Plazo: ${escapeHtml(dt.plazo)}</span>` : ''}
               </div>
               ${reqsHtml}
             </div>
@@ -228,31 +372,28 @@
         }
 
         const botHtml = `
-          <div className="flex gap-3 text-sm items-start">
-            <div className="w-7 h-7 rounded-lg bg-slate-900 text-white flex items-center justify-center shrink-0 text-xs font-semibold shadow-xs">L</div>
-            <div className="space-y-2 max-w-xl">
-              <div className="px-4 py-3 rounded-2xl bg-white border border-slate-200/80 text-slate-800 rounded-tl-xs shadow-xs">
-                <p className="whitespace-pre-line leading-relaxed text-[13.5px]">${escapeHtml(data.mensaje || 'Información procesada.')}</p>
-              </div>
+          <div class="flex items-start space-x-2.5">
+            <div class="w-7 h-7 rounded-full bg-[#003366] text-white font-bold flex items-center justify-center text-xs shrink-0">L</div>
+            <div class="bg-white border border-gray-200 rounded-2xl rounded-tl-none p-3 shadow-2xs max-w-[85%] text-xs space-y-1">
+              <p class="text-gray-800 leading-relaxed">${escapeHtml(data.mensaje || 'Información encontrada.')}</p>
               ${extraCard}
-              <span className="text-[10px] text-slate-400 block px-1">${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
             </div>
           </div>
         `;
-        chatContainer.insertAdjacentHTML('beforeend', botHtml);
+        chatBox.insertAdjacentHTML('beforeend', botHtml);
       } catch (err) {
         document.getElementById(typingId)?.remove();
         const errHtml = `
-          <div className="flex gap-3 text-sm items-start">
-            <div className="w-7 h-7 rounded-lg bg-slate-900 text-white flex items-center justify-center shrink-0 text-xs font-semibold">L</div>
-            <div className="px-4 py-3 rounded-2xl bg-white border border-red-200 text-red-700 text-xs shadow-xs">
-              Ocurrió un error al procesar tu solicitud. Inténtalo nuevamente.
+          <div class="flex items-start space-x-2.5">
+            <div class="w-7 h-7 rounded-full bg-[#003366] text-white font-bold flex items-center justify-center text-xs shrink-0">L</div>
+            <div class="bg-red-50 border border-red-200 text-red-700 rounded-2xl rounded-tl-none p-3 shadow-2xs text-xs">
+              No se pudo obtener respuesta del servidor. Intente nuevamente.
             </div>
           </div>
         `;
-        chatContainer.insertAdjacentHTML('beforeend', errHtml);
+        chatBox.insertAdjacentHTML('beforeend', errHtml);
       }
-      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+      chatBox.scrollTop = chatBox.scrollHeight;
     }
 
     function escapeHtml(str) {
