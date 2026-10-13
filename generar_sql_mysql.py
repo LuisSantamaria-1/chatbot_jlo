@@ -9,7 +9,7 @@ import secrets
 from werkzeug.security import generate_password_hash
 
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
-CSV_PATH = os.path.join(BASE_DIR, "tramites.csv")
+CSV_PATH = os.path.join(BASE_DIR, "data", "tramites.csv")
 SQL_OUTPUT = os.path.join(BASE_DIR, "database_mysql.sql")
 
 lines = [

@@ -7,6 +7,8 @@ from backend.models.tramite import Tramite, Requisito
 from backend.models.seguridad import Usuario, Rol
 from config import CSV_TRAMITES_PATH
 
+import re
+
 def _limpiar_requisito(texto):
     """
     Limpia el texto de un requisito removiendo numeraciones iniciales
@@ -14,11 +16,7 @@ def _limpiar_requisito(texto):
     """
     if not texto:
         return ""
-    texto = texto.strip()
-    partes = texto.split(".", 1)
-    if len(partes) == 2 and partes[0].strip().isdigit():
-        return partes[1].strip()
-    return texto
+    return re.sub(r"^\s*\d+[\.\)]\s*", "", texto.strip()).strip()
 
 def poblar_base_datos(csv_path=None):
     """Lee el CSV de trámites y los inserta o actualiza en la base de datos MySQL."""

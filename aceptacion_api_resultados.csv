@@ -5,7 +5,7 @@ AC-02,requisitos para certificado de numeracion,success,T_015,0.9682,"Para el tr
 
 ¿Deseas conocer el costo o el plazo de atención de este trámite?"
 AC-03,cuanto cuesta,success,consultar_costo,0.5606,"El costo del trámite ""Certificado de Numeración Municipal"" es: S/ 90.30."
-AC-04,cuanto tiempo demora,success,consultar_plazo,0.9869,"El plazo de atención del trámite ""Certificado de Numeración Municipal"" no se encuentra disponible actualmente en el sistema. Te sugerimos acudir directamente a la municipalidad para consultar esta información."
+AC-04,cuanto tiempo demora,success,consultar_plazo,0.9869,"El plazo de atención del trámite ""Certificado de Numeración Municipal"" es: Inmediato (0 días hábiles)."
 AC-05,ola qiero un permiso para mi bodega q hago,clarification,T_003,0.5068,"No estoy 100% seguro de haberte entendido. 🤔 ¿Te refieres a los requisitos para 'Licencia provisional de funcionamiento para bodegas'? Si es así, dímelo y te paso los datos."
 AC-06,si,success,confirmacion_positiva,N/A,"¡Perfecto! Para el trámite ""Licencia provisional de funcionamiento para bodegas"" necesitas:
 - Solicitud de Licencia Provisional (Declaración Jurada).
@@ -28,12 +28,13 @@ AC-11,"no, ese no",correction,correccion_contexto,0.1839,Disculpa la confusión 
 AC-12,"no gracias, adios",despedida,despedida,0.9916,"¡De nada! Ha sido un gusto ayudarte. Si necesitas consultar otro trámite del TUPA, aquí estaré. ¡Que tengas un excelente día! ✨"
 AC-13,cual es el sueldo del alcalde,fallback,fuera_de_dominio,0.3474,"Mi especialidad es exclusivamente el TUPA de la Municipalidad (licencias, permisos, duplicados, etc.). ¿Podrías reformular tu consulta hacia algún trámite municipal?"
 AC-14,quiero saber el estado de mi expediente,fallback,fuera_de_dominio,0.5644,"Solo puedo orientarte sobre los trámites y procedimientos administrativos del TUPA de la Municipalidad Distrital de José Leonardo Ortiz (licencias comerciales, cambio de giro, duplicados, acceso a la información, etc.). Por favor, formula una consulta relacionada a trámites municipales."
-AC-15,cuanto cuesta,fallback,consultar_costo,0.5606,"Solo puedo orientarte sobre los trámites y procedimientos administrativos del TUPA de la Municipalidad Distrital de José Leonardo Ortiz (licencias comerciales, cambio de giro, duplicados, acceso a la información, etc.). Por favor, formula una consulta relacionada a trámites municipales."
-AC-16,"no me ayudas en nada, pesimo servicio",saludo,saludo,0.0833,¡Hola! 👋 Qué gusto saludarte. Soy Leonardito. ¿En qué trámite municipal te puedo orientar hoy?
-AC-17a,requisitos para acceso a la informacion publica,success,T_001,0.9286,"Para el trámite ""Acceso a la Información Pública creada u obtenida por la entidad"" necesitas:
-- que se encuentre en su posesión o bajo su control
+AC-15,cuanto cuesta,fallback,consultar_costo,0.5606,"Con gusto te indico esa información, pero por favor indícame primero de qué trámite municipal se trata."
+AC-16,"no me ayudas en nada, pesimo servicio",frustration,frustracion,0.0833,"Lamento que esto no te esté resultando útil 🙏 Mi función es acotada: solo puedo orientarte sobre trámites del TUPA municipal. Si me indicas qué trámite necesitas, con gusto te ayudo con eso."
+AC-17a,requisitos para acceso a la informacion publica,success,T_001,0.9286,"Para el trámite ""Acceso a la Información Pública creada u obtenida por la entidad que se encuentre en su posesión o bajo su control"" necesitas:
+- Solicitud presentada vía formulario o documento.
+- Indicar número y fecha de comprobante de pago.
 
 ¿Deseas conocer el costo o el plazo de atención de este trámite?"
-AC-17b,cuanto cuesta,success,consultar_costo,0.5606,"El costo del trámite ""Acceso a la Información Pública creada u obtenida por la entidad"" es: 1. Solicitud presentada vía formulario o documento. | 2. Indicar número y fecha de comprobante de pa."
-AC-17c,cuanto demora,success,consultar_plazo,0.7697,"El plazo de atención del trámite ""Acceso a la Información Pública creada u obtenida por la entidad"" es: Copia S/0.10 - CD S/1.00."
-AC-18,<b>prueba</b>,charla_casual,charla_casual,0.0832,"¡Todo excelente! 🤖 Soy un asistente enfocado en trámites municipales, así que no puedo charlar de otros temas, pero con gusto te ayudo si tienes alguna consulta del TUPA."
+AC-17b,cuanto cuesta,success,consultar_costo,0.5606,"El costo del trámite ""Acceso a la Información Pública creada u obtenida por la entidad que se encuentre en su posesión o bajo su control"" es: Copia S/0.10 - CD S/1.00."
+AC-17c,cuanto demora,success,consultar_plazo,0.7697,"El plazo de atención del trámite ""Acceso a la Información Pública creada u obtenida por la entidad que se encuentre en su posesión o bajo su control"" es: 10 días hábiles."
+AC-18,<b>prueba</b>,fallback,charla_casual,0.0832,"Solo puedo orientarte sobre los trámites y procedimientos administrativos del TUPA de la Municipalidad Distrital de José Leonardo Ortiz (licencias comerciales, cambio de giro, duplicados, acceso a la información, etc.). Por favor, formula una consulta relacionada a trámites municipales."

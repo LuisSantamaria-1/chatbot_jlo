@@ -224,67 +224,138 @@ def test_api_chat_macrointencion_clarification(client, registrar):
 
 
 # ==============================================================================
-# PRUEBAS DE REGRESIÓN: T_001, T_015, FRUSTRACIÓN Y ESCAPE HTML
+# 5. PRUEBAS DE ACEPTACIÓN Y CALIDAD DE DATOS (FASE RC)
 # ==============================================================================
-def test_regresion_t001_columnas_correctas(client, registrar):
-    """Regresión T_001: verifica costo y plazo no desplazados y requisitos íntegros."""
+def test_calidad_datos_tramites_csv_y_bd(registrar):
+    """(a) Calidad de datos: código T_XXX único, 40 trámites, sin requisitos vacíos, sin residuales y sincronía total CSV-BD."""
+    import csv
+    import re
+    from config import CSV_TRAMITES_PATH
+    from backend.models import Tramite
+
+    with open(CSV_TRAMITES_PATH, "r", encoding="utf-8") as f:
+        csv_rows = list(csv.DictReader(f))
+
+    assert len(csv_rows) == 40, f"CSV debe tener exactamente 40 trámites (tiene {len(csv_rows)})"
+
+    with app.app_context():
+        bd_tramites = Tramite.query.all()
+        assert len(bd_tramites) == 40, f"BD debe tener exactamente 40 trámites (tiene {len(bd_tramites)})"
+        bd_map = {t.id_tramite: t for t in bd_tramites}
+
+        codigos_csv = set()
+        patron_codigo = re.compile(r"^T_\d{3}$")
+        patron_residual = re.compile(r"^\s*\d+[\.\)]")
+
+        for r in csv_rows:
+            id_t = r["ID_Tramite"].strip()
+            assert patron_codigo.match(id_t), f"Código inválido en CSV: {id_t}"
+            assert id_t not in codigos_csv, f"Código duplicado en CSV: {id_t}"
+            codigos_csv.add(id_t)
+
+            reqs_csv = [x.strip() for x in r["Requisitos"].split("|") if x.strip()]
+            assert len(reqs_csv) > 0, f"Trámite {id_t} no tiene requisitos en CSV"
+            for req in reqs_csv:
+                assert not patron_residual.match(req), f"Requisito con numeración residual en CSV ({id_t}): {req}"
+
+            t_bd = bd_map.get(id_t)
+            assert t_bd is not None, f"Trámite {id_t} no existe en BD"
+            assert t_bd.nombre == r["Nombre"].strip(), f"Nombre difiere en {id_t}"
+            assert t_bd.costo == r["Costo"].strip(), f"Costo difiere en {id_t}"
+            assert t_bd.plazo == r["Plazo"].strip(), f"Plazo difiere en {id_t}"
+
+            reqs_bd = [req_obj.descripcion for req_obj in t_bd.requisitos]
+            assert len(reqs_bd) == len(reqs_csv), f"Cantidad de requisitos difiere en {id_t}"
+            for req_bd in reqs_bd:
+                assert not patron_residual.match(req_bd), f"Requisito con numeración residual en BD ({id_t}): {req_bd}"
+            assert reqs_bd == reqs_csv, f"Requisitos difieren entre CSV y BD en {id_t}"
+
+    registrar(
+        "NUEVA_01", "calidad_datos", "Validación integral CSV vs BD",
+        "40 trámites, códigos T_XXX únicos, sin residuales y 100% sincronizados",
+        "40 trámites validados exitosamente en CSV y BD",
+        1.0, "PASO"
+    )
+
+
+def test_t001_costo_y_plazo_correctos(client, registrar):
+    """(b) Verifica que el costo y plazo de T_001 salgan correctos y sin columnas desplazadas."""
     r1 = client.post("/api/chat", json={"mensaje": "requisitos para acceso a la informacion publica"})
     d1 = r1.get_json()
     assert r1.status_code == 200
     assert d1.get("id_tramite") == "T_001"
     assert len(d1.get("requisitos", [])) == 2
+    for req in d1.get("requisitos", []):
+        assert not req.startswith("1.") and not req.startswith("2.")
 
     r2 = client.post("/api/chat", json={"mensaje": "cuanto cuesta"})
     d2 = r2.get_json()
     assert r2.status_code == 200
     assert d2.get("costo") == "Copia S/0.10 - CD S/1.00"
+    assert "Copia S/0.10 - CD S/1.00" in d2.get("mensaje", "")
     assert "1. Solicitud" not in d2.get("mensaje", "")
 
     r3 = client.post("/api/chat", json={"mensaje": "cuanto demora"})
     d3 = r3.get_json()
     assert r3.status_code == 200
     assert d3.get("plazo") == "10 días hábiles"
+    assert "10 días hábiles" in d3.get("mensaje", "")
     assert "Copia S/0.10" not in d3.get("mensaje", "")
 
     registrar(
-        "REG_01", "regresion_t001", "T_001: seguimiento costo y plazo sin columnas desplazadas",
+        "NUEVA_02", "t001_corregido", "T_001: seguimiento costo y plazo correcto",
         "costo='Copia S/0.10 - CD S/1.00', plazo='10 días hábiles'",
         f"costo='{d2.get('costo')}', plazo='{d3.get('plazo')}'",
         1.0, "PASO"
     )
 
 
-def test_regresion_t015_plazo_cero_inmediato(client, registrar):
-    """Regresión T_015: plazo '0 días hábiles' responde 'Inmediato' en lugar de no disponible."""
-    r1 = client.post("/api/chat", json={"mensaje": "requisitos para certificado de numeracion"})
-    assert r1.status_code == 200
-
+def test_plazo_t015_se_muestra_como_dato_valido(client, registrar):
+    """(c) Verifica que el plazo de T_015 se muestre como dato válido ('Inmediato (0 días hábiles)')."""
+    client.post("/api/chat", json={"mensaje": "requisitos para certificado de numeracion"})
     r2 = client.post("/api/chat", json={"mensaje": "cuanto tiempo demora"})
     d2 = r2.get_json()
     assert r2.status_code == 200
-    assert "Inmediato" in d2.get("mensaje", "")
+    assert "Inmediato (0 días hábiles)" in d2.get("mensaje", "")
     assert "no se encuentra disponible" not in d2.get("mensaje", "")
 
     registrar(
-        "REG_02", "regresion_t015", "T_015: plazo 0 días hábiles responde Inmediato",
-        "Mensaje contiene 'Inmediato' y no 'no se encuentra disponible'",
+        "NUEVA_03", "plazo_inmediato", "T_015 plazo inmediato válido",
+        "Mensaje contiene 'Inmediato (0 días hábiles)' y no 'no disponible'",
         f"mensaje='{d2.get('mensaje')}'",
         1.0, "PASO"
     )
 
 
-def test_regresion_frustracion_activa_empatia(client, registrar):
-    """Regresión Frustración: 'no me ayudas en nada, pesimo servicio' activa empatía y no saludo."""
+def test_mensaje_frustracion_recibe_empatia(client, registrar):
+    """(d) Verifica que el mensaje de frustración reciba respuesta de empatía."""
     r = client.post("/api/chat", json={"mensaje": "no me ayudas en nada, pesimo servicio"})
     d = r.get_json()
     assert r.status_code == 200
     assert d.get("status") == "frustration"
     assert d.get("intent") == "frustracion"
-    assert "¡Buenas! Soy Leonardito" not in d.get("mensaje", "")
+    assert "Soy Leonardito" not in d.get("mensaje", "")
 
     registrar(
-        "REG_03", "regresion_frustracion", "Mensaje de queja activa empatía en lugar de saludo",
+        "NUEVA_04", "empatia_frustracion", "Queja ciudadana activa empatía",
         "status='frustration', intent='frustracion'",
+        f"status='{d.get('status')}', intent='{d.get('intent')}'",
+        1.0, "PASO"
+    )
+
+
+def test_saludo_baja_confianza_no_se_responde_como_saludo(client, registrar):
+    """(e) Verifica que un saludo con baja confianza (< 0.35) no se responda como saludo y vaya a fallback."""
+    r = client.post("/api/chat", json={"mensaje": "<b>prueba</b>"})
+    d = r.get_json()
+    assert r.status_code == 200
+    assert d.get("status") == "fallback"
+    assert d.get("status") != "saludo"
+    assert "Soy Leonardito" not in d.get("mensaje", "")
+
+    registrar(
+        "NUEVA_05", "baja_confianza_fallback", "Entrada baja confianza no responde como saludo",
+        "status='fallback', no saludo",
         f"status='{d.get('status')}', intent='{d.get('intent')}'",
         1.0, "PASO"
     )
@@ -302,7 +373,6 @@ def test_regresion_escape_html_xss(client, registrar):
     assert "&gt;" in html
     assert "escapeHTML(texto)" in html
 
-    # Verificar que carga maliciosa no genere excepción interna
     r_chat = client.post("/api/chat", json={"mensaje": "<script>alert('xss')</script>"})
     assert r_chat.status_code == 200
 

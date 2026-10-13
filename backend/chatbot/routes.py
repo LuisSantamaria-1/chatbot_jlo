@@ -206,8 +206,12 @@ def _procesar_mensaje_chat():
                 "mensaje": random.choice(MENSAJES_EMPATIA_FALLBACK),
             }), 200
 
+        # Umbral mínimo exigido para intenciones conversacionales (saludo, despedida, charla_casual)
+        # Se toma UMBRAL_DUDA_MIN (0.35) como referencia de corte mínimo admisible (AC-16 / RF04)
+        UMBRAL_CONVERSACIONAL_MIN = UMBRAL_DUDA_MIN
+
         # --- Caso 1: saludo -----------------------------------------------
-        if intent_predicho == "saludo":
+        if intent_predicho == "saludo" and confianza >= UMBRAL_CONVERSACIONAL_MIN:
             session.pop("tramite_actual", None)
             session.pop("tramite_pendiente", None)
             session.pop("macro_pendiente", None)
@@ -232,7 +236,7 @@ def _procesar_mensaje_chat():
                 }), 200
 
         # --- Caso 1b: despedida ---------------------------------------------
-        if intent_predicho == "despedida":
+        if intent_predicho == "despedida" and confianza >= UMBRAL_CONVERSACIONAL_MIN:
             session.pop("tramite_actual", None)
             session.pop("tramite_pendiente", None)
             return jsonify({
@@ -243,7 +247,7 @@ def _procesar_mensaje_chat():
             }), 200
 
         # --- Caso 1c: charla casual (small talk) ---------------------------
-        if intent_predicho == "charla_casual":
+        if intent_predicho == "charla_casual" and confianza >= UMBRAL_CONVERSACIONAL_MIN:
             return jsonify({
                 "status": "charla_casual",
                 "intent": "charla_casual",
@@ -271,8 +275,8 @@ def _procesar_mensaje_chat():
                     plazo_str = (tramite.plazo or "").strip()
                     if not plazo_str or plazo_str.lower() == "no especificado":
                         mensaje_resp = f"El plazo de atención del trámite \"{tramite.nombre}\" no se encuentra disponible actualmente en el sistema. Te sugerimos acudir directamente a la municipalidad para consultar esta información."
-                    elif plazo_str.startswith("0 ") or plazo_str == "0":
-                        mensaje_resp = f"El plazo de atención del trámite \"{tramite.nombre}\" es: Inmediato."
+                    elif plazo_str.startswith("0 ") or plazo_str == "0" or ("aprobaci" in plazo_str.lower() and "autom" in plazo_str.lower()):
+                        mensaje_resp = f"El plazo de atención del trámite \"{tramite.nombre}\" es: Inmediato ({tramite.plazo})."
                     else:
                         mensaje_resp = f"El plazo de atención del trámite \"{tramite.nombre}\" es: {tramite.plazo}."
 
@@ -293,6 +297,15 @@ def _procesar_mensaje_chat():
                     },
                     "mensaje": mensaje_resp,
                 }), 200
+
+        # --- Caso 1d-bis: pregunta de costo o plazo sin trámite activo en sesión ---
+        if not session.get("tramite_actual") and (subintencion_activa or intent_predicho in INTENTS_SEGUIMIENTO):
+            return jsonify({
+                "status": "fallback",
+                "intent": intent_predicho if intent_predicho in INTENTS_SEGUIMIENTO else f"consultar_{subintencion_activa}",
+                "confianza": round(confianza, 4),
+                "mensaje": "Con gusto te indico esa información, pero por favor indícame primero de qué trámite municipal se trata."
+            }), 200
 
         # --- Caso 2: fuera de dominio o confianza insuficiente (RF04) ------
         if intent_predicho == "fuera_de_dominio" or round(confianza, 2) < UMBRAL_CONFIANZA:
@@ -382,9 +395,9 @@ def _procesar_mensaje_chat():
                     "Te sugerimos acudir directamente a la municipalidad para consultar esta información. "
                     "¿Te puedo ayudar con algo más?"
                 )
-            elif plazo_str.startswith("0 ") or plazo_str == "0":
+            elif plazo_str.startswith("0 ") or plazo_str == "0" or ("aprobaci" in plazo_str.lower() and "autom" in plazo_str.lower()):
                 mensaje_resp = (
-                    f"El plazo de atención para {tramite.nombre} es: Inmediato. "
+                    f"El plazo de atención para {tramite.nombre} es: Inmediato ({tramite.plazo}). "
                     "¿Te puedo ayudar con algo más?"
                 )
             else:
