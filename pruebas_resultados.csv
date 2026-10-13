@@ -1,0 +1,99 @@
+id,grupo,entrada,esperado,obtenido,confianza,estado
+ADM_01,autenticacion,admin/[ENV_PASSWORD],HTTP 200 status=success,HTTP 200 status=success,1.0000,PASO
+ADM_02,seguridad_credenciales,admin/[CLAVE_ANTIGUA],HTTP 401 rechazo por contraseña antigua,HTTP 401 status=error,1.0000,PASO
+ADM_03,seguridad_credenciales,municipalidad/mdjlo2026 (backdoor),HTTP 401 rechazo por credencial fija,HTTP 401 status=error,1.0000,PASO
+ADM_04,seguridad_credenciales,admin_jlo (usuario eliminado),HTTP 401 rechazo por usuario eliminado,HTTP 401 status=error,1.0000,PASO
+ADM_05,autenticacion,admin/clave_erronea,HTTP 401 status=error,HTTP 401 status=error,1.0000,PASO
+ADM_06,autenticacion,usuario_fantasma/password_xyz,HTTP 401 status=error,HTTP 401 status=error,1.0000,PASO
+ADM_07,proteccion_rutas,GET /api/admin/tramites (sin sesion),HTTP 401 No autorizado,HTTP 401 status=error,1.0000,PASO
+ADM_08,proteccion_rutas,POST /api/admin/tramites (sin sesion),HTTP 401 No autorizado,HTTP 401 status=error,1.0000,PASO
+ADM_09,proteccion_rutas,PUT /api/admin/tramites/T_001 (sin sesion),HTTP 401 No autorizado,HTTP 401 status=error,1.0000,PASO
+ADM_10,proteccion_rutas,DELETE /api/admin/tramites/T_001 (sin sesion),HTTP 401 No autorizado,HTTP 401 status=error,1.0000,PASO
+ADM_11,acceso_autorizado,GET /api/admin/tramites (con sesion),HTTP 200 total=40 tramites,HTTP 200 total=40 tramites,1.0000,PASO
+ADM_12,gestion_sesion,POST /api/admin/logout y posterior GET /api/admin/tramites,HTTP 200 logout y HTTP 401 posterior,"Logout=200, Tramites=401",1.0000,PASO
+ADM_13,seguridad_cookie,Cookie mdjlo_session permanente,Atributos Expires/Max-Age y HttpOnly presentes,"Expires/Max-Age=True, HttpOnly=True",1.0000,PASO
+ADM_14,cifrado_hash,password_hash != texto plano,Algoritmo scrypt:32768:8:1$ verificado,Prefijo scrypt:32768:8:1... len=162,1.0000,PASO
+ADM_15,validacion_crud,POST con id_tramite='INVALIDO_123',HTTP 400 formato T_XXX,HTTP 400 El código del trámite debe cumplir con el formato T_XXX (ejemplo: T_001).,1.0000,PASO
+ADM_16,validacion_crud,POST con id_tramite existente 'T_001',HTTP 409 Conflict,HTTP 409 El código de trámite 'T_001' ya se encuentra registrado.,1.0000,PASO
+ADM_17,validacion_crud,POST con nombre len=256,HTTP 400 excede 255 caracteres,HTTP 400 El nombre del trámite no puede exceder los 255 caracteres.,1.0000,PASO
+ADM_18,validacion_crud,POST con requisitos=[],HTTP 400 al menos un requisito,HTTP 400 El trámite debe contener al menos un requisito no vacío.,1.0000,PASO
+ADM_19,validacion_crud,POST con costo='' y plazo='',costo='No especificado' y plazo='No especificado',"costo='No especificado', plazo='No especificado'",1.0000,PASO
+ADM_20,validacion_crud,PUT con requisitos=[],HTTP 400 y requisitos previos intactos (2),HTTP 400 requisitos_restantes=2,1.0000,PASO
+ADM_21,validacion_crud,PUT y DELETE en T_998 inexistente,HTTP 404 en ambas operaciones,"PUT=404, DELETE=404",1.0000,PASO
+ADM_22,crud_autorizado,POST/PUT/DELETE tramite prueba con sesion,HTTP 201/200/200 y catalogo preservado en 40 tramites,Conteo final=40 tramites reales intactos,1.0000,PASO
+ADM_23,resiliencia_bd,Simulación caída de BD en /api/admin/*,HTTP 500 con mensaje genérico seguro sin str(e),HTTP 500 mensaje='Ocurrió un error interno. Intenta nuevamente más tarde.',1.0000,PASO
+ADM_24,resiliencia_bd,POST /api/admin/login con BD desconectada,HTTP 503 con 'Servicio no disponible. Intenta nuevamente más tarde.',HTTP 503 mensaje='Servicio no disponible. Intenta nuevamente más tarde.',1.0000,PASO
+ADM_25,configuracion_pool,Verificar engine pool options,pool_pre_ping=True y pool_recycle=280,"config={'pool_pre_ping': True, 'pool_recycle': 280}, engine_pre_ping=True, engine_recycle=280",1.0000,PASO
+ADM_26,configuracion_seguridad,Valor por defecto de debug sin FLASK_DEBUG,debug=False,debug=False,1.0000,PASO
+ADM_27,seguridad_xss,Trámite con carga <script>alert(1)</script>,"Guardado íntegro en BD, listado en API y eliminado preservando 40 trámites",HTTP 201 nombre=<script>alert(1)</script>,1.0000,PASO
+ADM_28,seguridad_secret_key,create_app() en prod sin SECRET_KEY,RuntimeError indicando cómo generar la clave,"Lanzó RuntimeError: True, msg='SECRET_KEY no está configurada en las variables de ento...'",1.0000,PASO
+ADM_29,seguridad_cookie,Evaluación COOKIE_SECURE (true/false),SESSION_COOKIE_SECURE True con 'true' y False con 'false',"true=True, false=False",1.0000,PASO
+ADM_30,rate_limiting_login,6 intentos fallidos seguidos y posterior reset,HTTP 429 al 6to intento con Retry-After y reinicio,"r6_code=429, retry_after=299, r_ok=200",1.0000,PASO
+ADM_31,cabeceras_seguridad,Inspección de cabeceras HTTP de respuesta,"X-Content-Type-Options, X-Frame-Options, Referrer-Policy, Permissions-Policy, Cache-Control, CSP","nosniff=nosniff, frame=SAMEORIGIN, cache_admin=no-store, no-cache, must-revalidate, max-age=0",1.0000,PASO
+ADM_32,compatibilidad_csp,GET / y GET /admin con directivas CSP,HTTP 200 en ambas páginas y directivas compatibles con Tailwind y estilos inline,"index_code=200, admin_code=200",1.0000,PASO
+CHAT_D01,contexto_dialogo,confirmacion_si,status=success,status=success,1.0000,PASO
+CHAT_D02,contexto_dialogo,confirmacion_no,status=clarification_rejected,status=clarification_rejected,1.0000,PASO
+CHAT_D03,contexto_dialogo,"no, ese no (con tramite activo)",status=correction,status=correction,0.1839,PASO
+CHAT_D04,contexto_dialogo,"no gracias, adios (con tramite activo)",status=despedida,status=despedida,0.9916,PASO
+CHAT_D05,contexto_dialogo,opcion 'a' en macrointencion,"status=success, id=T_009","status=success, id=T_009",1.0000,PASO
+CHAT_D06,contexto_dialogo,no se en macrointencion,status=derivacion,status=derivacion,1.0000,PASO
+CHAT_E01,endpoint_chat,hola buenos dias,status=saludo,status=saludo,0.9959,PASO
+CHAT_E02,endpoint_chat,requisitos para certificado de numeracion,status=success,status=success,0.9658,PASO
+CHAT_E03,endpoint_chat,cuanto cuesta (seguimiento),status=success con costo,"status=success, costo=S/ 90.30",0.5606,PASO
+CHAT_E04,endpoint_chat,cuanto tiempo demora (seguimiento),status=success con plazo,"status=success, plazo=0 días hábiles",0.9869,PASO
+CHAT_E05,endpoint_chat,cual es el sueldo del alcalde,status=fallback,status=fallback,0.3474,PASO
+CHAT_E06,endpoint_chat,mensaje vacio,status=fallback (400),status=fallback (400),0.0000,PASO
+CHAT_E07,endpoint_chat,payload sin 'mensaje',status=error (400),status=error (400),0.0000,PASO
+CHAT_E08,endpoint_chat,como te llamas,status=charla_casual,status=charla_casual,0.9232,PASO
+CHAT_E09,endpoint_chat,ola qiero un permiso para mi bodega q hago,status=clarification,status=clarification,0.5068,PASO
+CHAT_E10,endpoint_chat,licencia,status=clarification,status=clarification,0.9936,PASO
+LOG_01,registro_conversaciones,requisitos para certificado de numeracion,"ConversacionLog creado (T_015, success)","id=19427, intent=T_015, tipo=success",1.0000,PASO
+LOG_02,registro_conversaciones,mensaje_largo_600_caracteres,"sesion_id sha256 64 chars, len<=500, latencia>=0","len(sesion)=64, len(msg)=500, latencia=7ms",1.0000,PASO
+LOG_03,tolerancia_fallos,falla en commit de ConversacionLog,HTTP 200 status=saludo sin interrupción,HTTP 200 status=saludo,1.0000,PASO
+LOG_04,proteccion_rutas,GET /api/admin/conversaciones sin sesion,HTTP 401 No autorizado,HTTP 401 status=error,1.0000,PASO
+LOG_05,admin_conversaciones,GET /api/admin/conversaciones?page=1&limit=10,HTTP 200 status=success con lista y metadatos,"HTTP 200 status=success, total=24",1.0000,PASO
+NLP_A01,preprocesamiento,HOLA BUENOS DIAS,hola buenos dias,hola buenos dias,1.0000,PASO
+NLP_A02,preprocesamiento,trámite de numeración,tramite de numeracion,tramite de numeracion,1.0000,PASO
+NLP_A03,preprocesamiento,"¡hola!, ¿cuál es el costo?",hola cual es el costo,hola cual es el costo,1.0000,PASO
+NLP_A04,preprocesamiento,kiero mi permiso,quiero mi permiso,quiero mi permiso,1.0000,PASO
+NLP_A05,preprocesamiento,q requisitos piden,que requisitos piden,que requisitos piden,1.0000,PASO
+NLP_A06,preprocesamiento,sacar lisencia municipal,sacar licencia municipal,sacar licencia municipal,1.0000,PASO
+NLP_A07,preprocesamiento,necesito altoke mi constancia,necesito rapido mi constancia,necesito rapido mi constancia,1.0000,PASO
+NLP_A08,preprocesamiento,como hago pa tramitar,como hago para tramitar,como hago para tramitar,1.0000,PASO
+NLP_A09,preprocesamiento,kiero lisencia altoke pa mi tienda,quiero licencia rapido para mi tienda,quiero licencia rapido para mi tienda,1.0000,PASO
+NLP_A10,preprocesamiento,ayuda xfa,ayuda por favor,ayuda por favor,1.0000,PASO
+NLP_B01,clasificacion_intenciones,que tal como te va,saludo,saludo,0.3950,PASO
+NLP_B02,clasificacion_intenciones,nos vemos que te vaya bien,despedida,despedida,0.8978,PASO
+NLP_B03,clasificacion_intenciones,tienes amigos robots,charla_casual,charla_casual,0.9271,PASO
+NLP_B04,clasificacion_intenciones,dime la tarifa y precio,consultar_costo,consultar_costo,0.6931,PASO
+NLP_B05,clasificacion_intenciones,en cuantos dias me responden,consultar_plazo,consultar_plazo,0.9147,PASO
+NLP_B06,clasificacion_intenciones,a que hora abren el cine en chiclayo,fuera_de_dominio,fuera_de_dominio,0.9768,PASO
+NLP_B07,clasificacion_intenciones,quiero tramitar el cese definitivo de mi negocio,consultar_gestion_licencia,consultar_gestion_licencia,0.9400,PASO
+NLP_B08,clasificacion_intenciones,como hago para vender mi tienda y pasarle la licencia al nuevo comprador,consultar_gestion_licencia,consultar_gestion_licencia,0.9632,PASO
+NLP_B09,clasificacion_intenciones,se extravio la tarjeta de circulacion de mi mototaxi,consultar_tramite_vehicular,consultar_tramite_vehicular,0.9493,PASO
+NLP_B10,clasificacion_intenciones,quiero empadronar mi moto recien comprada,consultar_tramite_vehicular,consultar_tramite_vehicular,0.1763,PASO
+NLP_B11,clasificacion_intenciones,solicito incrementar el numero de unidades de mi empresa de mototaxis,consultar_gestion_flota_vehicular,consultar_gestion_flota_vehicular,0.5814,PASO
+NLP_B12,clasificacion_intenciones,nuestra asociacion de mototaxistas necesita permiso para un nuevo paradero,consultar_gestion_flota_vehicular,consultar_gestion_flota_vehicular,0.6528,PASO
+NLP_B13,clasificacion_intenciones,como solicito la conexion de agua potable para una persona juridica,consultar_conexion_agua,consultar_conexion_agua,0.9680,PASO
+NLP_B14,clasificacion_intenciones,que piden para autorizarme romper la pista para instalar desague,consultar_conexion_agua,consultar_conexion_agua,0.6835,PASO
+NLP_B15,clasificacion_intenciones,iniciar tramite de separacion mutua y divorcio rapido,consultar_divorcio,consultar_divorcio,0.5872,PASO
+NLP_B16,clasificacion_intenciones,ya pasaron dos meses de mi separacion quiero el divorcio ulterior,consultar_divorcio,consultar_divorcio,0.7629,PASO
+NLP_B17,clasificacion_intenciones,requisitos para casarme por civil un dia sabado fuera del municipio,consultar_matrimonio_civil,consultar_matrimonio_civil,0.9730,PASO
+NLP_B18,clasificacion_intenciones,matrimonio civil comunitario de mi hermano,consultar_matrimonio_civil,consultar_matrimonio_civil,0.9964,PASO
+NLP_B19,clasificacion_intenciones,deseo copia certificada de los acuerdos de concejo del mes pasado,T_001,T_001,0.5233,PASO
+NLP_B20,clasificacion_intenciones,solicito acceso a la informacion publica sobre el presupuesto municipal,T_001,T_001,0.8596,PASO
+NLP_B21,clasificacion_intenciones,tengo una bodeguita en mi casa y quiero abrirla con permiso provisional,T_003,T_003,0.7654,PASO
+NLP_B22,clasificacion_intenciones,licencia temporal para una bodega de abarrotes de barrio,T_003,T_003,0.8016,PASO
+NLP_B23,clasificacion_intenciones,requisitos para habilitacion urbana de predio menor de cinco hectareas,T_007,T_007,0.9328,PASO
+NLP_B24,clasificacion_intenciones,aprobacion municipal de proyecto de habilitacion urbana modal B,T_007,T_007,0.9230,PASO
+NLP_B25,clasificacion_intenciones,quiero dividir mi lote urbano en dos partes para mis hijos,T_008,T_008,0.9099,PASO
+NLP_B26,clasificacion_intenciones,regularizacion de subdivision de terreno urbano sin obras,T_008,T_008,0.9476,PASO
+NLP_B27,clasificacion_intenciones,necesito que la municipalidad le asigne numero de puerta a mi casa,T_015,T_015,0.6569,PASO
+NLP_B28,clasificacion_intenciones,certificado para saber la numeracion oficial de mi inmueble,T_015,T_015,0.7859,PASO
+NLP_B29,clasificacion_intenciones,visacion de planos para pedir luz electrica en mi lote de posesion,T_080,T_080,0.7160,PASO
+NLP_B30,clasificacion_intenciones,constancia y plano visado para tramite de electrificacion en asentamiento humano,T_080,T_080,0.4388,PASO
+NLP_C01,reglas_subintencion,cuantos dias demora,plazo,plazo,1.0000,PASO
+NLP_C02,reglas_subintencion,cual es el horario de atencion de mesa de partes,None,None,1.0000,PASO
+NLP_C03,reglas_umbrales,conf=0.45,en_zona_duda=True,en_zona_duda=True,0.4500,PASO
+NLP_C04,reglas_umbrales,conf=0.62,es_fallback=True,es_fallback=True,0.6200,PASO
+NLP_C05,reglas_umbrales,conf=0.25,menor_a_minimo=True,menor_a_minimo=True,0.2500,PASO

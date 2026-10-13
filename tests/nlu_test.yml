@@ -3,169 +3,292 @@ version: "3.1"
 nlu:
 - intent: T_001
   examples: |
-    - requisitos para solicitar acceso a la informacion publica
-    - quisiera informarme sobre como pedir copias certificadas
-    - necesito que me den el reporte de gastos del año pasado
-    - req para sacar copia de una ordenanza amigo
-    - como solicito la resolucion de alcaldia amigo
-    - quiero informacion sobre normas municipales
+    - como hago valer mi derecho de acceso a la info
+    - req para sacar copia de una ordenanza
+    - quiero sacar copias de un tramite pasado
+    - quiero el historial de licencias otorgadas en mi cuadra
+    - cuanto cobran por darme copias certificadas
+    - quiero copia del reglamento interno de la municipalidad
     - q formato lleno para pedir informacion
     - info para pedir papeles a mesa de partes
-    - hay algun formulario para pedir informacion presupuestal
-    - quiero el historial de licencias otorgadas en mi cuadra
-    - quiero sacar copias de un tramite pasado
-    - q debo presentar para pedir info a la muni
-- intent: T_002
-  examples: |
-    - voy a cambiar el rubro de mi negocio q tramite hago
-    - mi negocio de comida rapida ahora sera una lavanderia
-    - tramite para vender otros productos en mi local por favor
-    - tengo pensado cambiar el tipo de negocio que tengo
-    - requisitos para variar el giro de mi negocio
-    - quisiera saber que tramite hago para cambiar de giro
-    - voy a poner otro negocio en el mismo local por favor
-    - como modifico el giro de mi negocio
-    - cuanto esta el tramite de cambio de giro
-    - nesecito licencia por cambio de giro
-    - q documentos piden pa cambiar el giro de mi empresa
-    - permiso para cambiar de giro en la muni amigo
+    - estoy pensando en pedir una copia de un documento municipal
 - intent: T_003
   examples: |
-    - cuanto cuesta la licencia pa una jugueria
-    - quisiera saber que se necesita para abrir un negocio pequeño
-    - kiero licencia de funcionamiento para mi tienda
-    - req para licencia de mi negocio pequeño amigo
-    - requisitos para abrir un minimarket
-    - requisitos pa licencia de funcionamiento basica
-    - permiso municipal para local de riesgo bajo
-    - como obtengo licencia para un local chiquito
-    - requisitos para abrir un minimarket por favor
-    - kiero licencia de funcionamiento para mi tienda amigo
-    - cuanto cuesta la licencia pa una jugueria por favor
-    - quiero abrir una libreria q licencia saco por favor
-- intent: T_004
-  examples: |
-    - quiero el permiso rapido para mi bodeguita por favor
-    - q documentos presento para licencia provisional de bodega amigo
-    - como formalizo mi bodega con la nueva ley
-    - necesito legalizar rapido mi bodega antes de fin de mes
-    - licencia de funcionamiento provisional pa bodeguitas
+    - info sobre licencia provisional para bodegueros
     - quiero sacar permiso de bodega temporal
-    - quiero abrir una bodega y necesito los requisitos minimos
-    - info sobre licencia provisional para bodegueros amigo
-    - req para poner una bodega en mi jato por favor
-    - cuanto cuesta la licencia para bodega
-    - me dan licencia rapida si abro una bodega
-    - me gustaria saber que necesito para abrir una bodega
-- intent: T_005
+    - q formato lleno para licencia provisional de bodega
+    - como saco licencia provisional pa bodega
+    - quiero abrir una bodega en mi cochera
+    - kiero el permiso de bodega rapido
+    - licencia de funcionamiento provisional pa bodeguitas
+    - estoy pensando en abrir una bodega que necesito
+    - precio de la bodega
+- intent: T_007
   examples: |
-    - donde tramito el duplicado de mi licencia de funcionamiento
-    - cuanto cuesta el duplicado de la licencia amigo
-    - como saco copia de mi licencia q se extravio amigo
-    - necesito una copia de mi licencia de funcionamiento por favor
-    - como hago si se me quemo mi licencia del local
-    - se daño mi certificado de licencia quiero otro
-    - me robaron mi carton de licencia q hago
-    - req para sacar duplicado de licencia
-    - me robaron los papeles del negocio quiero duplicado
-    - quisiera saber que necesito si perdi mi licencia
-    - necesito una copia de mi licencia de funcionamiento
-    - me cambie de casa y no encuentro los papeles de mi licencia
-- intent: T_010
+    - cuanto cuesta el permiso para un cartel comercial
+    - requisitos de habilitacion urbana para predios que miden tres hectareas
+    - requisitos para que el municipio apruebe mi proyecto de habilitacion urbana tipo b
+    - que necesito para colgar un aviso publicitario en mi fachada
+    - como tramito la habilitacion urbana para un terreno de cuatro hectareas
+    - cual es el plazo para el permiso de publicidad exterior
+    - voy a instalar un letrero luminoso que tramite necesito
+    - necesito permiso para un aviso pegado a la pared de mi tienda
+    - quiero poner un cartel en mi tienda
+    - quiero poner un toldo con publicidad en la entrada de mi local
+- intent: T_008
   examples: |
-    - como inicio el tramite de edificacion modalidad a amigo
-    - hola req para licencia de obra menor por favor
-    - estaba pensando en construir mi casa este año
-    - requisitos para licencia de construccion modalidad a amigo
-    - quiero hacer una terraza nueva en mi azotea
-    - voy a levantar una pared de contencion en mi terreno
-    - requisitos para modalidad A de edificacion
-    - quiero saber los requisitos para edificar un local comercial pequeño
-    - tramites para edificacion tipo a
-    - licencia de edificacion a porfa por favor
-    - informacion sobre la licencia de edificacion modalidad a por favor
-    - necesito iniciar el tramite de licencia de edificacion
+    - quiero rectificar los linderos de mi terreno
+    - voy a corregir el area de mi terreno en registros publicos
+    - procedimiento para aprobacion de subdivision de lote urbano municipal
+    - requisitos para plano de lotizacion visado
+    - necesito visar el plano de manzaneo de mi lote
+    - como hago para dividir mi predio urbano legalmente ante el municipio
+- intent: T_013
+  examples: |
+    - necesito el reconocimiento municipal de mi junta directiva vecinal
+    - quiero inscribir mi junta vecinal en la municipalidad
+    - quiero formalizar mi junta vecinal ante la municipalidad
+    - que tramite hago para que reconozcan mi junta vecinal
+- intent: T_014
+  examples: |
+    - quiero conducir dos puestos en el mercado
+    - necesito la declaracion jurada de no tener mas de dos puestos
+    - como obtengo un espacio de venta en el mercado
+    - requisitos para renovar mi puesto en el mercado
+- intent: T_015
+  examples: |
+    - que tramite hago para tener numero de puerta oficial
+    - como saco el numero oficial de mi predio
+    - necesito el certificado de numeracion para escriturar mi casa
+    - necesito el certificado de numeracion de mi casa
+- intent: T_023
+  examples: |
+    - que necesito para inscribir a mi perro normal
+    - necesito inscribir a mi perro mestizo
+    - documentos para el registro canino municipal
+    - requisitos para registrar mi mascota en la muni
+- intent: T_024
+  examples: |
+    - que piden para perros potencialmente peligrosos
+    - como registro a mi dogo argentino de raza peligrosa
+    - como registro a mi pitbull en la municipalidad
+    - requisitos aptitud psicologica dueño de can peligroso
+- intent: T_027
+  examples: |
+    - como se si mi negocio no esta prohibido en esa zonificacion
+    - requisitos para saber que actividades se permiten en un local
+    - quiero saber si mi negocio de comida esta permitido en esa avenida
+    - cuanto cuesta verificar si mi giro es compatible con la zona
+    - requisitos para el papel de compatibilidad antes de firmar el alquiler
+    - como confirmo si mi negocio no esta prohibido en esa cuadra
+- intent: T_028
+  examples: |
+    - requisitos para el certificado de salubridad de mi restaurante
+    - necesito el certificado de fumigacion para mi local
+    - requisitos para la certificacion sanitaria municipal
+    - cuanto cuesta la certificacion sanitaria municipal
+- intent: T_029
+  examples: |
+    - necesito el numero de mi resolucion para reconsiderarla
+    - necesito presentar un escrito para reconsiderar mi resolucion
+    - quiero presentar un recurso de reconsideracion
+    - como cuestiono una resolucion que emitio la muni
+    - como reclamo contra una resolucion municipal
+- intent: T_030
+  examples: |
+    - necesito el permiso para una fiesta con mas de 500 personas
+    - requisitos para organizar un evento con mas de 3000 personas no aplica
+    - voy a hacer un evento con seguridad privada que necesito
+    - voy a realizar una actividad publica con concurrencia de personas
+    - voy a realizar un evento publico y necesito el permiso municipal
+    - que tramite es para organizar un festival en la plaza
+    - voy a montar un evento cultural con entrada libre
+    - voy a hacer una discoteca movil que autorizacion necesito
+- intent: T_031
+  examples: |
+    - vivo aqui hace años sin papeles necesito agua
+    - como consigo servicios basicos si no tengo escritura publica
+    - no tengo titulo de propiedad pero necesito luz para mi casa
+    - vivo en un lote sin habilitar necesito luz y agua
+- intent: T_032
+  examples: |
+    - cual es el plazo para la constancia de estado ruinoso
+    - requisitos para la constancia de inhabitabilidad
+    - mi casa esta en mal estado necesito una constancia
+    - necesito la constancia de que mi casa esta deteriorada
+- intent: T_033
+  examples: |
+    - necesito el coeficiente de edificacion antes de comprar un terreno
+    - como obtengo los parametros urbanisticos y edificatorios de mi predio
+    - mi arquitecto me pide los parametros antes de hacer los planos
+    - cual es la altura maxima permitida para construir en mi zona
+    - quiero saber los parametros edificatorios de mi lote
+    - requisitos para el certificado que necesito antes de edificar
+    - necesito saber los parametros de edificacion de mi lote antes de construir
+    - cual es el plazo para el certificado de parametros de construccion
+- intent: T_080
+  examples: |
+    - como tramito el permiso de construccion a
+    - requisitos de visacion de planos para servicios basicos en mi lote
+    - q documentos piden para hacer un cerco perimetrico
+    - necesito levantar un pisito mas en mi casa como hago
+    - como hago pa sacar mi permiso de obra en la muni
+    - necesito licencia para hacer un cerco en mi terreno
+    - plano visado por la municipalidad para pedir medidor de luz a ensa
+    - nesecito permiso pa construir en mi lote
+    - estoy pensando en construir un segundo piso en mi casa
+    - tengo pensado levantar una habitacion mas en mi casa
+    - cuales son los pasos para sacar la licencia de construccion
 - intent: charla_casual
   examples: |
-    - tienes emociones de verdad
-    - que opinas del futbol peruano
-    - eres inteligente
+    - como te va
+    - quien te hizo
+    - que bien explicas
+    - todo bien
     - eres muy amable
-    - cual es tu pelicula favorita
-    - eres de la municipalidad
-    - cuentame algo curioso
-    - sabes de todo o solo de tramites
-    - eres el mismo bot de siempre
-    - buen trabajo
-    - eres un robot
-    - cuanto sabes
+    - para que sirves
+    - te gusta el futbol
+    - te aburres de responder siempre lo mismo
+    - cual es tu comida favorita
+    - que tal el dia que tal te trata
+    - tienes sentimientos
+    - eres inteligente
+    - eres divertido
+- intent: consultar_conexion_agua
+  examples: |
+    - como tramito la conexion de agua para mi empresa constructora
+    - necesito el permiso de conexion domiciliaria como persona juridica
+    - mi empresa necesita instalar conexion de agua y desague
+    - como autorizo la instalacion de agua potable en mi domicilio
+    - como autorizo la instalacion de agua para mi empresa constructora
+    - necesito autorizacion para abrir la vereda e instalar agua
+    - cual es el plazo para la conexion de agua de una empresa
+    - voy a hacer trabajos en la vereda para instalar desague
 - intent: consultar_costo
   examples: |
-    - cual es el precio por favor
-    - cuanto debo llevar de dinero
-    - el tramite genera algun pago
-    - ese tramite tiene algun cobro
-    - cuanto cuesta hacer esto en la muni
-    - me confirman el costo del tramite
-    - cuanto tengo que desembolsar
+    - hay tarifa para este tramite
+    - hay q pagar algo en la muni
     - cuanto hay que abonar
-    - cual es el valor a pagar
-    - me van a cobrar por sacar eso
+    - y cuanto se paga
+    - cuanto esta ese tramite
     - q precio tiene ese tramite
-    - precio del tramite amigo
+    - cuanto piden pagar en caja
+    - me dices el precio porfa
+    - dime el costo de eso
+- intent: consultar_divorcio
+  examples: |
+    - q tramite es pa el divorcio
+    - quiero saber como tramitar mi divorcio
+    - como hago para divorciarme de mi pareja
+- intent: consultar_gestion_flota_vehicular
+  examples: |
+    - necesito la resolucion de operatividad para mi empresa
+    - como obtengo la resolucion de permiso para mi flota
+    - tramites a nivel empresarial para transporte especial
+    - vamos a formar una asociacion y necesitamos el permiso para operar
+    - cuanto cuesta el permiso de operacion para una asociacion
+- intent: consultar_gestion_licencia
+  examples: |
+    - cual es el plazo para el cese de actividades
+    - mi tio me traspaso su tienda como actualizo la licencia
+    - me pueden decir los req para cambiar giro de negocio
+    - el negocio sigue igual solo cambia el dueño que tramite hago
+    - paso de vender ropa a ofrecer servicios de internet
+    - cuanto cuesta cerrar mi negocio ante la muni
+    - como hago para cerrar mi tienda definitivamente
+    - mi local paso de ser cyber a ser una veterinaria
+    - voy a cerrar mi negocio que tramite hago
+    - cuanto cuesta poner la licencia de funcionamiento a nombre de otra persona
+    - necesito actualizar el titular de una licencia ya existente
+    - necesito otra licencia porque la anterior se deterioro
+    - voy a poner otro negocio en el mismo local
+    - no encuentro mi licencia por ningun lado que hago
+    - que piden para darme duplicado del permiso
+    - mi local va a dejar de ser bodega para ser un salon de eventos
+    - mi papa me dejo su negocio como cambio el titular de la licencia
+    - quisiera informarme sobre el cambio de giro de mi tienda
+    - cuanto cuesta el permiso de cambio de rubro
+    - kiero cambiar el tipo de negocio en mi licencia
+    - como solicito duplicado de licencia en la muni
+    - me gustaria saber que necesito para cambiar de rubro
+    - tengo pensado cambiar el tipo de negocio que tengo
+    - necesito reponer mi licencia porque se me cayo al rio
+    - quiero notificar que ya no voy a operar mi local
+    - mi licencia esta ilegible por el sol necesito otra copia
+    - info sobre el cambio de giro de licencia
+    - cierro mi tienda que debo hacer ante la municipalidad
+    - me robaron mi carton de licencia q hago
+- intent: consultar_matrimonio_civil
+  examples: |
+    - cuanto cuesta el matrimonio civil en la muni
+    - como es el proceso de matrimonio civil municipal
+    - voy a casarme necesito los requisitos completos
+    - voy a casarme por civil que documentos debo presentar
 - intent: consultar_plazo
   examples: |
-    - hay fecha exacta de entrega
-    - para cuando me lo tienen
-    - cual es el plazo de atencion por favor
-    - pa cuando estaria listo amigo
-    - cuanto se demoran en darme eso por favor
-    - en cuanto tiempo sale amigo
-    - cuanto se demoran en darme eso
-    - y en que tiempo lo aprueban
+    - cuanto tarda en salir el permiso
+    - hay un tiempo aproximado de espera
     - cual es el tiempo de espera
-    - cuanto tiempo demora por favor
-    - el tramite se resuelve rapido o no
-    - en que momento me avisan que esta listo
+    - demora mucho eso
+    - cuanto se demora en salir aprobado
+    - digame el plazo porfa
+    - cuanto se demoran en darme eso
+    - cuando puedo recoger el documento
+    - cuando queda resuelto el tramite
+    - hay fecha exacta de entrega
+    - cual es el plazo de atencion de mi tramite
+- intent: consultar_tramite_vehicular
+  examples: |
+    - necesito reemplazar mi mototaxi por otra unidad
+    - necesito registrar mi mototaxi nueva
+    - quiero arreglar la situacion de mi mototaxi
+    - quiero dar de baja mi vehiculo porque se malogro
+    - quiero cambiar la unidad de mi permiso porque compre una nueva
 - intent: despedida
   examples: |
-    - chau chau
-    - esta bien gracias por la informacion
-    - gracias por todo que estes bien
-    - vale gracias
-    - esta perfecto gracias me despido
-    - eso es todo por hoy gracias
-    - hasta luego
-    - gracias amigo nos vemos
-    - listo gracias
-    - bueno muchas gracias hasta luego
+    - chau nos vemos luego
+    - gracias eso era chau
+    - bye gracias
+    - muchas gracias por tu ayuda
+    - nos vemos gracias por todo
+    - me retiro que tengas buen dia y te vaya bien
+    - perfecto asi queda gracias
+    - ok perfecto gracias chau
+    - muchas gracias me quedo claro todo
+    - hasta la proxima
+    - chau
+    - ya no necesito nada mas gracias
     - gracias por tu tiempo adios
-    - eso era todo lo que necesitaba gracias
 - intent: fuera_de_dominio
   examples: |
-    - como hago para bloquear mi celular robado
-    - quiero cancelar mi tarjeta de credito bcp
-    - como denuncio un robo en la comisaria
-    - donde veo quien gano el partido de alianza ayer por favor
-    - pasame la receta del ceviche norteño amigo
-    - como hago para sacar mi brevete
-    - donde pago mi recibo de claro
-    - hasta que hora atienden hoy
-    - a q hora dan el bono en el banco de la nacion
-    - quiero sacar mi pasaporte q me piden amigo
-    - cuanto cuesta un pasaje en combi
-    - donde queda el hospital mas cercano
+    - kiero sacar cita en essalud
+    - como saco mi pasaporte
+    - donde puedo recargar mi tarjeta del metropolitano
+    - que servicios ofrece la municipalidad en general
+    - cual es el clima para mañana
+    - donde veo quien gano el partido de alianza ayer
+    - donde queda la oficina de la municipalidad
+    - como hago para reclamar en indecopi
+    - necesito informacion sobre el presupuesto participativo
+    - que hora es
+    - donde renuevo mi licencia de conducir
+    - hay trabajo disponible en la municipalidad
+    - como pago el recibo de ensa por internet
+    - cual es el horario de atencion de mesa de partes
+    - como esta el clima hoy
+    - como consulto mi deuda en sunat
+    - cuando limpian mi calle
 - intent: saludo
   examples: |
-    - buenas amigo
-    - hola perdon la molestia
-    - hola noches
+    - saludos cordiales
+    - que tal un saludo cordial para ti
     - que hay de nuevo
-    - buenas tardes
-    - hola como estas
-    - buen dia disculpa la hora
-    - buenos dias amigo
-    - hola gusto saludarte
-    - hola por favor
-    - buenisimos dias
-    - saludos amigo
+    - hola estimado que tal como estas
+    - hola leonardito
+    - buenas noches
+    - holis
+    - hola disculpa
+    - holaa
+    - hola me ayudas
+    - hola que tal
+    - hola buen dia
