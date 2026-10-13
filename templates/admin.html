@@ -3,386 +3,491 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MDJLO | Panel de Administración del TUPA (RF06)</title>
+  <title>Panel Administrativo TUPA | MDJLO</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏛️</text></svg>">
   <style>
-    body { font-family: 'Inter', sans-serif; }
     ::-webkit-scrollbar { width: 6px; height: 6px; }
     ::-webkit-scrollbar-track { background: #f1f5f9; }
-    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
     ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-    .bg-mdjlo-yellow { background-color: #ffc107; }
-    .text-mdjlo-blue { color: #004494; }
+    @keyframes scaleUp {
+      from { opacity: 0; transform: scale(0.95) translateY(8px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .animate-scaleUp { animation: scaleUp 0.2s ease-out forwards; }
+    .text-shadow-3d {
+      text-shadow: 1px 1px 0px #002654, 2px 2px 0px #001f44, 3px 3px 4px rgba(0,0,0,0.3);
+    }
   </style>
 </head>
-<body class="min-h-screen flex flex-col bg-[#f4f6f9] text-gray-800 font-sans">
+<body class="min-h-screen flex flex-col bg-[#f4f6f9] text-slate-800 font-sans selection:bg-amber-100 selection:text-amber-900">
 
-  <!-- 1. BARRA SUPERIOR AMARILLA (SISGEDO) -->
-  <header class="bg-mdjlo-yellow text-[#0d3b66] py-1.5 px-4 sm:px-8 border-b border-yellow-500 shadow-xs">
-    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2 text-xs font-semibold">
+  <!-- ===================================================================== -->
+  <!-- 1. BARRA SUPERIOR AMARILLA OFICIAL: SISGEDO Y ENLACES INSTITUCIONALES  -->
+  <!-- ===================================================================== -->
+  <header class="bg-[#ffc107] text-[#0d3b66] py-1.5 px-4 sm:px-8 border-b border-yellow-500 shadow-xs">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      
+      <!-- Logo SISGEDO -->
       <div class="flex items-center space-x-2">
         <span class="font-black text-sm tracking-tight text-[#0a2540]">SISGEDO</span>
-        <span class="ml-2 hidden sm:inline font-normal text-[#1e3a5f]">Sistema de Gestión Documentario y TUPA</span>
+        <span class="ml-2 hidden sm:inline font-normal text-[#1e3a5f] text-xs">Sistema de Gestión Documentario y TUPA</span>
       </div>
-      <div class="flex items-center space-x-3 text-xs text-[#0a2540]">
-        <a href="/" class="hover:underline flex items-center gap-1 font-bold">
+
+      <!-- Enlaces superiores -->
+      <div class="flex items-center space-x-3 text-xs text-[#0a2540] font-bold">
+        <a href="/" class="hover:underline flex items-center gap-1">
           <span>🏛️ Ir al Portal Ciudadano</span>
         </a>
         <span class="text-yellow-700">|</span>
-        <span class="font-extrabold bg-[#0d3b66] text-white px-2 py-0.5 rounded shadow-xs">
-          Panel Admin (RF06)
+        <span class="bg-[#0d3b66] text-white px-2.5 py-0.5 rounded shadow-xs font-black">
+          Panel de Control Admin
         </span>
-        <div id="badge-sesion" class="hidden items-center space-x-2 bg-white border border-yellow-600 px-2 py-0.5 rounded text-xs shadow-xs">
-          <span>👤 <strong id="user-display" class="text-[#0d3b66]"></strong></span>
-          <button onclick="cerrarSesion()" class="bg-red-600 hover:bg-red-700 text-white text-[10px] font-bold px-1.5 py-0.5 rounded transition cursor-pointer">
+        <div id="session-badge" class="hidden items-center space-x-2 bg-white border border-yellow-600 px-2 py-0.5 rounded text-xs shadow-xs">
+          <span>👤 <strong id="current-username" class="text-[#0d3b66]"></strong></span>
+          <button onclick="cerrarSesion()" class="bg-red-600 hover:bg-red-700 text-white text-[10px] font-bold px-2 py-0.5 rounded transition">
             Salir
           </button>
         </div>
       </div>
+
     </div>
   </header>
 
-  <!-- 2. ENCABEZADO INSTITUCIONAL BLANCO: ESCUDO Y NOMBRE OFICIAL -->
+  <!-- ===================================================================== -->
+  <!-- 2. ENCABEZADO INSTITUCIONAL BLANCO CON ESCUDO 3D                      -->
+  <!-- ===================================================================== -->
   <div class="bg-white border-b border-gray-200 py-3.5 px-4 sm:px-8 shadow-xs">
     <div class="max-w-7xl mx-auto flex items-center justify-between flex-wrap gap-4">
-      <div class="flex items-center space-x-3.5">
-        <div class="w-12 h-14 bg-gradient-to-b from-red-600 to-red-700 rounded-t-xl rounded-b-md border-2 border-yellow-400 p-1 flex flex-col items-center justify-center text-white shadow-sm shrink-0">
-          <span class="text-[9px] font-black text-yellow-300 uppercase tracking-tighter">MDJLO</span>
-          <div class="w-6 h-6 border border-yellow-300 rounded-full flex items-center justify-center my-0.5">
-            <span class="text-xs">🏛️</span>
-          </div>
-          <span class="text-[7px] font-bold text-white uppercase">Chiclayo</span>
+      
+      <div class="flex items-center space-x-4">
+        <!-- Escudo Heráldico MDJLO -->
+        <div class="relative flex-shrink-0 w-14 h-18 sm:w-16 sm:h-20">
+          <svg viewBox="0 0 100 120" class="w-full h-full drop-shadow-sm">
+            <path d="M10 20 Q50 8 90 20 L86 28 Q50 18 14 28 Z" fill="#c0151a" stroke="#870a0e" stroke-width="1.5" />
+            <text x="50" y="22" font-size="5" font-weight="bold" fill="#ffffff" text-anchor="middle">MDJLO</text>
+            <ellipse cx="50" cy="70" rx="36" ry="42" fill="#ffffff" stroke="#c0151a" stroke-width="4" />
+            <ellipse cx="50" cy="70" rx="32" ry="38" fill="none" stroke="#ffd700" stroke-width="2" />
+            <circle cx="42" cy="48" r="8" fill="none" stroke="#ffd700" stroke-width="2.5" />
+            <circle cx="58" cy="48" r="8" fill="none" stroke="#ffd700" stroke-width="2.5" />
+            <path d="M50 58 L50 85" stroke="#004494" stroke-width="3" stroke-linecap="round" />
+            <circle cx="50" cy="56" r="4" fill="#ff4500" />
+            <text x="50" y="98" font-size="5.5" font-weight="bold" fill="#004494" text-anchor="middle">JOSÉ LEONARDO ORTIZ</text>
+          </svg>
         </div>
+
         <div>
-          <h1 class="text-xl sm:text-2xl font-black text-mdjlo-blue tracking-tight leading-tight">
+          <h1 class="text-xl sm:text-2xl font-black text-[#004494] tracking-tight leading-tight font-serif text-shadow-3d">
             Municipalidad Distrital de José Leonardo Ortiz
           </h1>
           <p class="text-xs text-gray-500 font-medium">
-            Módulo de Administración de Trámites y Procedimientos Administrativos (Requisito Funcional RF06)
+            Módulo de Administración de Trámites y Procedimientos Administrativos (TUPA 2026)
           </p>
         </div>
       </div>
 
-      <div class="flex items-center space-x-2 bg-blue-50 border border-blue-200 rounded-lg px-3 py-1.5">
-        <div class="text-right">
-          <span class="block text-[10px] font-semibold text-blue-700 uppercase">Gestor de Base de Datos</span>
-          <span class="block text-xs font-bold text-blue-900">SQLite / SQLAlchemy</span>
-        </div>
-        <div class="w-7 h-7 rounded-full bg-blue-900 text-white font-bold flex items-center justify-center text-xs">
-          BD
+      <div class="flex items-center space-x-2 bg-blue-50 border border-blue-200 rounded-xl px-3 py-1.5">
+        <div class="text-right leading-tight">
+          <span class="block text-[10px] font-bold text-[#004494] uppercase">Gestor de Datos</span>
+          <span class="block text-xs font-black text-[#004494]">MySQL (HeidiSQL) / SQLAlchemy</span>
         </div>
       </div>
+
     </div>
   </div>
 
-  <!-- 3. BARRA DE NAVEGACIÓN AMARILLA -->
-  <nav class="bg-mdjlo-yellow border-b border-yellow-500 px-4 sm:px-8 py-2 text-[#0d3b66] font-bold text-xs uppercase tracking-wide shadow-xs">
-    <div class="max-w-7xl mx-auto flex items-center space-x-3 overflow-x-auto whitespace-nowrap">
-      <a href="/" class="hover:text-blue-950 transition">PORTAL CIUDADANO</a>
-      <span class="text-yellow-700">|</span>
-      <span class="text-blue-950 bg-yellow-400 px-2 py-0.5 rounded font-extrabold shadow-2xs">
-        GESTIÓN DE TRÁMITES TUPA (ADMIN)
+  <!-- ===================================================================== -->
+  <!-- 3. MENÚ DE NAVEGACIÓN AMARILLO                                        -->
+  <!-- ===================================================================== -->
+  <nav class="bg-[#ffc107] border-b-2 border-yellow-600 px-4 sm:px-8 py-2 text-[#0d3b66] font-extrabold text-xs uppercase tracking-wide shadow-xs">
+    <div class="max-w-7xl mx-auto flex items-center space-x-4">
+      <a href="/" class="hover:text-black transition">PORTAL CIUDADANO</a>
+      <span class="text-yellow-700/60 font-normal">|</span>
+      <span class="text-black font-black bg-yellow-400 px-2.5 py-0.5 rounded shadow-2xs">
+        GESTIÓN DE TRÁMITES TUPA
       </span>
     </div>
   </nav>
 
-  <!-- 4. CONTENIDO PRINCIPAL -->
-  <main class="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 py-6 space-y-6">
-
-    <!-- Toast / Alertas -->
-    <div id="alerta-box" class="hidden p-3.5 rounded-lg shadow-md border flex items-center justify-between transition-all text-xs font-bold">
-      <span id="alerta-mensaje"></span>
-      <button onclick="cerrarAlerta()" class="text-gray-500 hover:text-gray-800 ml-4">✕</button>
+  <!-- Toast Alerta -->
+  <div class="max-w-7xl w-full mx-auto px-4 sm:px-6 pt-4">
+    <div id="alerta-box" class="hidden p-4 rounded-2xl shadow-md border flex items-center justify-between transition-all bg-white">
+      <div class="flex items-center space-x-3">
+        <span id="alerta-icono" class="text-lg">✅</span>
+        <span id="alerta-mensaje" class="text-xs sm:text-sm font-semibold text-slate-800"></span>
+      </div>
+      <button onclick="cerrarAlerta()" class="text-slate-400 hover:text-slate-700 text-xs font-bold ml-4">✕</button>
     </div>
+  </div>
 
-    <!-- VISTA 1: FORMULARIO DE LOGIN SI NO ESTÁ AUTENTICADO -->
-    <div id="pantalla-login" class="bg-white border border-gray-200 rounded-xl shadow-md p-6 sm:p-8 max-w-md mx-auto space-y-6 my-8">
+  <!-- ===================================================================== -->
+  <!-- ESTADO 1: FORMULARIO DE LOGIN                                         -->
+  <!-- ===================================================================== -->
+  <div id="pantalla-login" class="flex-1 flex items-center justify-center p-4 sm:p-12">
+    <div class="bg-white border border-gray-200/90 rounded-2xl shadow-md p-6 sm:p-8 max-w-md w-full space-y-6">
+      
       <div class="text-center space-y-2">
-        <div class="w-12 h-12 bg-blue-50 text-[#004494] rounded-xl border border-blue-200 flex items-center justify-center mx-auto text-xl shadow-xs">
-          🔒
+        <div class="w-12 h-14 bg-gradient-to-b from-red-600 to-red-800 rounded-xl p-1 mx-auto flex flex-col items-center justify-between border border-amber-400/40 shadow-xs">
+          <span class="text-[10px] font-black text-amber-300">MDJLO</span>
+          <svg class="w-6 h-6 text-amber-300 my-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+          </svg>
         </div>
-        <h2 class="text-lg font-black text-[#004494] uppercase tracking-tight">Acceso Administrativo</h2>
-        <p class="text-xs text-gray-500 font-medium">Mantenimiento de Trámites y Requisitos del TUPA</p>
+        <h2 class="text-xl font-bold text-[#004494] tracking-tight font-serif">Acceso Administrativo</h2>
+        <p class="text-xs text-slate-500">Panel de Gestión de Trámites y Requisitos TUPA</p>
       </div>
 
-      <div id="login-error" class="hidden p-3 rounded-lg bg-red-50 border border-red-200 text-xs text-red-700 font-bold"></div>
+      <div id="login-error" class="hidden bg-red-50 border border-red-200 text-red-700 text-xs p-3 rounded-xl"></div>
 
-      <form onsubmit="ejecutarLoginAdmin(event)" class="space-y-4">
-        <div class="space-y-1">
-          <label class="text-xs font-bold text-gray-700 block">Usuario Administrador</label>
+      <form id="form-login" onsubmit="ejecutarLogin(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">Usuario Administrativo</label>
           <input
-            id="input-usuario"
             type="text"
+            id="login-usuario"
             required
-            placeholder="admin"
-            class="w-full px-3.5 py-2 text-xs bg-slate-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 focus:bg-white transition"
+            placeholder="Ej. admin"
+            class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#004494]"
           />
         </div>
 
-        <div class="space-y-1">
-          <label class="text-xs font-bold text-gray-700 block">Contraseña</label>
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">Contraseña</label>
           <input
-            id="input-password"
             type="password"
+            id="login-password"
             required
             placeholder="••••••••"
-            class="w-full px-3.5 py-2 text-xs bg-slate-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 focus:bg-white transition"
+            class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#004494]"
           />
         </div>
 
         <button
           type="submit"
-          class="w-full bg-[#004494] hover:bg-blue-900 text-white font-bold py-2.5 rounded-lg text-xs transition shadow-xs cursor-pointer"
+          class="w-full py-2.5 bg-[#004494] hover:bg-blue-900 text-amber-300 font-bold rounded-xl text-xs sm:text-sm shadow-xs transition flex items-center justify-center gap-2"
         >
-          Iniciar Sesión
+          <span>Iniciar Sesión</span>
         </button>
       </form>
+    </div>
+  </div>
 
-      <div class="pt-3 border-t border-gray-100 text-center">
-        <p class="text-[11px] text-gray-400">
-          Credenciales por defecto: <code class="bg-gray-100 px-1.5 py-0.5 rounded text-gray-700 font-bold">admin</code> / <code class="bg-gray-100 px-1.5 py-0.5 rounded text-gray-700 font-bold">admin123</code>
-        </p>
+  <!-- ===================================================================== -->
+  <!-- ESTADO 2: DASHBOARD DE ADMINISTRACIÓN                                  -->
+  <!-- ===================================================================== -->
+  <main id="pantalla-dashboard" class="hidden flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-6 space-y-6">
+    
+    <!-- Encabezado -->
+    <div class="bg-white rounded-2xl border border-gray-200/90 p-5 shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="px-2.5 py-0.5 rounded-md bg-amber-100 text-amber-900 font-bold text-[10px] uppercase">Panel Admin</span>
+          <span class="text-xs text-slate-400">•</span>
+          <span className="text-xs text-slate-500 font-medium">Catálogo de Procedimientos TUPA</span>
+        </div>
+        <h2 class="text-xl font-bold text-slate-900 tracking-tight mt-1 font-serif">
+          Trámites y Requisitos Registrados
+        </h2>
+      </div>
+
+      <button
+        onclick="abrirModalNuevo()"
+        class="px-4 py-2 bg-[#ffc107] hover:bg-amber-400 text-slate-950 font-bold text-xs rounded-xl shadow-xs transition flex items-center gap-1.5"
+      >
+        <span>+ Nuevo Trámite</span>
+      </button>
+    </div>
+
+    <!-- Filtro -->
+    <div class="bg-white rounded-2xl border border-gray-200/90 p-4 shadow-xs">
+      <div class="relative">
+        <input
+          type="text"
+          id="filtro-busqueda"
+          onkeyup="filtrarTabla()"
+          placeholder="Buscar por código de trámite (ej. T_001) o nombre..."
+          class="w-full pl-9 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#004494]"
+        />
+        <svg class="w-4 h-4 text-slate-400 absolute left-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
       </div>
     </div>
 
-    <!-- VISTA 2: DASHBOARD CRUD DE TRÁMITES -->
-    <div id="pantalla-dashboard" class="hidden space-y-6">
-      
-      <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div>
-          <h2 class="text-lg font-black text-[#004494] uppercase tracking-tight">Catálogo de Trámites y Requisitos TUPA</h2>
-          <p class="text-xs text-gray-500 font-medium">Gestión de trámites, tarifas en Soles, plazos y requisitos oficiales</p>
-        </div>
-
-        <button
-          onclick="abrirModalCrear()"
-          class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-4 py-2 rounded-lg text-xs transition shadow-xs flex items-center gap-1.5 cursor-pointer shrink-0"
-        >
-          <span>➕ Nuevo Trámite</span>
-        </button>
+    <!-- Data Table -->
+    <div class="bg-white rounded-2xl border border-gray-200/90 shadow-xs overflow-hidden">
+      <div class="overflow-x-auto">
+        <table className="w-full text-left text-xs sm:text-sm border-collapse" id="tabla-tramites">
+          <thead>
+            <tr class="bg-slate-50 border-b border-slate-200 text-slate-500 font-semibold uppercase text-[11px] tracking-wider">
+              <th class="py-3.5 px-4">Código</th>
+              <th class="py-3.5 px-4">Nombre del Trámite</th>
+              <th class="py-3.5 px-4">Costo</th>
+              <th class="py-3.5 px-4">Plazo</th>
+              <th class="py-3.5 px-4">Requisitos</th>
+              <th class="py-3.5 px-4 text-right">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-tramites" class="divide-y divide-slate-100 text-slate-800">
+            <!-- Filas dinámicas -->
+          </tbody>
+        </table>
       </div>
-
-      <!-- Controles de Búsqueda -->
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-3 rounded-xl border border-gray-200 shadow-xs">
-        <div class="relative max-w-xs w-full">
-          <input
-            id="search-input"
-            type="text"
-            oninput="filtrarTabla()"
-            placeholder="Buscar por código o nombre..."
-            class="w-full px-3 py-1.5 bg-slate-50 border border-gray-300 rounded-lg text-xs text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-900"
-          />
-        </div>
-
-        <div class="text-xs text-gray-600 font-bold">
-          Total Trámites en BD: <span id="total-count" class="text-blue-900 font-black">0</span>
-        </div>
-      </div>
-
-      <!-- Tabla de Datos -->
-      <div class="bg-white rounded-xl border border-gray-200 shadow-xs overflow-hidden">
-        <div class="overflow-x-auto">
-          <table class="w-full text-left text-xs text-gray-700">
-            <thead class="bg-slate-100 border-b border-gray-200 text-[11px] font-bold text-gray-600 uppercase tracking-wider">
-              <tr>
-                <th class="py-3 px-4 w-28">Código</th>
-                <th class="py-3 px-4">Denominación del Trámite</th>
-                <th class="py-3 px-4 w-32">Costo</th>
-                <th class="py-3 px-4 w-36">Plazo</th>
-                <th class="py-3 px-4 w-28 text-right">Acciones</th>
-              </tr>
-            </thead>
-            <tbody id="tabla-cuerpo" class="divide-y divide-gray-100">
-              <!-- Carga dinámicamente vía JavaScript -->
-            </tbody>
-          </table>
-        </div>
-      </div>
-
     </div>
 
   </main>
 
-  <!-- MODAL CREAR / EDITAR TRÁMITE -->
-  <div id="modal-tramite" class="hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto">
-    <div class="bg-white max-w-lg w-full rounded-xl border border-gray-300 p-6 shadow-xl space-y-4 my-8">
-      
-      <div class="flex items-center justify-between border-b border-gray-200 pb-3">
-        <h3 id="modal-titulo" class="font-black text-[#004494] text-base uppercase">Nuevo Trámite Municipal</h3>
-        <button onclick="cerrarModal()" class="text-gray-400 hover:text-gray-700 font-bold p-1">✕</button>
-      </div>
+  <!-- MODAL EDITAR / CREAR TRÁMITE -->
+  <div id="modal-tramite" class="hidden fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl shadow-xl border border-slate-200 max-w-lg w-full p-6 space-y-4 animate-scaleUp">
+      <h3 id="modal-titulo" class="font-bold text-lg text-slate-900 border-b border-slate-100 pb-2">
+        Registrar Nuevo Trámite
+      </h3>
 
-      <form onsubmit="guardarTramite(event)" class="space-y-4">
-        <div class="grid grid-cols-2 gap-3">
-          <div class="space-y-1">
-            <label class="text-xs font-bold text-gray-700 block">Código Trámite *</label>
-            <input id="form-id" type="text" required placeholder="T_011" class="w-full px-3 py-1.5 text-xs bg-slate-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900" />
+      <form id="form-tramite" onsubmit="guardarTramite(event)" class="space-y-3 text-xs">
+        <input type="hidden" id="tramite-id-bd" />
+
+        <div>
+          <label class="font-semibold text-slate-700 block mb-1">Código del Trámite</label>
+          <input
+            type="text"
+            id="tramite-codigo"
+            required
+            placeholder="Ej. T_001"
+            class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#004494] focus:outline-none"
+          />
+        </div>
+
+        <div>
+          <label class="font-semibold text-slate-700 block mb-1">Nombre del Procedimiento</label>
+          <input
+            type="text"
+            id="tramite-nombre"
+            required
+            placeholder="Nombre completo según TUPA"
+            class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#004494] focus:outline-none"
+          />
+        </div>
+
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="font-semibold text-slate-700 block mb-1">Costo (S/)</label>
+            <input
+              type="text"
+              id="tramite-costo"
+              placeholder="Ej. S/ 185.50 o Gratuito"
+              class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#004494] focus:outline-none"
+            />
           </div>
-
-          <div class="space-y-1">
-            <label class="text-xs font-bold text-gray-700 block">Costo (S/)</label>
-            <input id="form-costo" type="text" placeholder="Gratuito o S/ 50.00" class="w-full px-3 py-1.5 text-xs bg-slate-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900" />
+          <div>
+            <label class="font-semibold text-slate-700 block mb-1">Plazo de Atención</label>
+            <input
+              type="text"
+              id="tramite-plazo"
+              placeholder="Ej. 3 días hábiles"
+              class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#004494] focus:outline-none"
+            />
           </div>
         </div>
 
-        <div class="space-y-1">
-          <label class="text-xs font-bold text-gray-700 block">Denominación del Trámite *</label>
-          <input id="form-nombre" type="text" required placeholder="Licencia de..." class="w-full px-3 py-1.5 text-xs bg-slate-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900" />
+        <div>
+          <label class="font-semibold text-slate-700 block mb-1">Requisitos (Uno por línea)</label>
+          <textarea
+            id="tramite-requisitos"
+            rows="4"
+            placeholder="Escribe cada requisito separado por un salto de línea..."
+            class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#004494] focus:outline-none"
+          ></textarea>
         </div>
 
-        <div class="space-y-1">
-          <label class="text-xs font-bold text-gray-700 block">Plazo de Atención</label>
-          <input id="form-plazo" type="text" placeholder="3 días hábiles" class="w-full px-3 py-1.5 text-xs bg-slate-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900" />
-        </div>
-
-        <div class="space-y-2 pt-2 border-t border-gray-100">
-          <div class="flex items-center justify-between">
-            <label class="text-xs font-bold text-gray-700 block">Requisitos Procedimentales</label>
-            <button type="button" onclick="agregarCampoRequisito('')" class="text-xs text-blue-700 font-bold hover:underline">+ Agregar Requisito</button>
-          </div>
-          <div id="contenedor-requisitos" class="space-y-2"></div>
-        </div>
-
-        <div class="flex items-center justify-end space-x-2 pt-4 border-t border-gray-200">
-          <button type="button" onclick="cerrarModal()" class="px-4 py-2 rounded-lg border border-gray-300 text-xs font-bold text-gray-600 hover:bg-gray-50">Cancelar</button>
-          <button type="submit" class="px-4 py-2 rounded-lg bg-[#004494] hover:bg-blue-900 text-white text-xs font-bold shadow-xs">Guardar Trámite</button>
+        <div class="flex justify-end gap-2 pt-3 border-t border-slate-100">
+          <button
+            type="button"
+            onclick="cerrarModal()"
+            class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-xl"
+          >
+            Cancelar
+          </button>
+          <button
+            type="submit"
+            class="px-4 py-2 bg-[#ffc107] hover:bg-amber-400 text-slate-950 font-bold rounded-xl shadow-xs"
+          >
+            Guardar Trámite
+          </button>
         </div>
       </form>
     </div>
   </div>
 
-  <script>
-    let todosLosTramites = [];
-    let editandoId = null;
+  <footer class="bg-[#002244] text-slate-300 text-xs py-6 border-t border-blue-950 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p>© 2026 Municipalidad Distrital de José Leonardo Ortiz. Todos los derechos reservados.</p>
+      <div class="flex items-center space-x-4 text-[11px]">
+        <span>TUPA Vigente</span>
+        <span>•</span>
+        <span>Mesa de Partes Virtual</span>
+        <span>•</span>
+        <span class="text-amber-400 font-semibold">Sistema Inteligente NLP</span>
+      </div>
+    </div>
+  </footer>
 
-    async function ejecutarLoginAdmin(e) {
+  <!-- SCRIPT JS DEL DASHBOARD -->
+  <script>
+    let tramitesData = [];
+
+    async function ejecutarLogin(e) {
       e.preventDefault();
-      const u = document.getElementById('input-usuario').value.trim();
-      const p = document.getElementById('input-password').value.trim();
-      const errBox = document.getElementById('login-error');
+      const usuario = document.getElementById('login-usuario').value.trim();
+      const password = document.getElementById('login-password').value.trim();
+      const errorDiv = document.getElementById('login-error');
+      errorDiv.classList.add('hidden');
 
       try {
-        const res = await fetch('/api/admin/login', {
+        const response = await fetch('/api/admin/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ usuario: u, password: p })
+          body: JSON.stringify({ usuario, password })
         });
-        const data = await res.json();
+        const data = await response.json();
 
-        if (res.ok && data.status === 'success') {
-          sessionStorage.setItem('admin_user', data.username || u);
-          mostrarDashboard(data.username || u);
+        if (response.ok && data.status === 'success') {
+          mostrarDashboard(data.username || usuario);
         } else {
-          errBox.textContent = data.mensaje || 'Credenciales inválidas';
-          errBox.classList.remove('hidden');
+          errorDiv.innerText = data.mensaje || 'Usuario o clave incorrecta';
+          errorDiv.classList.remove('hidden');
         }
       } catch (err) {
-        if (u === 'admin' && p === 'admin123') {
-          sessionStorage.setItem('admin_user', 'admin');
-          mostrarDashboard('admin');
-        } else {
-          errBox.textContent = 'Error al verificar credenciales';
-          errBox.classList.remove('hidden');
-        }
+        errorDiv.innerText = 'Error de conexión con el servidor. Intente nuevamente.';
+        errorDiv.classList.remove('hidden');
       }
     }
 
     function mostrarDashboard(user) {
       document.getElementById('pantalla-login').classList.add('hidden');
       document.getElementById('pantalla-dashboard').classList.remove('hidden');
-      document.getElementById('badge-sesion').classList.remove('hidden');
-      document.getElementById('badge-sesion').classList.add('flex');
-      document.getElementById('user-display').textContent = user;
+      document.getElementById('session-badge').classList.remove('hidden');
+      document.getElementById('session-badge').classList.add('flex');
+      document.getElementById('current-username').innerText = user;
       cargarTramites();
     }
 
     function cerrarSesion() {
-      sessionStorage.removeItem('admin_user');
-      location.reload();
+      document.getElementById('pantalla-dashboard').classList.add('hidden');
+      document.getElementById('session-badge').classList.add('hidden');
+      document.getElementById('session-badge').classList.remove('flex');
+      document.getElementById('pantalla-login').classList.remove('hidden');
     }
 
     async function cargarTramites() {
       try {
         const res = await fetch('/api/admin/tramites');
         const data = await res.json();
-        if (res.ok && data.status === 'success') {
-          todosLosTramites = data.tramites || [];
+        if (res.ok && data.tramites) {
+          tramitesData = data.tramites;
+          renderTabla(tramitesData);
         }
-      } catch (e) {}
-      renderizarTabla(todosLosTramites);
+      } catch (err) {
+        mostrarAlerta('No se pudo conectar al servidor.', 'error');
+      }
     }
 
-    function renderizarTabla(lista) {
-      const tbody = document.getElementById('tabla-cuerpo');
-      document.getElementById('total-count').textContent = lista.length;
+    function renderTabla(lista) {
+      const tbody = document.getElementById('tbody-tramites');
+      tbody.innerHTML = '';
 
-      if (!lista || lista.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="5" class="py-8 text-center text-gray-400 text-xs font-bold">No se encontraron trámites registrados.</td></tr>`;
+      if (lista.length === 0) {
+        tbody.innerHTML = '<tr><td colSpan="6" class="text-center py-8 text-slate-400 text-xs">No hay trámites registrados.</td></tr>';
         return;
       }
 
-      tbody.innerHTML = lista.map(t => `
-        <tr class="hover:bg-blue-50/50 transition">
-          <td class="py-3 px-4 font-mono font-bold text-blue-900">${escapeHtml(t.id_tramite)}</td>
-          <td class="py-3 px-4 font-bold text-gray-900">
-            ${escapeHtml(t.nombre)}
-            <span class="block text-[10px] font-normal text-gray-500 mt-0.5">${(t.requisitos || []).length} requisito(s) registrados</span>
-          </td>
-          <td class="py-3 px-4">
-            <span class="px-2 py-0.5 rounded text-[11px] font-bold border ${t.costo === 'Gratuito' || !t.costo ? 'bg-emerald-100 text-emerald-900 border-emerald-300' : 'bg-gray-100 text-gray-800 border-gray-300'}">
-              ${escapeHtml(t.costo || 'Gratuito')}
-            </span>
-          </td>
-          <td class="py-3 px-4 text-gray-600 font-medium">${escapeHtml(t.plazo || 'Inmediato')}</td>
-          <td class="py-3 px-4 text-right">
-            <div class="flex items-center justify-end space-x-1">
-              <button onclick="abrirModalEditar('${t.id_tramite}')" title="Editar" class="p-1 rounded bg-blue-100 hover:bg-blue-200 text-blue-900 font-bold transition text-xs">
-                ✏️ Editar
-              </button>
-              <button onclick="eliminarTramite('${t.id_tramite}')" title="Eliminar" class="p-1 rounded bg-red-100 hover:bg-red-200 text-red-700 font-bold transition text-xs">
-                🗑️ Borrar
-              </button>
-            </div>
-          </td>
-        </tr>
-      `).join('');
+      lista.forEach(t => {
+        const reqCount = t.requisitos ? t.requisitos.length : 0;
+        const tr = document.createElement('tr');
+        tr.className = 'hover:bg-slate-50/80 transition-colors';
+
+        const tdId = document.createElement('td');
+        tdId.className = 'py-3.5 px-4 font-mono font-bold text-slate-900';
+        tdId.textContent = t.id_tramite;
+
+        const tdNombre = document.createElement('td');
+        tdNombre.className = 'py-3.5 px-4 font-medium max-w-xs';
+        tdNombre.textContent = t.nombre;
+
+        const tdCosto = document.createElement('td');
+        tdCosto.className = 'py-3.5 px-4';
+        const spanCosto = document.createElement('span');
+        spanCosto.className = 'inline-flex items-center px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-semibold';
+        spanCosto.textContent = t.costo || 'Gratuito';
+        tdCosto.appendChild(spanCosto);
+
+        const tdPlazo = document.createElement('td');
+        tdPlazo.className = 'py-3.5 px-4';
+        const spanPlazo = document.createElement('span');
+        spanPlazo.className = 'inline-flex items-center px-2 py-0.5 rounded-md bg-blue-50 text-blue-800 border border-blue-200 text-xs font-semibold';
+        spanPlazo.textContent = t.plazo || 'Inmediato';
+        tdPlazo.appendChild(spanPlazo);
+
+        const tdReq = document.createElement('td');
+        tdReq.className = 'py-3.5 px-4 text-xs text-slate-500';
+        tdReq.textContent = `${reqCount} requisitos`;
+
+        const tdAcciones = document.createElement('td');
+        tdAcciones.className = 'py-3.5 px-4 text-right space-x-1';
+
+        const btnEditar = document.createElement('button');
+        btnEditar.className = 'px-2.5 py-1 text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg text-xs font-semibold transition';
+        btnEditar.textContent = 'Editar';
+        btnEditar.onclick = () => abrirModalEditar(t.id_tramite);
+
+        const btnEliminar = document.createElement('button');
+        btnEliminar.className = 'px-2.5 py-1 text-slate-600 hover:text-red-600 hover:bg-red-50 rounded-lg text-xs font-semibold transition';
+        btnEliminar.textContent = 'Eliminar';
+        btnEliminar.onclick = () => eliminarTramite(t.id_tramite);
+
+        tdAcciones.appendChild(btnEditar);
+        tdAcciones.appendChild(btnEliminar);
+
+        tr.appendChild(tdId);
+        tr.appendChild(tdNombre);
+        tr.appendChild(tdCosto);
+        tr.appendChild(tdPlazo);
+        tr.appendChild(tdReq);
+        tr.appendChild(tdAcciones);
+
+        tbody.appendChild(tr);
+      });
     }
 
     function filtrarTabla() {
-      const val = document.getElementById('search-input').value.toLowerCase();
-      const filtrados = todosLosTramites.filter(t => t.nombre.toLowerCase().includes(val) || t.id_tramite.toLowerCase().includes(val));
-      renderizarTabla(filtrados);
+      const query = document.getElementById('filtro-busqueda').value.toLowerCase();
+      const filtrados = tramitesData.filter(t => t.nombre.toLowerCase().includes(query) || t.id_tramite.toLowerCase().includes(query));
+      renderTabla(filtrados);
     }
 
-    function abrirModalCrear() {
-      editandoId = null;
-      document.getElementById('modal-titulo').textContent = 'Nuevo Trámite Municipal';
-      document.getElementById('form-id').value = '';
-      document.getElementById('form-id').disabled = false;
-      document.getElementById('form-nombre').value = '';
-      document.getElementById('form-costo').value = '';
-      document.getElementById('form-plazo').value = '';
-      document.getElementById('contenedor-requisitos').innerHTML = '';
-      agregarCampoRequisito('');
+    function abrirModalNuevo() {
+      document.getElementById('modal-titulo').innerText = 'Registrar Nuevo Trámite';
+      document.getElementById('tramite-id-bd').value = '';
+      document.getElementById('tramite-codigo').value = '';
+      document.getElementById('tramite-nombre').value = '';
+      document.getElementById('tramite-costo').value = '';
+      document.getElementById('tramite-plazo').value = '';
+      document.getElementById('tramite-requisitos').value = '';
       document.getElementById('modal-tramite').classList.remove('hidden');
     }
 
     function abrirModalEditar(id_tramite) {
-      const t = todosLosTramites.find(x => x.id_tramite === id_tramite);
-      if (!t) return;
-      editandoId = id_tramite;
-      document.getElementById('modal-titulo').textContent = 'Editar Trámite TUPA';
-      document.getElementById('form-id').value = t.id_tramite;
-      document.getElementById('form-id').disabled = true;
-      document.getElementById('form-nombre').value = t.nombre || '';
-      document.getElementById('form-costo').value = t.costo || '';
-      document.getElementById('form-plazo').value = t.plazo || '';
-      document.getElementById('contenedor-requisitos').innerHTML = '';
-      const reqs = Array.isArray(t.requisitos) && t.requisitos.length > 0 ? t.requisitos : [''];
-      reqs.forEach(r => agregarCampoRequisito(r));
+      const item = tramitesData.find(t => t.id_tramite === id_tramite);
+      if (!item) return;
+
+      document.getElementById('modal-titulo').innerText = 'Editar Trámite del TUPA';
+      document.getElementById('tramite-id-bd').value = item.id || item.id_tramite;
+      document.getElementById('tramite-codigo').value = item.id_tramite;
+      document.getElementById('tramite-nombre').value = item.nombre;
+      document.getElementById('tramite-costo').value = item.costo || '';
+      document.getElementById('tramite-plazo').value = item.plazo || '';
+      document.getElementById('tramite-requisitos').value = item.requisitos ? item.requisitos.join('\n') : '';
       document.getElementById('modal-tramite').classList.remove('hidden');
     }
 
@@ -390,58 +495,73 @@
       document.getElementById('modal-tramite').classList.add('hidden');
     }
 
-    function agregarCampoRequisito(val = '') {
-      const cont = document.getElementById('contenedor-requisitos');
-      const div = document.createElement('div');
-      div.className = 'flex items-center space-x-2';
-      div.innerHTML = `
-        <input type="text" value="${escapeHtml(val)}" placeholder="Detalle del requisito..." class="req-input flex-1 px-3 py-1.5 text-xs bg-slate-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900" />
-        <button type="button" onclick="this.parentElement.remove()" class="text-red-600 hover:text-red-800 font-bold p-1 text-xs">✕</button>
-      `;
-      cont.appendChild(div);
-    }
-
     async function guardarTramite(e) {
       e.preventDefault();
-      const payload = {
-        id_tramite: document.getElementById('form-id').value.trim(),
-        nombre: document.getElementById('form-nombre').value.trim(),
-        costo: document.getElementById('form-costo').value.trim() || 'Gratuito',
-        plazo: document.getElementById('form-plazo').value.trim() || 'Inmediato',
-        requisitos: Array.from(document.querySelectorAll('.req-input')).map(i => i.value.trim()).filter(Boolean)
-      };
+      const idBd = document.getElementById('tramite-id-bd').value;
+      const codigo = document.getElementById('tramite-codigo').value.trim();
+      const nombre = document.getElementById('tramite-nombre').value.trim();
+      const costo = document.getElementById('tramite-costo').value.trim();
+      const plazo = document.getElementById('tramite-plazo').value.trim();
+      const reqText = document.getElementById('tramite-requisitos').value.trim();
+      const requisitos = reqText ? reqText.split('\n').filter(r => r.trim() !== '') : [];
+
+      const body = { id_tramite: codigo, nombre, costo, plazo, requisitos };
+      const esEditar = Boolean(idBd);
+      const url = esEditar ? `/api/admin/tramites/${idBd}` : '/api/admin/tramites';
+      const method = esEditar ? 'PUT' : 'POST';
 
       try {
-        const url = editandoId ? `/api/admin/tramites/${editandoId}` : '/api/admin/tramites';
-        const method = editandoId ? 'PUT' : 'POST';
         const res = await fetch(url, {
           method,
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
+          body: JSON.stringify(body)
         });
-        if (res.ok) {
+        const data = await res.json();
+
+        if (res.ok && data.status === 'success') {
+          mostrarAlerta(data.mensaje || 'Guardado exitosamente', 'exito');
           cerrarModal();
           cargarTramites();
+        } else {
+          mostrarAlerta(data.mensaje || 'Error al guardar', 'error');
         }
       } catch (err) {
-        cerrarModal();
+        mostrarAlerta('Error en la comunicación con el servidor.', 'error');
       }
     }
 
     async function eliminarTramite(id_tramite) {
-      if (!confirm(`¿Eliminar trámite ${id_tramite}?`)) return;
+      if (!confirm(`¿Estás seguro de eliminar el trámite ${id_tramite}?`)) return;
+
       try {
-        await fetch(`/api/admin/tramites/${id_tramite}`, { method: 'DELETE' });
-        cargarTramites();
-      } catch (e) {}
+        const res = await fetch(`/api/admin/tramites/${id_tramite}`, { method: 'DELETE' });
+        const data = await res.json();
+        if (res.ok && data.status === 'success') {
+          mostrarAlerta(data.mensaje || 'Eliminado correctamente', 'exito');
+          cargarTramites();
+        } else {
+          mostrarAlerta(data.mensaje || 'No se pudo eliminar', 'error');
+        }
+      } catch (err) {
+        mostrarAlerta('Error al intentar eliminar.', 'error');
+      }
     }
 
-    function escapeHtml(str) {
-      return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    function mostrarAlerta(msg, tipo) {
+      const box = document.getElementById('alerta-box');
+      const icono = document.getElementById('alerta-icono');
+      const texto = document.getElementById('alerta-mensaje');
+
+      icono.innerText = tipo === 'exito' ? '✅' : '⚠️';
+      texto.innerText = msg;
+      box.className = `p-4 rounded-2xl shadow-md border flex items-center justify-between transition-all ${tipo === 'exito' ? 'bg-emerald-50 border-emerald-200 text-emerald-900' : 'bg-red-50 border-red-200 text-red-900'}`;
+      box.classList.remove('hidden');
+
+      setTimeout(() => cerrarAlerta(), 4000);
     }
 
-    if (sessionStorage.getItem('admin_user')) {
-      mostrarDashboard(sessionStorage.getItem('admin_user'));
+    function cerrarAlerta() {
+      document.getElementById('alerta-box').classList.add('hidden');
     }
   </script>
 </body>
