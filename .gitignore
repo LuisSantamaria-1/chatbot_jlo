@@ -4,13 +4,32 @@ venv/
 ENV/
 env/
 
-# Archivos de caché de Python
+# Archivos de caché de Python y pruebas
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
+.pytest_cache/
 
-# Base de datos SQLite (se regenera con `python database.py`)
+# Node.js y Frontend Next.js
+node_modules/
+frontend/node_modules/
+frontend/.next/
+.next/
+
+# Variables de entorno y secretos
+.env
+.env.*
+*.env
+
+# Logs
+logs/
+*.log
+
+# Carpetas de trabajo temporal
+scratch/
+
+# Base de datos SQLite local
 *.db
 municipal.db
 
@@ -19,4 +38,3 @@ municipal.db
 Thumbs.db
 .vscode/
 .idea/
-*.log

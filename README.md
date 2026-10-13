@@ -122,9 +122,9 @@ Accede a `http://localhost:5000` para interactuar con la interfaz del chatbot.
 ### ⚙️ 2. Módulo de Administración (`/admin`)
 Accede a `http://localhost:5000/admin` o haz clic en **"⚙️ Panel Admin (RF06)"** en la barra superior.
 
-- **Credenciales por defecto:**
-  - **Usuario:** `admin` (o `admin_jlo`)
-  - **Contraseña:** `admin123`
+- **Credenciales:**
+  - **Usuario:** `admin`
+  - **Contraseña:** Configurada mediante la variable de entorno `ADMIN_PASSWORD` (o generada aleatoriamente al inicializar la BD).
 - **Funcionalidades CRUD:**
   - **Ver Catálogo:** Lista todos los trámites, costos, plazos y requisitos.
   - **Crear Trámite:** Añadir un nuevo procedimiento administrativo al TUPA.

@@ -544,13 +544,6 @@ export default function AdminTramitesPage() {
                   )}
                 </button>
               </form>
-
-              <div className="mt-6 pt-4 border-t border-slate-100 text-center">
-                <p className="text-[11px] text-slate-400">
-                  Credenciales de acceso: <strong>admin</strong> / <strong>admin123</strong>
-                </p>
-              </div>
-
             </div>
           </div>
         ) : (
@@ -814,7 +807,7 @@ export default function AdminTramitesPage() {
               <strong className="text-gray-800">{tramites.length}</strong> trámites registrados.
             </span>
             <span className="text-[11px] text-gray-500 italic">
-              Conexión directa: MySQL <code>chatbot_mdjlo</code>
+              Conexión directa: MySQL <code>municipal_db</code>
             </span>
           </div>
         </div>
