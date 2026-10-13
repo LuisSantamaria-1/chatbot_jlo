@@ -52,11 +52,11 @@ REG_01,regresion_t001,T_001: seguimiento costo y plazo sin columnas desplazadas,
 REG_02,regresion_t015,T_015: plazo 0 días hábiles responde Inmediato,Mensaje contiene 'Inmediato' y no 'no se encuentra disponible',"mensaje='El plazo de atención del trámite ""Certificado de Numeración Municipal"" es: Inmediato.'",1.0000,PASO
 REG_03,regresion_frustracion,Mensaje de queja activa empatía en lugar de saludo,"status='frustration', intent='frustracion'","status='frustration', intent='frustracion'",1.0000,PASO
 REG_04,regresion_xss,Verificación de escape HTML en portal y widget,escapeHTML activo y manejo seguro de payloads con etiquetas,escapeHTML presente en plantilla y endpoint responde seguro HTTP 200,1.0000,PASO
-LOG_01,registro_conversaciones,requisitos para certificado de numeracion,"ConversacionLog creado (T_015, success)","id=19575, intent=T_015, tipo=success",1.0000,PASO
-LOG_02,registro_conversaciones,mensaje_largo_600_caracteres,"sesion_id sha256 64 chars, len<=500, latencia>=0","len(sesion)=64, len(msg)=500, latencia=8ms",1.0000,PASO
+LOG_01,registro_conversaciones,requisitos para certificado de numeracion,"ConversacionLog creado (T_015, success)","id=19686, intent=T_015, tipo=success",1.0000,PASO
+LOG_02,registro_conversaciones,mensaje_largo_600_caracteres,"sesion_id sha256 64 chars, len<=500, latencia>=0","len(sesion)=64, len(msg)=500, latencia=10ms",1.0000,PASO
 LOG_03,tolerancia_fallos,falla en commit de ConversacionLog,HTTP 200 status=saludo sin interrupción,HTTP 200 status=saludo,1.0000,PASO
 LOG_04,proteccion_rutas,GET /api/admin/conversaciones sin sesion,HTTP 401 No autorizado,HTTP 401 status=error,1.0000,PASO
-LOG_05,admin_conversaciones,GET /api/admin/conversaciones?page=1&limit=10,HTTP 200 status=success con lista y metadatos,"HTTP 200 status=success, total=44",1.0000,PASO
+LOG_05,admin_conversaciones,GET /api/admin/conversaciones?page=1&limit=10,HTTP 200 status=success con lista y metadatos,"HTTP 200 status=success, total=56",1.0000,PASO
 NLP_A01,preprocesamiento,HOLA BUENOS DIAS,hola buenos dias,hola buenos dias,1.0000,PASO
 NLP_A02,preprocesamiento,trámite de numeración,tramite de numeracion,tramite de numeracion,1.0000,PASO
 NLP_A03,preprocesamiento,"¡hola!, ¿cuál es el costo?",hola cual es el costo,hola cual es el costo,1.0000,PASO
