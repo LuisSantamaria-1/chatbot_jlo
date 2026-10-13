@@ -64,7 +64,7 @@
       <div class="flex items-center space-x-4">
         <!-- Escudo Heráldico MDJLO -->
         <div class="relative flex-shrink-0 w-14 h-18 sm:w-16 sm:h-20">
-          <svg viewBox="0 0 100 120" class="w-full h-full drop-shadow-sm">
+          <svg viewBox="0 0 100 120" class="w-full h-full drop-shadow-sm" role="img" aria-label="Escudo oficial de José Leonardo Ortiz">
             <path d="M10 20 Q50 8 90 20 L86 28 Q50 18 14 28 Z" fill="#c0151a" stroke="#870a0e" stroke-width="1.5" />
             <text x="50" y="22" font-size="5" font-weight="bold" fill="#ffffff" text-anchor="middle">MDJLO</text>
             <ellipse cx="50" cy="70" rx="36" ry="42" fill="#ffffff" stroke="#c0151a" stroke-width="4" />
@@ -117,7 +117,7 @@
         <span id="alerta-icono" class="text-lg">✅</span>
         <span id="alerta-mensaje" class="text-xs sm:text-sm font-semibold text-slate-800"></span>
       </div>
-      <button onclick="cerrarAlerta()" class="text-slate-400 hover:text-slate-700 text-xs font-bold ml-4">✕</button>
+      <button onclick="cerrarAlerta()" aria-label="Cerrar notificación" class="text-slate-400 hover:text-slate-700 text-xs font-bold ml-4">✕</button>
     </div>
   </div>
 
@@ -142,10 +142,11 @@
 
       <form id="form-login" onsubmit="ejecutarLogin(event)" class="space-y-4">
         <div>
-          <label class="block text-xs font-semibold text-slate-700 mb-1">Usuario Administrativo</label>
+          <label for="login-usuario" class="block text-xs font-semibold text-slate-700 mb-1">Usuario Administrativo</label>
           <input
             type="text"
             id="login-usuario"
+            aria-label="Usuario administrativo"
             required
             placeholder="Ej. admin"
             class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#004494]"
@@ -153,10 +154,11 @@
         </div>
 
         <div>
-          <label class="block text-xs font-semibold text-slate-700 mb-1">Contraseña</label>
+          <label for="login-password" class="block text-xs font-semibold text-slate-700 mb-1">Contraseña</label>
           <input
             type="password"
             id="login-password"
+            aria-label="Contraseña"
             required
             placeholder="••••••••"
             class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#004494]"
@@ -184,7 +186,7 @@
         <div class="flex items-center gap-2">
           <span class="px-2.5 py-0.5 rounded-md bg-amber-100 text-amber-900 font-bold text-[10px] uppercase">Panel Admin</span>
           <span class="text-xs text-slate-400">•</span>
-          <span className="text-xs text-slate-500 font-medium">Catálogo de Procedimientos TUPA</span>
+          <span class="text-xs text-slate-500 font-medium">Catálogo de Procedimientos TUPA</span>
         </div>
         <h2 class="text-xl font-bold text-slate-900 tracking-tight mt-1 font-serif">
           Trámites y Requisitos Registrados
@@ -205,11 +207,12 @@
         <input
           type="text"
           id="filtro-busqueda"
+          aria-label="Buscar trámites por código o nombre"
           onkeyup="filtrarTabla()"
           placeholder="Buscar por código de trámite (ej. T_001) o nombre..."
           class="w-full pl-9 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#004494]"
         />
-        <svg class="w-4 h-4 text-slate-400 absolute left-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="w-4 h-4 text-slate-400 absolute left-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
       </div>
@@ -218,7 +221,7 @@
     <!-- Data Table -->
     <div class="bg-white rounded-2xl border border-gray-200/90 shadow-xs overflow-hidden">
       <div class="overflow-x-auto">
-        <table className="w-full text-left text-xs sm:text-sm border-collapse" id="tabla-tramites">
+        <table class="w-full text-left text-xs sm:text-sm border-collapse" id="tabla-tramites">
           <thead>
             <tr class="bg-slate-50 border-b border-slate-200 text-slate-500 font-semibold uppercase text-[11px] tracking-wider">
               <th class="py-3.5 px-4">Código</th>
@@ -240,7 +243,7 @@
 
   <!-- MODAL EDITAR / CREAR TRÁMITE -->
   <div id="modal-tramite" class="hidden fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-xs flex items-center justify-center p-4">
-    <div class="bg-white rounded-2xl shadow-xl border border-slate-200 max-w-lg w-full p-6 space-y-4 animate-scaleUp">
+    <div class="bg-white rounded-2xl shadow-xl border border-slate-200 max-w-lg w-full p-6 space-y-4 animate-scaleUp max-h-[90vh] overflow-y-auto">
       <h3 id="modal-titulo" class="font-bold text-lg text-slate-900 border-b border-slate-100 pb-2">
         Registrar Nuevo Trámite
       </h3>
@@ -249,7 +252,7 @@
         <input type="hidden" id="tramite-id-bd" />
 
         <div>
-          <label class="font-semibold text-slate-700 block mb-1">Código del Trámite</label>
+          <label for="tramite-codigo" class="font-semibold text-slate-700 block mb-1">Código del Trámite</label>
           <input
             type="text"
             id="tramite-codigo"
@@ -260,7 +263,7 @@
         </div>
 
         <div>
-          <label class="font-semibold text-slate-700 block mb-1">Nombre del Procedimiento</label>
+          <label for="tramite-nombre" class="font-semibold text-slate-700 block mb-1">Nombre del Procedimiento</label>
           <input
             type="text"
             id="tramite-nombre"
@@ -272,7 +275,7 @@
 
         <div class="grid grid-cols-2 gap-2">
           <div>
-            <label class="font-semibold text-slate-700 block mb-1">Costo (S/)</label>
+            <label for="tramite-costo" class="font-semibold text-slate-700 block mb-1">Costo (S/)</label>
             <input
               type="text"
               id="tramite-costo"
@@ -281,7 +284,7 @@
             />
           </div>
           <div>
-            <label class="font-semibold text-slate-700 block mb-1">Plazo de Atención</label>
+            <label for="tramite-plazo" class="font-semibold text-slate-700 block mb-1">Plazo de Atención</label>
             <input
               type="text"
               id="tramite-plazo"
@@ -292,7 +295,7 @@
         </div>
 
         <div>
-          <label class="font-semibold text-slate-700 block mb-1">Requisitos (Uno por línea)</label>
+          <label for="tramite-requisitos" class="font-semibold text-slate-700 block mb-1">Requisitos (Uno por línea)</label>
           <textarea
             id="tramite-requisitos"
             rows="4"
@@ -373,7 +376,10 @@
       cargarTramites();
     }
 
-    function cerrarSesion() {
+    async function cerrarSesion() {
+      try {
+        await fetch('/api/admin/logout', { method: 'POST' });
+      } catch (_) {}
       document.getElementById('pantalla-dashboard').classList.add('hidden');
       document.getElementById('session-badge').classList.add('hidden');
       document.getElementById('session-badge').classList.remove('flex');
@@ -383,6 +389,11 @@
     async function cargarTramites() {
       try {
         const res = await fetch('/api/admin/tramites');
+        if (res.status === 401) {
+          cerrarSesion();
+          mostrarAlerta('Tu sesión ha expirado. Por favor, inicia sesión nuevamente.', 'error');
+          return;
+        }
         const data = await res.json();
         if (res.ok && data.tramites) {
           tramitesData = data.tramites;
@@ -398,7 +409,9 @@
       tbody.innerHTML = '';
 
       if (lista.length === 0) {
-        tbody.innerHTML = '<tr><td colSpan="6" class="text-center py-8 text-slate-400 text-xs">No hay trámites registrados.</td></tr>';
+        const query = (document.getElementById('filtro-busqueda').value || '').trim();
+        const msg = query ? 'No se encontraron trámites que coincidan con la búsqueda.' : 'No hay trámites registrados en el catálogo del TUPA.';
+        tbody.innerHTML = `<tr><td colspan="6" class="text-center py-8 text-slate-400 text-xs font-medium">${msg}</td></tr>`;
         return;
       }
 
@@ -439,11 +452,13 @@
         const btnEditar = document.createElement('button');
         btnEditar.className = 'px-2.5 py-1 text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg text-xs font-semibold transition';
         btnEditar.textContent = 'Editar';
+        btnEditar.setAttribute('aria-label', `Editar trámite ${t.id_tramite}`);
         btnEditar.onclick = () => abrirModalEditar(t.id_tramite);
 
         const btnEliminar = document.createElement('button');
         btnEliminar.className = 'px-2.5 py-1 text-slate-600 hover:text-red-600 hover:bg-red-50 rounded-lg text-xs font-semibold transition';
         btnEliminar.textContent = 'Eliminar';
+        btnEliminar.setAttribute('aria-label', `Eliminar trámite ${t.id_tramite}`);
         btnEliminar.onclick = () => eliminarTramite(t.id_tramite);
 
         tdAcciones.appendChild(btnEditar);
@@ -516,6 +531,12 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(body)
         });
+        if (res.status === 401) {
+          cerrarModal();
+          cerrarSesion();
+          mostrarAlerta('Tu sesión ha expirado. Por favor, inicia sesión nuevamente.', 'error');
+          return;
+        }
         const data = await res.json();
 
         if (res.ok && data.status === 'success') {
@@ -531,10 +552,15 @@
     }
 
     async function eliminarTramite(id_tramite) {
-      if (!confirm(`¿Estás seguro de eliminar el trámite ${id_tramite}?`)) return;
+      if (!confirm(`¿Estás seguro de que deseas eliminar el trámite con código ${id_tramite}? Esta acción no se puede deshacer.`)) return;
 
       try {
         const res = await fetch(`/api/admin/tramites/${id_tramite}`, { method: 'DELETE' });
+        if (res.status === 401) {
+          cerrarSesion();
+          mostrarAlerta('Tu sesión ha expirado. Por favor, inicia sesión nuevamente.', 'error');
+          return;
+        }
         const data = await res.json();
         if (res.ok && data.status === 'success') {
           mostrarAlerta(data.mensaje || 'Eliminado correctamente', 'exito');

@@ -31,6 +31,7 @@ ADM_29,seguridad_cookie,Evaluación COOKIE_SECURE (true/false),SESSION_COOKIE_SE
 ADM_30,rate_limiting_login,6 intentos fallidos seguidos y posterior reset,HTTP 429 al 6to intento con Retry-After y reinicio,"r6_code=429, retry_after=299, r_ok=200",1.0000,PASO
 ADM_31,cabeceras_seguridad,Inspección de cabeceras HTTP de respuesta,"X-Content-Type-Options, X-Frame-Options, Referrer-Policy, Permissions-Policy, Cache-Control, CSP","nosniff=nosniff, frame=SAMEORIGIN, cache_admin=no-store, no-cache, must-revalidate, max-age=0",1.0000,PASO
 ADM_32,compatibilidad_csp,GET / y GET /admin con directivas CSP,HTTP 200 en ambas páginas y directivas compatibles con Tailwind y estilos inline,"index_code=200, admin_code=200",1.0000,PASO
+ADM_33,plantillas_ui_accesibilidad,"Verificación de accesibilidad, atributos y sintaxis en HTML","Atributos lang='es', aria-labels, etiquetas for, sin JSX residual y modales responsive",Ambas plantillas cumplen estándares de accesibilidad e integridad visual,1.0000,PASO
 CHAT_D01,contexto_dialogo,confirmacion_si,status=success,status=success,1.0000,PASO
 CHAT_D02,contexto_dialogo,confirmacion_no,status=clarification_rejected,status=clarification_rejected,1.0000,PASO
 CHAT_D03,contexto_dialogo,"no, ese no (con tramite activo)",status=correction,status=correction,0.1839,PASO
@@ -47,7 +48,7 @@ CHAT_E07,endpoint_chat,payload sin 'mensaje',status=error (400),status=error (40
 CHAT_E08,endpoint_chat,como te llamas,status=charla_casual,status=charla_casual,0.9232,PASO
 CHAT_E09,endpoint_chat,ola qiero un permiso para mi bodega q hago,status=clarification,status=clarification,0.5068,PASO
 CHAT_E10,endpoint_chat,licencia,status=clarification,status=clarification,0.9936,PASO
-LOG_01,registro_conversaciones,requisitos para certificado de numeracion,"ConversacionLog creado (T_015, success)","id=19427, intent=T_015, tipo=success",1.0000,PASO
+LOG_01,registro_conversaciones,requisitos para certificado de numeracion,"ConversacionLog creado (T_015, success)","id=19529, intent=T_015, tipo=success",1.0000,PASO
 LOG_02,registro_conversaciones,mensaje_largo_600_caracteres,"sesion_id sha256 64 chars, len<=500, latencia>=0","len(sesion)=64, len(msg)=500, latencia=7ms",1.0000,PASO
 LOG_03,tolerancia_fallos,falla en commit de ConversacionLog,HTTP 200 status=saludo sin interrupción,HTTP 200 status=saludo,1.0000,PASO
 LOG_04,proteccion_rutas,GET /api/admin/conversaciones sin sesion,HTTP 401 No autorizado,HTTP 401 status=error,1.0000,PASO

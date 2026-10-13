@@ -57,7 +57,7 @@
         <span class="text-yellow-700 font-normal">|</span>
         <span class="hover:underline cursor-pointer">Mesa de Partes Virtual</span>
         <span class="text-yellow-700 font-normal">|</span>
-        <span class="hover:underline cursor-pointer">Tramifacil</span>
+        <span class="hover:underline cursor-pointer">Tramifácil</span>
         <span class="text-yellow-700 font-normal">|</span>
         <span class="hover:underline cursor-pointer">Rendición de Cuentas</span>
         <span class="text-yellow-700 font-normal">|</span>
@@ -83,11 +83,11 @@
         
         <!-- Escudo de José Leonardo Ortiz -->
         <div class="relative flex-shrink-0 w-16 h-20 sm:w-20 sm:h-24">
-          <svg viewBox="0 0 100 120" class="w-full h-full drop-shadow-md">
-            <!-- Cinta superior roja "POR UNA TRANSFORMACION SOCIO CULTURAL" -->
+          <svg viewBox="0 0 100 120" class="w-full h-full drop-shadow-md" role="img" aria-label="Escudo oficial de José Leonardo Ortiz">
+            <!-- Cinta superior roja "POR UNA TRANSFORMACIÓN SOCIO CULTURAL" -->
             <path d="M10 20 Q50 8 90 20 L86 28 Q50 18 14 28 Z" fill="#c0151a" stroke="#870a0e" stroke-width="1.5" />
             <text x="50" y="21" font-size="5" font-weight="bold" fill="#ffffff" text-anchor="middle" font-family="sans-serif">
-              POR UNA TRANSFORMACION
+              POR UNA TRANSFORMACIÓN
             </text>
             <text x="50" y="26" font-size="4.5" font-weight="bold" fill="#ffd700" text-anchor="middle" font-family="sans-serif">
               SOCIO CULTURAL
@@ -322,16 +322,19 @@
             <input
               type="text"
               id="chat-input"
+              aria-label="Escribe tu pregunta sobre trámites"
               placeholder="Escribe tu pregunta sobre trámites (ej. Licencia para bodega)..."
               class="flex-1 bg-transparent px-3 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none"
               required
             />
             <button
+              id="chat-submit-btn"
               type="submit"
+              aria-label="Enviar consulta al asistente"
               class="bg-[#003366] hover:bg-blue-900 text-amber-400 px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 shadow-xs"
             >
               <span>Enviar</span>
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </button>
@@ -357,10 +360,10 @@
 
         <div class="space-y-4 text-xs">
           
-          {/* Norma 1 */}
+          <!-- Norma 1 -->
           <div class="space-y-1 pb-3 border-b border-slate-100">
             <h4 class="font-bold text-slate-900 hover:text-[#004494] cursor-pointer transition">
-              RESOLUCION DE GERENCIA MUNICIPAL N°292-2026-MDJLO-GM
+              RESOLUCIÓN DE GERENCIA MUNICIPAL N°292-2026-MDJLO-GM
             </h4>
             <p class="text-slate-600 line-clamp-2">
               💬 APROBAR, en virtud de la facultad excepcional conferida por el numeral (...)
@@ -370,10 +373,10 @@
             </span>
           </div>
 
-          {/* Norma 2 */}
+          <!-- Norma 2 -->
           <div class="space-y-1 pb-3 border-b border-slate-100">
             <h4 class="font-bold text-slate-900 hover:text-[#004494] cursor-pointer transition">
-              RESOLUCION DE GERENCIA MUNICIPAL N°290-2026-MDJLO-GM
+              RESOLUCIÓN DE GERENCIA MUNICIPAL N°290-2026-MDJLO-GM
             </h4>
             <p class="text-slate-600 line-clamp-2">
               💬 FORMALIZAR LAS MODIFICACIONES PRESUPUESTARIAS EFECTUADAS EN EL NIVEL FUNCIONAL (...)
@@ -383,7 +386,7 @@
             </span>
           </div>
 
-          {/* TUPA 2026 */}
+          <!-- TUPA 2026 -->
           <div class="bg-amber-50/70 border border-amber-200 rounded-xl p-3 space-y-1">
             <span class="px-2 py-0.5 rounded bg-amber-400 text-slate-950 font-bold text-[9px] uppercase">
               DOCUMENTO VIGENTE
@@ -412,18 +415,19 @@
       onclick="toggleChatFlotante()"
       class="w-14 h-14 bg-[#003366] hover:bg-blue-900 text-amber-400 rounded-full shadow-2xl border-2 border-yellow-400 flex items-center justify-center transition-all hover:scale-105"
       title="Abrir Asistente Virtual"
+      aria-label="Abrir asistente virtual"
     >
       <span class="text-xl">🤖</span>
     </button>
 
     <!-- Modal Flotante Emergente -->
-    <div id="widget-flotante" class="hidden absolute bottom-16 right-0 w-80 sm:w-96 bg-white rounded-2xl shadow-2xl border border-slate-300 overflow-hidden flex flex-col h-[450px] animate-scaleUp">
+    <div id="widget-flotante" class="hidden absolute bottom-16 right-0 w-[calc(100vw-2.5rem)] sm:w-96 max-w-sm bg-white rounded-2xl shadow-2xl border border-slate-300 overflow-hidden flex flex-col h-[450px] max-h-[80vh] animate-scaleUp">
       <div class="bg-[#003366] text-white p-3 flex items-center justify-between border-b border-blue-900">
         <div class="flex items-center space-x-2">
           <span class="text-amber-400 font-bold text-sm">Leonardito</span>
           <span class="text-[10px] bg-emerald-500 text-white px-1.5 py-0.5 rounded font-semibold">TUPA MDJLO</span>
         </div>
-        <button onclick="toggleChatFlotante()" class="text-slate-300 hover:text-white text-sm font-bold p-1">✕</button>
+        <button onclick="toggleChatFlotante()" aria-label="Cerrar asistente virtual" class="text-slate-300 hover:text-white text-sm font-bold p-1">✕</button>
       </div>
 
       <div id="widget-messages" class="flex-1 p-3 overflow-y-auto space-y-2.5 text-xs bg-slate-50/50">
@@ -434,15 +438,30 @@
         </div>
       </div>
 
+      <!-- Indicador de Carga Flotante -->
+      <div id="widget-typing-indicator" class="hidden px-3 py-1.5 bg-slate-50 border-t border-slate-100 flex items-center space-x-1.5 text-slate-500 text-[11px]">
+        <span class="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce"></span>
+        <span class="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce [animation-delay:0.2s]"></span>
+        <span class="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce [animation-delay:0.4s]"></span>
+        <span class="ml-1 text-[10px] text-slate-500 font-medium">Leonardito está escribiendo...</span>
+      </div>
+
       <form onsubmit="handleWidgetSubmit(event)" class="p-2 bg-white border-t border-slate-200 flex gap-1">
         <input
           type="text"
           id="widget-input"
+          aria-label="Escribe tu consulta en el asistente flotante"
           placeholder="Escribe tu consulta..."
+          onkeydown="if(event.key === 'Enter') { event.preventDefault(); handleWidgetSubmit(event); }"
           class="flex-1 bg-slate-50 border border-slate-200 rounded-xl px-3 text-xs focus:outline-none"
           required
         />
-        <button type="submit" class="bg-[#003366] text-amber-400 px-3 py-1.5 rounded-xl text-xs font-bold">
+        <button
+          id="widget-submit-btn"
+          type="submit"
+          aria-label="Enviar consulta flotante"
+          class="bg-[#003366] text-amber-400 px-3 py-1.5 rounded-xl text-xs font-bold"
+        >
           Enviar
         </button>
       </form>
@@ -489,12 +508,17 @@
     async function handleChatSubmit(e) {
       e.preventDefault();
       const input = document.getElementById('chat-input');
+      const btn = document.getElementById('chat-submit-btn');
       const texto = input.value.trim();
       if (!texto) return;
 
       appendUserMessage(texto, 'chat-messages');
       input.value = '';
       showTyping(true);
+      if (btn) {
+        btn.disabled = true;
+        btn.classList.add('opacity-50', 'cursor-not-allowed');
+      }
 
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 10000);
@@ -507,33 +531,54 @@
           signal: controller.signal
         });
         clearTimeout(timeoutId);
-        const data = await response.json();
 
-        if (response.ok && data.status === 'success') {
+        if (response.status === 503) {
+          appendBotMessage('El servicio no está disponible en este momento (servidor en mantenimiento o sobrecargado). Por favor, intenta más tarde.', null, 'chat-messages');
+          return;
+        }
+
+        let data = null;
+        try {
+          data = await response.json();
+        } catch (_) {}
+
+        if (response.ok && data && data.status === 'success') {
           appendBotMessage(data.mensaje || `Información encontrada para: ${data.nombre}`, data.datosTramite, 'chat-messages');
-        } else {
+        } else if (response.ok && data) {
           appendBotMessage(data.mensaje || 'Solo puedo orientarte sobre los trámites del TUPA de la MDJLO.', null, 'chat-messages');
+        } else {
+          appendBotMessage(data && data.mensaje ? data.mensaje : 'Ocurrió un error en el servidor. Por favor, intenta más tarde.', null, 'chat-messages');
         }
       } catch (err) {
         clearTimeout(timeoutId);
         if (err.name === 'AbortError') {
-          appendBotMessage('El servidor tardó demasiado en responder. Intenta nuevamente.', null, 'chat-messages');
+          appendBotMessage('El servidor tardó demasiado en responder (tiempo límite de 10 s agotado). Por favor, intenta nuevamente.', null, 'chat-messages');
         } else {
-          appendBotMessage('Error de conexión con el servidor. Intenta nuevamente más tarde.', null, 'chat-messages');
+          appendBotMessage('Error de red o conexión con el servidor. Verifica tu conexión e intenta más tarde.', null, 'chat-messages');
         }
       } finally {
         showTyping(false);
+        if (btn) {
+          btn.disabled = false;
+          btn.classList.remove('opacity-50', 'cursor-not-allowed');
+        }
       }
     }
 
     async function handleWidgetSubmit(e) {
       e.preventDefault();
       const input = document.getElementById('widget-input');
+      const btn = document.getElementById('widget-submit-btn');
       const texto = input.value.trim();
       if (!texto) return;
 
       appendUserMessage(texto, 'widget-messages');
       input.value = '';
+      showWidgetTyping(true);
+      if (btn) {
+        btn.disabled = true;
+        btn.classList.add('opacity-50', 'cursor-not-allowed');
+      }
 
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 10000);
@@ -546,14 +591,36 @@
           signal: controller.signal
         });
         clearTimeout(timeoutId);
-        const data = await response.json();
-        appendBotMessage(data.mensaje || 'Información procesada.', null, 'widget-messages');
+
+        if (response.status === 503) {
+          appendBotMessage('El servicio no está disponible en este momento (servidor en mantenimiento o sobrecargado). Por favor, intenta más tarde.', null, 'widget-messages');
+          return;
+        }
+
+        let data = null;
+        try {
+          data = await response.json();
+        } catch (_) {}
+
+        if (response.ok && data && data.status === 'success') {
+          appendBotMessage(data.mensaje || `Información encontrada para: ${data.nombre}`, null, 'widget-messages');
+        } else if (response.ok && data) {
+          appendBotMessage(data.mensaje || 'Solo puedo orientarte sobre los trámites del TUPA de la MDJLO.', null, 'widget-messages');
+        } else {
+          appendBotMessage(data && data.mensaje ? data.mensaje : 'Ocurrió un error en el servidor. Por favor, intenta más tarde.', null, 'widget-messages');
+        }
       } catch (err) {
         clearTimeout(timeoutId);
         if (err.name === 'AbortError') {
-          appendBotMessage('El servidor tardó demasiado en responder. Intenta nuevamente.', null, 'widget-messages');
+          appendBotMessage('El servidor tardó demasiado en responder (tiempo límite de 10 s agotado). Por favor, intenta nuevamente.', null, 'widget-messages');
         } else {
-          appendBotMessage('Error de conexión con el servidor. Intenta nuevamente más tarde.', null, 'widget-messages');
+          appendBotMessage('Error de red o conexión con el servidor. Verifica tu conexión e intenta más tarde.', null, 'widget-messages');
+        }
+      } finally {
+        showWidgetTyping(false);
+        if (btn) {
+          btn.disabled = false;
+          btn.classList.remove('opacity-50', 'cursor-not-allowed');
         }
       }
     }
@@ -618,7 +685,17 @@
     }
 
     function showTyping(show) {
-      document.getElementById('typing-indicator').classList.toggle('hidden', !show);
+      const el = document.getElementById('typing-indicator');
+      if (el) el.classList.toggle('hidden', !show);
+      const container = document.getElementById('chat-messages');
+      if (show && container) container.scrollTop = container.scrollHeight;
+    }
+
+    function showWidgetTyping(show) {
+      const el = document.getElementById('widget-typing-indicator');
+      if (el) el.classList.toggle('hidden', !show);
+      const container = document.getElementById('widget-messages');
+      if (show && container) container.scrollTop = container.scrollHeight;
     }
   </script>
 </body>

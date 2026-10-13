@@ -1,0 +1,39 @@
+id,mensaje,status,intencion,confianza,mensaje_devuelto
+AC-01,hola buenos dias,saludo,saludo,0.9959,"¡Buenas! Soy Leonardito, el asistente del TUPA de la MDJLO. Cuéntame, ¿qué trámite necesitas hacer?"
+AC-02,requisitos para certificado de numeracion,success,T_015,0.9682,"Para el trámite ""Certificado de Numeración Municipal"" necesitas:
+- Solicitud simple indicando los ingresos al predio y/o las unidades inmobiliarias de las que requiere el certificado señalando el número de recibo y la fecha del pago efectuado por el derecho de tramitación.
+
+¿Deseas conocer el costo o el plazo de atención de este trámite?"
+AC-03,cuanto cuesta,success,consultar_costo,0.5606,"El costo del trámite ""Certificado de Numeración Municipal"" es: S/ 90.30."
+AC-04,cuanto tiempo demora,success,consultar_plazo,0.9869,"El plazo de atención del trámite ""Certificado de Numeración Municipal"" no se encuentra disponible actualmente en el sistema. Te sugerimos acudir directamente a la municipalidad para consultar esta información."
+AC-05,ola qiero un permiso para mi bodega q hago,clarification,T_003,0.5068,"No estoy 100% seguro de haberte entendido. 🤔 ¿Te refieres a los requisitos para 'Licencia provisional de funcionamiento para bodegas'? Si es así, dímelo y te paso los datos."
+AC-06,si,success,confirmacion_positiva,N/A,"¡Perfecto! Para el trámite ""Licencia provisional de funcionamiento para bodegas"" necesitas:
+- Solicitud de Licencia Provisional (Declaración Jurada).
+- Declaración Jurada de cumplimiento de condiciones de seguridad de la bodega.
+
+¿Deseas conocer el costo o el plazo de atención de este trámite?"
+AC-07,no,clarification_rejected,confirmacion_negativa,N/A,"Entendido, disculpa la confusión. ¿Podrías indicarme nuevamente y con más detalle qué trámite municipal necesitas realizar?"
+AC-08,licencia,clarification,consultar_gestion_licencia,0.9936,"Ya tienes una licencia de funcionamiento y quieres hacer algo con ella. Cuéntame exactamente qué necesitas:
+a) Cambiar el giro/rubro de mi negocio (sigo siendo el mismo dueño)
+b) Transferir la licencia a otra persona (venta, herencia, cambio de dueño)
+c) Cerrar mi negocio (cese de actividades)
+d) Sacar un duplicado porque perdí o me robaron mi licencia
+Respóndeme con la letra o cuéntame cuál necesitas."
+AC-09,a,success,resolucion_macro,N/A,"Entendido. Para el trámite ""Licencia de funcionamiento para cambio de giro"" necesitas:
+- Declaración jurada para informar el cambio de giro.
+
+¿Deseas conocer el costo o el plazo de atención de este trámite?"
+AC-10,no se,derivacion,no_seguro_macro,N/A,"No hay apuro. Cuando tengas claro si necesitas cambiar el giro, transferir la licencia, cerrar el negocio o sacar un duplicado, dime la letra o cuéntame qué pasó."
+AC-11,"no, ese no",correction,correccion_contexto,0.1839,Disculpa la confusión 🙏 ¿Sobre qué trámite necesitas información entonces?
+AC-12,"no gracias, adios",despedida,despedida,0.9916,"¡De nada! Ha sido un gusto ayudarte. Si necesitas consultar otro trámite del TUPA, aquí estaré. ¡Que tengas un excelente día! ✨"
+AC-13,cual es el sueldo del alcalde,fallback,fuera_de_dominio,0.3474,"Mi especialidad es exclusivamente el TUPA de la Municipalidad (licencias, permisos, duplicados, etc.). ¿Podrías reformular tu consulta hacia algún trámite municipal?"
+AC-14,quiero saber el estado de mi expediente,fallback,fuera_de_dominio,0.5644,"Solo puedo orientarte sobre los trámites y procedimientos administrativos del TUPA de la Municipalidad Distrital de José Leonardo Ortiz (licencias comerciales, cambio de giro, duplicados, acceso a la información, etc.). Por favor, formula una consulta relacionada a trámites municipales."
+AC-15,cuanto cuesta,fallback,consultar_costo,0.5606,"Solo puedo orientarte sobre los trámites y procedimientos administrativos del TUPA de la Municipalidad Distrital de José Leonardo Ortiz (licencias comerciales, cambio de giro, duplicados, acceso a la información, etc.). Por favor, formula una consulta relacionada a trámites municipales."
+AC-16,"no me ayudas en nada, pesimo servicio",saludo,saludo,0.0833,¡Hola! 👋 Qué gusto saludarte. Soy Leonardito. ¿En qué trámite municipal te puedo orientar hoy?
+AC-17a,requisitos para acceso a la informacion publica,success,T_001,0.9286,"Para el trámite ""Acceso a la Información Pública creada u obtenida por la entidad"" necesitas:
+- que se encuentre en su posesión o bajo su control
+
+¿Deseas conocer el costo o el plazo de atención de este trámite?"
+AC-17b,cuanto cuesta,success,consultar_costo,0.5606,"El costo del trámite ""Acceso a la Información Pública creada u obtenida por la entidad"" es: 1. Solicitud presentada vía formulario o documento. | 2. Indicar número y fecha de comprobante de pa."
+AC-17c,cuanto demora,success,consultar_plazo,0.7697,"El plazo de atención del trámite ""Acceso a la Información Pública creada u obtenida por la entidad"" es: Copia S/0.10 - CD S/1.00."
+AC-18,<b>prueba</b>,charla_casual,charla_casual,0.0832,"¡Todo excelente! 🤖 Soy un asistente enfocado en trámites municipales, así que no puedo charlar de otros temas, pero con gusto te ayudo si tienes alguna consulta del TUPA."

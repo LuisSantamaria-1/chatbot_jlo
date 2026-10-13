@@ -886,3 +886,48 @@ def test_paginas_html_responden_200_con_csp(client, registrar):
         1.0, estado
     )
 
+
+def test_ui_plantillas_accesibilidad_y_sin_artefactos_jsx(client, registrar):
+    """Verifica accesibilidad básica, lang='es', indicadores de carga y ausencia de artefactos JSX en plantillas HTML."""
+    # 1. Portal Ciudadano (index.html)
+    res_index = client.get("/")
+    assert res_index.status_code == 200
+    html_index = res_index.get_data(as_text=True)
+
+    assert '<html lang="es">' in html_index
+    assert 'aria-label="Escribe tu pregunta sobre trámites"' in html_index
+    assert 'aria-label="Escribe tu consulta en el asistente flotante"' in html_index
+    assert 'id="widget-typing-indicator"' in html_index
+    assert 'id="chat-submit-btn"' in html_index
+    assert 'id="widget-submit-btn"' in html_index
+    assert '{/*' not in html_index
+    assert '*/}' not in html_index
+    assert "Tramifácil" in html_index
+    assert "POR UNA TRANSFORMACIÓN" in html_index
+    assert "RESOLUCIÓN DE GERENCIA MUNICIPAL" in html_index
+
+    # 2. Panel Administrativo (admin.html)
+    res_admin = client.get("/admin")
+    assert res_admin.status_code == 200
+    html_admin = res_admin.get_data(as_text=True)
+
+    assert '<html lang="es">' in html_admin
+    assert '<label for="login-usuario"' in html_admin
+    assert '<label for="login-password"' in html_admin
+    assert '<label for="tramite-codigo"' in html_admin
+    assert '<label for="tramite-nombre"' in html_admin
+    assert 'aria-label="Buscar trámites por código o nombre"' in html_admin
+    assert 'className=' not in html_admin
+    assert '{/*' not in html_admin
+    assert 'max-h-[90vh] overflow-y-auto' in html_admin
+    assert 'Tu sesión ha expirado' in html_admin
+    assert '¿Estás seguro de que deseas eliminar el trámite con código' in html_admin
+
+    registrar(
+        "ADM_33", "plantillas_ui_accesibilidad", "Verificación de accesibilidad, atributos y sintaxis en HTML",
+        "Atributos lang='es', aria-labels, etiquetas for, sin JSX residual y modales responsive",
+        "Ambas plantillas cumplen estándares de accesibilidad e integridad visual",
+        1.0, "PASO"
+    )
+
+
