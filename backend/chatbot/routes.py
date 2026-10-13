@@ -193,6 +193,19 @@ def _procesar_mensaje_chat():
                     "mensaje": mensaje_resp,
                 }), 200
 
+        # --- Detección de frustración temprana (regla de empatía léxica) ---
+        texto_norm_frustracion = preprocesar_texto(texto_consulta)
+        if detectar_frustracion(texto_norm_frustracion):
+            session.pop("tramite_actual", None)
+            session.pop("tramite_pendiente", None)
+            session.pop("macro_pendiente", None)
+            return jsonify({
+                "status": "frustration",
+                "intent": "frustracion",
+                "confianza": round(confianza, 4),
+                "mensaje": random.choice(MENSAJES_EMPATIA_FALLBACK),
+            }), 200
+
         # --- Caso 1: saludo -----------------------------------------------
         if intent_predicho == "saludo":
             session.pop("tramite_actual", None)
@@ -256,8 +269,10 @@ def _procesar_mensaje_chat():
                         mensaje_resp = f"El costo del trámite \"{tramite.nombre}\" es: {tramite.costo}."
                 else:  # plazo
                     plazo_str = (tramite.plazo or "").strip()
-                    if not plazo_str or plazo_str.lower() == "no especificado" or plazo_str.startswith("0 "):
+                    if not plazo_str or plazo_str.lower() == "no especificado":
                         mensaje_resp = f"El plazo de atención del trámite \"{tramite.nombre}\" no se encuentra disponible actualmente en el sistema. Te sugerimos acudir directamente a la municipalidad para consultar esta información."
+                    elif plazo_str.startswith("0 ") or plazo_str == "0":
+                        mensaje_resp = f"El plazo de atención del trámite \"{tramite.nombre}\" es: Inmediato."
                     else:
                         mensaje_resp = f"El plazo de atención del trámite \"{tramite.nombre}\" es: {tramite.plazo}."
 
@@ -361,10 +376,15 @@ def _procesar_mensaje_chat():
 
         if subintencion == "plazo":
             plazo_str = (tramite.plazo or "").strip()
-            if not plazo_str or plazo_str.lower() == "no especificado" or plazo_str.startswith("0 "):
+            if not plazo_str or plazo_str.lower() == "no especificado":
                 mensaje_resp = (
                     f"El plazo de atención para {tramite.nombre} no se encuentra disponible actualmente en el sistema. "
                     "Te sugerimos acudir directamente a la municipalidad para consultar esta información. "
+                    "¿Te puedo ayudar con algo más?"
+                )
+            elif plazo_str.startswith("0 ") or plazo_str == "0":
+                mensaje_resp = (
+                    f"El plazo de atención para {tramite.nombre} es: Inmediato. "
                     "¿Te puedo ayudar con algo más?"
                 )
             else:

@@ -35,7 +35,7 @@ def poblar_base_datos(csv_path=None):
         contador_actualizados = 0
 
         for fila in lector:
-            id_tramite = fila["ID"].strip()
+            id_tramite = (fila.get("ID") or fila.get("ID_Tramite") or fila.get("id_tramite") or "").strip()
             nombre = fila["Nombre"].strip()
             requisitos_raw = fila["Requisitos"].strip()
             costo = fila["Costo"].strip()

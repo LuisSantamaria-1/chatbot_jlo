@@ -106,8 +106,8 @@ def interpretar_confirmacion(texto_preprocesado):
 FRASES_FRUSTRACION = [
     "no funciona", "no sirve para nada", "no sirve", "pesimo servicio",
     "que mal servicio", "esto es un desastre", "no entiendes nada",
-    "no me ayudas", "eres inutil", "no entiendo nada", "esto no sirve",
-    "que porqueria", "malisimo este chatbot", "no resuelves nada",
+    "no me ayudas", "no me ayudas en nada", "eres inutil", "no entiendo nada",
+    "esto no sirve", "que porqueria", "malisimo este chatbot", "no resuelves nada",
     "perdida de tiempo", "no ayudas en nada", "que bot mas malo",
     "no sabes nada", "eres pesimo", "que servicio tan malo",
 ]
