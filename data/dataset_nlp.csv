@@ -1,0 +1,1166 @@
+query,intent
+quiero el tupa de la municipalidad en digital,T_001
+necesito copia del reglamento de organizacion y funciones,T_001
+quiero solicitar el organigrama municipal,T_001
+necesito copia de una ordenanza especifica,T_001
+quiero solicitar copias de una resolucion antigua,T_001
+como hago pa pedir documentos a la muni,T_001
+necesito el expediente de mi calle,T_001
+req para sacar copia de una ordenanza,T_001
+kiero una informacion publica de la municipalidad,T_001
+como tramito acceso a la informacion,T_001
+cuanto cobran por darme copias certificadas,T_001
+q debo presentar para pedir info a la muni,T_001
+necesito leer un documento publico como hago,T_001
+donde pido el informe de una obra,T_001
+quiero sacar copias de un tramite pasado,T_001
+requisitos pa ver un expediente de la alcaldia,T_001
+me pueden dar copia de un contrato municipal,T_001
+como solicito la resolucion de alcaldia,T_001
+info para pedir papeles a mesa de partes,T_001
+necesito q me faciliten un doc de la muni,T_001
+como hago valer mi derecho de acceso a la info,T_001
+quiero q me den copia de unos planos antiguos,T_001
+q formato lleno para pedir informacion,T_001
+sacar copia de un documento de la municipalidad,T_001
+quiero una copia certificada de la ordenanza de licencias,T_001
+quiero el expediente completo de una obra ya ejecutada,T_001
+requisitos para solicitar acceso a la informacion publica,T_001
+donde solicito el tupa de la municipalidad,T_001
+estoy pensando en pedir una copia de un documento municipal,T_001
+me gustaria saber que necesito para solicitar informacion publica,T_001
+quisiera informarme sobre como pedir copias certificadas,T_001
+tengo pensado solicitar el expediente de mi calle,T_001
+me interesa saber que tramite hago para pedir informacion a la muni,T_001
+estaba pensando en solicitar una copia de una ordenanza,T_001
+quisiera saber que debo presentar para una solicitud de informacion,T_001
+quiero ver el expediente tecnico de una obra publica,T_001
+necesito que me den el reporte de gastos del año pasado,T_001
+hay forma de pedir los planos de una obra municipal,T_001
+quiero el historial de licencias otorgadas en mi cuadra,T_001
+me pueden facilitar el acta de una sesion de consejo,T_001
+como averiguo cuanto se gasto en la pista de mi calle,T_001
+donde pido el padron de contribuyentes de mi zona,T_001
+quiero copia del reglamento interno de la municipalidad,T_001
+necesito que me entreguen el informe tecnico de una inspeccion,T_001
+hay algun formulario para pedir informacion presupuestal,T_001
+mi tienda de ropa ahora va a vender celulares que hago,consultar_gestion_licencia
+quiero que mi tienda deje de ser bazar y sea libreria,consultar_gestion_licencia
+mi negocio de comida rapida ahora sera una lavanderia,consultar_gestion_licencia
+antes vendia zapatos y ahora quiero vender muebles,consultar_gestion_licencia
+mi local paso de ser cyber a ser una veterinaria,consultar_gestion_licencia
+quiero que mi restaurante ahora funcione como panaderia,consultar_gestion_licencia
+mi tienda de abarrotes se va a convertir en ferreteria,consultar_gestion_licencia
+antes tenia una peluqueria y ahora sera una farmacia,consultar_gestion_licencia
+mi negocio cambio de actividad y necesito actualizarlo,consultar_gestion_licencia
+paso de vender ropa a ofrecer servicios de internet,consultar_gestion_licencia
+mi local va a dejar de ser bodega para ser un salon de eventos,consultar_gestion_licencia
+quiero que conste que mi negocio ahora es otro rubro,consultar_gestion_licencia
+mi tienda de electrodomesticos ahora sera una carniceria,consultar_gestion_licencia
+quiero traspasar mi negocio a otra persona,consultar_gestion_licencia
+voy a vender mi tienda con licencia y todo,consultar_gestion_licencia
+necesito poner la licencia a nombre del nuevo dueño,consultar_gestion_licencia
+compre un negocio que ya tenia licencia como la paso a mi nombre,consultar_gestion_licencia
+mi papa me dejo su negocio como cambio el titular de la licencia,consultar_gestion_licencia
+quiero ceder mi licencia a mi socio,consultar_gestion_licencia
+el negocio ya tiene licencia solo quiero cambiar el propietario,consultar_gestion_licencia
+necesito cambiar el dueño de la licencia sin cerrar el negocio,consultar_gestion_licencia
+voy a heredar el negocio de mi papa la licencia sigue vigente como la paso a mi nombre,consultar_gestion_licencia
+necesito el contrato de compra venta para transferir la licencia,consultar_gestion_licencia
+quiero registrar al nuevo propietario del negocio,consultar_gestion_licencia
+el local ya funciona legalmente solo hay cambio de dueño,consultar_gestion_licencia
+necesito actualizar el titular de una licencia ya existente,consultar_gestion_licencia
+voy a comprar un negocio funcionando necesito pasar la licencia a mi nombre,consultar_gestion_licencia
+cuanto cuesta poner la licencia de funcionamiento a nombre de otra persona,consultar_gestion_licencia
+requisitos para cambiar el titular de una licencia vigente,consultar_gestion_licencia
+mi tio me traspaso su tienda como actualizo la licencia,consultar_gestion_licencia
+necesito cambiar de razon social manteniendo la misma licencia,consultar_gestion_licencia
+quiero transferir la titularidad de mi negocio a mi esposa,consultar_gestion_licencia
+el negocio sigue igual solo cambia el dueño que tramite hago,consultar_gestion_licencia
+quiero cerrar mi negocio,consultar_gestion_licencia
+como hago para cerrar mi tienda definitivamente,consultar_gestion_licencia
+voy a cerrar mi bodega que tramite hago,consultar_gestion_licencia
+necesito dar de baja mi negocio,consultar_gestion_licencia
+quiero comunicar el cierre de mi local,consultar_gestion_licencia
+que necesito para cesar actividades de mi empresa,consultar_gestion_licencia
+voy a dejar de trabajar en mi negocio como lo doy de baja,consultar_gestion_licencia
+cierro mi tienda que debo hacer ante la municipalidad,consultar_gestion_licencia
+requisitos para el cese de actividades comerciales,consultar_gestion_licencia
+quiero dar de baja la licencia porque ya no voy a trabajar,consultar_gestion_licencia
+ya no voy a seguir con mi negocio como notifico eso,consultar_gestion_licencia
+necesito el formulario para cerrar mi empresa,consultar_gestion_licencia
+cuanto cuesta cerrar mi negocio ante la muni,consultar_gestion_licencia
+cual es el plazo para el cese de actividades,consultar_gestion_licencia
+voy a liquidar mi negocio que tramite corresponde,consultar_gestion_licencia
+quiero notificar que ya no voy a operar mi local,consultar_gestion_licencia
+como comunico el cierre definitivo de mi tienda,consultar_gestion_licencia
+tramite para cerrar legalmente mi negocio,consultar_gestion_licencia
+necesito dar de baja mi ruc y mi local comercial,consultar_gestion_licencia
+quiero clausurar mi negocio de forma voluntaria,consultar_gestion_licencia
+se me perdio mi licencia municipal como saco otra,consultar_gestion_licencia
+quiero un duplicado de mi licencia de funcionamiento,consultar_gestion_licencia
+me robaron mi carton de licencia q hago,consultar_gestion_licencia
+como saco copia de mi licencia q se extravio,consultar_gestion_licencia
+perdi el permiso de mi local quiero duplicado,consultar_gestion_licencia
+req para sacar duplicado de licencia,consultar_gestion_licencia
+kiero sacar otra vez mi licencia pq la perdi,consultar_gestion_licencia
+cuanto cuesta el duplicado de la licencia,consultar_gestion_licencia
+se daño mi certificado de licencia quiero otro,consultar_gestion_licencia
+que piden para darme duplicado del permiso,consultar_gestion_licencia
+necesito una copia de mi licencia de funcionamiento,consultar_gestion_licencia
+como solicito duplicado de licencia en la muni,consultar_gestion_licencia
+extravie mi licencia comercial tramite de duplicado,consultar_gestion_licencia
+pasos para pedir duplicado de licencia,consultar_gestion_licencia
+quiero recuperar mi licencia municipal q se me perdio,consultar_gestion_licencia
+me robaron los papeles del negocio quiero duplicado,consultar_gestion_licencia
+info para tramitar duplicado de licencia,consultar_gestion_licencia
+q llevo pa que me den un nuevo carton de licencia,consultar_gestion_licencia
+perdi la resolucion de mi negocio como pido copia,consultar_gestion_licencia
+donde tramito el duplicado de mi licencia de funcionamiento,consultar_gestion_licencia
+requisitos para solicitar un nuevo certificado de licencia,consultar_gestion_licencia
+como hago si se me quemo mi licencia del local,consultar_gestion_licencia
+kiero pedir el duplicado de mi permiso,consultar_gestion_licencia
+cuanto tarda el duplicado de la licencia,consultar_gestion_licencia
+necesito el formato para pedir duplicado de licencia,consultar_gestion_licencia
+kuesta sacar un duplicado,consultar_gestion_licencia
+mi licencia se maltrato mucho y ya no se lee necesito otra,consultar_gestion_licencia
+tengo el carton de mi licencia partido en dos como lo cambio,consultar_gestion_licencia
+no encuentro mi licencia por ningun lado que hago,consultar_gestion_licencia
+mi hijo boto sin querer el carton de mi licencia,consultar_gestion_licencia
+la licencia de mi negocio se quemo en un incendio pequeño,consultar_gestion_licencia
+necesito reponer mi licencia porque se me cayo al rio,consultar_gestion_licencia
+mi licencia esta ilegible por el sol necesito otra copia,consultar_gestion_licencia
+como consigo un nuevo certificado si perdi el original,consultar_gestion_licencia
+me cambie de casa y no encuentro los papeles de mi licencia,consultar_gestion_licencia
+necesito otra licencia porque la anterior se deterioro,consultar_gestion_licencia
+se me extravio la licencia en la mudanza del negocio,consultar_gestion_licencia
+mi licencia tiene manchas de agua y no se lee bien,consultar_gestion_licencia
+voy a cambiar el rubro de mi negocio q tramite hago,consultar_gestion_licencia
+requisitos pa cambiar de giro mi tienda,consultar_gestion_licencia
+nesecito licencia por cambio de giro,consultar_gestion_licencia
+como paso de restaurante a bodega en mi local,consultar_gestion_licencia
+kiero cambiar el tipo de negocio en mi licencia,consultar_gestion_licencia
+q documentos piden pa cambiar el giro de mi empresa,consultar_gestion_licencia
+cuanto esta el tramite de cambio de giro,consultar_gestion_licencia
+quiero modificar el rubro de mi local comercial,consultar_gestion_licencia
+permiso para cambiar de giro en la muni,consultar_gestion_licencia
+voy a poner otro negocio en el mismo local,consultar_gestion_licencia
+como hago si quiero cambiar de rubro,consultar_gestion_licencia
+q necesito para actualizar mi licencia a otro giro,consultar_gestion_licencia
+requisitos para variar el giro de mi negocio,consultar_gestion_licencia
+tramite para vender otros productos en mi local,consultar_gestion_licencia
+quiero sacar licencia por cambio de giro comercial,consultar_gestion_licencia
+como modifico el giro de mi negocio,consultar_gestion_licencia
+pa cambiar de rubro q papeles llevo,consultar_gestion_licencia
+info sobre el cambio de giro de licencia,consultar_gestion_licencia
+kiero hacer un cambio de giro cuanto demora,consultar_gestion_licencia
+me pueden decir los req para cambiar giro de negocio,consultar_gestion_licencia
+voy a cambiar mi botica a ferreteria como hago,consultar_gestion_licencia
+q presento para que me cambien el giro,consultar_gestion_licencia
+pasos para solicitar cambio de giro en la muni,consultar_gestion_licencia
+cuanto cuesta el permiso de cambio de rubro,consultar_gestion_licencia
+quiero vender otra cosa en mi local q hago,consultar_gestion_licencia
+estoy pensando en cambiar el giro de mi negocio,consultar_gestion_licencia
+me gustaria saber que necesito para cambiar de rubro,consultar_gestion_licencia
+quisiera informarme sobre el cambio de giro de mi tienda,consultar_gestion_licencia
+tengo pensado cambiar el tipo de negocio que tengo,consultar_gestion_licencia
+me interesa saber como paso de restaurante a bodega,consultar_gestion_licencia
+estaba pensando en cambiar el rubro de mi local,consultar_gestion_licencia
+quisiera saber que tramite hago para cambiar de giro,consultar_gestion_licencia
+estoy pensando en sacar un duplicado de mi licencia,consultar_gestion_licencia
+me gustaria saber que hago porque perdi mi licencia,consultar_gestion_licencia
+quisiera informarme sobre el duplicado de mi permiso,consultar_gestion_licencia
+tengo pensado sacar otra copia de mi licencia extraviada,consultar_gestion_licencia
+me interesa saber como reemplazo mi carton de licencia,consultar_gestion_licencia
+estaba pensando en pedir un duplicado porque me lo robaron,consultar_gestion_licencia
+quisiera saber que necesito si perdi mi licencia,consultar_gestion_licencia
+quiero cerrar mi negocio definitivamente,consultar_gestion_licencia
+como doy de baja mi bodega,consultar_gestion_licencia
+necesito cerrar mi tienda legalmente,consultar_gestion_licencia
+voy a cerrar mi negocio que tramite hago,consultar_gestion_licencia
+como notifico el cierre de mi local,consultar_gestion_licencia
+quiero dar de baja mi establecimiento comercial,consultar_gestion_licencia
+ya no voy a seguir con mi negocio que hago,consultar_gestion_licencia
+kiero cerrar mi tienda pa siempre,consultar_gestion_licencia
+como comunico que cerre mi bodega,consultar_gestion_licencia
+necesito avisar a la muni que cerre mi negocio,consultar_gestion_licencia
+quiero dar de baja mi licencia porque cerre,consultar_gestion_licencia
+voy a dejar de operar mi tienda,consultar_gestion_licencia
+como clausuro legalmente mi establecimiento,consultar_gestion_licencia
+cuanto cuesta la licencia para bodega,T_003
+precio de la bodega,T_003
+quiero el permiso rapido para mi bodeguita,T_003
+como saco licencia provisional pa bodega,T_003
+req para poner una bodega en mi jato,T_003
+licencia gratis para bodegueros q piden,T_003
+quiero abrir una bodega en mi cochera,T_003
+q documentos presento para licencia provisional de bodega,T_003
+kiero el permiso de bodega rapido,T_003
+requisitos para licencia provisional bodegas,T_003
+como formalizo mi bodega con la nueva ley,T_003
+tramite para sacar licencia de bodega provisional,T_003
+nesecito permiso pa mi bodega en casa,T_003
+info sobre licencia provisional para bodegueros,T_003
+quiero poner mi bodeguita q papeles llevo,T_003
+pasos para la licencia provisional de bodega,T_003
+como obtengo el permiso rapido para bodega,T_003
+quiero sacar la licencia temporal de bodega,T_003
+q necesito pa abrir mi bodega al toke,T_003
+licencia de funcionamiento provisional pa bodeguitas,T_003
+kiero saber de la licencia gratis de bodega,T_003
+tramite de bodega provisional cuanto demora,T_003
+requisitos de la muni pa bodega en casa,T_003
+como pido la licencia provisional de mi tienda,T_003
+quiero sacar permiso de bodega temporal,T_003
+q formato lleno para licencia provisional de bodega,T_003
+me dan licencia rapida si abro una bodega,T_003
+estoy pensando en abrir una bodega que necesito,T_003
+me gustaria saber que necesito para abrir una bodega,T_003
+quisiera informarme sobre la licencia provisional de bodega,T_003
+tengo pensado poner una bodega en mi casa,T_003
+me interesa saber que documentos piden para mi bodeguita,T_003
+estaba pensando en abrir una bodega en mi cochera,T_003
+quisiera saber como saco el permiso rapido para mi bodega,T_003
+quiero abrir mi bodega y sacar el permiso mas rapido posible,T_003
+tengo una bodega funcionando sin papeles que hago,T_003
+necesito el tramite expres para mi bodega nueva,T_003
+mi bodega no tiene licencia y quiero regularizarla ya,T_003
+quiero saber si hay un permiso temporal para bodegas,T_003
+tengo pensado poner una bodega en la sala de mi casa,T_003
+que necesito para que mi bodega no me multen,T_003
+quiero abrir una bodega chiquita cerca del colegio,T_003
+como saco el permiso de bodega sin tanto papeleo,T_003
+necesito legalizar rapido mi bodega antes de fin de mes,T_003
+quiero abrir una bodega y necesito los requisitos minimos,T_003
+quiero poner un cartel en mi tienda,T_007
+necesito permiso para colocar un letrero publicitario,T_007
+que requisitos piden para instalar un anuncio en mi local,T_007
+quiero poner publicidad afuera de mi negocio,T_007
+como saco permiso para un aviso publicitario,T_007
+necesito autorizacion para colocar un banner en mi fachada,T_007
+voy a instalar un letrero luminoso que tramite necesito,T_007
+requisitos para anuncio publicitario adosado,T_007
+cuanto cuesta el permiso para un cartel comercial,T_007
+quiero poner el nombre de mi tienda en un letrero grande,T_007
+necesito licencia para publicidad exterior,T_007
+que necesito para colgar un anuncio en la pared de mi local,T_007
+tramite para autorizacion de anuncio publicitario simple,T_007
+voy a poner un toldo con el nombre de mi negocio necesito permiso,T_007
+cual es el plazo para el permiso de publicidad exterior,T_007
+quiero colocar un panel publicitario en mi fachada,T_007
+necesito el permiso para el letrero de mi restaurante,T_007
+como tramito la autorizacion de un anuncio adosado,T_007
+requisitos para poner publicidad en la parte de afuera de mi tienda,T_007
+necesito permiso municipal para un cartel led,T_007
+quiero poner un letrero en la fachada de mi tienda que necesito,T_007
+necesito permiso para colocar un cartel publicitario en mi negocio,T_007
+voy a instalar un anuncio adosado a la fachada que tramite hago,T_007
+quiero poner un toldo con publicidad en la entrada de mi local,T_007
+que necesito para colgar un aviso publicitario en mi fachada,T_007
+necesito autorizacion para un letrero simple en mi negocio,T_007
+voy a poner un cartel con el nombre de mi tienda en la pared,T_007
+quiero instalar publicidad exterior adosada a mi local,T_007
+necesito permiso para un aviso pegado a la pared de mi tienda,T_007
+voy a colocar un anuncio publicitario en el frontis de mi negocio,T_007
+que tramite es para poner un letrero simple en mi fachada,T_007
+quiero autorizacion para un toldo publicitario,T_007
+necesito poner un cartel con mi logo en la entrada del local,T_007
+como saco permiso para un anuncio adosado a mi tienda,T_007
+voy a instalar un letrero simple en la pared de mi negocio,T_007
+que requisitos piden para colocar un aviso en mi fachada,T_007
+necesito el permiso para el letrero de mi bodega en la fachada,T_007
+quiero colgar un banner publicitario en la entrada de mi local,T_007
+como tramito la instalacion de un cartel en mi negocio,T_007
+necesito autorizacion municipal para mi anuncio adosado,T_007
+necesito visar mis planos para prescripcion adquisitiva,T_008
+quiero visar el plano de mi terreno,T_008
+requisitos para visacion de planos municipales,T_008
+necesito el plano perimetrico visado de mi predio,T_008
+como visado mi plano de ubicacion,T_008
+necesito visar planos para titulo supletorio,T_008
+quiero rectificar los linderos de mi terreno,T_008
+necesito delimitar el area de mi propiedad,T_008
+cuanto cuesta la visacion de planos,T_008
+requisitos para plano de lotizacion visado,T_008
+necesito el certificado de busqueda catastral,T_008
+voy a hacer un tramite de prescripcion adquisitiva de mi terreno,T_008
+necesito visar el plano de manzaneo de mi lote,T_008
+cual es el plazo para visar planos en la muni,T_008
+necesito un ingeniero para visar mis planos municipales,T_008
+quiero regularizar los linderos de mi predio,T_008
+necesito el formato xiv para mi plano,T_008
+requisitos para visacion de plano de localizacion,T_008
+voy a corregir el area de mi terreno en registros publicos,T_008
+necesito visar tres juegos de planos de mi propiedad,T_008
+necesito la resolucion de operatividad para mi empresa,consultar_gestion_flota_vehicular
+quiero la resolucion para que mi asociacion opere servicio,consultar_gestion_flota_vehicular
+como obtengo la resolucion de permiso para mi flota,consultar_gestion_flota_vehicular
+necesito un tramite para mi asociacion de mototaxis,consultar_gestion_flota_vehicular
+quiero sacar el permiso de operacion para mi asociacion de transportistas,consultar_gestion_flota_vehicular
+necesito renovar el permiso de mi empresa de transporte especial,consultar_gestion_flota_vehicular
+como obtengo autorizacion para un paradero de mi comite,consultar_gestion_flota_vehicular
+quiero incrementar los vehiculos de la flota de mi asociacion,consultar_gestion_flota_vehicular
+que tramites necesito para formalizar mi empresa de transportistas,consultar_gestion_flota_vehicular
+necesito el permiso de diez años para mi empresa de mototaxis,consultar_gestion_flota_vehicular
+como agrego mas unidades a la flota de mi empresa,consultar_gestion_flota_vehicular
+requisitos para la autorizacion de paradero de mi asociacion,consultar_gestion_flota_vehicular
+quiero registrar una nueva flota de mototaxis,consultar_gestion_flota_vehicular
+cuanto cuesta el permiso de operacion para una asociacion,consultar_gestion_flota_vehicular
+tramites a nivel empresarial para transporte especial,consultar_gestion_flota_vehicular
+necesito un paradero oficial para mi comite de transportistas,consultar_gestion_flota_vehicular
+vamos a formar una asociacion y necesitamos el permiso para operar,consultar_gestion_flota_vehicular
+como renuevo el permiso de operacion de toda la asociacion,consultar_gestion_flota_vehicular
+requisitos para aumentar la flota vehicular de mi empresa,consultar_gestion_flota_vehicular
+necesito la resolucion para que mi empresa opere legalmente,consultar_gestion_flota_vehicular
+como gestiono los permisos de mi comite vehicular,consultar_gestion_flota_vehicular
+necesito regularizar mi flota de mototaxis,consultar_gestion_flota_vehicular
+quiero formalizar mi asociacion de mototaxistas,consultar_gestion_flota_vehicular
+quiero cambiar la unidad de mi vehiculo personal,consultar_tramite_vehicular
+necesito reemplazar mi mototaxi por otra unidad,consultar_tramite_vehicular
+voy a sustituir mi vehiculo menor por uno nuevo,consultar_tramite_vehicular
+necesito registrar mi mototaxi nueva,consultar_tramite_vehicular
+como empadrono mi vehiculo menor,consultar_tramite_vehicular
+quiero renovar la tarjeta de operatividad de mi unidad,consultar_tramite_vehicular
+se me perdio la tarjeta de mi mototaxi necesito un duplicado,consultar_tramite_vehicular
+quiero dar de baja mi vehiculo porque se malogro,consultar_tramite_vehicular
+voy a chatarrear mi mototaxi viejo como lo doy de baja,consultar_tramite_vehicular
+necesito reemplazar mi unidad por una mas moderna,consultar_tramite_vehicular
+requisitos para inscribir mi vehiculo menor en la municipalidad,consultar_tramite_vehicular
+como actualizo los papeles y la tarjeta de mi mototaxi,consultar_tramite_vehicular
+me robaron la tarjeta de operatividad quiero otra,consultar_tramite_vehicular
+necesito hacer el tramite de sustitucion de vehiculo,consultar_tramite_vehicular
+quiero cambiar la unidad de mi permiso porque compre una nueva,consultar_tramite_vehicular
+tramite para dar de baja definitiva a mi mototaxi,consultar_tramite_vehicular
+necesito el duplicado de la tarjeta de circulacion de mi vehiculo,consultar_tramite_vehicular
+cuanto cuesta renovar la tarjeta de mi moto,consultar_tramite_vehicular
+tengo un problema con mi vehiculo que tramite hago,consultar_tramite_vehicular
+necesito hacer algo con los papeles de mi mototaxi,consultar_tramite_vehicular
+que tramite es para mi vehiculo personal,consultar_tramite_vehicular
+quiero arreglar la situacion de mi mototaxi,consultar_tramite_vehicular
+necesito regularizar mi vehiculo menor,consultar_tramite_vehicular
+quiero inscribir mi junta vecinal en la municipalidad,T_013
+necesito registrar mi organizacion social que hago,T_013
+como inscribo mi comite de vaso de leche,T_013
+quiero registrar la asociacion de padres de familia del colegio,T_013
+necesito inscribir mi club de madres ante la muni,T_013
+que tramite es para registrar una organizacion comunal,T_013
+quiero formalizar mi junta vecinal ante la municipalidad,T_013
+necesito registrar mi comite de seguridad ciudadana,T_013
+como hago para inscribir mi asociacion de comerciantes,T_013
+quiero que mi organizacion social quede registrada oficialmente,T_013
+necesito el reconocimiento municipal de mi junta directiva vecinal,T_013
+que requisitos piden para registrar un comite vecinal,T_013
+quiero inscribir la directiva de mi asociacion comunal,T_013
+necesito registrar mi programa social ante la municipalidad,T_013
+como tramito el registro de mi club deportivo vecinal,T_013
+quiero formalizar mi comite de damas ante la muni,T_013
+necesito inscribir mi organizacion de base ante la municipalidad,T_013
+que tramite hago para que reconozcan mi junta vecinal,T_013
+quiero registrar mi asociacion sin fines de lucro del barrio,T_013
+necesito el registro municipal de mi organizacion social,T_013
+quiero un puesto en el mercado municipal,T_014
+como consigo un puesto de venta en el mercado,T_014
+requisitos para conducir un puesto en el mercado,T_014
+necesito el carnet de comerciante del mercado,T_014
+quiero vender en el mercado de la muni,T_014
+como me empadrono para tener un puesto,T_014
+necesito la ficha de empadronamiento del mercado,T_014
+cuanto cuesta un puesto de venta en el mercado municipal,T_014
+quiero conducir dos puestos en el mercado,T_014
+requisitos para ser comerciante en el mercado municipal,T_014
+necesito mi carnet de comerciante para vender ahi,T_014
+como obtengo un espacio de venta en el mercado,T_014
+cual es el plazo para el permiso de puesto en el mercado,T_014
+quiero registrarme como vendedor del mercado,T_014
+necesito la declaracion jurada de no tener mas de dos puestos,T_014
+voy a vender verduras en el mercado que necesito,T_014
+requisitos para renovar mi puesto en el mercado,T_014
+necesito el numero de serie de mi carnet de comerciante,T_014
+como saco el permiso para vender en el mercado municipal,T_014
+quiero un espacio para mi negocio dentro del mercado,T_014
+necesito el certificado de numeracion de mi casa,T_015
+como saco el numero oficial de mi predio,T_015
+quiero el certificado que confirme el numero de mi vivienda,T_015
+necesito saber el numero municipal de mi casa,T_015
+que tramite hago para tener numero de puerta oficial,T_015
+quiero certificar el numero de mi domicilio,T_015
+requisitos para el certificado de numeracion municipal,T_015
+necesito el documento con el numero oficial de mi inmueble,T_015
+cuanto cuesta el certificado de numeracion,T_015
+mi casa no tiene numero como lo consigo,T_015
+necesito la constancia de numeracion para tramites bancarios,T_015
+quiero el certificado de numeracion para mi negocio,T_015
+cual es el plazo para el certificado de numeracion,T_015
+como obtengo el numero municipal de mi local,T_015
+necesito acreditar el numero de mi predio ante una entidad,T_015
+quiero saber que numero le corresponde a mi casa segun la muni,T_015
+tramite para certificar numeracion de inmueble,T_015
+necesito el certificado de numeracion para escriturar mi casa,T_015
+donde saco el numero oficial de mi vivienda,T_015
+requiero constancia de numeracion municipal urgente,T_015
+quiero casarme por civil en la municipalidad,consultar_matrimonio_civil
+que requisitos piden para el matrimonio civil,consultar_matrimonio_civil
+como programo mi matrimonio civil,consultar_matrimonio_civil
+necesito saber los documentos para casarme,consultar_matrimonio_civil
+cuanto cuesta el matrimonio civil en la muni,consultar_matrimonio_civil
+quiero contraer matrimonio civil que necesito,consultar_matrimonio_civil
+requisitos para casarme por la municipalidad,consultar_matrimonio_civil
+como hago el tramite de matrimonio civil,consultar_matrimonio_civil
+necesito el certificado de soltero para casarme,consultar_matrimonio_civil
+voy a casarme por civil que documentos debo presentar,consultar_matrimonio_civil
+cual es el plazo para el matrimonio civil,consultar_matrimonio_civil
+quiero saber los pasos para el matrimonio civil municipal,consultar_matrimonio_civil
+necesito informacion sobre bodas civiles en la muni,consultar_matrimonio_civil
+que necesito llevar el dia de mi matrimonio civil,consultar_matrimonio_civil
+requisitos para testigos de matrimonio civil,consultar_matrimonio_civil
+quiero fijar fecha para mi matrimonio civil,consultar_matrimonio_civil
+necesito el edicto matrimonial para casarme,consultar_matrimonio_civil
+como es el proceso de matrimonio civil municipal,consultar_matrimonio_civil
+voy a casarme necesito los requisitos completos,consultar_matrimonio_civil
+que examenes medicos piden para el matrimonio civil,consultar_matrimonio_civil
+como inscribo a mi perrito en el registro municipal,T_023
+requisitos para registrar mi mascota en la muni,T_023
+necesito el carnet canino de mi perro,T_023
+como saco el registro canino de mi cachorro,T_023
+que necesito para inscribir a mi perro normal,T_023
+documentos para el registro canino municipal,T_023
+quiero registrar a mi mascota domestica,T_023
+plazo del registro canino municipal,T_023
+cuanto cuesta inscribir a mi perro en la muni,T_023
+como tramito el carnet de mi mascota,T_023
+necesito inscribir a mi perro mestizo,T_023
+requisitos carnet de vacunacion para registro canino,T_023
+kiero inscribir a mi perrito en el registro,T_023
+q necesito pa registrar mi mascota,T_023
+como registro a mi perro que no es de raza peligrosa,T_023
+inscripcion de mascotas domesticas en la municipalidad,T_023
+necesito el registro municipal de mi perro faldero,T_023
+documentos para inscribir a mi cachorro mestizo,T_023
+como saco el carnet municipal de mi mascota,T_023
+quiero el registro canino normal de mi perro,T_023
+como registro a mi pitbull en la municipalidad,T_024
+requisitos para inscribir mi rottweiler como perro peligroso,T_024
+necesito el certificado psicologico para mi perro de raza peligrosa,T_024
+documentos para registrar mi perro agresivo,T_024
+como inscribo a mi perro de raza considerada peligrosa,T_024
+quiero registrar a mi bull terrier como can peligroso,T_024
+que piden para perros potencialmente peligrosos,T_024
+necesito el certificado de aptitud psicologica del dueño de un perro peligroso,T_024
+como registro a mi dogo argentino de raza peligrosa,T_024
+requisitos para inscribir can agresivo en la municipalidad,T_024
+kiero registrar a mi pitbull pa que no me multen,T_024
+q necesito pa mi perro de raza peligrosa,T_024
+certificado psicologico para registro de perro agresivo,T_024
+como inscribo a mi fila brasileño como can peligroso,T_024
+documentos para registrar perro considerado potencialmente peligroso,T_024
+necesito inscribir a mi rottweiler es obligatorio por ser raza peligrosa,T_024
+que certificado psicologico piden para razas peligrosas,T_024
+como registro a mi staffordshire terrier como can peligroso,T_024
+requisitos aptitud psicologica dueño de can peligroso,T_024
+inscripcion registro canino perros de razas potencialmente peligrosas,T_024
+quiero instalar agua y desague en mi casa,consultar_conexion_agua
+necesito el permiso para conectar el agua a mi vivienda,consultar_conexion_agua
+requisitos para instalar conexion de agua potable,consultar_conexion_agua
+como conecto el desague de mi casa a la red publica,consultar_conexion_agua
+necesito autorizacion para abrir la vereda e instalar agua,consultar_conexion_agua
+voy a instalar el servicio de agua en mi terreno,consultar_conexion_agua
+cuanto cuesta el permiso para conectar agua y desague,consultar_conexion_agua
+necesito hacer la conexion domiciliaria de agua,consultar_conexion_agua
+requisitos para instalar desague en mi casa nueva,consultar_conexion_agua
+voy a romper la pista para poner mi conexion de agua,consultar_conexion_agua
+necesito el permiso municipal para conectar servicios basicos,consultar_conexion_agua
+como autorizo la instalacion de agua potable en mi domicilio,consultar_conexion_agua
+cual es el plazo para el permiso de conexion de agua,consultar_conexion_agua
+necesito conectar mi casa a la red de alcantarillado,consultar_conexion_agua
+requisitos para instalar el servicio de agua en mi vivienda,consultar_conexion_agua
+voy a hacer trabajos en la vereda para instalar desague,consultar_conexion_agua
+necesito autorizacion para excavar y poner tuberia de agua,consultar_conexion_agua
+como consigo el permiso para conectar agua a mi lote,consultar_conexion_agua
+requisitos para la reposicion de vereda por conexion de agua,consultar_conexion_agua
+necesito permiso para instalar agua en mi casa como propietario,consultar_conexion_agua
+mi empresa necesita instalar conexion de agua y desague,consultar_conexion_agua
+requisitos para conexion de agua a nombre de mi empresa,consultar_conexion_agua
+necesito el permiso de conexion domiciliaria como persona juridica,consultar_conexion_agua
+mi negocio va a instalar agua potable que necesito,consultar_conexion_agua
+como tramito la conexion de agua para mi empresa constructora,consultar_conexion_agua
+necesito el proyecto aprobado para instalar agua en mi edificio,consultar_conexion_agua
+requisitos para conectar desague en un proyecto empresarial,consultar_conexion_agua
+cuanto cuesta la conexion de agua para persona juridica,consultar_conexion_agua
+necesito la representacion legal para tramitar la conexion de agua,consultar_conexion_agua
+voy a instalar servicios basicos en mi condominio que necesito,consultar_conexion_agua
+requisitos para la declaracion jurada de responsabilidad de obra de agua,consultar_conexion_agua
+necesito el ingeniero responsable para el proyecto de conexion de agua,consultar_conexion_agua
+como conecto agua y desague para mi edificio multifamiliar,consultar_conexion_agua
+mi constructora necesita autorizacion para instalar agua,consultar_conexion_agua
+cual es el plazo para la conexion de agua de una empresa,consultar_conexion_agua
+necesito instalar el servicio de agua para mi local comercial nuevo,consultar_conexion_agua
+requisitos para conexion de desague de una persona juridica,consultar_conexion_agua
+voy a urbanizar un terreno necesito instalar agua y desague,consultar_conexion_agua
+necesito el permiso empresarial para conectar servicios de agua,consultar_conexion_agua
+como autorizo la instalacion de agua para mi empresa constructora,consultar_conexion_agua
+necesito el certificado de compatibilidad de uso,T_027
+quiero verificar la zonificacion de mi local,T_027
+como saco el certificado de uso de suelo,T_027
+necesito saber si la zona permite mi giro de negocio,T_027
+quiero el certificado de compatibilidad antes de abrir mi tienda,T_027
+como verifico la zonificacion de mi predio para mi negocio,T_027
+requisitos para el certificado de compatibilidad de uso,T_027
+necesito la constancia de zonificacion comercial,T_027
+puedo poner una farmacia en esta direccion,T_027
+quiero saber si este local permite mi tipo de negocio,T_027
+antes de alquilar necesito saber si mi giro esta permitido ahi,T_027
+necesito el papel que confirme que mi negocio puede funcionar en esa calle,T_027
+requisitos para saber si mi rubro esta permitido en esa zona comercial,T_027
+quiero verificar si puedo abrir un bar en esa avenida,T_027
+necesito el documento que apruebe mi giro antes de sacar la licencia,T_027
+como confirmo si mi negocio no esta prohibido en esa cuadra,T_027
+cuanto cuesta verificar si mi giro es compatible con la zona,T_027
+necesito saber si esa zona es exclusivamente residencial,T_027
+quiero abrir mi negocio ahi pero no se si esta permitido el giro,T_027
+requisitos para el papel de compatibilidad antes de firmar el alquiler,T_027
+necesito saber si puedo tener un taller mecanico en esa calle,T_027
+cual es el plazo para saber si mi giro esta permitido,T_027
+quiero validar que mi RUC coincide con lo permitido en esa direccion,T_027
+necesito confirmar el giro autorizado para ese local antes de invertir,T_027
+como se si mi negocio no esta prohibido en esa zonificacion,T_027
+requisitos para saber que actividades se permiten en un local,T_027
+necesito el certificado antes de firmar el contrato de alquiler del local,T_027
+quiero saber si mi negocio de comida esta permitido en esa avenida,T_027
+necesito la certificacion sanitaria de mi restaurante,T_028
+como saco el certificado sanitario para mi negocio,T_028
+requisitos para la certificacion sanitaria municipal,T_028
+necesito el certificado de fumigacion para mi local,T_028
+quiero la certificacion sanitaria para mi bodega de alimentos,T_028
+cuanto cuesta la certificacion sanitaria municipal,T_028
+necesito demostrar que mi negocio cumple normas sanitarias,T_028
+requisitos para el certificado de salubridad de mi restaurante,T_028
+como renuevo mi certificado de fumigacion vigente,T_028
+necesito la certificacion sanitaria para vender alimentos,T_028
+voy a abrir un restaurante necesito el certificado sanitario,T_028
+cual es el plazo para la certificacion sanitaria municipal,T_028
+necesito el certificado sanitario para mi puesto de comida,T_028
+requisitos para acreditar condiciones sanitarias de mi negocio,T_028
+como consigo la certificacion de salubridad para mi local,T_028
+necesito el certificado sanitario junto con mi licencia de funcionamiento,T_028
+voy a renovar la certificacion sanitaria de mi restaurante,T_028
+requisitos para la certificacion sanitaria de un establecimiento de servicios,T_028
+necesito la resolucion sectorial para mi certificado sanitario,T_028
+como tramito el certificado sanitario para mi negocio de comida,T_028
+quiero presentar un recurso de reconsideracion,T_029
+necesito impugnar una resolucion municipal,T_029
+como reconsidero una decision de la muni,T_029
+tengo nueva prueba para reconsiderar mi caso,T_029
+quiero apelar mediante reconsideracion,T_029
+como presento un recurso contra una resolucion,T_029
+necesito el formato para reconsiderar un tramite rechazado,T_029
+quiero apelar una resolucion de la municipalidad,T_029
+me rechazaron mi tramite quiero reconsiderarlo,T_029
+como presento un recurso de reconsideracion,T_029
+no estoy de acuerdo con la resolucion que me dieron,T_029
+requisitos para pedir reconsideracion de una resolucion,T_029
+quiero impugnar una decision de la municipalidad,T_029
+como reclamo contra una resolucion municipal,T_029
+tengo nueva prueba para que reconsideren mi caso,T_029
+necesito presentar un escrito para reconsiderar mi resolucion,T_029
+quiero que revisen de nuevo mi solicitud rechazada,T_029
+cuanto cuesta presentar un recurso de reconsideracion,T_029
+cual es el plazo para el recurso de reconsideracion,T_029
+como cuestiono una resolucion que emitio la muni,T_029
+necesito el numero de mi resolucion para reconsiderarla,T_029
+quiero recurrir la decision de mi tramite denegado,T_029
+tengo pruebas nuevas para mi caso ya resuelto,T_029
+requisitos para impugnar una resolucion municipal,T_029
+como hago un recurso administrativo contra la muni,T_029
+necesito reconsiderar el resultado de mi solicitud,T_029
+quiero apelar porque no estoy conforme con la resolucion,T_029
+quiero hacer un concierto necesito permiso,T_030
+voy a organizar un evento necesito autorizacion municipal,T_030
+requisitos para un espectaculo publico no deportivo,T_030
+necesito el permiso para una fiesta con mas de 500 personas,T_030
+voy a hacer una discoteca movil que autorizacion necesito,T_030
+requisitos para organizar un show en mi distrito,T_030
+necesito permiso municipal para un concierto,T_030
+quiero organizar un evento masivo necesito autorizacion,T_030
+cuanto cuesta el permiso para un espectaculo publico,T_030
+necesito la resolucion de seguridad para mi evento,T_030
+voy a traer artistas necesito autorizacion municipal,T_030
+requisitos para hacer una feria con espectaculo,T_030
+necesito permiso para una obra de teatro publica,T_030
+cual es el plazo para autorizar mi evento,T_030
+voy a alquilar un local para un espectaculo que necesito,T_030
+necesito el permiso de apdayc para mi evento,T_030
+requisitos para organizar un evento con mas de 3000 personas no aplica,T_030
+necesito autorizacion para un show artistico en mi distrito,T_030
+voy a hacer un evento con seguridad privada que necesito,T_030
+quiero presentar mi evento con anticipacion que tramite hago,T_030
+voy a organizar un concierto necesito permiso,T_030
+quiero hacer un evento con hasta 2000 personas que tramite hago,T_030
+necesito autorizacion para un show en mi local,T_030
+voy a realizar una fiesta patronal necesito permiso municipal,T_030
+quiero organizar un espectaculo publico no deportivo,T_030
+necesito permiso para un evento masivo el fin de semana,T_030
+voy a hacer una presentacion artistica con publico que necesito,T_030
+que tramite es para organizar un festival en la plaza,T_030
+necesito autorizacion para un concierto con afluencia de gente,T_030
+voy a montar un evento cultural con entrada libre,T_030
+quiero permiso para una kermes con espectaculo en vivo,T_030
+necesito autorizacion temporal para un show musical,T_030
+voy a realizar un evento publico y necesito el permiso municipal,T_030
+que requisitos piden para organizar una feria con show,T_030
+necesito permiso para un evento con banda en vivo,T_030
+voy a hacer una presentacion de artistas en la plaza principal,T_030
+quiero organizar un espectaculo con hasta 3000 asistentes,T_030
+necesito el tramite para autorizar un evento social masivo,T_030
+voy a realizar una actividad publica con concurrencia de personas,T_030
+como saco permiso para un evento no deportivo en mi distrito,T_030
+no tengo titulo de propiedad pero necesito luz para mi casa,T_031
+vivo aqui hace años sin papeles necesito agua,T_031
+como pido factibilidad de luz sin ser dueño formal del terreno,T_031
+necesito que la empresa de electricidad me instale luz sin escritura,T_031
+vivo en posesion informal necesito agua y desague,T_031
+requisitos para certificar que ocupo un terreno sin titulo,T_031
+necesito el acta de colindancia con mis vecinos para mi terreno,T_031
+como consigo servicios basicos si no tengo escritura publica,T_031
+necesito demostrar que vivo en mi lote hace tiempo para pedir luz,T_031
+vivo en un terreno invadido necesito regularizar los servicios,T_031
+cuanto cuesta certificar posesion para servicios basicos,T_031
+necesito el documento de posesion para presentar a epsel,T_031
+mi terreno no esta inscrito en registros publicos necesito posesion,T_031
+requisitos para pedir agua sin ser propietario legal,T_031
+necesito el croquis firmado por mis vecinos colindantes,T_031
+cual es el plazo para el certificado de posesion,T_031
+vivo en un lote sin habilitar necesito luz y agua,T_031
+necesito acreditar mi posesion ante la empresa electrica,T_031
+como regularizo servicios basicos en un terreno sin titulo,T_031
+necesito el papel de posesion para instalar mi medidor de luz,T_031
+mi casa esta en mal estado necesito una constancia,T_032
+necesito certificar que mi vivienda es inhabitable,T_032
+mi casa esta ruinosa necesito el documento oficial,T_032
+requisitos para la constancia de inhabitabilidad,T_032
+necesito demostrar que mi vivienda no se puede habitar,T_032
+mi casa esta a punto de caerse necesito constancia municipal,T_032
+como certifico el estado ruinoso de mi inmueble,T_032
+necesito la constancia de que mi casa esta deteriorada,T_032
+cuanto cuesta la constancia de inhabitabilidad,T_032
+mi propiedad sufrio daños necesito certificarlo,T_032
+requisitos para declarar mi vivienda en estado ruinoso,T_032
+necesito el plano de mi inmueble para la constancia de inhabitabilidad,T_032
+cual es el plazo para la constancia de estado ruinoso,T_032
+mi casa quedo dañada por el terremoto necesito constancia,T_032
+necesito certificar que mi vivienda esta abandonada y deteriorada,T_032
+requisitos para constancia de inmueble no habitable,T_032
+mi vivienda tiene rajaduras necesito el certificado municipal,T_032
+necesito demostrar que mi casa no es segura para vivir,T_032
+como saco la constancia de inhabitabilidad de mi predio,T_032
+mi casa esta en riesgo de colapso necesito el documento oficial,T_032
+antes de construir necesito saber cuanto puedo edificar,T_033
+cuantos pisos me dejan construir en mi terreno,T_033
+necesito saber el area libre obligatoria de mi lote,T_033
+mi arquitecto me pide los parametros antes de hacer los planos,T_033
+cual es la altura maxima permitida para construir en mi zona,T_033
+necesito el coeficiente de edificacion antes de comprar un terreno,T_033
+quiero saber cuanto retiro debo dejar al construir,T_033
+requisitos para el certificado que necesito antes de edificar,T_033
+necesito saber los limites de construccion de mi predio,T_033
+cuanto puedo construir en un terreno de esas medidas segun la norma,T_033
+necesito el documento con la normativa de edificacion de mi zona,T_033
+voy a construir necesito saber los parametros vigentes de mi lote,T_033
+cuanto cuesta el certificado con la normativa de construccion,T_033
+necesito saber si mi terreno permite construir un segundo piso,T_033
+cual es el plazo para el certificado de parametros de construccion,T_033
+necesito los datos tecnicos de zonificacion para mi proyecto,T_033
+quiero los parametros de edificacion vigentes por 36 meses,T_033
+necesito saber la densidad permitida para construir en mi lote,T_033
+antes de hacer mi licencia de edificacion necesito los parametros,T_033
+necesito el certificado con las normas de construccion de mi predio,T_033
+necesito el certificado de parametros urbanisticos de mi terreno,T_033
+quiero saber los parametros edificatorios de mi lote,T_033
+necesito el documento de parametros urbanisticos para mi terreno,T_033
+como saco el certificado de parametros urbanisticos y edificatorios,T_033
+necesito saber la altura maxima permitida para construir en mi lote,T_033
+quiero el certificado que indica los parametros de mi terreno,T_033
+necesito saber cuantos pisos puedo construir segun zonificacion,T_033
+como obtengo el certificado de parametros edificatorios,T_033
+necesito el documento con los parametros urbanisticos vigentes de mi predio,T_033
+quiero saber el retiro y altura permitidos en mi terreno,T_033
+necesito el certificado de parametros para presentar a mi arquitecto,T_033
+como tramito el certificado de parametros urbanisticos y edificatorios,T_033
+necesito saber los parametros de edificacion de mi lote antes de construir,T_033
+quiero el certificado vigente de parametros urbanisticos,T_033
+necesito saber la zonificacion y parametros de mi terreno,T_033
+como saco el documento de parametros edificatorios de mi predio,T_033
+necesito el certificado de parametros con vigencia de 36 meses,T_033
+quiero saber los parametros urbanisticos antes de comprar un terreno,T_033
+necesito el certificado que indica el coeficiente de edificacion de mi lote,T_033
+como obtengo los parametros urbanisticos y edificatorios de mi predio,T_033
+quiero separarme legalmente de mi esposo,consultar_divorcio
+necesito tramitar mi separacion y divorcio,consultar_divorcio
+como hago para separarme legalmente,consultar_divorcio
+kiero divorciarme de mi pareja,consultar_divorcio
+necesito el tramite para disolver mi matrimonio,consultar_divorcio
+que debo hacer para divorciarme legalmente,consultar_divorcio
+como tramito mi divorcio,consultar_divorcio
+quiero divorciarme que necesito,consultar_divorcio
+que tramite hago para divorciarme,consultar_divorcio
+necesito disolver legalmente mi vinculo matrimonial,consultar_divorcio
+como inicio mi proceso de divorcio,consultar_divorcio
+quiero separarme de mi esposo legalmente,consultar_divorcio
+q tramite es pa el divorcio,consultar_divorcio
+requisitos para el divorcio en la municipalidad,consultar_divorcio
+como hago para divorciarme de mi pareja,consultar_divorcio
+necesito info del tramite de divorcio,consultar_divorcio
+quiero saber como tramitar mi divorcio,consultar_divorcio
+quiero sacar permiso para construir mi jato,T_080
+q piden para la licencia de edificacion modalidad a,T_080
+necesito levantar un pisito mas en mi casa como hago,T_080
+requisitos para licencia de construccion modalidad a,T_080
+como hago pa sacar mi permiso de obra en la muni,T_080
+kiero construir mi casa q docmentos presento,T_080
+licencia para edificar mi terreno modalidad a,T_080
+que se necesita para la licencia de construccion a,T_080
+quiero techar mi casa y necesito el permiso,T_080
+como inicio el tramite de edificacion modalidad a,T_080
+hola req para licencia de obra menor,T_080
+q documentos piden para hacer un cerco perimetrico,T_080
+licencia de edificacion a porfa,T_080
+nesecito permiso pa construir en mi lote,T_080
+informacion sobre la licencia de edificacion modalidad a,T_080
+cuales son los pasos para sacar la licencia de construccion,T_080
+que papeles llevo a la muni para construir mi casa,T_080
+tramites para edificacion tipo a,T_080
+kiero hacer una ampliacion en mi jato q licencia saco,T_080
+requisitos para modalidad A de edificacion,T_080
+quiero sacar licencia pa mi casita,T_080
+como tramito el permiso de construccion a,T_080
+que piden para edificar una vivienda unifamiliar,T_080
+documentos pa la licencia de construccion de mi casa,T_080
+necesito iniciar el tramite de licencia de edificacion,T_080
+estoy pensando en construir un segundo piso en mi casa,T_080
+me gustaria saber que necesito para la licencia de construccion,T_080
+quisiera informarme sobre el permiso de obra modalidad a,T_080
+tengo pensado levantar una habitacion mas en mi casa,T_080
+me interesa saber como saco mi licencia de edificacion,T_080
+estaba pensando en construir mi casa este año,T_080
+quisiera saber que documentos piden para modalidad a,T_080
+quiero hacer una terraza nueva en mi azotea,T_080
+necesito permiso para tumbar una pared interior,T_080
+voy a poner un segundo nivel de material noble,T_080
+quiero saber que se necesita para construir un garaje,T_080
+necesito licencia para hacer un cerco en mi terreno,T_080
+voy a construir una tienda pegada a mi casa,T_080
+quiero saber los requisitos para edificar un local comercial pequeño,T_080
+necesito el permiso para hacer una loza deportiva,T_080
+voy a levantar una pared de contencion en mi terreno,T_080
+quiero ampliar mi vivienda con un cuarto adicional,T_080
+necesito permiso para instalar un techo de calamina nuevo,T_080
+voy a construir un cuarto de servicio en mi terreno,T_080
+quiero saber que tramite hago para edificar en un lote nuevo,T_080
+cuanto esta ese tramite,consultar_costo
+cual es el costo,consultar_costo
+cuanto me cuesta sacar eso,consultar_costo
+y cuanto se paga,consultar_costo
+cuanto duele el tramite,consultar_costo
+cual es el precio por favor,consultar_costo
+hay q pagar algo en la muni,consultar_costo
+dime el costo de eso,consultar_costo
+cuanto sale en total,consultar_costo
+cuanto me cobran por ese documento,consultar_costo
+es gratis o tiene costo,consultar_costo
+precio del tramite,consultar_costo
+a como esta el permiso,consultar_costo
+cuanto de plata necesito para eso,consultar_costo
+cual es el valor a pagar,consultar_costo
+cuanto me va a costar,consultar_costo
+me dices el precio porfa,consultar_costo
+tarifa de ese tramite,consultar_costo
+cuanto piden pagar en caja,consultar_costo
+cuanto debo cancelar,consultar_costo
+y eso cuanto vale,consultar_costo
+cuanto hay que abonar,consultar_costo
+digame el costo pe,consultar_costo
+necesito saber cuanto cuesta,consultar_costo
+q precio tiene ese tramite,consultar_costo
+cuanto debo pagar en total,consultar_costo
+ese tramite tiene algun cobro,consultar_costo
+me van a cobrar por sacar eso,consultar_costo
+cuanto es el pago que debo hacer,consultar_costo
+hay un monto fijo para esto,consultar_costo
+cuanto me sale hacer el tramite,consultar_costo
+eso tiene costo o es sin pago,consultar_costo
+cual seria el precio a cancelar,consultar_costo
+cuanto debo llevar de dinero,consultar_costo
+me dicen cuanto cuesta por favor,consultar_costo
+el tramite genera algun pago,consultar_costo
+cuanto tengo que desembolsar,consultar_costo
+hay tarifa para este tramite,consultar_costo
+cuanto se cancela en ventanilla,consultar_costo
+debo pagar derecho de tramite,consultar_costo
+cual es el importe a pagar,consultar_costo
+cuanto cuesta hacer esto en la muni,consultar_costo
+eso demanda algun costo,consultar_costo
+cuanto es lo que se abona,consultar_costo
+me confirman el costo del tramite,consultar_costo
+cual es el plazo de atencion de mi tramite,consultar_plazo
+en cuantos dias me entregan esto,consultar_plazo
+cuanto tiempo demora el tramite,consultar_plazo
+cuantos dias habiles toma esto,consultar_plazo
+para cuando esta listo mi tramite,consultar_plazo
+que tiempo de espera tiene esto,consultar_plazo
+cuando puedo recoger el resultado,consultar_plazo
+en que fecha me daran respuesta,consultar_plazo
+cuanto me voy a demorar en total,consultar_plazo
+dentro de cuantos dias se resuelve,consultar_plazo
+el plazo es largo o corto,consultar_plazo
+necesito saber cuando estara listo,consultar_plazo
+cuanto tiempo demora,consultar_plazo
+en cuantos dias me lo dan,consultar_plazo
+cual es el plazo de atencion,consultar_plazo
+pa cuando estaria listo,consultar_plazo
+cuanto se demoran en darme eso,consultar_plazo
+al toque sale o demora,consultar_plazo
+cuantos dias habiles son,consultar_plazo
+que tiempo tarda el tramite,consultar_plazo
+cuando me entregan el documento,consultar_plazo
+demora mucho eso,consultar_plazo
+tiempo aproximado de entrega,consultar_plazo
+en cuanto tiempo sale,consultar_plazo
+cuantos dias tengo que esperar,consultar_plazo
+cual es el tiempo de espera,consultar_plazo
+y eso en cuanto sale,consultar_plazo
+para cuando me lo tienen,consultar_plazo
+demora regular o es rapido,consultar_plazo
+digame el plazo porfa,consultar_plazo
+cuantos dias se demoran,consultar_plazo
+cuanto tengo q esperar,consultar_plazo
+plazo maximo para q me den eso,consultar_plazo
+y en que tiempo lo aprueban,consultar_plazo
+es en el dia o demora,consultar_plazo
+cuanto tarda en salir el permiso,consultar_plazo
+en cuantos dias habiles me responden,consultar_plazo
+cuanto tardan en resolver esto,consultar_plazo
+en que fecha me lo entregan,consultar_plazo
+cuantos dias habiles demora la respuesta,consultar_plazo
+cuanto tiempo debo esperar la aprobacion,consultar_plazo
+hay un tiempo limite para la respuesta,consultar_plazo
+cuando puedo recoger el documento,consultar_plazo
+el tramite se resuelve rapido o no,consultar_plazo
+cuantas semanas demora esto,consultar_plazo
+en que momento me avisan que esta listo,consultar_plazo
+cuanto se demora en salir aprobado,consultar_plazo
+hay fecha exacta de entrega,consultar_plazo
+cuanto tiempo toma la evaluacion,consultar_plazo
+me pueden decir cuando estara listo,consultar_plazo
+el proceso es inmediato o toma dias,consultar_plazo
+cuanto demora en resolverse mi solicitud,consultar_plazo
+hasta cuando tengo que esperar,consultar_plazo
+en que plazo sale la respuesta,consultar_plazo
+cuanto se demora normalmente esto,consultar_plazo
+hay un tiempo aproximado de espera,consultar_plazo
+cuando queda resuelto el tramite,consultar_plazo
+a que hora pasa el carro recolector de basura,fuera_de_dominio
+cuando limpian mi calle,fuera_de_dominio
+porque no prenden los postes de luz en mi cuadra,fuera_de_dominio
+me duele la cabeza que pastilla puedo tomar,fuera_de_dominio
+tengo fiebre que debo hacer,fuera_de_dominio
+donde hay una farmacia cerca,fuera_de_dominio
+como invierto mi dinero,fuera_de_dominio
+que necesito para viajar a españa,fuera_de_dominio
+como saco mi pasaporte,fuera_de_dominio
+cuanto cuesta un pasaje en combi,fuera_de_dominio
+como preparo un lomo saltado,fuera_de_dominio
+cual es la mejor receta de ceviche,fuera_de_dominio
+que hora es,fuera_de_dominio
+que dia es hoy,fuera_de_dominio
+como esta el clima hoy,fuera_de_dominio
+kiero saber mi puntaje de infocorp,fuera_de_dominio
+como consulto mi deuda en sunat,fuera_de_dominio
+como tramito mi dni en reniec,fuera_de_dominio
+donde queda la comisaria mas cercana,fuera_de_dominio
+cuanto gana un ingeniero en peru,fuera_de_dominio
+que pelicula me recomiendas ver,fuera_de_dominio
+como me inscribo en essalud,fuera_de_dominio
+cual es el horario del banco,fuera_de_dominio
+hay trabajo disponible en la municipalidad,fuera_de_dominio
+como postulo a un empleo municipal,fuera_de_dominio
+cuando pasa el camion de basura por mi calle,fuera_de_dominio
+porque no hay alumbrado publico en mi cuadra,fuera_de_dominio
+como reporto un problema de serenazgo,fuera_de_dominio
+hay algun evento cultural esta semana,fuera_de_dominio
+como me comunico con el alcalde,fuera_de_dominio
+quiero poner una queja sobre un trabajador municipal,fuera_de_dominio
+que programas sociales tiene la municipalidad,fuera_de_dominio
+donde reporto un bache en la pista,fuera_de_dominio
+cuales son los horarios de atencion de la municipalidad,fuera_de_dominio
+que servicios ofrece la municipalidad en general,fuera_de_dominio
+como consigo una beca municipal,fuera_de_dominio
+hay actividades deportivas gratuitas,fuera_de_dominio
+necesito informacion sobre el presupuesto participativo,fuera_de_dominio
+como denuncio ruidos molestos de un vecino,fuera_de_dominio
+donde queda la oficina de la municipalidad,fuera_de_dominio
+que normas municipales existen sobre construcciones en general,fuera_de_dominio
+como hago para pagar mi recibo de luz,fuera_de_dominio
+quiero renovar mi dni azul a electronico,fuera_de_dominio
+donde veo quien gano el partido de alianza ayer,fuera_de_dominio
+como preparo un lomo saltado jugoso,fuera_de_dominio
+a q hora dan el bono en el banco de la nacion,fuera_de_dominio
+quiero sacar mi pasaporte q me piden,fuera_de_dominio
+cuanto esta el kilo de limon en el mercado,fuera_de_dominio
+como pago el recibo de ensa por internet,fuera_de_dominio
+pasame la receta del ceviche norteño,fuera_de_dominio
+donde queda la oficina de la reniec,fuera_de_dominio
+como hago para sacar mi brevete,fuera_de_dominio
+me duele la cabeza q pastilla tomo,fuera_de_dominio
+como denuncio un robo en la comisaria,fuera_de_dominio
+donde pago mi recibo de claro,fuera_de_dominio
+como matriculo a mi hijo en el colegio,fuera_de_dominio
+a que hora juega la seleccion peruana,fuera_de_dominio
+quiero cancelar mi tarjeta de credito bcp,fuera_de_dominio
+q me recomiendas para el dolor de estomago,fuera_de_dominio
+donde puedo recargar mi tarjeta del metropolitano,fuera_de_dominio
+como descargo peliculas gratis,fuera_de_dominio
+kiero sacar cita en essalud,fuera_de_dominio
+cual es el clima para mañana,fuera_de_dominio
+como hago para bloquear mi celular robado,fuera_de_dominio
+cual es el horario de atencion de mesa de partes,fuera_de_dominio
+a que hora atienden en la municipalidad,fuera_de_dominio
+quiero hacer seguimiento a mi expediente,fuera_de_dominio
+como veo el estado de mi expediente,fuera_de_dominio
+presente un documento la semana pasada que paso con eso,fuera_de_dominio
+donde queda mesa de partes,fuera_de_dominio
+hasta que hora atienden hoy,fuera_de_dominio
+como saco mi certificado de antecedentes penales,fuera_de_dominio
+donde renuevo mi licencia de conducir,fuera_de_dominio
+a que hora abre el banco de la nacion,fuera_de_dominio
+como hago para votar en las elecciones,fuera_de_dominio
+donde queda el hospital mas cercano,fuera_de_dominio
+como saco cita para la vacuna,fuera_de_dominio
+quiero saber el resultado del sorteo de la tinka,fuera_de_dominio
+como me afilio a essalud,fuera_de_dominio
+donde compro entradas para un concierto,fuera_de_dominio
+cual es el tipo de cambio del dolar hoy,fuera_de_dominio
+como hago para reclamar en indecopi,fuera_de_dominio
+donde puedo sacar copias fotostaticas cerca de aqui,fuera_de_dominio
+hola buenos dias,saludo
+hola que tal,saludo
+buenas tardes quisiera consultar,saludo
+hola disculpa,saludo
+hola buen dia,saludo
+hola necesito ayuda,saludo
+hola,saludo
+buenos dias,saludo
+buenas tardes,saludo
+buenas noches,saludo
+saludos,saludo
+que tal,saludo
+hola leonardito,saludo
+buen dia,saludo
+hola como estas,saludo
+alo,saludo
+hey,saludo
+hola muni,saludo
+buenas,saludo
+que onda,saludo
+hola amigo,saludo
+saludos cordiales,saludo
+hola bot,saludo
+buenisimos dias,saludo
+hola buenas,saludo
+hola a todos,saludo
+holis,saludo
+hola señor,saludo
+buenas tardesito,saludo
+muy buenas,saludo
+hola tardes,saludo
+hola noches,saludo
+que hay de nuevo,saludo
+hola respondeme porfa,saludo
+hola oye,saludo
+buenas quiero preguntar algo,saludo
+hola necesito informacion,saludo
+hola me ayudas,saludo
+hola estas ahi,saludo
+hola espero me puedas ayudar,saludo
+muy buenos dias,saludo
+hola gusto saludarte,saludo
+hola te escribo por una consulta,saludo
+buen dia disculpa la hora,saludo
+hola espero estes bien,saludo
+hola quiero hacer una consulta,saludo
+hola perdon la molestia,saludo
+hola alo hay atencion,saludo
+hola que haces,saludo
+hola todo bien,saludo
+oye hola,saludo
+holaa,saludo
+adios,despedida
+hasta luego,despedida
+nos vemos,despedida
+chau,despedida
+gracias hasta pronto,despedida
+muchas gracias por tu ayuda,despedida
+eso es todo gracias,despedida
+listo gracias,despedida
+ya no necesito nada mas gracias,despedida
+gracias adios,despedida
+chau nos vemos luego,despedida
+esta bien gracias por la informacion,despedida
+perfecto muchas gracias adios,despedida
+ok gracias eso era todo,despedida
+gracias que tengas buen dia,despedida
+muy amable hasta luego,despedida
+eso era todo lo que necesitaba gracias,despedida
+gracias por la ayuda me retiro,despedida
+listo ya me quedo claro gracias,despedida
+vale muchas gracias adios,despedida
+hasta la proxima,despedida
+nos vemos gracias por todo,despedida
+chau chau,despedida
+bye gracias,despedida
+gracias ya no tengo mas preguntas,despedida
+eso es todo por hoy gracias,despedida
+gracias por atenderme adios,despedida
+muchisimas gracias hasta luego,despedida
+esta perfecto gracias me despido,despedida
+ok perfecto gracias chau,despedida
+gracias por tu tiempo adios,despedida
+listo con eso me basta gracias adios,despedida
+hasta pronto gracias por la informacion,despedida
+gracias cuidate,despedida
+gracias por todo que estes bien,despedida
+bueno gracias hasta otra,despedida
+esta bien asi gracias y hasta luego,despedida
+gracias eso resuelve mi duda adios,despedida
+perfecto muchas gracias buen dia,despedida
+gracias nos vemos pronto,despedida
+gracias,despedida
+muchas gracias,despedida
+listo,despedida
+ya esta,despedida
+ya,despedida
+vale gracias,despedida
+gracias eso resolvia todas mis dudas,despedida
+muchas gracias me quedo claro todo,despedida
+listo perfecto muchas gracias,despedida
+gracias amigo nos vemos,despedida
+bueno muchas gracias hasta luego,despedida
+gracias por resolver mi consulta,despedida
+ya con eso me voy gracias,despedida
+gracias eso necesitaba saber nomas,despedida
+perfecto asi queda gracias,despedida
+muy agradecido hasta pronto,despedida
+gracias por la paciencia adios,despedida
+gracias ahi quedamos,despedida
+gracias eso era chau,despedida
+bueno gracias me retiro ya,despedida
+que tal todo bien por aqui bot,charla_casual
+que tal el dia que tal te trata,charla_casual
+como andas funcionando bien,charla_casual
+duermes de noche o estas despierto siempre,charla_casual
+como estas todo bien por el chat,charla_casual
+que tal el dia bot,charla_casual
+funcionas bien todo el dia,charla_casual
+eres un robot de verdad,charla_casual
+que mas sabes hacer ademas de tramites,charla_casual
+quien te creo,charla_casual
+como estas,charla_casual
+como te va,charla_casual
+todo bien,charla_casual
+que tal todo,charla_casual
+como andas,charla_casual
+eres un robot,charla_casual
+eres una persona real,charla_casual
+quien te programo,charla_casual
+eres una inteligencia artificial,charla_casual
+cual es tu nombre,charla_casual
+como te llamas,charla_casual
+cuantos años tienes,charla_casual
+de donde eres,charla_casual
+te gusta tu trabajo,charla_casual
+eres humano,charla_casual
+hablas otros idiomas,charla_casual
+cuentame un chiste,charla_casual
+sabes cocinar,charla_casual
+te gusta el futbol,charla_casual
+cual es tu color favorito,charla_casual
+eres inteligente,charla_casual
+puedes pensar,charla_casual
+tienes sentimientos,charla_casual
+como funcionas,charla_casual
+quien te hizo,charla_casual
+eres de la municipalidad,charla_casual
+trabajas aqui,charla_casual
+cuanto sabes,charla_casual
+que puedes hacer,charla_casual
+para que sirves,charla_casual
+eres util,charla_casual
+buen trabajo,charla_casual
+que bien explicas,charla_casual
+eres muy amable,charla_casual
+me caes bien,charla_casual
+eres divertido,charla_casual
+de que material estas hecho,charla_casual
+tienes emociones de verdad,charla_casual
+puedes soñar,charla_casual
+te aburres de responder siempre lo mismo,charla_casual
+cual es tu comida favorita,charla_casual
+sabes bailar,charla_casual
+que opinas del futbol peruano,charla_casual
+tienes amigos,charla_casual
+puedes enamorarte,charla_casual
+cuentame algo curioso,charla_casual
+sabes jugar ajedrez,charla_casual
+te caen bien los reclamos de la gente,charla_casual
+tienes vacaciones alguna vez,charla_casual
+cual es tu pelicula favorita,charla_casual
+sabes cantar,charla_casual
+duermes de noche,charla_casual
+te canso con tantas preguntas,charla_casual
+eres el mismo bot de siempre,charla_casual
+como se llama tu creador,charla_casual
+te gustaria ser humano,charla_casual
+sabes de todo o solo de tramites,charla_casual
+hola amigo como te va el dia de hoy,saludo
+buen dia vecino como te va por tu casa,saludo
+hola estimado que tal como estas,saludo
+que tal un saludo cordial para ti,saludo
+buenas como te va todo bien por aqui,saludo
+hola como estas que tal te va todo,saludo
+muchas gracias y que te vaya muy bien,despedida
+eso seria todo nos vemos luego amigo,despedida
+gracias por la ayuda hasta la proxima oportunidad,despedida
+me retiro que tengas buen dia y te vaya bien,despedida
+listo ya me voy nos vemos mas tarde,despedida
+todo claro hasta luego y que te vaya genial,despedida
+como tramito la habilitacion urbana para un terreno de cuatro hectareas,T_007
+que documentos necesito para aprobar la habilitacion urbana modalidad b,T_007
+quiero habilitar urbanamente mi predio que no supera las 5 hectareas,T_007
+procedimiento municipal para habilitacion urbana aprobada por la municipalidad modalidad b,T_007
+requisitos de habilitacion urbana para predios que miden tres hectareas,T_007
+donde presento el expediente de habilitacion urbana modalidad b en la municipalidad,T_007
+tramite para habilitar un terreno rustico menor a cinco hectareas en zona urbana,T_007
+que piden para la aprobacion de habilitacion urbana para predio menor de 5 hectareas,T_007
+pasos para sacar la aprobacion de mi habilitacion urbana modalidad b,T_007
+necesito gestionar la habilitacion urbana de mi predio de dos hectareas,T_007
+requisitos para que el municipio apruebe mi proyecto de habilitacion urbana tipo b,T_007
+como puedo partir mi lote urbano en dos predios independientes,T_008
+tramite para hacer la subdivision de un terreno urbano registrado,T_008
+requisitos para independizar y subdividir mi propiedad urbana,T_008
+quiero desmembrar mi terreno urbano en varios lotes,T_008
+que papeles me piden para la subdivision de lote urbano sin hacer obras,T_008
+como hago para dividir mi predio urbano legalmente ante el municipio,T_008
+necesito autorizacion municipal para partir mi lote en dos terrenos,T_008
+procedimiento para aprobacion de subdivision de lote urbano municipal,T_008
+quiero fraccionar mi lote urbano para vender una mitad,T_008
+que requisitos exigen para la subdivision de un predio urbano,T_008
+tramite de aprobacion de subdivision de terreno dentro del distrito,T_008
+donde pido visar mis planos para solicitar instalacion de luz electrica,T_080
+necesito visacion de planos de mi predio para que ensa me ponga medidor de luz,T_080
+requisitos para visar plano para servicio de agua y desague en mi terreno,T_080
+como tramito el visado de planos para electrificacion de mi vivienda,T_080
+que piden para visacion de plano y memoria descriptiva para luz definitiva,T_080
+solicito visacion de planos para pedir agua potable en mi sector,T_080
+tramite municipal para visar plano perimetrico para instalacion de red electrica,T_080
+necesito visacion de planos para que epsel me instale conexion de desague,T_080
+plano visado por la municipalidad para pedir medidor de luz a ensa,T_080
+requisitos de visacion de planos para servicios basicos en mi lote,T_080
+como hago para que el municipio me vise el plano para electrificacion domiciliaria,T_080

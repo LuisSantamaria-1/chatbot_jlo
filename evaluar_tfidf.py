@@ -1,9 +1,10 @@
 import pandas as pd
 import unicodedata
+import json
 from sklearn.pipeline import Pipeline
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.svm import LinearSVC
-from sklearn.metrics import accuracy_score, classification_report
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
 # 1. Preprocesamiento
 def preprocesar_texto(texto):
@@ -37,3 +38,34 @@ print("   RESULTADOS FINALES: TF-IDF + SVM")
 print("="*40)
 print(f"Accuracy Exacto (Test 20%): {acc:.4f}\n")
 print(classification_report(y_test, y_pred, zero_division=0))
+
+# ---------------------------------------------------------------------------
+# 5. Detalle de confusión por clase (qué se confunde con qué, y cuántas veces)
+# ---------------------------------------------------------------------------
+clases = sorted(y_test.unique())
+cm = confusion_matrix(y_test, y_pred, labels=clases)
+reporte_dict = classification_report(y_test, y_pred, zero_division=0, output_dict=True)
+
+resultado = {}
+for i, clase in enumerate(clases):
+    confundido_con = {}
+    for j, otra_clase in enumerate(clases):
+        if i != j and cm[i][j] > 0:
+            confundido_con[otra_clase] = int(cm[i][j])
+    metricas = reporte_dict.get(clase, {})
+    resultado[clase] = {
+        "precision": metricas.get("precision", 0),
+        "recall": metricas.get("recall", 0),
+        "f1-score": metricas.get("f1-score", 0),
+        "support": metricas.get("support", 0),
+        "confused_with": confundido_con,
+    }
+
+print("\n" + "="*40)
+print("   DETALLE DE CONFUSIÓN POR CLASE")
+print("="*40)
+print(json.dumps(resultado, indent=2, ensure_ascii=False))
+
+with open("confusion_detalle.json", "w", encoding="utf-8") as f:
+    json.dump(resultado, f, indent=2, ensure_ascii=False)
+print("\nGuardado también en confusion_detalle.json")

@@ -1,0 +1,97 @@
+ID_Tramite,Nombre,Requisitos,Costo,Plazo
+T_001,Acceso a la Información Pública creada u obtenida por la entidad que se encuentre en su posesión o bajo su control,1. Solicitud presentada vía formulario o documento. | 2. Indicar número y fecha de comprobante de pago.,Copia S/0.10 - CD S/1.00,10 días hábiles
+T_002,Licencia de funcionamiento para cambio de giro,1. Declaración jurada para informar el cambio de giro.,S/ 70.80,2 días hábiles
+T_003,Licencia provisional de funcionamiento para bodegas,1. Solicitud de Licencia Provisional (Declaración Jurada). | 2. Declaración Jurada de cumplimiento de condiciones de seguridad de la bodega.,Gratuito,5 días hábiles
+T_004,Transferencia de Licencia de Funcionamiento o Cambio de Denominación,1. Formato de declaración jurada para licencia de funcionamiento. | 2. Copia simple del contrato de transferencia.,S/ 50.70,2 días hábiles
+T_005,Cese de actividades,1. Comunicación de cese de actividades.,Gratuito,2 días hábiles
+T_006,Duplicado de licencia de funcionamiento,1. Solicitud simple o formato FUT. | 2. DJ de representación o Carta Poder. | 3. Copia simple de denuncia policial por pérdida o robo. | 4. Pago por derecho de trámite.,S/ 42.90,5 días hábiles
+T_007,Autorización de instalación de publicidad exterior: anuncio publicitario simple adosado,1. Solicitud simple o según formato FUT de Publicidad Exterior. | 2. Foto y/o fotomontaje. | 3. Diseño de anuncio. | 4. Pago por derecho de trámite.,S/ 212.30,15 días hábiles
+T_008,VISACIÓN DE PLANOS PARA TRÁMITES DE PRESCRIPCIÓN ADQUISITIVA O TÍTULO SUPLETORIO Y PARA RECTIFICACIÓN Y/O DELIMITACIÓN DE ÁREAS Y LINDEROS,"1. Solicitud simple o según el formato FUT debidamente llenado. | 2. Copia simple del documento que acredite la propiedad o posesión del predio. | 3. Tres juegos de plano de ubicación, localización, perimétrico, lotización (con sección de vías) o manzaneo de las memorias descriptivas firmados por el profesional y el posesionario en el formato XIV - MVCS. | 4. Pago por derecho de trámite. | 5. Certificado de búsqueda catastral, de corresponder.",S/ 100.30,10 días hábiles
+T_009,Divorcio Por mutuo acuerdo o separación convencional,1. Formato de solicitud de separación convencional y divorcio ulterior. | 2. Acta de matrimonio Actualizada (vigencia de 3 meses). | 3. Exhibición de los DNIs de los cónyuges. | 4. Partidas de nacimientos vigentes en los casos de tener hijos menores o DDJJ de no tener hijos menores de edad o mayores con discapacidad. | 5. Copia certificada de la sentencia y resolución que la declara consentida o acta de conciliación extrajudicial en la que establecen tenencia alimentos y régimen de visitas a favor de los hijos menores de edad. | 6. Testimonio de escritura pública de sustitución de sociedad de gananciales por la de separación de bienes inscrita en registros públicos o declaración jurada de no tener bienes en común. | 7. DDJJ del último domicilio conyugal. | 8. Pago por derecho de trámite.,S/ 313.60,15 días hábiles
+T_010,PERMISO DE OPERACIÓN PARA PRESTAR EL SERVICIO DE TRANSPORTE PÚBLICO ESPECIAL DE PASAJEROS Y DE CARGA EN VEHÍCULOS MENORES,1. Solicitud simple indicando número del DNI. | 2. Copia simple de la escritura pública de constitución de la persona jurídica inscrita en Registros Públicos. | 3. Copia literal vigente de la partida registral. | 4. Certificado de Vigencia de Poder de la persona natural que representa a la persona jurídica. | 5. Exhibir el Documento Nacional de Identidad del representante legal. | 6. Pago por derecho de tramitación. | 7. Padrón Actualizado de Socios Propietarios y Unidades Vehiculares.,S/ 1064.40,30 días hábiles
+T_011,TARJETA DE OPERATIVIDAD DE VEHICULO Y RENOVACIÓN (vigencia 6 años renovable aplicado a vehículos formalizados),1. Solicitud simple. | 2. Exhibir el numero de documento de identidad. | 3. Copia legible de Licencia de Conducir. | 4. Copia de Tarjeta de Propiedad o contrato de compra venta. | 5. Copia legible del SOAT o AFOCAT vigente. | 6. Copia legible de Ticket Libre de infracciones vigente. | 7. Conformidad Constatación de Características del vehículo. | 8. Copia de carnet del curso de seguridad vial vigente. | 9. Pago por derecho de tramitación. | 10. Boleta Informativa Expedida por la SUNARP. | 11. Constancia de ser socio expedida por el presidente de la asociación. | 12. Copia simple del certificado de inspección vehicular (CARTICAT). | 13. Declaración jurada de socio. | 14. Numero de resolución del permiso de operatividad de la asociación. | 15. Copia del padrón de asociación.,S/ 66.70,5 días hábiles
+T_012,BAJA Y SUSTITUCIÓN DE VEHICULO MENOR,1. Solicitud simple. | 2. Constancia de autorizacion de la unidad a sustituir otorgada por el presidente de la asociación o persona juridica. | 3. Constancia de autorizacion de la baja otorgada por el presidente de la asociación o persona juridica. | 4. Pago por derecho de tramitación. | 5. Devolución de la tarjeta de operatividad del vehículo dada de alta. | 6. Numero de resolucion del permiso de autorizacion. | 7. Copia de la tarjeta de propiedad del vehiculo a efectos de la sustitución. | 8. Exhibir el numero de documento de identidad del propietario. | 9. Indicar N° de Resolución del permiso de operatividad. | 10. Copia simple del padron modificado. | 11. Constancia de ser socio consignado.,S/ 59.40,5 días hábiles
+T_013,Registro de Organizaciones Sociales,1. Solicitud Simple o en formato FUT debidamente llenada por el administrado. | 2. Acta de Fundación o de constitución. | 3. Norma de Organización (reglamento Estatutos u otros) y su acta de aprobación. | 4. Padrón de miembros de la organización social. | 5. Nómina de los miembros del órgano directivo. | 6. Acta de elección del órgano directivo. | 7. Copia legible del documento de identidad de los integrantes del órgano directivo. | 8. Otros documentos de ser el caso.,Gratuito,15 días hábiles
+T_014,CONDUCCIÓN DE PUESTO DE VENTA EN MERCADOS MUNICIPALES,1. Solicitud simple indicando número del DNI. | 2. Ficha Empadronamiento. | 3. Declaración Jurada de NO conducir más de 02 puestos. | 4. Comprobante de Pago por costo administrativo. | 5. Numero o Serie de Carnet de Comerciante emitido por la MDJLO.,Variable (desde S/ 137.50 hasta S/ 2191.70 según calificación),1 días hábiles
+T_015,Certificado de Numeración Municipal,1. Solicitud simple indicando los ingresos al predio y/o las unidades inmobiliarias de las que requiere el certificado señalando el número de recibo y la fecha del pago efectuado por el derecho de tramitación.,S/ 90.30,0 días hábiles
+T_016,Matrimonio civil (dentro del horario de trabajo en local municipal),1. Formato de solicitud de matrimonio civil. | 2. Exhibir DNI de contrayentes y testigos mayores de edad. | 3. Certificado de soltería expedido por RENIEC. | 4. Certificado de análisis clínicos. | 5. Publicación del Edicto Matrimonial. | 6. Requisitos específicos para divorciados viudos o extranjeros según corresponda. | 7. Pago por derecho de trámite.,S/ 240.00,20 días hábiles
+T_017,Matrimonio civil (en local público dentro de la jurisdicción),"1. Formato de solicitud de matrimonio civil. | 2. DNI de los contrayentes y testigos mayores de edad. | 3. Certificado de soltería expedido por RENIEC (solteros), o partida de matrimonio con divorcio registrado (divorciados), o partida de matrimonio anterior y partida de defunción (viudos), según corresponda. | 4. Certificado de análisis clínicos. | 5. Publicación del Edicto Matrimonial. | 6. Para extranjeros: partida de nacimiento y certificado de soltería apostillados, copia legalizada de pasaporte y traducción visada. | 7. Pago por derecho de trámite.",S/ 300.20,20 días hábiles
+T_018,Matrimonio civil (fuera del horario de trabajo en local municipal),"1. Formato de solicitud de matrimonio civil. | 2. DNI de los contrayentes y testigos mayores de edad. | 3. Certificado de soltería expedido por RENIEC (solteros), o partida de matrimonio con divorcio registrado (divorciados), o partida de matrimonio anterior y partida de defunción (viudos), según corresponda. | 4. Certificado de análisis clínicos. | 5. Publicación del Edicto Matrimonial. | 6. Para extranjeros: partida de nacimiento y certificado de soltería apostillados, copia legalizada de pasaporte y traducción visada. | 7. Pago por derecho de trámite.",S/ 266.70,20 días hábiles
+T_019,Matrimonio civil (en local público fuera de la jurisdicción),"1. Formato de solicitud de matrimonio civil. | 2. DNI de los contrayentes y testigos mayores de edad. | 3. Certificado de soltería expedido por RENIEC (solteros), o partida de matrimonio con divorcio registrado (divorciados), o partida de matrimonio anterior y partida de defunción (viudos), según corresponda. | 4. Certificado de análisis clínicos. | 5. Publicación del Edicto Matrimonial. | 6. Para extranjeros: partida de nacimiento y certificado de soltería apostillados, copia legalizada de pasaporte y traducción visada. | 7. Pago por derecho de trámite.",S/ 344.90,20 días hábiles
+T_020,Matrimonio civil (a domicilio dentro de la jurisdicción),"1. Formato de solicitud de matrimonio civil. | 2. DNI de los contrayentes y testigos mayores de edad. | 3. Certificado de soltería expedido por RENIEC (solteros), o partida de matrimonio con divorcio registrado (divorciados), o partida de matrimonio anterior y partida de defunción (viudos), según corresponda. | 4. Certificado de análisis clínicos. | 5. Publicación del Edicto Matrimonial. | 6. Para extranjeros: partida de nacimiento y certificado de soltería apostillados, copia legalizada de pasaporte y traducción visada. | 7. Pago por derecho de trámite.",S/ 290.10,20 días hábiles
+T_021,Matrimonio civil (ceremonia oficiada por el Alcalde),"1. Formato de solicitud de matrimonio civil. | 2. DNI de los contrayentes y testigos mayores de edad. | 3. Certificado de soltería expedido por RENIEC (solteros), o partida de matrimonio con divorcio registrado (divorciados), o partida de matrimonio anterior y partida de defunción (viudos), según corresponda. | 4. Certificado de análisis clínicos. | 5. Publicación del Edicto Matrimonial. | 6. Para extranjeros: partida de nacimiento y certificado de soltería apostillados, copia legalizada de pasaporte y traducción visada. | 7. Pago por derecho de trámite.",S/ 390.10,20 días hábiles
+T_022,Matrimonio civil comunitario,"1. Formato de solicitud de matrimonio civil. | 2. DNI de los contrayentes y testigos mayores de edad. | 3. Certificado de soltería expedido por RENIEC (solteros), o partida de matrimonio con divorcio registrado (divorciados), o partida de matrimonio anterior y partida de defunción (viudos), según corresponda. | 4. Certificado de análisis clínicos. | 5. Publicación del Edicto Matrimonial. | 6. Para extranjeros: partida de nacimiento y certificado de soltería apostillados, copia legalizada de pasaporte y traducción visada. | 7. Pago por derecho de trámite.",S/ 100.10,20 días hábiles
+T_023,Inscripción en registro canino municipal,1. Solicitud en formato FUT debidamente llenada por el administrado (donde conste las características del can que permitan su plena identificación). | 2. Presentar Carnet de Vacunación completa (Validado por el colegio Médico Veterinario o un profesional Médico veterinario colegiado y habilitado). | 3. Copia del recibo de luz o agua del tenedor o propietario del can. | 4. Foto tamaño pasaporte del can. | 5. Pago por derecho de trámite.,S/ 20.10,7 días hábiles
+T_024,Inscripción en Registro Canino Municipal de Canes Potencialmente Peligrosos,"1. Solicitud en formato FUT con características que identifiquen plenamente al can. | 2. Carnet de vacunación completo, validado por médico veterinario colegiado. | 3. Certificado o constancia de aptitud psicológica del dueño, expedido por psicólogo colegiado. | 4. Copia del recibo de luz o agua del tenedor o propietario. | 5. Pago por derecho de trámite. | Nota: el propietario debe ser mayor de edad y presentar certificado de vacunación antirrábica y desparasitación.",S/ 20.00,7 días hábiles
+T_025,Autorización para instalación de conexiones domiciliarias de agua y desagüe (persona natural),"1. Formulario único de trámite (FUT), debidamente llenado. | 2. Documentación que acredite derecho a realizar trabajos (si no es propietario). | 3. Copia simple de carta de EPSEL SA autorizando trabajos. | 4. Declaración Jurada de compromiso de reposición de infraestructura pública. | 5. Pago por derecho de trámite.",S/ 169.80,10 días hábiles
+T_026,Autorización para instalación de conexiones domiciliarias de agua y desagüe (persona jurídica),1. Formulario único de trámite (FUT). | 2. Documento que acredite la representación legal. | 3. Copia de proyecto aprobado por la entidad correspondiente. | 4. Declaración jurada de responsabilidad de obra. | 5. Declaración jurada de habilidad del profesional responsable del proyecto. | 6. Pago por derecho de trámite.,S/ 249.70,10 días hábiles
+T_027,Certificado de Compatibilidad de Uso,1. Solicitud simple o FUT (indicando RUC y giro de negocio). | 2. Croquis o plano de ubicación (si corresponde). | 3. Pago por derecho de trámite.,S/ 90.70,10 días hábiles
+T_028,Certificación sanitaria municipal para establecimientos comerciales y de servicios,1. Solicitud simple o FUT (indicando N° Licencia de Funcionamiento o ITSE). | 2. Exhibir DNI. | 3. Carta poder simple (si es representante legal). | 4. Copia de certificado de fumigación vigente. | 5. Copia de autorización o resolución sectorial (si corresponde). | 6. Pago por derecho de trámite.,S/ 80.10,5 días hábiles
+T_029,Recurso de Reconsideración,1. Escrito fundamentado y firmado por el interesado o representante legal. | 2. Consignar N° de DNI y N° de Resolución emitida por la MDJLO de la cual solicita reconsideración (debe sustentarse en nueva prueba).,Gratuito,15 días hábiles
+T_030,Autorización Temporal para el Desarrollo de Espectáculos Públicos No Deportivos,"1. Solicitud simple o FUT indicando detalles del evento (tipo, fecha, hora, área, medidas de seguridad). | 2. Indicar el número de Resolución de Evaluación de Condiciones de Seguridad del evento. | 3. Copia simple del contrato de alquiler o cesión de uso del local. | 4. Copia de la autorización de APDAYC (de ser el caso). | 5. Copia simple del contrato entre el promotor y los artistas (de corresponder). | 6. Copia simple de la solicitud ante la gobernación José Leonardo Ortiz. | 7. Contar con licencia de funcionamiento (de ser el caso). | 8. Pago de importe por impuesto a los espectáculos públicos no deportivos. | 9. Copia simple del contrato de seguridad con la empresa prestadora. | 10. Copia simple del pago efectuado ante la prefectura por garantía. | 11. Pago por derecho de trámite. (Presentar con un mínimo de 10 días de anticipación).",S/ 245.80,10 días hábiles
+T_031,Certificado de Posesión para la Factibilidad de Servicios Básicos,"1. Solicitud simple o formato llenado (indicando DNI, correo electrónico, celular). | 2. Croquis de ubicación. | 3. Acta de colindancia debidamente llenada según formato. | 4. Copias simples de documentos que acrediten propiedad y/o DDJJ de posesión de vivienda. | 5. Pago por derecho de trámite.",S/ 80.00,10 días hábiles
+T_032,Constancia de Inhabitabilidad y Estado Ruinoso,"1. Solicitud en formato FUT, debidamente llenada. | 2. Plano y/o croquis de ubicación del inmueble. | 3. Pago por derecho de trámite.",S/ 68.80,5 días hábiles
+T_033,Certificado de Parámetros Urbanísticos y Edificatorios,"1. Solicitud simple o FUT, debidamente llenado. | 2. Copia simple del documento que acredite la propiedad. | 3. Plano de ubicación y localización (con sección de vías), según formato XIV - MVCS. | 4. Pago por derecho de trámite. (Documentación técnica firmada por el propietario y profesional competente/habilitado).",S/ 106.50,5 días hábiles
+T_034,Divorcio Ulterior,"1. Formato de Solicitud de Divorcio Ulterior dirigida al Alcalde, indicando N° y fecha de resolución que declaró la separación convencional. | 2. Exhibir DNIs de ambos cónyuges. | 3. Pago por derecho de trámite. | Nota: solo procede tras 2 meses de emitida la separación convencional.",S/ 200.10,15 días hábiles
+T_045,Registro y/o Empadronamiento Municipal de Vehículos Menores del Servicio Especial de Pasajeros y de Carga,"1. Solicitud simple o formato FUT debidamente llenado. | 2. Boleta Informativa de Registros Públicos (no mayor a 30 días). | 3. Copia simple de la Tarjeta de Propiedad Vehicular. | 4. Pago por derecho de trámite.",S/ 269.90,25 días hábiles
+T_046,Autorización Anual para Uso de Paradero o para Vehículos Menores del Servicio Especial,"1. Solicitud simple según formato FUT. | 2. Certificado de Vigencia de Poder del representante (antigüedad no mayor a 15 días). | 3. Documento de identidad del presidente de la asociación. | 4. Número de resolución del permiso de operatividad. | 5. Pago por derecho de trámite.",S/ 259.60,5 días hábiles
+T_047,Incremento de Flota Vehicular (Vehículos Menores),"1. Solicitud simple o Formato FUT. | 2. DNI del presidente de la asociación y del propietario del vehículo. | 3. Número de resolución del permiso de operatividad. | 4. Conformidad de constatación de características del nuevo vehículo o recibo de pago. | 5. Copia simple de tarjeta de propiedad vigente. | 6. Copia simple de licencia de conducir vigente. | 7. Copia del SOAT o FORCAT vigentes. | 8. Boucher de pago de la tarjeta de operatividad. | 9. Carnet vial o Boucher de pago. | 10. Pago por derecho de trámite.",S/ 180.20,10 días hábiles
+T_048,Renovación de Permiso de Operación para Transporte Público Especial de Pasajeros y Carga en Vehículos Menores (Vigencia 10 años),"1. Solicitud o FUT con carácter de declaración jurada (datos de persona jurídica, lista de prestadores, vehículos y modificaciones). | 2. Copia simple del contrato de alquiler del vehículo (si el prestador no es propietario). | 3. Constancia y fecha de pago por derecho de trámite.",S/ 1213.10,30 días hábiles
+T_049,Duplicado de Tarjeta de Operatividad de Vehículos Menores,"1. Solicitud simple o Formato FUT. | 2. Exhibir DNI. | 3. Pago por derecho de trámite.",S/ 30.50,5 días hábiles
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+T_080,Licencia de Edificación Modalidad A,1. Formulario Único de Edificación (FUE) debidamente suscrito. | 2. Documento que acredite el derecho a edificar. | 3. Declaración Jurada de los profesionales responsables. | 4. Planos de ubicación y arquitectura. | 5. Comprobante de pago por derecho de trámite.,S/ 150.00,Aprobación Automática
