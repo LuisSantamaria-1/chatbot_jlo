@@ -5,7 +5,7 @@ import os
 print("Cargando dataset_maestro.csv...")
 try:
     # 1. Leemos el archivo maestro que has estado editando manualmente
-    df_maestro = pd.read_csv("dataset_nlp.csv")
+    df_maestro = pd.read_csv('data/dataset_nlp.csv')
 except FileNotFoundError:
     print("Error: No se encontró dataset_maestro.csv en esta carpeta.")
     exit()
@@ -31,8 +31,7 @@ df_train, df_test = train_test_split(
     stratify=df_maestro["intent"]
 )
 
-df_train.to_csv("train_nlp.csv", index=False)
-df_test.to_csv("test_nlp.csv", index=False)
+
 if os.path.exists("data"):
     df_train.to_csv("data/train_nlp.csv", index=False)
     df_test.to_csv("data/test_nlp.csv", index=False)

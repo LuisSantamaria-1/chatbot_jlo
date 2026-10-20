@@ -1,17 +1,7 @@
-# 🏛️ Sistema Inteligente de Chatbot para la Municipalidad Distrital de José Leonardo Ortiz (MDJLO)
+🏛️ Sistema Inteligente de Chatbot para la Municipalidad Distrital de José Leonardo Ortiz (MDJLO)
 
-> **Título de la Investigación:** Sistema inteligente basado en chatbot para apoyar la orientación sobre requisitos procedimentales en la Municipalidad de José Leonardo Ortiz  
-> **Asignatura:** Seminario de Tesis I  
-> **Hito:** Hito 2 (50% - Cierre del Núcleo Funcional)  
-> **Metodología Híbrida:** Scrum / CRISP-DM  
+Este proyecto consiste en un sistema web inteligente basado en Procesamiento de Lenguaje Natural (NLP)diseñado para orientar a los ciudadanos del distrito de José Leonardo Ortiz sobre los trámites, requisitos procedimentales, costos y plazos estipulados en el TUPA (Texto Único de Procedimientos Administrativos) de la MDJLO.
 
----
-
-## 📌 Descripción del Proyecto
-
-Este proyecto consiste en un **sistema web inteligente basado en Procesamiento de Lenguaje Natural (NLP)** diseñado para orientar a los ciudadanos del distrito de José Leonardo Ortiz sobre los trámites, requisitos procedimentales, costos y plazos estipulados en el **TUPA (Texto Único de Procedimientos Administrativos)** de la MDJLO.
-
-El sistema está impulsado por el asistente virtual **"Leonardito"**, respaldado por un modelo de clasificación semántica **TF-IDF + SVM (LinearSVC)** que reconoce intenciones en tiempo real, gestiona memoria conversacional contextual, filtra consultas fuera de dominio y proporciona un panel administrativo seguro para la gestión del catálogo de trámites.
 
 ---
 

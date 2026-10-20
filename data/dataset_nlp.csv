@@ -232,46 +232,57 @@ quiero abrir una bodega chiquita cerca del colegio,T_003
 como saco el permiso de bodega sin tanto papeleo,T_003
 necesito legalizar rapido mi bodega antes de fin de mes,T_003
 quiero abrir una bodega y necesito los requisitos minimos,T_003
-quiero poner un cartel en mi tienda,T_007
-necesito permiso para colocar un letrero publicitario,T_007
-que requisitos piden para instalar un anuncio en mi local,T_007
-quiero poner publicidad afuera de mi negocio,T_007
-como saco permiso para un aviso publicitario,T_007
-necesito autorizacion para colocar un banner en mi fachada,T_007
-voy a instalar un letrero luminoso que tramite necesito,T_007
-requisitos para anuncio publicitario adosado,T_007
-cuanto cuesta el permiso para un cartel comercial,T_007
-quiero poner el nombre de mi tienda en un letrero grande,T_007
-necesito licencia para publicidad exterior,T_007
-que necesito para colgar un anuncio en la pared de mi local,T_007
-tramite para autorizacion de anuncio publicitario simple,T_007
-voy a poner un toldo con el nombre de mi negocio necesito permiso,T_007
-cual es el plazo para el permiso de publicidad exterior,T_007
-quiero colocar un panel publicitario en mi fachada,T_007
-necesito el permiso para el letrero de mi restaurante,T_007
-como tramito la autorizacion de un anuncio adosado,T_007
-requisitos para poner publicidad en la parte de afuera de mi tienda,T_007
-necesito permiso municipal para un cartel led,T_007
-quiero poner un letrero en la fachada de mi tienda que necesito,T_007
-necesito permiso para colocar un cartel publicitario en mi negocio,T_007
-voy a instalar un anuncio adosado a la fachada que tramite hago,T_007
-quiero poner un toldo con publicidad en la entrada de mi local,T_007
-que necesito para colgar un aviso publicitario en mi fachada,T_007
-necesito autorizacion para un letrero simple en mi negocio,T_007
-voy a poner un cartel con el nombre de mi tienda en la pared,T_007
-quiero instalar publicidad exterior adosada a mi local,T_007
-necesito permiso para un aviso pegado a la pared de mi tienda,T_007
-voy a colocar un anuncio publicitario en el frontis de mi negocio,T_007
-que tramite es para poner un letrero simple en mi fachada,T_007
-quiero autorizacion para un toldo publicitario,T_007
-necesito poner un cartel con mi logo en la entrada del local,T_007
-como saco permiso para un anuncio adosado a mi tienda,T_007
-voy a instalar un letrero simple en la pared de mi negocio,T_007
-que requisitos piden para colocar un aviso en mi fachada,T_007
-necesito el permiso para el letrero de mi bodega en la fachada,T_007
-quiero colgar un banner publicitario en la entrada de mi local,T_007
-como tramito la instalacion de un cartel en mi negocio,T_007
-necesito autorizacion municipal para mi anuncio adosado,T_007
+quiero poner un cartel en mi tienda,consultar_publicidad_exterior
+necesito permiso para colocar un letrero publicitario,consultar_publicidad_exterior
+que requisitos piden para instalar un anuncio en mi local,consultar_publicidad_exterior
+quiero poner publicidad afuera de mi negocio,consultar_publicidad_exterior
+como saco permiso para un aviso publicitario,consultar_publicidad_exterior
+necesito autorizacion para colocar un banner en mi fachada,consultar_publicidad_exterior
+voy a instalar un letrero luminoso que tramite necesito,consultar_publicidad_exterior
+requisitos para anuncio publicitario adosado,consultar_publicidad_exterior
+cuanto cuesta el permiso para un cartel comercial,consultar_publicidad_exterior
+quiero poner el nombre de mi tienda en un letrero grande,consultar_publicidad_exterior
+necesito licencia para publicidad exterior,consultar_publicidad_exterior
+que necesito para colgar un anuncio en la pared de mi local,consultar_publicidad_exterior
+tramite para autorizacion de anuncio publicitario simple,consultar_publicidad_exterior
+voy a poner un toldo con el nombre de mi negocio necesito permiso,consultar_publicidad_exterior
+cual es el plazo para el permiso de publicidad exterior,consultar_publicidad_exterior
+quiero colocar un panel publicitario en mi fachada,consultar_publicidad_exterior
+necesito el permiso para el letrero de mi restaurante,consultar_publicidad_exterior
+como tramito la autorizacion de un anuncio adosado,consultar_publicidad_exterior
+requisitos para poner publicidad en la parte de afuera de mi tienda,consultar_publicidad_exterior
+necesito permiso municipal para un cartel led,consultar_publicidad_exterior
+quiero poner un letrero en la fachada de mi tienda que necesito,consultar_publicidad_exterior
+necesito permiso para colocar un cartel publicitario en mi negocio,consultar_publicidad_exterior
+voy a instalar un anuncio adosado a la fachada que tramite hago,consultar_publicidad_exterior
+quiero poner un toldo con publicidad en la entrada de mi local,consultar_publicidad_exterior
+que necesito para colgar un aviso publicitario en mi fachada,consultar_publicidad_exterior
+necesito autorizacion para un letrero simple en mi negocio,consultar_publicidad_exterior
+voy a poner un cartel con el nombre de mi tienda en la pared,consultar_publicidad_exterior
+quiero instalar publicidad exterior adosada a mi local,consultar_publicidad_exterior
+necesito permiso para un aviso pegado a la pared de mi tienda,consultar_publicidad_exterior
+voy a colocar un anuncio publicitario en el frontis de mi negocio,consultar_publicidad_exterior
+que tramite es para poner un letrero simple en mi fachada,consultar_publicidad_exterior
+quiero autorizacion para un toldo publicitario,consultar_publicidad_exterior
+necesito poner un cartel con mi logo en la entrada del local,consultar_publicidad_exterior
+como saco permiso para un anuncio adosado a mi tienda,consultar_publicidad_exterior
+voy a instalar un letrero simple en la pared de mi negocio,consultar_publicidad_exterior
+que requisitos piden para colocar un aviso en mi fachada,consultar_publicidad_exterior
+necesito el permiso para el letrero de mi bodega en la fachada,consultar_publicidad_exterior
+quiero colgar un banner publicitario en la entrada de mi local,consultar_publicidad_exterior
+como tramito la instalacion de un cartel en mi negocio,consultar_publicidad_exterior
+necesito autorizacion municipal para mi anuncio adosado,consultar_publicidad_exterior
+donde pido visar mis planos para solicitar instalacion de luz electrica,T_008
+necesito visacion de planos de mi predio para que ensa me ponga medidor de luz,T_008
+requisitos para visar plano para servicio de agua y desague en mi terreno,T_008
+como tramito el visado de planos para electrificacion de mi vivienda,T_008
+que piden para visacion de plano y memoria descriptiva para luz definitiva,T_008
+solicito visacion de planos para pedir agua potable en mi sector,T_008
+tramite municipal para visar plano perimetrico para instalacion de red electrica,T_008
+necesito visacion de planos para que epsel me instale conexion de desague,T_008
+plano visado por la municipalidad para pedir medidor de luz a ensa,T_008
+requisitos de visacion de planos para servicios basicos en mi lote,T_008
+como hago para que el municipio me vise el plano para electrificacion domiciliaria,T_008
 necesito visar mis planos para prescripcion adquisitiva,T_008
 quiero visar el plano de mi terreno,T_008
 requisitos para visacion de planos municipales,T_008
@@ -282,7 +293,6 @@ quiero rectificar los linderos de mi terreno,T_008
 necesito delimitar el area de mi propiedad,T_008
 cuanto cuesta la visacion de planos,T_008
 requisitos para plano de lotizacion visado,T_008
-necesito el certificado de busqueda catastral,T_008
 voy a hacer un tramite de prescripcion adquisitiva de mi terreno,T_008
 necesito visar el plano de manzaneo de mi lote,T_008
 cual es el plazo para visar planos en la muni,T_008
@@ -358,46 +368,46 @@ necesito inscribir mi organizacion de base ante la municipalidad,T_013
 que tramite hago para que reconozcan mi junta vecinal,T_013
 quiero registrar mi asociacion sin fines de lucro del barrio,T_013
 necesito el registro municipal de mi organizacion social,T_013
-quiero un puesto en el mercado municipal,T_014
-como consigo un puesto de venta en el mercado,T_014
-requisitos para conducir un puesto en el mercado,T_014
-necesito el carnet de comerciante del mercado,T_014
-quiero vender en el mercado de la muni,T_014
-como me empadrono para tener un puesto,T_014
-necesito la ficha de empadronamiento del mercado,T_014
-cuanto cuesta un puesto de venta en el mercado municipal,T_014
-quiero conducir dos puestos en el mercado,T_014
-requisitos para ser comerciante en el mercado municipal,T_014
-necesito mi carnet de comerciante para vender ahi,T_014
-como obtengo un espacio de venta en el mercado,T_014
-cual es el plazo para el permiso de puesto en el mercado,T_014
-quiero registrarme como vendedor del mercado,T_014
-necesito la declaracion jurada de no tener mas de dos puestos,T_014
-voy a vender verduras en el mercado que necesito,T_014
-requisitos para renovar mi puesto en el mercado,T_014
-necesito el numero de serie de mi carnet de comerciante,T_014
-como saco el permiso para vender en el mercado municipal,T_014
-quiero un espacio para mi negocio dentro del mercado,T_014
-necesito el certificado de numeracion de mi casa,T_015
-como saco el numero oficial de mi predio,T_015
-quiero el certificado que confirme el numero de mi vivienda,T_015
-necesito saber el numero municipal de mi casa,T_015
-que tramite hago para tener numero de puerta oficial,T_015
-quiero certificar el numero de mi domicilio,T_015
-requisitos para el certificado de numeracion municipal,T_015
-necesito el documento con el numero oficial de mi inmueble,T_015
-cuanto cuesta el certificado de numeracion,T_015
-mi casa no tiene numero como lo consigo,T_015
-necesito la constancia de numeracion para tramites bancarios,T_015
-quiero el certificado de numeracion para mi negocio,T_015
-cual es el plazo para el certificado de numeracion,T_015
-como obtengo el numero municipal de mi local,T_015
-necesito acreditar el numero de mi predio ante una entidad,T_015
-quiero saber que numero le corresponde a mi casa segun la muni,T_015
-tramite para certificar numeracion de inmueble,T_015
-necesito el certificado de numeracion para escriturar mi casa,T_015
-donde saco el numero oficial de mi vivienda,T_015
-requiero constancia de numeracion municipal urgente,T_015
+quiero un puesto en el mercado municipal,consultar_puesto_mercado
+como consigo un puesto de venta en el mercado,consultar_puesto_mercado
+requisitos para conducir un puesto en el mercado,consultar_puesto_mercado
+necesito el carnet de comerciante del mercado,consultar_puesto_mercado
+quiero vender en el mercado de la muni,consultar_puesto_mercado
+como me empadrono para tener un puesto,consultar_puesto_mercado
+necesito la ficha de empadronamiento del mercado,consultar_puesto_mercado
+cuanto cuesta un puesto de venta en el mercado municipal,consultar_puesto_mercado
+quiero conducir dos puestos en el mercado,consultar_puesto_mercado
+requisitos para ser comerciante en el mercado municipal,consultar_puesto_mercado
+necesito mi carnet de comerciante para vender ahi,consultar_puesto_mercado
+como obtengo un espacio de venta en el mercado,consultar_puesto_mercado
+cual es el plazo para el permiso de puesto en el mercado,consultar_puesto_mercado
+quiero registrarme como vendedor del mercado,consultar_puesto_mercado
+necesito la declaracion jurada de no tener mas de dos puestos,consultar_puesto_mercado
+voy a vender verduras en el mercado que necesito,consultar_puesto_mercado
+requisitos para renovar mi puesto en el mercado,consultar_puesto_mercado
+necesito el numero de serie de mi carnet de comerciante,consultar_puesto_mercado
+como saco el permiso para vender en el mercado municipal,consultar_puesto_mercado
+quiero un espacio para mi negocio dentro del mercado,consultar_puesto_mercado
+necesito el certificado de numeracion de mi casa,consultar_numeracion_municipal
+como saco el numero oficial de mi predio,consultar_numeracion_municipal
+quiero el certificado que confirme el numero de mi vivienda,consultar_numeracion_municipal
+necesito saber el numero municipal de mi casa,consultar_numeracion_municipal
+que tramite hago para tener numero de puerta oficial,consultar_numeracion_municipal
+quiero certificar el numero de mi domicilio,consultar_numeracion_municipal
+requisitos para el certificado de numeracion municipal,consultar_numeracion_municipal
+necesito el documento con el numero oficial de mi inmueble,consultar_numeracion_municipal
+cuanto cuesta el certificado de numeracion,consultar_numeracion_municipal
+mi casa no tiene numero como lo consigo,consultar_numeracion_municipal
+necesito la constancia de numeracion para tramites bancarios,consultar_numeracion_municipal
+quiero el certificado de numeracion para mi negocio,consultar_numeracion_municipal
+cual es el plazo para el certificado de numeracion,consultar_numeracion_municipal
+como obtengo el numero municipal de mi local,consultar_numeracion_municipal
+necesito acreditar el numero de mi predio ante una entidad,consultar_numeracion_municipal
+quiero saber que numero le corresponde a mi casa segun la muni,consultar_numeracion_municipal
+tramite para certificar numeracion de inmueble,consultar_numeracion_municipal
+necesito el certificado de numeracion para escriturar mi casa,consultar_numeracion_municipal
+donde saco el numero oficial de mi vivienda,consultar_numeracion_municipal
+requiero constancia de numeracion municipal urgente,consultar_numeracion_municipal
 quiero casarme por civil en la municipalidad,consultar_matrimonio_civil
 que requisitos piden para el matrimonio civil,consultar_matrimonio_civil
 como programo mi matrimonio civil,consultar_matrimonio_civil
@@ -418,46 +428,56 @@ necesito el edicto matrimonial para casarme,consultar_matrimonio_civil
 como es el proceso de matrimonio civil municipal,consultar_matrimonio_civil
 voy a casarme necesito los requisitos completos,consultar_matrimonio_civil
 que examenes medicos piden para el matrimonio civil,consultar_matrimonio_civil
-como inscribo a mi perrito en el registro municipal,T_023
-requisitos para registrar mi mascota en la muni,T_023
-necesito el carnet canino de mi perro,T_023
-como saco el registro canino de mi cachorro,T_023
-que necesito para inscribir a mi perro normal,T_023
-documentos para el registro canino municipal,T_023
-quiero registrar a mi mascota domestica,T_023
-plazo del registro canino municipal,T_023
-cuanto cuesta inscribir a mi perro en la muni,T_023
-como tramito el carnet de mi mascota,T_023
-necesito inscribir a mi perro mestizo,T_023
-requisitos carnet de vacunacion para registro canino,T_023
-kiero inscribir a mi perrito en el registro,T_023
-q necesito pa registrar mi mascota,T_023
-como registro a mi perro que no es de raza peligrosa,T_023
-inscripcion de mascotas domesticas en la municipalidad,T_023
-necesito el registro municipal de mi perro faldero,T_023
-documentos para inscribir a mi cachorro mestizo,T_023
-como saco el carnet municipal de mi mascota,T_023
-quiero el registro canino normal de mi perro,T_023
-como registro a mi pitbull en la municipalidad,T_024
-requisitos para inscribir mi rottweiler como perro peligroso,T_024
-necesito el certificado psicologico para mi perro de raza peligrosa,T_024
-documentos para registrar mi perro agresivo,T_024
-como inscribo a mi perro de raza considerada peligrosa,T_024
-quiero registrar a mi bull terrier como can peligroso,T_024
-que piden para perros potencialmente peligrosos,T_024
-necesito el certificado de aptitud psicologica del dueño de un perro peligroso,T_024
-como registro a mi dogo argentino de raza peligrosa,T_024
-requisitos para inscribir can agresivo en la municipalidad,T_024
-kiero registrar a mi pitbull pa que no me multen,T_024
-q necesito pa mi perro de raza peligrosa,T_024
-certificado psicologico para registro de perro agresivo,T_024
-como inscribo a mi fila brasileño como can peligroso,T_024
-documentos para registrar perro considerado potencialmente peligroso,T_024
-necesito inscribir a mi rottweiler es obligatorio por ser raza peligrosa,T_024
-que certificado psicologico piden para razas peligrosas,T_024
-como registro a mi staffordshire terrier como can peligroso,T_024
-requisitos aptitud psicologica dueño de can peligroso,T_024
-inscripcion registro canino perros de razas potencialmente peligrosas,T_024
+quiero registrar a mi perro en la municipalidad,consultar_registro_canino
+necesito inscribir a mi mascota,consultar_registro_canino
+tramite del registro canino,consultar_registro_canino
+como registro a mi perro,consultar_registro_canino
+mi perro necesita registro en la muni,consultar_registro_canino
+requisitos para el registro canino,consultar_registro_canino
+cuanto cuesta registrar a mi perro,consultar_registro_canino
+cuanto demora el registro canino,consultar_registro_canino
+no se si mi perro es de raza peligrosa y quiero registrarlo,consultar_registro_canino
+tengo un perro y la muni me pide registrarlo,consultar_registro_canino
+como inscribo a mi perrito en el registro municipal,consultar_registro_canino
+requisitos para registrar mi mascota en la muni,consultar_registro_canino
+necesito el carnet canino de mi perro,consultar_registro_canino
+como saco el registro canino de mi cachorro,consultar_registro_canino
+que necesito para inscribir a mi perro normal,consultar_registro_canino
+documentos para el registro canino municipal,consultar_registro_canino
+quiero registrar a mi mascota domestica,consultar_registro_canino
+plazo del registro canino municipal,consultar_registro_canino
+cuanto cuesta inscribir a mi perro en la muni,consultar_registro_canino
+como tramito el carnet de mi mascota,consultar_registro_canino
+necesito inscribir a mi perro mestizo,consultar_registro_canino
+requisitos carnet de vacunacion para registro canino,consultar_registro_canino
+kiero inscribir a mi perrito en el registro,consultar_registro_canino
+q necesito pa registrar mi mascota,consultar_registro_canino
+como registro a mi perro que no es de raza peligrosa,consultar_registro_canino
+inscripcion de mascotas domesticas en la municipalidad,consultar_registro_canino
+necesito el registro municipal de mi perro faldero,consultar_registro_canino
+documentos para inscribir a mi cachorro mestizo,consultar_registro_canino
+como saco el carnet municipal de mi mascota,consultar_registro_canino
+quiero el registro canino normal de mi perro,consultar_registro_canino
+como registro a mi pitbull en la municipalidad,consultar_registro_canino
+requisitos para inscribir mi rottweiler como perro peligroso,consultar_registro_canino
+necesito el certificado psicologico para mi perro de raza peligrosa,consultar_registro_canino
+documentos para registrar mi perro agresivo,consultar_registro_canino
+como inscribo a mi perro de raza considerada peligrosa,consultar_registro_canino
+quiero registrar a mi bull terrier como can peligroso,consultar_registro_canino
+que piden para perros potencialmente peligrosos,consultar_registro_canino
+necesito el certificado de aptitud psicologica del dueño de un perro peligroso,consultar_registro_canino
+como registro a mi dogo argentino de raza peligrosa,consultar_registro_canino
+requisitos para inscribir can agresivo en la municipalidad,consultar_registro_canino
+kiero registrar a mi pitbull pa que no me multen,consultar_registro_canino
+q necesito pa mi perro de raza peligrosa,consultar_registro_canino
+certificado psicologico para registro de perro agresivo,consultar_registro_canino
+como inscribo a mi fila brasileño como can peligroso,consultar_registro_canino
+documentos para registrar perro considerado potencialmente peligroso,consultar_registro_canino
+necesito inscribir a mi rottweiler es obligatorio por ser raza peligrosa,consultar_registro_canino
+que certificado psicologico piden para razas peligrosas,consultar_registro_canino
+como registro a mi staffordshire terrier como can peligroso,consultar_registro_canino
+requisitos aptitud psicologica dueño de can peligroso,consultar_registro_canino
+inscripcion registro canino perros de razas potencialmente peligrosas,consultar_registro_canino
 quiero instalar agua y desague en mi casa,consultar_conexion_agua
 necesito el permiso para conectar el agua a mi vivienda,consultar_conexion_agua
 requisitos para instalar conexion de agua potable,consultar_conexion_agua
@@ -498,6 +518,20 @@ requisitos para conexion de desague de una persona juridica,consultar_conexion_a
 voy a urbanizar un terreno necesito instalar agua y desague,consultar_conexion_agua
 necesito el permiso empresarial para conectar servicios de agua,consultar_conexion_agua
 como autorizo la instalacion de agua para mi empresa constructora,consultar_conexion_agua
+quiero saber si la zonificacion de mi local permite abrir una tienda,T_027
+necesito el certificado que diga que el uso de suelo es compatible con mi negocio,T_027
+voy a alquilar un local y quiero confirmar que la zona permite mi actividad,T_027
+puedo poner una polleria en esta cuadra segun la zonificacion,T_027
+la zona donde quiero abrir mi negocio es residencial o comercial,T_027
+necesito compatibilidad de uso antes de pedir mi licencia de funcionamiento,T_027
+como compruebo que el uso de suelo de mi local es comercial,T_027
+que papel me piden para demostrar que mi local esta en zona comercial,T_027
+quiero abrir una botica y necesito saber si esa direccion lo permite,T_027
+certificado de compatibilidad de uso de suelo para mi local,T_027
+la municipalidad me pide compatibilidad de uso para mi negocio,T_027
+requisitos para saber si mi local esta en zona permitida,T_027
+necesito zonificacion de la direccion de mi futuro negocio,T_027
+antes de comprar este local quiero saber si el uso de suelo me sirve,T_027
 necesito el certificado de compatibilidad de uso,T_027
 quiero verificar la zonificacion de mi local,T_027
 como saco el certificado de uso de suelo,T_027
@@ -526,26 +560,26 @@ como se si mi negocio no esta prohibido en esa zonificacion,T_027
 requisitos para saber que actividades se permiten en un local,T_027
 necesito el certificado antes de firmar el contrato de alquiler del local,T_027
 quiero saber si mi negocio de comida esta permitido en esa avenida,T_027
-necesito la certificacion sanitaria de mi restaurante,T_028
-como saco el certificado sanitario para mi negocio,T_028
-requisitos para la certificacion sanitaria municipal,T_028
-necesito el certificado de fumigacion para mi local,T_028
-quiero la certificacion sanitaria para mi bodega de alimentos,T_028
-cuanto cuesta la certificacion sanitaria municipal,T_028
-necesito demostrar que mi negocio cumple normas sanitarias,T_028
-requisitos para el certificado de salubridad de mi restaurante,T_028
-como renuevo mi certificado de fumigacion vigente,T_028
-necesito la certificacion sanitaria para vender alimentos,T_028
-voy a abrir un restaurante necesito el certificado sanitario,T_028
-cual es el plazo para la certificacion sanitaria municipal,T_028
-necesito el certificado sanitario para mi puesto de comida,T_028
-requisitos para acreditar condiciones sanitarias de mi negocio,T_028
-como consigo la certificacion de salubridad para mi local,T_028
-necesito el certificado sanitario junto con mi licencia de funcionamiento,T_028
-voy a renovar la certificacion sanitaria de mi restaurante,T_028
-requisitos para la certificacion sanitaria de un establecimiento de servicios,T_028
-necesito la resolucion sectorial para mi certificado sanitario,T_028
-como tramito el certificado sanitario para mi negocio de comida,T_028
+necesito la certificacion sanitaria de mi restaurante,consultar_certificacion_sanitaria
+como saco el certificado sanitario para mi negocio,consultar_certificacion_sanitaria
+requisitos para la certificacion sanitaria municipal,consultar_certificacion_sanitaria
+necesito el certificado de fumigacion para mi local,consultar_certificacion_sanitaria
+quiero la certificacion sanitaria para mi bodega de alimentos,consultar_certificacion_sanitaria
+cuanto cuesta la certificacion sanitaria municipal,consultar_certificacion_sanitaria
+necesito demostrar que mi negocio cumple normas sanitarias,consultar_certificacion_sanitaria
+requisitos para el certificado de salubridad de mi restaurante,consultar_certificacion_sanitaria
+como renuevo mi certificado de fumigacion vigente,consultar_certificacion_sanitaria
+necesito la certificacion sanitaria para vender alimentos,consultar_certificacion_sanitaria
+voy a abrir un restaurante necesito el certificado sanitario,consultar_certificacion_sanitaria
+cual es el plazo para la certificacion sanitaria municipal,consultar_certificacion_sanitaria
+necesito el certificado sanitario para mi puesto de comida,consultar_certificacion_sanitaria
+requisitos para acreditar condiciones sanitarias de mi negocio,consultar_certificacion_sanitaria
+como consigo la certificacion de salubridad para mi local,consultar_certificacion_sanitaria
+necesito el certificado sanitario junto con mi licencia de funcionamiento,consultar_certificacion_sanitaria
+voy a renovar la certificacion sanitaria de mi restaurante,consultar_certificacion_sanitaria
+requisitos para la certificacion sanitaria de un establecimiento de servicios,consultar_certificacion_sanitaria
+necesito la resolucion sectorial para mi certificado sanitario,consultar_certificacion_sanitaria
+como tramito el certificado sanitario para mi negocio de comida,consultar_certificacion_sanitaria
 quiero presentar un recurso de reconsideracion,T_029
 necesito impugnar una resolucion municipal,T_029
 como reconsidero una decision de la muni,T_029
@@ -573,46 +607,46 @@ requisitos para impugnar una resolucion municipal,T_029
 como hago un recurso administrativo contra la muni,T_029
 necesito reconsiderar el resultado de mi solicitud,T_029
 quiero apelar porque no estoy conforme con la resolucion,T_029
-quiero hacer un concierto necesito permiso,T_030
-voy a organizar un evento necesito autorizacion municipal,T_030
-requisitos para un espectaculo publico no deportivo,T_030
-necesito el permiso para una fiesta con mas de 500 personas,T_030
-voy a hacer una discoteca movil que autorizacion necesito,T_030
-requisitos para organizar un show en mi distrito,T_030
-necesito permiso municipal para un concierto,T_030
-quiero organizar un evento masivo necesito autorizacion,T_030
-cuanto cuesta el permiso para un espectaculo publico,T_030
-necesito la resolucion de seguridad para mi evento,T_030
-voy a traer artistas necesito autorizacion municipal,T_030
-requisitos para hacer una feria con espectaculo,T_030
-necesito permiso para una obra de teatro publica,T_030
-cual es el plazo para autorizar mi evento,T_030
-voy a alquilar un local para un espectaculo que necesito,T_030
-necesito el permiso de apdayc para mi evento,T_030
-requisitos para organizar un evento con mas de 3000 personas no aplica,T_030
-necesito autorizacion para un show artistico en mi distrito,T_030
-voy a hacer un evento con seguridad privada que necesito,T_030
-quiero presentar mi evento con anticipacion que tramite hago,T_030
-voy a organizar un concierto necesito permiso,T_030
-quiero hacer un evento con hasta 2000 personas que tramite hago,T_030
-necesito autorizacion para un show en mi local,T_030
-voy a realizar una fiesta patronal necesito permiso municipal,T_030
-quiero organizar un espectaculo publico no deportivo,T_030
-necesito permiso para un evento masivo el fin de semana,T_030
-voy a hacer una presentacion artistica con publico que necesito,T_030
-que tramite es para organizar un festival en la plaza,T_030
-necesito autorizacion para un concierto con afluencia de gente,T_030
-voy a montar un evento cultural con entrada libre,T_030
-quiero permiso para una kermes con espectaculo en vivo,T_030
-necesito autorizacion temporal para un show musical,T_030
-voy a realizar un evento publico y necesito el permiso municipal,T_030
-que requisitos piden para organizar una feria con show,T_030
-necesito permiso para un evento con banda en vivo,T_030
-voy a hacer una presentacion de artistas en la plaza principal,T_030
-quiero organizar un espectaculo con hasta 3000 asistentes,T_030
-necesito el tramite para autorizar un evento social masivo,T_030
-voy a realizar una actividad publica con concurrencia de personas,T_030
-como saco permiso para un evento no deportivo en mi distrito,T_030
+quiero hacer un concierto necesito permiso,consultar_evento_publico
+voy a organizar un evento necesito autorizacion municipal,consultar_evento_publico
+requisitos para un espectaculo publico no deportivo,consultar_evento_publico
+necesito el permiso para una fiesta con mas de 500 personas,consultar_evento_publico
+voy a hacer una discoteca movil que autorizacion necesito,consultar_evento_publico
+requisitos para organizar un show en mi distrito,consultar_evento_publico
+necesito permiso municipal para un concierto,consultar_evento_publico
+quiero organizar un evento masivo necesito autorizacion,consultar_evento_publico
+cuanto cuesta el permiso para un espectaculo publico,consultar_evento_publico
+necesito la resolucion de seguridad para mi evento,consultar_evento_publico
+voy a traer artistas necesito autorizacion municipal,consultar_evento_publico
+requisitos para hacer una feria con espectaculo,consultar_evento_publico
+necesito permiso para una obra de teatro publica,consultar_evento_publico
+cual es el plazo para autorizar mi evento,consultar_evento_publico
+voy a alquilar un local para un espectaculo que necesito,consultar_evento_publico
+necesito el permiso de apdayc para mi evento,consultar_evento_publico
+requisitos para organizar un evento con mas de 3000 personas no aplica,consultar_evento_publico
+necesito autorizacion para un show artistico en mi distrito,consultar_evento_publico
+voy a hacer un evento con seguridad privada que necesito,consultar_evento_publico
+quiero presentar mi evento con anticipacion que tramite hago,consultar_evento_publico
+voy a organizar un concierto necesito permiso,consultar_evento_publico
+quiero hacer un evento con hasta 2000 personas que tramite hago,consultar_evento_publico
+necesito autorizacion para un show en mi local,consultar_evento_publico
+voy a realizar una fiesta patronal necesito permiso municipal,consultar_evento_publico
+quiero organizar un espectaculo publico no deportivo,consultar_evento_publico
+necesito permiso para un evento masivo el fin de semana,consultar_evento_publico
+voy a hacer una presentacion artistica con publico que necesito,consultar_evento_publico
+que tramite es para organizar un festival en la plaza,consultar_evento_publico
+necesito autorizacion para un concierto con afluencia de gente,consultar_evento_publico
+voy a montar un evento cultural con entrada libre,consultar_evento_publico
+quiero permiso para una kermes con espectaculo en vivo,consultar_evento_publico
+necesito autorizacion temporal para un show musical,consultar_evento_publico
+voy a realizar un evento publico y necesito el permiso municipal,consultar_evento_publico
+que requisitos piden para organizar una feria con show,consultar_evento_publico
+necesito permiso para un evento con banda en vivo,consultar_evento_publico
+voy a hacer una presentacion de artistas en la plaza principal,consultar_evento_publico
+quiero organizar un espectaculo con hasta 3000 asistentes,consultar_evento_publico
+necesito el tramite para autorizar un evento social masivo,consultar_evento_publico
+voy a realizar una actividad publica con concurrencia de personas,consultar_evento_publico
+como saco permiso para un evento no deportivo en mi distrito,consultar_evento_publico
 no tengo titulo de propiedad pero necesito luz para mi casa,T_031
 vivo aqui hace años sin papeles necesito agua,T_031
 como pido factibilidad de luz sin ser dueño formal del terreno,T_031
@@ -710,51 +744,6 @@ requisitos para el divorcio en la municipalidad,consultar_divorcio
 como hago para divorciarme de mi pareja,consultar_divorcio
 necesito info del tramite de divorcio,consultar_divorcio
 quiero saber como tramitar mi divorcio,consultar_divorcio
-quiero sacar permiso para construir mi jato,T_080
-q piden para la licencia de edificacion modalidad a,T_080
-necesito levantar un pisito mas en mi casa como hago,T_080
-requisitos para licencia de construccion modalidad a,T_080
-como hago pa sacar mi permiso de obra en la muni,T_080
-kiero construir mi casa q docmentos presento,T_080
-licencia para edificar mi terreno modalidad a,T_080
-que se necesita para la licencia de construccion a,T_080
-quiero techar mi casa y necesito el permiso,T_080
-como inicio el tramite de edificacion modalidad a,T_080
-hola req para licencia de obra menor,T_080
-q documentos piden para hacer un cerco perimetrico,T_080
-licencia de edificacion a porfa,T_080
-nesecito permiso pa construir en mi lote,T_080
-informacion sobre la licencia de edificacion modalidad a,T_080
-cuales son los pasos para sacar la licencia de construccion,T_080
-que papeles llevo a la muni para construir mi casa,T_080
-tramites para edificacion tipo a,T_080
-kiero hacer una ampliacion en mi jato q licencia saco,T_080
-requisitos para modalidad A de edificacion,T_080
-quiero sacar licencia pa mi casita,T_080
-como tramito el permiso de construccion a,T_080
-que piden para edificar una vivienda unifamiliar,T_080
-documentos pa la licencia de construccion de mi casa,T_080
-necesito iniciar el tramite de licencia de edificacion,T_080
-estoy pensando en construir un segundo piso en mi casa,T_080
-me gustaria saber que necesito para la licencia de construccion,T_080
-quisiera informarme sobre el permiso de obra modalidad a,T_080
-tengo pensado levantar una habitacion mas en mi casa,T_080
-me interesa saber como saco mi licencia de edificacion,T_080
-estaba pensando en construir mi casa este año,T_080
-quisiera saber que documentos piden para modalidad a,T_080
-quiero hacer una terraza nueva en mi azotea,T_080
-necesito permiso para tumbar una pared interior,T_080
-voy a poner un segundo nivel de material noble,T_080
-quiero saber que se necesita para construir un garaje,T_080
-necesito licencia para hacer un cerco en mi terreno,T_080
-voy a construir una tienda pegada a mi casa,T_080
-quiero saber los requisitos para edificar un local comercial pequeño,T_080
-necesito el permiso para hacer una loza deportiva,T_080
-voy a levantar una pared de contencion en mi terreno,T_080
-quiero ampliar mi vivienda con un cuarto adicional,T_080
-necesito permiso para instalar un techo de calamina nuevo,T_080
-voy a construir un cuarto de servicio en mi terreno,T_080
-quiero saber que tramite hago para edificar en un lote nuevo,T_080
 cuanto esta ese tramite,consultar_costo
 cual es el costo,consultar_costo
 cuanto me cuesta sacar eso,consultar_costo
@@ -857,6 +846,15 @@ en que plazo sale la respuesta,consultar_plazo
 cuanto se demora normalmente esto,consultar_plazo
 hay un tiempo aproximado de espera,consultar_plazo
 cuando queda resuelto el tramite,consultar_plazo
+quiero renovar mi brevete donde voy,fuera_de_dominio
+como tramito mi dni por primera vez,fuera_de_dominio
+necesito mis antecedentes penales,fuera_de_dominio
+como saco el soat de mi moto,fuera_de_dominio
+donde pago mis impuestos a la sunat,fuera_de_dominio
+quiero inscribirme en un instituto,fuera_de_dominio
+como hago para sacar mi licencia de arma,fuera_de_dominio
+necesito mi certificado de estudios,fuera_de_dominio
+donde saco mi record de conductor,fuera_de_dominio
 a que hora pasa el carro recolector de basura,fuera_de_dominio
 cuando limpian mi calle,fuera_de_dominio
 porque no prenden los postes de luz en mi cuadra,fuera_de_dominio
@@ -1131,36 +1129,347 @@ gracias por la ayuda hasta la proxima oportunidad,despedida
 me retiro que tengas buen dia y te vaya bien,despedida
 listo ya me voy nos vemos mas tarde,despedida
 todo claro hasta luego y que te vaya genial,despedida
-como tramito la habilitacion urbana para un terreno de cuatro hectareas,T_007
-que documentos necesito para aprobar la habilitacion urbana modalidad b,T_007
-quiero habilitar urbanamente mi predio que no supera las 5 hectareas,T_007
-procedimiento municipal para habilitacion urbana aprobada por la municipalidad modalidad b,T_007
-requisitos de habilitacion urbana para predios que miden tres hectareas,T_007
-donde presento el expediente de habilitacion urbana modalidad b en la municipalidad,T_007
-tramite para habilitar un terreno rustico menor a cinco hectareas en zona urbana,T_007
-que piden para la aprobacion de habilitacion urbana para predio menor de 5 hectareas,T_007
-pasos para sacar la aprobacion de mi habilitacion urbana modalidad b,T_007
-necesito gestionar la habilitacion urbana de mi predio de dos hectareas,T_007
-requisitos para que el municipio apruebe mi proyecto de habilitacion urbana tipo b,T_007
-como puedo partir mi lote urbano en dos predios independientes,T_008
-tramite para hacer la subdivision de un terreno urbano registrado,T_008
-requisitos para independizar y subdividir mi propiedad urbana,T_008
-quiero desmembrar mi terreno urbano en varios lotes,T_008
-que papeles me piden para la subdivision de lote urbano sin hacer obras,T_008
-como hago para dividir mi predio urbano legalmente ante el municipio,T_008
-necesito autorizacion municipal para partir mi lote en dos terrenos,T_008
-procedimiento para aprobacion de subdivision de lote urbano municipal,T_008
-quiero fraccionar mi lote urbano para vender una mitad,T_008
-que requisitos exigen para la subdivision de un predio urbano,T_008
-tramite de aprobacion de subdivision de terreno dentro del distrito,T_008
-donde pido visar mis planos para solicitar instalacion de luz electrica,T_080
-necesito visacion de planos de mi predio para que ensa me ponga medidor de luz,T_080
-requisitos para visar plano para servicio de agua y desague en mi terreno,T_080
-como tramito el visado de planos para electrificacion de mi vivienda,T_080
-que piden para visacion de plano y memoria descriptiva para luz definitiva,T_080
-solicito visacion de planos para pedir agua potable en mi sector,T_080
-tramite municipal para visar plano perimetrico para instalacion de red electrica,T_080
-necesito visacion de planos para que epsel me instale conexion de desague,T_080
-plano visado por la municipalidad para pedir medidor de luz a ensa,T_080
-requisitos de visacion de planos para servicios basicos en mi lote,T_080
-como hago para que el municipio me vise el plano para electrificacion domiciliaria,T_080
+quiero hacer un tramite de mi puesto en el mercado,consultar_puesto_mercado
+necesito ayuda con mi puesto del mercado municipal,consultar_puesto_mercado
+tengo una consulta sobre puestos del mercado,consultar_puesto_mercado
+que tramites hay para los comerciantes del mercado,consultar_puesto_mercado
+como hago un tramite para mi puesto de venta,consultar_puesto_mercado
+orientame sobre puestos en el mercado de la muni,consultar_puesto_mercado
+tengo un puesto en el mercado y quiero hacer un tramite,consultar_puesto_mercado
+que necesito para mi puesto del mercado,consultar_puesto_mercado
+info sobre tramites de puestos de mercado,consultar_puesto_mercado
+quisiera saber que tramites puedo hacer con mi puesto,consultar_puesto_mercado
+quiero preguntar por mi puesto en el mercado municipal,consultar_puesto_mercado
+tramites para comerciantes de mercados municipales,consultar_puesto_mercado
+se me vence el acta de adjudicacion de mi puesto del mercado,consultar_puesto_mercado
+quiero renovar la conduccion de mi puesto en el mercado,consultar_puesto_mercado
+mi puesto del mercado ya esta por vencer que hago,consultar_puesto_mercado
+como renuevo automaticamente mi puesto de venta,consultar_puesto_mercado
+cuantos dias antes debo pedir la renovacion de mi puesto,consultar_puesto_mercado
+necesito renovar mi acta de adjudicacion del puesto,consultar_puesto_mercado
+ya casi se vence mi contrato del puesto en el mercado,consultar_puesto_mercado
+renovacion automatica del puesto del mercado municipal,consultar_puesto_mercado
+quiero seguir conduciendo mi puesto cuando venza el acta,consultar_puesto_mercado
+como hago para no perder mi puesto cuando se acabe el plazo,consultar_puesto_mercado
+cuanto cuesta renovar mi puesto del mercado,consultar_puesto_mercado
+requisitos para la renovacion automatica de mi puesto de venta,consultar_puesto_mercado
+tengo mi acta de adjudicacion por vencer en el mercado,consultar_puesto_mercado
+quiero ampliar la vigencia de mi puesto en el mercado,consultar_puesto_mercado
+mi papa fallecio y tenia un puesto en el mercado,consultar_puesto_mercado
+murio el titular del puesto y quiero quedarme con el,consultar_puesto_mercado
+como heredo el puesto de mi mama en el mercado,consultar_puesto_mercado
+fallecio mi esposo que tenia puesto en el mercado municipal,consultar_puesto_mercado
+quiero que me adjudiquen el puesto de mi familiar fallecido,consultar_puesto_mercado
+el dueño del puesto murio y soy su hijo,consultar_puesto_mercado
+puedo seguir con el puesto de mi abuelo que fallecio,consultar_puesto_mercado
+adjudicacion de puesto por fallecimiento del conductor,consultar_puesto_mercado
+tramite para quedarme con el puesto del mercado de mi difunto padre,consultar_puesto_mercado
+mi hermano fallecio y conducia un puesto en el mercado,consultar_puesto_mercado
+cuanto tiempo tengo para pedir el puesto de un familiar fallecido,consultar_puesto_mercado
+requisitos para heredar un puesto de venta,consultar_puesto_mercado
+quien se queda con el puesto del mercado si el titular muere,consultar_puesto_mercado
+necesito el acta de defuncion para el puesto del mercado,consultar_puesto_mercado
+hay un puesto cerrado hace años en el mercado y lo quiero,consultar_puesto_mercado
+quiero un puesto que esta abandonado en el mercado municipal,consultar_puesto_mercado
+como me adjudico un puesto revertido,consultar_puesto_mercado
+puestos vacios en el mercado como los consigo,consultar_puesto_mercado
+vi un puesto en abandono y quiero conducirlo,consultar_puesto_mercado
+el municipio recupero un puesto del mercado y quiero postular,consultar_puesto_mercado
+puesto declarado en abandono adjudicacion,consultar_puesto_mercado
+quiero tomar un puesto que nadie usa en el mercado,consultar_puesto_mercado
+hay puestos desocupados en el mercado para vender,consultar_puesto_mercado
+requisitos para adjudicarme un puesto revertido,consultar_puesto_mercado
+necesito la inspeccion previa para un puesto del mercado,consultar_puesto_mercado
+como consigo un puesto libre en el mercado de jlo,consultar_puesto_mercado
+quiero que me den un puesto que quedo vacante,consultar_puesto_mercado
+declaracion jurada de no tener otro puesto en el mercado,consultar_puesto_mercado
+quiero arreglar mi puesto del mercado,consultar_puesto_mercado
+necesito autorizacion para remodelar mi puesto de venta,consultar_puesto_mercado
+quiero cambiar el techo de mi puesto en el mercado,consultar_puesto_mercado
+puedo pintar y reparar mi puesto sin permiso,consultar_puesto_mercado
+mantenimiento correctivo de mi puesto del mercado,consultar_puesto_mercado
+quiero reconstruir mi puesto en el mercado municipal,consultar_puesto_mercado
+necesito permiso para hacer cambios en mi puesto,consultar_puesto_mercado
+deseo mejorar mi puesto ponerle puerta y estantes,consultar_puesto_mercado
+mi puesto del mercado esta deteriorado y quiero repararlo,consultar_puesto_mercado
+autorizacion para obras menores en mi puesto de venta,consultar_puesto_mercado
+cuanto cuesta el permiso para remodelar mi puesto del mercado,consultar_puesto_mercado
+que piden para hacer modificaciones menores en mi puesto,consultar_puesto_mercado
+quiero hacer una remodelacion en mi puesto sin tocar la estructura,consultar_puesto_mercado
+necesito memoria descriptiva para mi puesto del mercado,consultar_puesto_mercado
+quiero cambiar lo que vendo en mi puesto del mercado,consultar_puesto_mercado
+como cambio el giro de mi puesto en el mercado,consultar_puesto_mercado
+vendo ropa y quiero vender abarrotes en mi puesto,consultar_puesto_mercado
+cambio de rubro de mi puesto de venta,consultar_puesto_mercado
+quiero dedicar mi puesto a otra actividad,consultar_puesto_mercado
+puedo vender otra cosa en mi puesto del mercado,consultar_puesto_mercado
+autorizacion para cambiar el giro de mi puesto municipal,consultar_puesto_mercado
+ahora quiero vender comida en mi puesto del mercado,consultar_puesto_mercado
+mi puesto era de verduras y quiero poner zapateria,consultar_puesto_mercado
+que necesito para cambiar de giro en el mercado,consultar_puesto_mercado
+cuanto demora el cambio de giro de un puesto de mercado,consultar_puesto_mercado
+quiero cambiar de negocio dentro de mi puesto,consultar_puesto_mercado
+declaracion jurada de cambio de giro en el puesto de venta,consultar_puesto_mercado
+el nuevo giro es compatible con la seccion de mi puesto,consultar_puesto_mercado
+necesito el numero de mi casa,consultar_numeracion_municipal
+quiero tramitar la numeracion municipal,consultar_numeracion_municipal
+que tramite hago para el numero de mi puerta,consultar_numeracion_municipal
+como consigo la numeracion de mi inmueble,consultar_numeracion_municipal
+necesito numeracion para mi edificio,consultar_numeracion_municipal
+tramite de numeracion municipal,consultar_numeracion_municipal
+quiero que me pongan numero a mi predio,consultar_numeracion_municipal
+orientame con la numeracion de mi propiedad,consultar_numeracion_municipal
+termine de construir mi edificio y necesito numero para cada departamento,consultar_numeracion_municipal
+mi proyecto ya fue aprobado y necesito que le asignen numero,consultar_numeracion_municipal
+como asigno numero a las unidades inmobiliarias de mi proyecto,consultar_numeracion_municipal
+necesito numeracion para cada una de las tiendas de mi galeria,consultar_numeracion_municipal
+construi cuatro departamentos y quiero que cada uno tenga su numero,consultar_numeracion_municipal
+quiero asignacion de numeracion para el ingreso de mi edificacion,consultar_numeracion_municipal
+me aprobaron la licencia de edificacion y falta la numeracion,consultar_numeracion_municipal
+necesito numero municipal para los ingresos de mi condominio,consultar_numeracion_municipal
+asignacion de numeracion municipal para mi proyecto aprobado,consultar_numeracion_municipal
+que piden para que me asignen numero a mis departamentos,consultar_numeracion_municipal
+cuanto cuesta la asignacion de numeracion de mi edificio,consultar_numeracion_municipal
+cuanto demora que me asignen la numeracion de mi proyecto,consultar_numeracion_municipal
+tengo un edificio nuevo con varios locales y no tienen numero,consultar_numeracion_municipal
+numeracion de unidades inmobiliarias de una obra aprobada,consultar_numeracion_municipal
+mi casa recien construida necesita numero oficial asignado,consultar_numeracion_municipal
+quiero la resolucion de asignacion de numero de mi construccion,consultar_numeracion_municipal
+necesito el certificado de nomenclatura vial,T_056
+como saco la nomenclatura vial de mi calle,T_056
+quiero saber el nombre oficial de la calle de mi terreno,T_056
+mi calle no tiene nombre oficial y necesito certificarlo,T_056
+necesito acreditar la denominacion de la via donde queda mi predio,T_056
+certificado de como se llama oficialmente mi pasaje,T_056
+requisitos para el certificado de nomenclatura vial,T_056
+cuanto cuesta el certificado de nomenclatura vial,T_056
+cual es el plazo del certificado de nomenclatura vial,T_056
+necesito saber si mi calle es avenida jiron o pasaje segun la muni,T_056
+quiero la clasificacion de la via frente a mi lote,T_056
+me piden la nomenclatura vial para un tramite en notaria,T_056
+necesito certificar el nombre de la avenida donde esta mi terreno,T_056
+que tramite hago para confirmar el nombre y tipo de mi calle,T_056
+documento que acredite la denominacion oficial de mi via,T_056
+necesito la nomenclatura de la calle para mis planos,T_056
+como averiguo si mi jiron tiene nombre oficial en la muni,T_056
+tramite para certificar el tipo de via de mi propiedad,T_056
+solicito certificado de nomenclatura vial para mi lote,T_056
+nomenclatura vial de la calle donde queda mi terreno,T_056
+quiero tramitar la nomenclatura vial de mi predio,T_056
+que se necesita para sacar la nomenclatura vial,T_056
+certificado de denominacion y clasificacion de vias,T_056
+mi pasaje no figura con nombre y necesito la nomenclatura vial,T_056
+necesito un certificado catastral,consultar_catastro_predial
+quiero hacer un tramite de catastro de mi predio,consultar_catastro_predial
+tramites de catastro en la municipalidad,consultar_catastro_predial
+que documentos de catastro puedo sacar,consultar_catastro_predial
+me piden un documento catastral de mi terreno,consultar_catastro_predial
+orientame sobre el codigo catastral,consultar_catastro_predial
+necesito algo del catastro municipal para mi lote,consultar_catastro_predial
+quiero preguntar por la ficha catastral de mi predio,consultar_catastro_predial
+necesito el certificado de codigo catastral de mi terreno,consultar_catastro_predial
+quiero saber cual es el codigo catastral de mi casa,consultar_catastro_predial
+como saco el codigo catastral de mi predio,consultar_catastro_predial
+me piden el codigo catastral para una compraventa,consultar_catastro_predial
+requisitos del certificado de codigo catastral,consultar_catastro_predial
+cuanto cuesta el certificado de codigo catastral,consultar_catastro_predial
+cual es el plazo para el certificado de codigo catastral,consultar_catastro_predial
+necesito el codigo catastral para mi escritura,consultar_catastro_predial
+el notario me pide el certificado de codigo catastral,consultar_catastro_predial
+quiero el codigo unico de mi inmueble en el catastro municipal,consultar_catastro_predial
+necesito codigo catastral de mi lote subdividido,consultar_catastro_predial
+necesito codigo catastral despues de acumular mis lotes,consultar_catastro_predial
+documento que acredite el codigo catastral de mi propiedad,consultar_catastro_predial
+donde tramito mi codigo catastral,consultar_catastro_predial
+necesito el certificado negativo de codigo catastral,consultar_catastro_predial
+mi terreno no tiene codigo catastral y necesito certificarlo,consultar_catastro_predial
+quiero un documento que diga que mi predio no esta en el catastro,consultar_catastro_predial
+certificado de que mi lote no figura en el sistema catastral,consultar_catastro_predial
+necesito el negativo catastral para formalizar mi propiedad,consultar_catastro_predial
+me piden constancia de que mi terreno no tiene codigo catastral,consultar_catastro_predial
+requisitos del certificado negativo de codigo catastral,consultar_catastro_predial
+cuanto cuesta el certificado negativo catastral,consultar_catastro_predial
+cuanto demora el certificado negativo de codigo catastral,consultar_catastro_predial
+mi predio no esta registrado en catastro y quiero formalizarlo,consultar_catastro_predial
+para regularizar mi terreno me piden el negativo de catastro,consultar_catastro_predial
+quiero certificar que mi inmueble no tiene codigo catastral asignado,consultar_catastro_predial
+quiero actualizar la informacion catastral de mi predio,consultar_catastro_predial
+necesito actualizar la ficha catastral de mi casa,consultar_catastro_predial
+construi un piso mas y quiero actualizar mis datos catastrales,consultar_catastro_predial
+los datos de mi predio en catastro estan desactualizados,consultar_catastro_predial
+como actualizo los datos de mi unidad catastral,consultar_catastro_predial
+requisitos para actualizar la ficha catastral,consultar_catastro_predial
+cuanto cuesta actualizar la informacion catastral de un predio,consultar_catastro_predial
+cuanto demora la actualizacion catastral de mi propiedad,consultar_catastro_predial
+cambio el propietario y quiero actualizar el catastro de mi predio,consultar_catastro_predial
+mi ficha catastral tiene datos errados quiero corregirlos,consultar_catastro_predial
+tramite para que el catastro registre mis ampliaciones,consultar_catastro_predial
+necesito una ficha catastral actualizada,consultar_catastro_predial
+quiero poner al dia la informacion de mi predio en el catastro municipal,consultar_catastro_predial
+actualizacion de datos de mi predio ante la municipalidad,consultar_catastro_predial
+quiero conseguir un puesto en el mercado,consultar_puesto_mercado
+necesito mi carnet de comerciante del mercado municipal,consultar_puesto_mercado
+quiero empadronarme como comerciante del mercado,consultar_puesto_mercado
+como me inscribo para vender en el mercado municipal,consultar_puesto_mercado
+quiero conducir un puesto en el mercado por primera vez,consultar_puesto_mercado
+necesito la ficha de empadronamiento para mi puesto,consultar_puesto_mercado
+requisitos para tener mi propio puesto de venta,consultar_puesto_mercado
+quiero declarar que no conduzco mas de dos puestos,consultar_puesto_mercado
+necesito permiso para poner publicidad en mi negocio,consultar_publicidad_exterior
+quiero un letrero en mi local no se que tramite es,consultar_publicidad_exterior
+que tramite hago para anunciar mi negocio afuera,consultar_publicidad_exterior
+quiero instalar un letrero luminoso en mi tienda,consultar_publicidad_exterior
+necesito permiso para un aviso con luz en la fachada,consultar_publicidad_exterior
+voy a poner un letrero iluminado con led en mi negocio,consultar_publicidad_exterior
+como saco autorizacion para un anuncio luminoso,consultar_publicidad_exterior
+requisitos para un anuncio publicitario iluminado adosado a fachada,consultar_publicidad_exterior
+cuanto cuesta el permiso de un letrero luminoso,consultar_publicidad_exterior
+cuanto demora autorizar un anuncio luminoso,consultar_publicidad_exterior
+necesito el informe de defensa civil para mi letrero con luz,consultar_publicidad_exterior
+quiero un panel luminoso con el nombre de mi local,consultar_publicidad_exterior
+letrero de neon para mi bar que permiso necesito,consultar_publicidad_exterior
+mi anuncio va a tener luces y quiero la autorizacion municipal,consultar_publicidad_exterior
+permiso para cartel iluminado en la fachada de mi restaurante,consultar_publicidad_exterior
+autorizacion para anuncio publicitario iluminado,consultar_publicidad_exterior
+quiero hacer un tramite de mi certificacion sanitaria,consultar_certificacion_sanitaria
+necesito ayuda con el certificado sanitario de mi negocio,consultar_certificacion_sanitaria
+que tramites hay sobre la certificacion sanitaria municipal,consultar_certificacion_sanitaria
+tengo una consulta sobre mi certificado sanitario,consultar_certificacion_sanitaria
+perdi mi certificado sanitario y quiero un duplicado,consultar_certificacion_sanitaria
+se me malogro el certificado sanitario de mi restaurante,consultar_certificacion_sanitaria
+me robaron mi certificacion sanitaria que hago,consultar_certificacion_sanitaria
+duplicado de certificacion sanitaria municipal,consultar_certificacion_sanitaria
+extravie el certificado sanitario de mi local,consultar_certificacion_sanitaria
+requisitos para el duplicado del certificado sanitario,consultar_certificacion_sanitaria
+cuanto cuesta el duplicado de la certificacion sanitaria,consultar_certificacion_sanitaria
+cuanto demora sacar duplicado de mi certificacion sanitaria,consultar_certificacion_sanitaria
+necesito otra copia de mi certificado sanitario,consultar_certificacion_sanitaria
+se deterioro mi certificacion sanitaria y necesito una nueva copia,consultar_certificacion_sanitaria
+quiero dar de baja mi certificacion sanitaria,consultar_certificacion_sanitaria
+voy a cerrar mi restaurante y quiero cancelar el certificado sanitario,consultar_certificacion_sanitaria
+baja de certificacion sanitaria municipal,consultar_certificacion_sanitaria
+ya no voy a vender alimentos y quiero anular mi certificacion sanitaria,consultar_certificacion_sanitaria
+cambie de actividad y quiero dar de baja el certificado sanitario,consultar_certificacion_sanitaria
+requisitos para la baja de certificacion sanitaria,consultar_certificacion_sanitaria
+cuanto cuesta dar de baja la certificacion sanitaria,consultar_certificacion_sanitaria
+cuanto demora la baja del certificado sanitario,consultar_certificacion_sanitaria
+cierre temporal de mi negocio y quiero dar de baja la certificacion sanitaria,consultar_certificacion_sanitaria
+quiero devolver mi certificado sanitario porque cierro el local,consultar_certificacion_sanitaria
+quiero hacer una actividad con juegos y mucha gente que permiso necesito,consultar_evento_publico
+que autorizacion piden para ferias o eventos,consultar_evento_publico
+quiero instalar un circo en un terreno del distrito,consultar_evento_publico
+necesito permiso para poner juegos mecanicos en una feria,consultar_evento_publico
+autorizacion para feria en la plaza,consultar_evento_publico
+voy a traer un parque de diversiones y quiero la autorizacion,consultar_evento_publico
+como saco permiso para instalar juegos inflables y mecanicos,consultar_evento_publico
+requisitos para instalar ferias circos y juegos mecanicos,consultar_evento_publico
+cuanto cuesta la autorizacion para un circo,consultar_evento_publico
+cuanto demora el permiso para instalar una feria,consultar_evento_publico
+quiero poner una feria de comida por fiestas patronales,consultar_evento_publico
+permiso para instalar carruseles y juegos para ninos en un terreno,consultar_evento_publico
+mi circo va a estar un mes en el distrito necesito autorizacion,consultar_evento_publico
+autorizacion para ferias y similares con numero de dni,consultar_evento_publico
+voy a montar una feria con juegos mecanicos y necesito la resolucion de seguridad,consultar_evento_publico
+que necesito para traer un circo a jose leonardo ortiz,consultar_evento_publico
+quiero juntar dos lotes en uno solo,T_061
+tramite para acumular mis dos terrenos,T_061
+requisitos para la acumulacion de lote urbano,T_061
+como unir dos predios colindantes legalmente,T_061
+compre el lote de al lado y quiero unirlo al mio,T_061
+fusion de dos lotes urbanos en la municipalidad,T_061
+necesito acumular mi lote con el del vecino que le compre,T_061
+cuanto cuesta la acumulacion de lotes,T_061
+cual es el plazo para acumular lotes urbanos,T_061
+necesito plano perimetrico del lote acumulado,T_061
+quiero convertir mis dos lotes en un solo predio,T_061
+que papeles piden para unir dos terrenos,T_061
+acumulacion de unidades inmobiliarias,T_061
+tengo dos terrenos contiguos y quiero hacer uno solo,T_061
+memoria descriptiva y planos para acumular mis lotes,T_061
+solicito acumulacion de lote matriz y lote adyacente,T_061
+como hago para que mis dos propiedades queden como una sola,T_061
+quiero acumular dos departamentos en una sola unidad,T_061
+quiero sacar la licencia de funcionamiento de mi negocio,consultar_licencia_funcionamiento
+necesito licencia de funcionamiento para mi local,consultar_licencia_funcionamiento
+como obtengo la licencia de funcionamiento,consultar_licencia_funcionamiento
+requisitos para la licencia de funcionamiento,consultar_licencia_funcionamiento
+voy a abrir un negocio y necesito licencia de funcionamiento,consultar_licencia_funcionamiento
+tramite de licencia de funcionamiento nueva,consultar_licencia_funcionamiento
+que necesito para que mi negocio funcione legalmente,consultar_licencia_funcionamiento
+quiero formalizar mi negocio con licencia de funcionamiento,consultar_licencia_funcionamiento
+licencia de funcionamiento con itse posterior,consultar_licencia_funcionamiento
+licencia de funcionamiento con itse previa,consultar_licencia_funcionamiento
+que es la inspeccion tecnica de seguridad itse para mi licencia,consultar_licencia_funcionamiento
+cuanto cuesta la licencia de funcionamiento,consultar_licencia_funcionamiento
+cuanto demora sacar la licencia de funcionamiento,consultar_licencia_funcionamiento
+necesito licencia para abrir mi local comercial,consultar_licencia_funcionamiento
+me piden licencia de funcionamiento para mi establecimiento,consultar_licencia_funcionamiento
+como saco el permiso para que mi negocio atienda al publico,consultar_licencia_funcionamiento
+licencia de funcionamiento segun el nivel de riesgo de mi local,consultar_licencia_funcionamiento
+no se que nivel de riesgo tiene mi negocio y quiero mi licencia,consultar_licencia_funcionamiento
+estoy pensando en abrir un negocio que licencia necesito,consultar_licencia_funcionamiento
+quiero tramitar mi licencia de funcionamiento por primera vez,consultar_licencia_funcionamiento
+quiero licencia para una oficina pequena sin atencion al publico,consultar_licencia_funcionamiento
+licencia de funcionamiento para mi peluqueria pequena,consultar_licencia_funcionamiento
+necesito licencia de funcionamiento de riesgo bajo,consultar_licencia_funcionamiento
+licencia para un local pequeno de bajo riesgo con itse posterior,consultar_licencia_funcionamiento
+quiero abrir una tienda de ropa chica que licencia necesito,consultar_licencia_funcionamiento
+licencia de funcionamiento para un bazar pequeno,consultar_licencia_funcionamiento
+licencia con itse posterior para un negocio de bajo riesgo,consultar_licencia_funcionamiento
+cuanto cuesta la licencia de funcionamiento de riesgo bajo,consultar_licencia_funcionamiento
+cuanto demora la licencia de funcionamiento de riesgo bajo,consultar_licencia_funcionamiento
+requisitos de licencia de funcionamiento para riesgo bajo,consultar_licencia_funcionamiento
+mi local es chico y sencillo y necesito mi licencia,consultar_licencia_funcionamiento
+licencia de funcionamiento de riesgo medio,consultar_licencia_funcionamiento
+quiero abrir un restaurante mediano y necesito licencia,consultar_licencia_funcionamiento
+licencia para mi consultorio con itse posterior,consultar_licencia_funcionamiento
+requisitos de licencia de funcionamiento para riesgo medio,consultar_licencia_funcionamiento
+cuanto cuesta la licencia de funcionamiento de riesgo medio,consultar_licencia_funcionamiento
+cuanto demora la licencia de funcionamiento de riesgo medio,consultar_licencia_funcionamiento
+licencia para una botica mediana,consultar_licencia_funcionamiento
+licencia de funcionamiento para una panaderia con local mediano,consultar_licencia_funcionamiento
+necesito licencia para un local mediano con riesgo medio,consultar_licencia_funcionamiento
+licencia con itse posterior para riesgo medio,consultar_licencia_funcionamiento
+quiero abrir una polleria mediana que licencia saco,consultar_licencia_funcionamiento
+licencia de funcionamiento de riesgo alto,consultar_licencia_funcionamiento
+licencia de funcionamiento con itse previa para riesgo alto,consultar_licencia_funcionamiento
+quiero abrir un gimnasio grande y necesito licencia,consultar_licencia_funcionamiento
+licencia para una clinica con itse previa,consultar_licencia_funcionamiento
+requisitos de licencia de funcionamiento para riesgo alto,consultar_licencia_funcionamiento
+cuanto cuesta la licencia de funcionamiento de riesgo alto,consultar_licencia_funcionamiento
+cuanto demora la licencia de funcionamiento de riesgo alto,consultar_licencia_funcionamiento
+necesito licencia para un supermercado,consultar_licencia_funcionamiento
+quiero abrir un hotel y necesito la licencia de funcionamiento,consultar_licencia_funcionamiento
+necesito el itse antes de la licencia para mi local grande,consultar_licencia_funcionamiento
+licencia para un colegio privado con itse previa,consultar_licencia_funcionamiento
+licencia de funcionamiento de riesgo muy alto,consultar_licencia_funcionamiento
+quiero abrir una discoteca y necesito licencia,consultar_licencia_funcionamiento
+licencia para un grifo con itse previa,consultar_licencia_funcionamiento
+requisitos de licencia de funcionamiento para riesgo muy alto,consultar_licencia_funcionamiento
+cuanto cuesta la licencia de funcionamiento de riesgo muy alto,consultar_licencia_funcionamiento
+cuanto demora la licencia de funcionamiento de riesgo muy alto,consultar_licencia_funcionamiento
+licencia para una gasolinera,consultar_licencia_funcionamiento
+licencia de funcionamiento para un casino o tragamonedas,consultar_licencia_funcionamiento
+necesito licencia para una fabrica con itse previa,consultar_licencia_funcionamiento
+licencia para un hospital con itse previa,consultar_licencia_funcionamiento
+licencia para un local de mucha concurrencia y riesgo muy alto,consultar_licencia_funcionamiento
+licencia de funcionamiento corporativa para mi mercado,consultar_licencia_funcionamiento
+licencia corporativa para galeria comercial,consultar_licencia_funcionamiento
+soy de la junta de propietarios y queremos licencia de funcionamiento,consultar_licencia_funcionamiento
+licencia de funcionamiento para un centro comercial,consultar_licencia_funcionamiento
+licencia para el mercado de abastos a nombre de la junta,consultar_licencia_funcionamiento
+requisitos de licencia corporativa para galerias comerciales,consultar_licencia_funcionamiento
+cuanto cuesta la licencia corporativa de un mercado,consultar_licencia_funcionamiento
+cuanto demora la licencia de funcionamiento corporativa,consultar_licencia_funcionamiento
+represento a los comerciantes de una galeria y queremos una licencia conjunta,consultar_licencia_funcionamiento
+licencia de funcionamiento para el ente colectivo de un mercado,consultar_licencia_funcionamiento
+como saco la licencia del mercado completo no de un puesto,consultar_licencia_funcionamiento
+licencia corporativa con itse previa,consultar_licencia_funcionamiento
+necesito la licencia corporativa de mi centro comercial,consultar_licencia_funcionamiento
+
+
+
+
+
+
+

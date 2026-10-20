@@ -1,117 +1,63 @@
 {
   "T_001": {
-    "precision": 1.0,
+    "precision": 0.875,
     "recall": 0.7777777777777778,
-    "f1-score": 0.875,
+    "f1-score": 0.8235294117647058,
     "support": 9.0,
     "confused_with": {
-      "consultar_costo": 1,
-      "fuera_de_dominio": 1
+      "T_056": 1,
+      "consultar_costo": 1
     }
   },
   "T_003": {
     "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
+    "recall": 0.8888888888888888,
+    "f1-score": 0.9411764705882353,
     "support": 9.0,
-    "confused_with": {}
-  },
-  "T_007": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 10.0,
-    "confused_with": {}
-  },
-  "T_008": {
-    "precision": 0.8571428571428571,
-    "recall": 1.0,
-    "f1-score": 0.9230769230769231,
-    "support": 6.0,
-    "confused_with": {}
-  },
-  "T_013": {
-    "precision": 0.75,
-    "recall": 0.75,
-    "f1-score": 0.75,
-    "support": 4.0,
     "confused_with": {
-      "consultar_gestion_licencia": 1
+      "consultar_licencia_funcionamiento": 1
     }
   },
-  "T_014": {
+  "T_008": {
     "precision": 1.0,
-    "recall": 0.75,
-    "f1-score": 0.8571428571428571,
-    "support": 4.0,
+    "recall": 0.8333333333333334,
+    "f1-score": 0.9090909090909091,
+    "support": 6.0,
     "confused_with": {
       "consultar_conexion_agua": 1
     }
   },
-  "T_015": {
+  "T_013": {
     "precision": 0.8,
     "recall": 1.0,
     "f1-score": 0.8888888888888888,
     "support": 4.0,
     "confused_with": {}
-  },
-  "T_023": {
-    "precision": 0.8,
-    "recall": 1.0,
-    "f1-score": 0.8888888888888888,
-    "support": 4.0,
-    "confused_with": {}
-  },
-  "T_024": {
-    "precision": 1.0,
-    "recall": 0.75,
-    "f1-score": 0.8571428571428571,
-    "support": 4.0,
-    "confused_with": {
-      "T_023": 1
-    }
   },
   "T_027": {
-    "precision": 0.8333333333333334,
-    "recall": 0.8333333333333334,
-    "f1-score": 0.8333333333333334,
-    "support": 6.0,
-    "confused_with": {
-      "consultar_gestion_licencia": 1
-    }
-  },
-  "T_028": {
-    "precision": 1.0,
+    "precision": 0.8888888888888888,
     "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 4.0,
+    "f1-score": 0.9411764705882353,
+    "support": 8.0,
     "confused_with": {}
   },
   "T_029": {
     "precision": 1.0,
-    "recall": 0.8,
-    "f1-score": 0.8888888888888888,
+    "recall": 0.4,
+    "f1-score": 0.5714285714285714,
     "support": 5.0,
     "confused_with": {
-      "T_015": 1
+      "T_001": 1,
+      "consultar_gestion_licencia": 1,
+      "consultar_plazo": 1
     }
-  },
-  "T_030": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 8.0,
-    "confused_with": {}
   },
   "T_031": {
     "precision": 1.0,
-    "recall": 0.5,
-    "f1-score": 0.6666666666666666,
+    "recall": 1.0,
+    "f1-score": 1.0,
     "support": 4.0,
-    "confused_with": {
-      "T_080": 1,
-      "consultar_conexion_agua": 1
-    }
+    "confused_with": {}
   },
   "T_032": {
     "precision": 1.0,
@@ -121,54 +67,82 @@
     "confused_with": {}
   },
   "T_033": {
-    "precision": 0.875,
-    "recall": 0.875,
-    "f1-score": 0.875,
+    "precision": 1.0,
+    "recall": 0.75,
+    "f1-score": 0.8571428571428571,
     "support": 8.0,
     "confused_with": {
-      "T_027": 1
+      "consultar_catastro_predial": 1,
+      "consultar_costo": 1
     }
   },
-  "T_080": {
-    "precision": 0.7272727272727273,
-    "recall": 0.7272727272727273,
-    "f1-score": 0.7272727272727273,
-    "support": 11.0,
-    "confused_with": {
-      "T_008": 1,
-      "T_033": 1,
-      "fuera_de_dominio": 1
-    }
+  "T_056": {
+    "precision": 0.8333333333333334,
+    "recall": 1.0,
+    "f1-score": 0.9090909090909091,
+    "support": 5.0,
+    "confused_with": {}
+  },
+  "T_061": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4.0,
+    "confused_with": {}
   },
   "charla_casual": {
-    "precision": 0.8461538461538461,
-    "recall": 0.8461538461538461,
-    "f1-score": 0.8461538461538461,
+    "precision": 1.0,
+    "recall": 0.9230769230769231,
+    "f1-score": 0.96,
     "support": 13.0,
     "confused_with": {
-      "T_080": 1,
-      "saludo": 1
+      "consultar_puesto_mercado": 1
     }
   },
-  "consultar_conexion_agua": {
-    "precision": 0.8,
+  "consultar_catastro_predial": {
+    "precision": 0.9090909090909091,
     "recall": 1.0,
-    "f1-score": 0.8888888888888888,
+    "f1-score": 0.9523809523809523,
+    "support": 10.0,
+    "confused_with": {}
+  },
+  "consultar_certificacion_sanitaria": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 9.0,
+    "confused_with": {}
+  },
+  "consultar_conexion_agua": {
+    "precision": 0.8888888888888888,
+    "recall": 1.0,
+    "f1-score": 0.9411764705882353,
     "support": 8.0,
     "confused_with": {}
   },
   "consultar_costo": {
-    "precision": 0.6428571428571429,
-    "recall": 1.0,
-    "f1-score": 0.782608695652174,
+    "precision": 0.7272727272727273,
+    "recall": 0.8888888888888888,
+    "f1-score": 0.8,
     "support": 9.0,
-    "confused_with": {}
+    "confused_with": {
+      "consultar_plazo": 1
+    }
   },
   "consultar_divorcio": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
+    "precision": 0.6666666666666666,
+    "recall": 0.6666666666666666,
+    "f1-score": 0.6666666666666666,
     "support": 3.0,
+    "confused_with": {
+      "consultar_matrimonio_civil": 1
+    }
+  },
+  "consultar_evento_publico": {
+    "precision": 0.9166666666666666,
+    "recall": 1.0,
+    "f1-score": 0.9565217391304348,
+    "support": 11.0,
     "confused_with": {}
   },
   "consultar_gestion_flota_vehicular": {
@@ -177,16 +151,26 @@
     "f1-score": 0.8888888888888888,
     "support": 5.0,
     "confused_with": {
-      "T_080": 1
+      "T_013": 1
     }
   },
   "consultar_gestion_licencia": {
-    "precision": 0.8484848484848485,
-    "recall": 0.9655172413793104,
-    "f1-score": 0.9032258064516129,
+    "precision": 0.8709677419354839,
+    "recall": 0.9310344827586207,
+    "f1-score": 0.9,
     "support": 29.0,
     "confused_with": {
-      "T_013": 1
+      "consultar_licencia_funcionamiento": 2
+    }
+  },
+  "consultar_licencia_funcionamiento": {
+    "precision": 0.7647058823529411,
+    "recall": 0.8666666666666667,
+    "f1-score": 0.8125,
+    "support": 15.0,
+    "confused_with": {
+      "consultar_gestion_licencia": 1,
+      "consultar_puesto_mercado": 1
     }
   },
   "consultar_matrimonio_civil": {
@@ -196,23 +180,49 @@
     "support": 4.0,
     "confused_with": {}
   },
+  "consultar_numeracion_municipal": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 9.0,
+    "confused_with": {}
+  },
   "consultar_plazo": {
-    "precision": 0.9,
-    "recall": 0.8181818181818182,
-    "f1-score": 0.8571428571428571,
+    "precision": 0.8461538461538461,
+    "recall": 1.0,
+    "f1-score": 0.9166666666666666,
+    "support": 11.0,
+    "confused_with": {}
+  },
+  "consultar_publicidad_exterior": {
+    "precision": 1.0,
+    "recall": 0.9090909090909091,
+    "f1-score": 0.9523809523809523,
     "support": 11.0,
     "confused_with": {
-      "consultar_costo": 2
+      "consultar_licencia_funcionamiento": 1
     }
+  },
+  "consultar_puesto_mercado": {
+    "precision": 0.9166666666666666,
+    "recall": 1.0,
+    "f1-score": 0.9565217391304348,
+    "support": 22.0,
+    "confused_with": {}
+  },
+  "consultar_registro_canino": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 10.0,
+    "confused_with": {}
   },
   "consultar_tramite_vehicular": {
     "precision": 1.0,
-    "recall": 0.6,
-    "f1-score": 0.75,
+    "recall": 1.0,
+    "f1-score": 1.0,
     "support": 5.0,
-    "confused_with": {
-      "consultar_gestion_licencia": 2
-    }
+    "confused_with": {}
   },
   "despedida": {
     "precision": 1.0,
@@ -222,25 +232,23 @@
     "confused_with": {}
   },
   "fuera_de_dominio": {
-    "precision": 0.8,
-    "recall": 0.7058823529411765,
-    "f1-score": 0.75,
-    "support": 17.0,
+    "precision": 1.0,
+    "recall": 0.6842105263157895,
+    "f1-score": 0.8125,
+    "support": 19.0,
     "confused_with": {
-      "consultar_costo": 2,
-      "consultar_gestion_licencia": 1,
-      "consultar_matrimonio_civil": 1,
-      "consultar_plazo": 1
+      "T_027": 1,
+      "consultar_costo": 1,
+      "consultar_divorcio": 1,
+      "consultar_evento_publico": 1,
+      "consultar_gestion_licencia": 2
     }
   },
   "saludo": {
-    "precision": 0.9,
-    "recall": 0.75,
-    "f1-score": 0.8181818181818182,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
     "support": 12.0,
-    "confused_with": {
-      "charla_casual": 2,
-      "fuera_de_dominio": 1
-    }
+    "confused_with": {}
   }
 }

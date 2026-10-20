@@ -1,68 +1,58 @@
 [
   {
-    "texto": "como te va",
-    "esperado": "charla_casual",
-    "predicho": "saludo"
+    "texto": "kiero saber mi puntaje de infocorp",
+    "esperado": "fuera_de_dominio",
+    "predicho": "T_027"
   },
   {
-    "texto": "requisitos para saber que actividades se permiten en un local",
-    "esperado": "T_027",
+    "texto": "cuanto gana un ingeniero en peru",
+    "esperado": "fuera_de_dominio",
+    "predicho": "consultar_costo"
+  },
+  {
+    "texto": "quiero saber cuanto retiro debo dejar al construir",
+    "esperado": "T_033",
+    "predicho": "consultar_costo"
+  },
+  {
+    "texto": "cuanto cuesta poner la licencia de funcionamiento a nombre de otra persona",
+    "esperado": "consultar_gestion_licencia",
+    "predicho": "consultar_licencia_funcionamiento"
+  },
+  {
+    "texto": "necesito los datos tecnicos de zonificacion para mi proyecto",
+    "esperado": "T_033",
+    "predicho": "consultar_catastro_predial"
+  },
+  {
+    "texto": "necesito reconsiderar el resultado de mi solicitud",
+    "esperado": "T_029",
+    "predicho": "consultar_plazo"
+  },
+  {
+    "texto": "como saco el permiso para que mi negocio atienda al publico",
+    "esperado": "consultar_licencia_funcionamiento",
     "predicho": "consultar_gestion_licencia"
   },
   {
-    "texto": "cuanto tarda en salir el permiso",
-    "esperado": "consultar_plazo",
-    "predicho": "consultar_costo"
-  },
-  {
-    "texto": "necesito el numero de mi resolucion para reconsiderarla",
-    "esperado": "T_029",
-    "predicho": "T_015"
-  },
-  {
-    "texto": "quiero el historial de licencias otorgadas en mi cuadra",
-    "esperado": "T_001",
-    "predicho": "fuera_de_dominio"
-  },
-  {
-    "texto": "necesito la declaracion jurada de no tener mas de dos puestos",
-    "esperado": "T_014",
-    "predicho": "consultar_conexion_agua"
-  },
-  {
-    "texto": "que hay de nuevo",
-    "esperado": "saludo",
-    "predicho": "fuera_de_dominio"
-  },
-  {
-    "texto": "requisitos de visacion de planos para servicios basicos en mi lote",
-    "esperado": "T_080",
-    "predicho": "T_008"
-  },
-  {
-    "texto": "como hago pa sacar mi permiso de obra en la muni",
-    "esperado": "T_080",
-    "predicho": "fuera_de_dominio"
-  },
-  {
-    "texto": "como consigo servicios basicos si no tengo escritura publica",
-    "esperado": "T_031",
-    "predicho": "consultar_conexion_agua"
-  },
-  {
-    "texto": "vamos a formar una asociacion y necesitamos el permiso para operar",
+    "texto": "como gestiono los permisos de mi comite vehicular",
     "esperado": "consultar_gestion_flota_vehicular",
-    "predicho": "T_080"
+    "predicho": "T_013"
   },
   {
-    "texto": "digame el plazo porfa",
-    "esperado": "consultar_plazo",
-    "predicho": "consultar_costo"
+    "texto": "licencia de funcionamiento provisional pa bodeguitas",
+    "esperado": "T_003",
+    "predicho": "consultar_licencia_funcionamiento"
   },
   {
-    "texto": "cual es el clima para mañana",
-    "esperado": "fuera_de_dominio",
-    "predicho": "consultar_costo"
+    "texto": "que opinas del futbol peruano",
+    "esperado": "charla_casual",
+    "predicho": "consultar_puesto_mercado"
+  },
+  {
+    "texto": "como saco la licencia del mercado completo no de un puesto",
+    "esperado": "consultar_licencia_funcionamiento",
+    "predicho": "consultar_puesto_mercado"
   },
   {
     "texto": "cuanto cobran por darme copias certificadas",
@@ -70,78 +60,63 @@
     "predicho": "consultar_costo"
   },
   {
-    "texto": "para que sirves",
-    "esperado": "charla_casual",
-    "predicho": "T_080"
+    "texto": "requisitos para visar plano para servicio de agua y desague en mi terreno",
+    "esperado": "T_008",
+    "predicho": "consultar_conexion_agua"
   },
   {
-    "texto": "nesecito permiso pa construir en mi lote",
-    "esperado": "T_080",
-    "predicho": "T_033"
-  },
-  {
-    "texto": "necesito informacion sobre el presupuesto participativo",
-    "esperado": "fuera_de_dominio",
-    "predicho": "consultar_matrimonio_civil"
-  },
-  {
-    "texto": "holis",
-    "esperado": "saludo",
-    "predicho": "charla_casual"
-  },
-  {
-    "texto": "quiero dar de baja mi vehiculo porque se malogro",
-    "esperado": "consultar_tramite_vehicular",
+    "texto": "quiero que revisen de nuevo mi solicitud rechazada",
+    "esperado": "T_029",
     "predicho": "consultar_gestion_licencia"
   },
   {
-    "texto": "donde renuevo mi licencia de conducir",
+    "texto": "necesito licencia para publicidad exterior",
+    "esperado": "consultar_publicidad_exterior",
+    "predicho": "consultar_licencia_funcionamiento"
+  },
+  {
+    "texto": "quiero poner una queja sobre un trabajador municipal",
     "esperado": "fuera_de_dominio",
-    "predicho": "consultar_gestion_licencia"
+    "predicho": "consultar_evento_publico"
   },
   {
-    "texto": "no tengo titulo de propiedad pero necesito luz para mi casa",
-    "esperado": "T_031",
-    "predicho": "T_080"
-  },
-  {
-    "texto": "como registro a mi pitbull en la municipalidad",
-    "esperado": "T_024",
-    "predicho": "T_023"
-  },
-  {
-    "texto": "como esta el clima hoy",
-    "esperado": "fuera_de_dominio",
-    "predicho": "consultar_costo"
-  },
-  {
-    "texto": "que tramite hago para que reconozcan mi junta vecinal",
-    "esperado": "T_013",
-    "predicho": "consultar_gestion_licencia"
-  },
-  {
-    "texto": "holaa",
-    "esperado": "saludo",
-    "predicho": "charla_casual"
-  },
-  {
-    "texto": "requisitos para el certificado que necesito antes de edificar",
-    "esperado": "T_033",
-    "predicho": "T_027"
-  },
-  {
-    "texto": "cierro mi tienda que debo hacer ante la municipalidad",
+    "texto": "necesito una copia de mi licencia de funcionamiento",
     "esperado": "consultar_gestion_licencia",
-    "predicho": "T_013"
+    "predicho": "consultar_licencia_funcionamiento"
   },
   {
-    "texto": "cuando limpian mi calle",
-    "esperado": "fuera_de_dominio",
+    "texto": "y cuanto se paga",
+    "esperado": "consultar_costo",
     "predicho": "consultar_plazo"
   },
   {
-    "texto": "quiero cambiar la unidad de mi permiso porque compre una nueva",
-    "esperado": "consultar_tramite_vehicular",
+    "texto": "necesito el tramite para disolver mi matrimonio",
+    "esperado": "consultar_divorcio",
+    "predicho": "consultar_matrimonio_civil"
+  },
+  {
+    "texto": "como saco el soat de mi moto",
+    "esperado": "fuera_de_dominio",
     "predicho": "consultar_gestion_licencia"
+  },
+  {
+    "texto": "tengo fiebre que debo hacer",
+    "esperado": "fuera_de_dominio",
+    "predicho": "consultar_divorcio"
+  },
+  {
+    "texto": "cual es el tipo de cambio del dolar hoy",
+    "esperado": "fuera_de_dominio",
+    "predicho": "consultar_gestion_licencia"
+  },
+  {
+    "texto": "como averiguo cuanto se gasto en la pista de mi calle",
+    "esperado": "T_001",
+    "predicho": "T_056"
+  },
+  {
+    "texto": "requisitos para pedir reconsideracion de una resolucion",
+    "esperado": "T_029",
+    "predicho": "T_001"
   }
 ]
