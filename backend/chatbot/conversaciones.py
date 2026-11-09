@@ -7,12 +7,21 @@ Registra de forma anónima y no intrusiva cada turno conversacional.
 
 import hashlib
 import logging
+import re
 import uuid
 from datetime import datetime, timezone
 from flask import session
 from backend.models import db, ConversacionLog
 
 logger = logging.getLogger(__name__)
+
+
+def anonimizar_mensaje(mensaje):
+    """Oculta correos e identificadores numéricos habituales antes de persistir."""
+    mensaje = re.sub(r"\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b", "[CORREO]", str(mensaje or ""), flags=re.I)
+    mensaje = re.sub(r"(?<!\w)(?:\+?51[\s-]?)?9(?:[\s-]?\d){8}(?!\w)", "[TELEFONO]", mensaje)
+    mensaje = re.sub(r"(?<!\w)\d{8,11}(?!\w)", "[DOCUMENTO]", mensaje)
+    return mensaje[:500]
 
 # Lista fija de tipos de respuesta permitidos en el sistema
 TIPOS_RESPUESTA_VALIDOS = (
@@ -23,6 +32,7 @@ TIPOS_RESPUESTA_VALIDOS = (
     "saludo",                  # Saludo inicial
     "despedida",               # Despedida y cierre de interacción
     "charla_casual",           # Conversación informal (small talk)
+    "frustration",            # Empatía ante frustración del ciudadano
     "correction",              # Corrección de contexto ("no, ese no")
     "derivacion",              # Derivación a ventanilla municipal (duda en macrointención)
     "error",                   # Entrada inválida o error en el procesamiento
@@ -60,7 +70,7 @@ def registrar_conversacion(
             sesion_id = obtener_sesion_id_anonimo()
 
         # Truncar mensaje a 500 caracteres (privacidad y capacidad)
-        mensaje_seguro = str(mensaje_usuario or "")[:500]
+        mensaje_seguro = anonimizar_mensaje(mensaje_usuario)
 
         # Garantizar que el tipo de respuesta pertenezca a la lista fija
         if tipo_respuesta not in TIPOS_RESPUESTA_VALIDOS:

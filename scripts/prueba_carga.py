@@ -30,6 +30,7 @@ BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.insert(0, BASE_DIR)
 
 from backend.nlp import predecir_intencion
+from config import REPORTS_DIR
 
 # Configuración del servidor de pruebas
 PORT = 5055
@@ -37,8 +38,8 @@ SERVER_URL = f"http://127.0.0.1:{PORT}"
 CHAT_URL = f"{SERVER_URL}/api/chat"
 
 # Archivos de salida
-CSV_RESULTADOS = os.path.join(BASE_DIR, "rendimiento_resultados.csv")
-CSV_DETALLE = os.path.join(BASE_DIR, "rendimiento_detalle.csv")
+CSV_RESULTADOS = REPORTS_DIR / "rendimiento_resultados.csv"
+CSV_DETALLE = REPORTS_DIR / "rendimiento_detalle.csv"
 
 # ==============================================================================
 # BANCOS DE FRASES VARIADAS PARA PRUEBAS REALISTAS
@@ -238,6 +239,7 @@ def iniciar_servidor():
 # EJECUCIÓN PRINCIPAL DE PRUEBAS
 # ==============================================================================
 def main():
+    REPORTS_DIR.mkdir(exist_ok=True)
     print("=" * 80)
     print("INICIANDO BATERÍA DE PRUEBAS DE RENDIMIENTO Y CARGA (MDJLO CHATBOT)")
     print("=" * 80)

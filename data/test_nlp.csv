@@ -1,295 +1,687 @@
 query,intent
-quiero abrir mi bodega y sacar el permiso mas rapido posible,T_003
-quiero q me den copia de unos planos antiguos,T_001
-nos vemos,despedida
-precio de la bodega,T_003
-kiero saber mi puntaje de infocorp,fuera_de_dominio
-hola todo bien,saludo
-sabes cocinar,charla_casual
-antes tenia una peluqueria y ahora sera una farmacia,consultar_gestion_licencia
-cuanto cuesta certificar posesion para servicios basicos,T_031
-cuanto gana un ingeniero en peru,fuera_de_dominio
-hola espero me puedas ayudar,saludo
-eres una inteligencia artificial,charla_casual
-hay un tiempo aproximado de espera,consultar_plazo
-como hago si quiero cambiar de rubro,consultar_gestion_licencia
-necesito la declaracion jurada de no tener mas de dos puestos,consultar_puesto_mercado
-voy a poner otro negocio en el mismo local,consultar_gestion_licencia
-se me vence el acta de adjudicacion de mi puesto del mercado,consultar_puesto_mercado
-vamos a formar una asociacion y necesitamos el permiso para operar,consultar_gestion_flota_vehicular
-cual es el tiempo de espera,consultar_plazo
-cierro mi tienda que debo hacer ante la municipalidad,consultar_gestion_licencia
-quiero saber cuanto retiro debo dejar al construir,T_033
-cuanto cuesta poner la licencia de funcionamiento a nombre de otra persona,consultar_gestion_licencia
-como compruebo que el uso de suelo de mi local es comercial,T_027
-hola buenas,saludo
-necesito el certificado de compatibilidad de uso,T_027
-mi constructora necesita autorizacion para instalar agua,consultar_conexion_agua
-info para pedir papeles a mesa de partes,T_001
-necesito permiso para un aviso pegado a la pared de mi tienda,consultar_publicidad_exterior
-mi casa esta ruinosa necesito el documento oficial,T_032
-necesito el ingeniero responsable para el proyecto de conexion de agua,consultar_conexion_agua
-pasame la receta del ceviche norteño,fuera_de_dominio
-como saco mi certificado de antecedentes penales,fuera_de_dominio
-como obtengo el permiso rapido para bodega,T_003
-voy a comprar un negocio funcionando necesito pasar la licencia a mi nombre,consultar_gestion_licencia
-hay q pagar algo en la muni,consultar_costo
-requisitos para la certificacion sanitaria municipal,consultar_certificacion_sanitaria
-necesito visar planos para titulo supletorio,T_008
-quiero copia del reglamento interno de la municipalidad,T_001
-quiero saber los pasos para el matrimonio civil municipal,consultar_matrimonio_civil
-declaracion jurada de no tener otro puesto en el mercado,consultar_puesto_mercado
-q formato lleno para pedir informacion,T_001
-necesito el duplicado de la tarjeta de circulacion de mi vehiculo,consultar_tramite_vehicular
-necesito inscribir mi club de madres ante la muni,T_013
-quiero un documento que diga que mi predio no esta en el catastro,consultar_catastro_predial
-como saco la nomenclatura vial de mi calle,T_056
-quien te hizo,charla_casual
-bye gracias,despedida
-quiero certificar el numero de mi domicilio,consultar_numeracion_municipal
-como inscribo mi comite de vaso de leche,T_013
-requisitos para la autorizacion de paradero de mi asociacion,consultar_gestion_flota_vehicular
-necesito ayuda con el certificado sanitario de mi negocio,consultar_certificacion_sanitaria
-extravie el certificado sanitario de mi local,consultar_certificacion_sanitaria
-mi negocio va a instalar agua potable que necesito,consultar_conexion_agua
-que tal el dia bot,charla_casual
-cuantas semanas demora esto,consultar_plazo
-necesito el certificado de parametros para presentar a mi arquitecto,T_033
-quiero abrir una bodega en mi cochera,T_003
-quiero instalar un circo en un terreno del distrito,consultar_evento_publico
-necesito los datos tecnicos de zonificacion para mi proyecto,T_033
-que examenes medicos piden para el matrimonio civil,consultar_matrimonio_civil
-licencia de funcionamiento de riesgo medio,consultar_licencia_funcionamiento
-quiero inscribir mi junta vecinal en la municipalidad,T_013
-como pago el recibo de ensa por internet,fuera_de_dominio
-necesito autorizacion para un concierto con afluencia de gente,consultar_evento_publico
-eso seria todo nos vemos luego amigo,despedida
-cual es el plazo para saber si mi giro esta permitido,T_027
-el municipio recupero un puesto del mercado y quiero postular,consultar_puesto_mercado
-baja de certificacion sanitaria municipal,consultar_certificacion_sanitaria
-que piden para hacer modificaciones menores en mi puesto,consultar_puesto_mercado
-quiero abrir una discoteca y necesito licencia,consultar_licencia_funcionamiento
-tengo una bodega funcionando sin papeles que hago,T_003
-necesito la nomenclatura de la calle para mis planos,T_056
-quiero que conste que mi negocio ahora es otro rubro,consultar_gestion_licencia
-como hago para bloquear mi celular robado,fuera_de_dominio
-necesito reconsiderar el resultado de mi solicitud,T_029
-necesito renovar mi acta de adjudicacion del puesto,consultar_puesto_mercado
-como me inscribo para vender en el mercado municipal,consultar_puesto_mercado
-estoy pensando en abrir una bodega que necesito,T_003
-necesito el certificado sanitario junto con mi licencia de funcionamiento,consultar_certificacion_sanitaria
-tengo dos terrenos contiguos y quiero hacer uno solo,T_061
-como saco el permiso para que mi negocio atienda al publico,consultar_licencia_funcionamiento
-necesito visacion de planos para que epsel me instale conexion de desague,T_008
-quiero solicitar el organigrama municipal,T_001
-requisitos para casarme por la municipalidad,consultar_matrimonio_civil
-es gratis o tiene costo,consultar_costo
-cuanto cuesta la licencia corporativa de un mercado,consultar_licencia_funcionamiento
-fusion de dos lotes urbanos en la municipalidad,T_061
-chau chau,despedida
-como gestiono los permisos de mi comite vehicular,consultar_gestion_flota_vehicular
-licencia de funcionamiento provisional pa bodeguitas,T_003
-cual es el importe a pagar,consultar_costo
-requisitos para conectar desague en un proyecto empresarial,consultar_conexion_agua
-licencia de funcionamiento para un casino o tragamonedas,consultar_licencia_funcionamiento
-cuanto demora que me asignen la numeracion de mi proyecto,consultar_numeracion_municipal
-necesito que la empresa de electricidad me instale luz sin escritura,T_031
-el proceso es inmediato o toma dias,consultar_plazo
-necesito registrar mi programa social ante la municipalidad,T_013
-quiero la certificacion sanitaria para mi bodega de alimentos,consultar_certificacion_sanitaria
-gracias por la paciencia adios,despedida
-quiero registrar a mi mascota domestica,consultar_registro_canino
-que necesito para colgar un anuncio en la pared de mi local,consultar_publicidad_exterior
-quiero asignacion de numeracion para el ingreso de mi edificacion,consultar_numeracion_municipal
-q necesito pa registrar mi mascota,consultar_registro_canino
-necesito autorizacion municipal para mi anuncio adosado,consultar_publicidad_exterior
-listo con eso me basta gracias adios,despedida
-que opinas del futbol peruano,charla_casual
-donde saco el numero oficial de mi vivienda,consultar_numeracion_municipal
-necesito el documento que apruebe mi giro antes de sacar la licencia,T_027
-mi negocio de comida rapida ahora sera una lavanderia,consultar_gestion_licencia
-cuantos dias habiles son,consultar_plazo
-hola estas ahi,saludo
-necesito el certificado negativo de codigo catastral,consultar_catastro_predial
-me piden constancia de que mi terreno no tiene codigo catastral,consultar_catastro_predial
-quiero conducir un puesto en el mercado por primera vez,consultar_puesto_mercado
-cuanto tiempo tengo para pedir el puesto de un familiar fallecido,consultar_puesto_mercado
-quiero certificar que mi inmueble no tiene codigo catastral asignado,consultar_catastro_predial
-necesito permiso para un evento con banda en vivo,consultar_evento_publico
-licencia con itse posterior para un negocio de bajo riesgo,consultar_licencia_funcionamiento
-quiero hacer un tramite de catastro de mi predio,consultar_catastro_predial
-numeracion de unidades inmobiliarias de una obra aprobada,consultar_numeracion_municipal
-como saco la licencia del mercado completo no de un puesto,consultar_licencia_funcionamiento
-necesito el edicto matrimonial para casarme,consultar_matrimonio_civil
-necesito la resolucion de operatividad para mi empresa,consultar_gestion_flota_vehicular
-info sobre tramites de puestos de mercado,consultar_puesto_mercado
-necesito el formato para reconsiderar un tramite rechazado,T_029
-licencia de funcionamiento de riesgo alto,consultar_licencia_funcionamiento
-quiero tomar un puesto que nadie usa en el mercado,consultar_puesto_mercado
-cual es el plazo para autorizar mi evento,consultar_evento_publico
-hola oye,saludo
-quiero permiso para una kermes con espectaculo en vivo,consultar_evento_publico
-estaba pensando en pedir un duplicado porque me lo robaron,consultar_gestion_licencia
-cuanto cobran por darme copias certificadas,T_001
-requisitos para visar plano para servicio de agua y desague en mi terreno,T_008
-para cuando esta listo mi tramite,consultar_plazo
-quiero renovar la tarjeta de operatividad de mi unidad,consultar_tramite_vehicular
-como registro a mi perro que no es de raza peligrosa,consultar_registro_canino
-tengo un edificio nuevo con varios locales y no tienen numero,consultar_numeracion_municipal
-certificado psicologico para registro de perro agresivo,consultar_registro_canino
-eres muy amable,charla_casual
-requisitos para certificar que ocupo un terreno sin titulo,T_031
-cuanto cuesta renovar la tarjeta de mi moto,consultar_tramite_vehicular
-requisitos para la licencia de funcionamiento,consultar_licencia_funcionamiento
-perfecto asi queda gracias,despedida
-donde saco mi record de conductor,fuera_de_dominio
-gracias eso necesitaba saber nomas,despedida
-que hora es,fuera_de_dominio
-que piden para darme duplicado del permiso,consultar_gestion_licencia
-hola te escribo por una consulta,saludo
-cuanto cuesta la conexion de agua para persona juridica,consultar_conexion_agua
-requisitos para solicitar un nuevo certificado de licencia,consultar_gestion_licencia
-puedo poner una farmacia en esta direccion,T_027
-donde tramito mi codigo catastral,consultar_catastro_predial
-necesito zonificacion de la direccion de mi futuro negocio,T_027
-estoy pensando en cambiar el giro de mi negocio,consultar_gestion_licencia
-y eso cuanto vale,consultar_costo
-hola que haces,saludo
-quiero que revisen de nuevo mi solicitud rechazada,T_029
-soy de la junta de propietarios y queremos licencia de funcionamiento,consultar_licencia_funcionamiento
-quiero abrir una tienda de ropa chica que licencia necesito,consultar_licencia_funcionamiento
-necesito licencia para publicidad exterior,consultar_publicidad_exterior
-quiero arreglar la situacion de mi mototaxi,consultar_tramite_vehicular
-voy a realizar una actividad publica con concurrencia de personas,consultar_evento_publico
-quiero notificar que ya no voy a operar mi local,consultar_gestion_licencia
-como cuestiono una resolucion que emitio la muni,T_029
-voy a hacer una discoteca movil que autorizacion necesito,consultar_evento_publico
-quiero poner un cartel en mi tienda,consultar_publicidad_exterior
-que tiempo de espera tiene esto,consultar_plazo
-como saco cita para la vacuna,fuera_de_dominio
-tengo un puesto en el mercado y quiero hacer un tramite,consultar_puesto_mercado
-sacar copia de un documento de la municipalidad,T_001
-eres una persona real,charla_casual
-voy a cambiar el rubro de mi negocio q tramite hago,consultar_gestion_licencia
-documentos para registrar mi perro agresivo,consultar_registro_canino
-necesito licencia para un supermercado,consultar_licencia_funcionamiento
-como hago para que mis dos propiedades queden como una sola,T_061
-se me malogro el certificado sanitario de mi restaurante,consultar_certificacion_sanitaria
-cuantos dias habiles toma esto,consultar_plazo
-quiero poner una queja sobre un trabajador municipal,fuera_de_dominio
-como saco la constancia de inhabitabilidad de mi predio,T_032
-como se si mi negocio no esta prohibido en esa zonificacion,T_027
-licencia para un grifo con itse previa,consultar_licencia_funcionamiento
-necesito el registro municipal de mi perro faldero,consultar_registro_canino
-quiero el certificado que indica los parametros de mi terreno,T_033
-como hago para no perder mi puesto cuando se acabe el plazo,consultar_puesto_mercado
-cuanto cuesta actualizar la informacion catastral de un predio,consultar_catastro_predial
-cuanto cuesta el permiso para un cartel comercial,consultar_publicidad_exterior
-muy buenas,saludo
-adios,despedida
-debo pagar derecho de tramite,consultar_costo
-listo gracias,despedida
-cuantos pisos me dejan construir en mi terreno,T_033
-permiso para cambiar de giro en la muni,consultar_gestion_licencia
-que se necesita para sacar la nomenclatura vial,T_056
-eres divertido,charla_casual
-kiero sacar otra vez mi licencia pq la perdi,consultar_gestion_licencia
-hola gusto saludarte,saludo
-necesito una copia de mi licencia de funcionamiento,consultar_gestion_licencia
-necesito permiso para instalar agua en mi casa como propietario,consultar_conexion_agua
-buen dia disculpa la hora,saludo
-necesito autorizacion para un show en mi local,consultar_evento_publico
-duermes de noche o estas despierto siempre,charla_casual
-necesito permiso para colocar un cartel publicitario en mi negocio,consultar_publicidad_exterior
-quiero un panel luminoso con el nombre de mi local,consultar_publicidad_exterior
-como comunico el cierre definitivo de mi tienda,consultar_gestion_licencia
-quiero vender en el mercado de la muni,consultar_puesto_mercado
-voy a cerrar mi bodega que tramite hago,consultar_gestion_licencia
-gracias amigo nos vemos,despedida
-el tramite se resuelve rapido o no,consultar_plazo
-perdi el permiso de mi local quiero duplicado,consultar_gestion_licencia
 mi tienda de ropa ahora va a vender celulares que hago,consultar_gestion_licencia
-necesito el documento de posesion para presentar a epsel,T_031
-necesito info del tramite de divorcio,consultar_divorcio
-como consulto mi deuda en sunat,fuera_de_dominio
-requisitos para anuncio publicitario adosado,consultar_publicidad_exterior
-requisitos para la constancia de inhabitabilidad,T_032
-eso es todo gracias,despedida
-quiero saber como tramitar mi divorcio,consultar_divorcio
-que certificado psicologico piden para razas peligrosas,consultar_registro_canino
-quiero cerrar mi negocio definitivamente,consultar_gestion_licencia
-necesito mi carnet de comerciante del mercado municipal,consultar_puesto_mercado
-y cuanto se paga,consultar_costo
-construi cuatro departamentos y quiero que cada uno tenga su numero,consultar_numeracion_municipal
-cual es el plazo para la certificacion sanitaria municipal,consultar_certificacion_sanitaria
-quiero formalizar mi negocio con licencia de funcionamiento,consultar_licencia_funcionamiento
-necesito licencia de funcionamiento de riesgo bajo,consultar_licencia_funcionamiento
-donde pido visar mis planos para solicitar instalacion de luz electrica,T_008
-que tiempo tarda el tramite,consultar_plazo
-como conecto agua y desague para mi edificio multifamiliar,consultar_conexion_agua
-necesito inscribir a mi mascota,consultar_registro_canino
-necesito el tramite para disolver mi matrimonio,consultar_divorcio
-a que hora juega la seleccion peruana,fuera_de_dominio
-cual es el plazo del certificado de nomenclatura vial,T_056
-necesito saber si esa zona es exclusivamente residencial,T_027
-eres el mismo bot de siempre,charla_casual
-q precio tiene ese tramite,consultar_costo
-necesito avisar a la muni que cerre mi negocio,consultar_gestion_licencia
-estaba pensando en cambiar el rubro de mi local,consultar_gestion_licencia
-como esta el clima hoy,fuera_de_dominio
-el tramite genera algun pago,consultar_costo
-acumulacion de unidades inmobiliarias,T_061
-requisitos para constancia de inmueble no habitable,T_032
-tengo un problema con mi vehiculo que tramite hago,consultar_tramite_vehicular
-quiero saber el nombre oficial de la calle de mi terreno,T_056
-como saco el soat de mi moto,fuera_de_dominio
-se me perdio mi licencia municipal como saco otra,consultar_gestion_licencia
-se me extravio la licencia en la mudanza del negocio,consultar_gestion_licencia
-cambio el propietario y quiero actualizar el catastro de mi predio,consultar_catastro_predial
-me gustaria saber que necesito para cambiar de rubro,consultar_gestion_licencia
-quiero traspasar mi negocio a otra persona,consultar_gestion_licencia
-tengo fiebre que debo hacer,fuera_de_dominio
-necesito autorizacion para un show artistico en mi distrito,consultar_evento_publico
-cual es el tipo de cambio del dolar hoy,fuera_de_dominio
-cuanto cuesta registrar a mi perro,consultar_registro_canino
-quiero saber el retiro y altura permitidos en mi terreno,T_033
-cual es el horario de atencion de mesa de partes,fuera_de_dominio
-orientame sobre el codigo catastral,consultar_catastro_predial
-quiero conseguir un puesto en el mercado,consultar_puesto_mercado
+que requisitos piden para aprobar un anteproyecto,consultar_anteproyecto_consulta
+quiero divorciarme que necesito,consultar_divorcio
+quiero ya termine los trabajos en la via publia y quiero la conformidad,consultar_obras_via_publica
+cual es el plazo para el permiso de puesto en el mercado,consultar_puesto_mercado
+quiero hacer habilitacion urbana para vender casas edificadas,consultar_habilitacion_urbana
+como hago para modificacion no sustancial de mi obra modalidad d despues de la licencia,consultar_modificacion_proyecto_edificacion
+necesito el permiso empresarial para conectar servicios de agua,consultar_conexion_agua
+quiero cercar mi terreno con un muro de mas de 20 metros,consultar_licencia_cerco
+quiero la certificacion sanitaria para mi bodega de alimentos,consultar_certificacion_sanitaria
+estoy pensando en modificacion de datos en la tarjeta de operatividad,consultar_tramite_vehicular
+cuanto cuesta la reurbanizacion de una zona,consultar_habilitacion_urbana
+que papeles necesito para cambio no sustancial a mi habilitacion modalidad d antes de ejecutarla,consultar_modificacion_habilitacion_urbana
 requisitos para ser comerciante en el mercado municipal,consultar_puesto_mercado
-como averiguo cuanto se gasto en la pista de mi calle,T_001
-buenas tardes quisiera consultar,saludo
-tramite para quedarme con el puesto del mercado de mi difunto padre,consultar_puesto_mercado
-quiero ver el expediente tecnico de una obra publica,T_001
+que papeles necesito para recibir las obras de mi habilitacion modalidad d con cambios,consultar_recepcion_obras_habilitacion
+cuanto demora el proyecto integral de edificacion,consultar_proyecto_integral_edificacion
+que necesito para que mi bodega no me multen,T_003
+cuanto es el costo para tramitar proyecto integral y licencia de una etapa modalidad d de edificacion,consultar_proyecto_integral_edificacion
+como presento un recurso contra una resolucion,consultar_recurso_administrativo
+gracias por todo que estes bien,despedida
+me pueden orientar para recibir las obras de mi habilitacion modalidad d sin cambios,consultar_recepcion_obras_habilitacion
+como autorizo una conexion de alcantarillado de mi vivienda,consultar_conexion_agua
+como hago para pagar mi recibo de luz,fuera_de_dominio
+puedo pintar y reparar mi puesto sin permiso,consultar_puesto_mercado
+como inscribo a mi perrito en el registro municipal,consultar_registro_canino
+requisitos para un espectaculo publico no deportivo,consultar_evento_publico
+cuanto es el costo para renovar el certificado de defensa civil de mi peluqueria,consultar_itse
+autorizacion para feria en la plaza,consultar_evento_publico
+que requisitos piden para construir un edificio con tienda abajo y vivienda arriba,consultar_licencia_construccion
+en cuanto tiempo puedo presentar mi proyecto integral de habilitacion urbana modalidad c para hacerlo por etapas,consultar_proyecto_integral_habilitacion
+como programo mi matrimonio civil,consultar_matrimonio_civil
+habilitacion urbana modalidad d con comision tecnica para predio colindante con area protegida,consultar_habilitacion_urbana
+estoy pensando en renovar el certificado de defensa civil de mi grifo,consultar_itse
+que documentos hay que llevar para remodelar mi viviena con cambio estructural y mas area techada,consultar_licencia_ampliacion_remodelacion
+ya termine de construir y quiero mi conformidad de obra,consultar_conformidad_obra
+cuanto es el costo para tender fibra optica en el distrito,consultar_telecomunicaciones
+donde pido el padron de contribuyentes de mi zona,T_001
+mi lote y el del vecino quiero hacer algo con ellos,consultar_lotes_urbanos
+necesito permiso para tirar abajo una construccion,consultar_licencia_demolicion
+buenas tardes necesito sacar la conformidad de obra de mi edificio modalidad b sin cambios,consultar_conformidad_obra
+licencia de habilitacion urbana modalidad d para predios que colindan con zonas arqueologicas,consultar_habilitacion_urbana
+como hago para construir un centro comercial de mas de 30000 metros,consultar_licencia_edificacion_no_vivienda
+mi habilitacion urbana colinda con patrimonio cultural,consultar_habilitacion_urbana
+cuanto es el costo para construir un colegio privado,consultar_licencia_edificacion_no_vivienda
+donde y como tramito el certificado de ubicacion areas medidas y linderos de mi inmueble,T_245
+cuanto tarda el duplicado de la licencia,consultar_gestion_licencia
+tengo pensado cambiar el tipo de negocio que tengo,consultar_gestion_licencia
+necesito mi carnet de comerciante para vender ahi,consultar_puesto_mercado
+cuanto cuesta regularizar una construccion,consultar_regularizacion_obras
+como confirmo si mi negocio no esta prohibido en esa cuadra,T_027
+que documentos hay que llevar para mi lcencia de construccion ya vencio y quiero revalidarla,consultar_prorroga_revalidacion_licencia
+solicito certificado de nomenclatura vial para mi lote,T_056
+certificado de que mi lote no figura en el sistema catastral,consultar_catastro_predial
+cuanto demora la licencia para edificacion del estado,consultar_licencia_edificacion_estado
+en cuanto tiempo puedo sacar la libre disponbilidad de mi lote urbano,consultar_libre_disponibilidad
+quisiera saber como hacer una vivienda multifamiliar de cuatro pisos,consultar_licencia_construccion
+necesito la inspeccion tecnica de seguridad en edificaciones,consultar_itse
+cuanto demora pedir licencia de la segunda etapa porque ya me aprobaron el proyecto integral de edificacion,consultar_proyecto_integral_edificacion
+me pueden orientar para recibir las obras de mi habilitacion modalidad c sin cambios,consultar_recepcion_obras_habilitacion
+"cuanto demora declaratoria de edificacion modalidad a, modifique algo de los planos",consultar_conformidad_obra
+quisiera saber como pedir licencia de la segunda etapa porque ya me aprobaron el proyecto integral de edificacion,consultar_proyecto_integral_edificacion
+quisiera informarme sobre el duplicado de mi permiso,consultar_gestion_licencia
+quiero saber cual es el codigo catastral de mi casa,consultar_catastro_predial
+me pueden orientar para demoler mi casa de dos pisos sin sotano,consultar_licencia_demolicion
+quiero saber el resultado del sorteo de la tinka,fuera_de_dominio
+quiero lotizar mi terreno y vender los lotes mientras hago las obras,consultar_habilitacion_urbana
+necesito demoler un edificio de cinco pisos,consultar_licencia_demolicion
+quiero sacar copias de un tramite pasado,T_001
+que documentos hay que llevar para sacar la conformidad de obra de mi casa modalidad a sin cambios,consultar_conformidad_obra
+hay actividades deportivas gratuitas,fuera_de_dominio
+quiero abrir una discoteca y necesito licencia,consultar_licencia_funcionamiento
+quiero saber los parametros urbanisticos antes de comprar un terreno,T_033
+hay algun evento cultural esta semana,fuera_de_dominio
+estoy pensando en declaratoria anticipada de casco no habitable modalidad b modifique algo del plano,consultar_conformidad_obra_anticipada
+voy a pedir permiso para trabajos de conexion de agua,consultar_conexion_agua
+que clima hara manana,fuera_de_dominio
+"cuanto demora declaratoria de edificacion modalidad c, modifique algo de los planos",consultar_conformidad_obra
+voy a corregir el area de mi terreno en registros publicos,T_008
+que papeles necesito para modificacion sustancial de mi obra modalidad d despues de la licencia,consultar_modificacion_proyecto_edificacion
+quiero conformidad de la ejecucion de la infraestructura de telecomunicaciones,consultar_telecomunicaciones
+requisitos para la constancia de inhabitabilidad,T_032
+paso de vender ropa a ofrecer servicios de internet,consultar_gestion_licencia
+estoy pensando en cambio no sustancial a mi habilitacion mdalidad d antes de ejecutarla,consultar_modificacion_habilitacion_urbana
 cual es tu color favorito,charla_casual
-requisitos para hacer una feria con espectaculo,consultar_evento_publico
-donde puedo sacar copias fotostaticas cerca de aqui,fuera_de_dominio
-necesito el documento de parametros urbanisticos para mi terreno,T_033
-asignacion de numeracion municipal para mi proyecto aprobado,consultar_numeracion_municipal
-esta perfecto gracias me despido,despedida
-requisitos para pedir reconsideracion de una resolucion,T_029
-en que fecha me daran respuesta,consultar_plazo
-puedo vender otra cosa en mi puesto del mercado,consultar_puesto_mercado
-necesito poner la licencia a nombre del nuevo dueño,consultar_gestion_licencia
-como renuevo automaticamente mi puesto de venta,consultar_puesto_mercado
-necesito delimitar el area de mi propiedad,T_008
-hola necesito informacion,saludo
-que pelicula me recomiendas ver,fuera_de_dominio
-cuanto es el pago que debo hacer,consultar_costo
+que papees necesito para cambiar los planos de mi expediente modalidad b antes de la licencia,consultar_modificacion_proyecto_edificacion
+cuanto es el costo para cambiar el proyecto de una etapa de mi edificio que forma parte de un proyecto integral,consultar_proyecto_integral_edificacion
+en cuanto tiempo puedo construir un pabellon para una universidad nacional,consultar_licencia_edificacion_estado
+habilitacion urbana de terreno residencial con revisor urbano,consultar_habilitacion_urbana
+que papeles necesito para la resolucion de condiciones de seguridad de mi espectaculo,T_099
+quiero reparar el techo de mi puesto municipal,consultar_puesto_mercado
+necesito los datos tecnicos de zonificacion para mi proyecto,T_033
+cuanto cuesta construir un edificio con tienda abajo y vivienda arriba,consultar_licencia_construccion
+cuanto cuesta la habilitacion urbana con venta garantizada de lotes,consultar_habilitacion_urbana
+cuanto es el costo para aprobar el anteproyecto de una fabrica,consultar_anteproyecto_consulta
+que documentos hay que llevar para hacer una rampa en la vereda de mi casa,consultar_obras_via_publica
+en cuanto tiempo puedo recbir las obras de mi habilitacion modalidad a sin cambios,consultar_recepcion_obras_habilitacion
+cuanto es el costo para cambio no sustancial a mi habilitacion modalidad b antes de ejecutara,consultar_modificacion_habilitacion_urbana
+necesito ya termine los trabajos en la via publica y quiero la conformidad,consultar_obras_via_publica
+estoy pensando en remodelar mi vivienda con cambio estructural y mas area techada,consultar_licencia_ampliacion_remodelacion
+necesito actualizar el titular de una licencia ya existente,consultar_gestion_licencia
+requisitos para el registro canino,consultar_registro_canino
+hasta pronto gracias por la informacion,despedida
+hola espero estes bien,saludo
+necesito sacar certificado sanitario de mi negocio,consultar_certificacion_sanitaria
+mi casa esta a punto de caerse necesito constancia municipal,T_032
+mi pasaje no figura con nombre y necesito la nomenclatura vial,T_056
+necesito legalizar rapido mi bodega antes de fin de mes,T_003
+voy a construir un edificio que no es vivienda,consultar_licencia_edificacion_no_vivienda
+que papeles necesito para declaatoria anticipada de casco no habitable modalidad b igual al plano,consultar_conformidad_obra_anticipada
+que requisitos piden para licencia de ampliacion,consultar_licencia_ampliacion_remodelacion
+como saco mi licencia de conducir por primera vez,fuera_de_dominio
 necesito renovar el permiso de mi empresa de transporte especial,consultar_gestion_flota_vehicular
-tramite de numeracion municipal,consultar_numeracion_municipal
-como autorizo la instalacion de agua potable en mi domicilio,consultar_conexion_agua
-como saco permiso para un anuncio adosado a mi tienda,consultar_publicidad_exterior
-te gusta el futbol,charla_casual
-mi puesto era de verduras y quiero poner zapateria,consultar_puesto_mercado
+me puedes vender una pizza,fuera_de_dominio
+tramites para comerciantes de mercados municipales,consultar_puesto_mercado
+donde y como tramito hacer la inspeccion de defensa civil de mi gimnasio,consultar_itse
+cuanto cuesta la habilitacion urbana para proyectos de inversion publica,consultar_habilitacion_urbana
+como hago para cambiar los planos de mi expediente modalidad d antes de la licencia,consultar_modificacion_proyecto_edificacion
 plazo del registro canino municipal,consultar_registro_canino
-puedes soñar,charla_casual
-necesito el formato xiv para mi plano,T_008
-voy a traer artistas necesito autorizacion municipal,consultar_evento_publico
+hola quiero sacar conformidad anticipada de mi casco modalidad c con cambios,consultar_conformidad_obra_anticipada
+voy a romper la pista y me piden permiso,consultar_obras_via_publica
+cual es el plazo para el permiso de conexion de agua,consultar_conexion_agua
+requisitos para saber que actividades se permiten en un local,T_027
+tengo que sacar la conformidad de obra modalidad d con cambios y no se por donde empezar,consultar_conformidad_obra
+necesito el contrato de compra venta para transferir la licencia,consultar_gestion_licencia
+hay un poste malogrado en mi calle a quien aviso,fuera_de_dominio
+necesito remodelar mi casa por dentro sin tocar columnas,consultar_licencia_ampliacion_remodelacion
+quiero construir un edificio de oficinas,consultar_licencia_edificacion_no_vivienda
+que necesito para inscribir a mi perro normal,consultar_registro_canino
+tengo que hacer una demolicion parcial del segundo piso y no se por donde empezar,consultar_licencia_demolicion
+mi local paso de ser cyber a ser una veterinaria,consultar_gestion_licencia
+que requisitos piden para declaratoria anticipada de casco no habitable modalidad d igual al plano,consultar_conformidad_obra_anticipada
+ahora quiero vender comida en mi puesto del mercado,consultar_puesto_mercado
+cuanto cuesta el itse,consultar_itse
+quiero casarme por civil en la municipalidad,consultar_matrimonio_civil
+cuanto es el costo para sacar la libre disponibilidad de mi lote urbano,consultar_libre_disponibilidad
+gracias eso resolvia todas mis dudas,despedida
+cual es el plazo para el certificado de numeracion,consultar_numeracion_municipal
+como consigo un puesto de venta en el mercado,consultar_puesto_mercado
+necesito autorizacion para obras en la via publica,consultar_obras_via_publica
+cuanto es el costo para recibir solo una etapa de mi habilitacion urbana,consultar_recepcion_obras_habilitacion
+que papeles necesito para construir viviendas del programa bono familiar habitacional,consultar_licencia_edificacion_estado
+requisitos para visar plano para servicio de agua y desague en mi terreno,T_008
+me pueden orientar para dividir mi terreno rustico y habilitarlo a la vez modalidad d,consultar_independizacion_terreno_rustico
+requisitos para un anuncio publicitario iluminado adosado a fachada,consultar_publicidad_exterior
+necesito inscribir a mi pitubll,consultar_registro_canino
+como me afilio a essalud,fuera_de_dominio
+que documentos hay que llevar para hacer un condominio grande con edificios de seis pisos,consultar_licencia_construccion
+quiero formalizar mi junta vecinal ante la municipalidad,T_013
+quiero que mi restaurante ahora funcione como panaderia,consultar_gestion_licencia
+que papeles necesito para aprobar el proyecto interal de habilitacion urbana modalidad c,consultar_proyecto_integral_habilitacion
+necesito el documento con los parametros urbanisticos vigentes de mi predio,T_033
+como saco el documento de parametros edificatorios de mi predio,T_033
+como actualizo los papeles y la tarjeta de mi mototaxi,consultar_tramite_vehicular
+necesito pedir libre disponibilidad de mi terreno para poder construir,consultar_libre_disponibilidad
+como pido factibilidad de luz sin ser dueño formal del terreno,T_031
+cuanto cuesta remodelar mi vivienda con cambio estructural y mas area techada,consultar_licencia_ampliacion_remodelacion
+como hago para edificar infraestructura publica por concesion,consultar_licencia_edificacion_estado
+tramite para dar de baja definitiva a mi mototaxi,consultar_tramite_vehicular
+licencia para un grifo con itse previa,consultar_licencia_funcionamiento
+que requisitos piden para hacer un cambio grande a mi proyecto modalidad d ya con licencia,consultar_modificacion_proyecto_edificacion
+que papeles necesito para regularizar mi casa que construi sin licencia,consultar_regularizacion_obras
+declaracion jurada de inexistencia de feudatarios,consultar_habilitacion_urbana
+que papeles necesio para poner ductos y camaras para cables de telecomunicaciones,consultar_telecomunicaciones
+que papeles necesito para recibir las obras de mi habilitacion modalidad a sin cambios,consultar_recepcion_obras_habilitacion
+cuanto demora hacer un cambio grande a mi proyecto modalidad d ya con licencia,consultar_modificacion_proyecto_edificacion
+demora regular o es rapido,consultar_plazo
+estoy pensando en recepcion parcial de obras de mi habilitacion por etapas,consultar_recepcion_obras_habilitacion
+tengo que construir un cuartel del ejercito y no se por donde empezar,consultar_licencia_edificacion_estado
+voy a ampliar mi construccion y me piden licencia,consultar_licencia_ampliacion_remodelacion
+hola gusto saludarte,saludo
+cuanto cuesta la habilitacion urbana con revisor urbano,consultar_habilitacion_urbana
+habilitacion urbana para usos especiales,consultar_habilitacion_urbana
+quiero saber como tramitar mi divorcio,consultar_divorcio
+quiero regularizar mi construccion sin licencia,consultar_regularizacion_obras
+como consulto mi deuda en sunat,fuera_de_dominio
+necesito parcelar mi terreno rustico en parcelas de mas de una hectarea,consultar_independizacion_terreno_rustico
+cuanto es el costo para evaluar la seguridad de mi evento antes de realizarlo,T_099
+en mi jaus quiero celebrar mi matrimonio,consultar_matrimonio_civil
+en cuanto tiempo puedo tirar abajo mi casa vieja de hasta tres pisos,consultar_licencia_demolicion
+no se que nivel de riesgo tiene mi negocio y quiero mi licencia,consultar_licencia_funcionamiento
+cuanto cuesta recepcion de obras de habiltacion urbana modalidad a con variaciones,consultar_recepcion_obras_habilitacion
+donde y como tramito declaratoria anticipada de casco no habitable modalidad d igual al plano,consultar_conformidad_obra_anticipada
+la municipalidad me pide compatibilidad de uso para mi negocio,T_027
+que dcumentos hay que llevar para hacer un cerco en mi condominio,consultar_licencia_cerco
+programa del sector vivienda y necesito habilitar el terreno,consultar_habilitacion_urbana
+necesito renovar el certificado de defensa civil de mi consultorio,consultar_itse
+tramite de numeracion municipal,consultar_numeracion_municipal
+cuanto demora la baja del certificado sanitario,consultar_certificacion_sanitaria
+quiero romper la pista para hacer una zanja,consultar_obras_via_publica
+requisitos de habilitacion urbana modalidad d,consultar_habilitacion_urbana
+kiero saber mi puntaje de infocorp,fuera_de_dominio
+permiso para cambiar de giro en la muni,consultar_gestion_licencia
+necesito reconsiderar el resultado de mi solicitud,consultar_recurso_administrativo
+como saco permiso para instalar juegos inflables y mecanicos,consultar_evento_publico
+como hago para saber en que distrito cae mi lote con un certificado de jurisdiccion,T_244
+quisiera saber como saco el permiso rapido para mi bodega,T_003
+todo bien,charla_casual
+quiero un documento que diga que mi predio no esta en el catastro,consultar_catastro_predial
+que requisitos piden para presentar mi proyecto integral de edificacion modalidad d para hacerlo por etapas,consultar_proyecto_integral_edificacion
+me pueden orientar para recibir las obras de mi habilitacion modalidad b sin cambios,consultar_recepcion_obras_habilitacion
+licencia de funcionamiento para mi peluqueria pequena,consultar_licencia_funcionamiento
+necesito declaratoria anticipada de casco no habitable modalidad d igual al plano,consultar_conformidad_obra_anticipada
+habilitacion urbana de un terreno sin habilitar rodeado de zona urbana,consultar_habilitacion_urbana
+que papeles necesito para recepcion de obras de habilitacion urbana modalidad a sin variaciones,consultar_recepcion_obras_habilitacion
+cuantos dias demora el tramite de la publicacion de edicto de matrimonio de otra municipalidad,T_249
+como hago para construir un estadio,consultar_licencia_edificacion_no_vivienda
+que papeles necesito para presentar un anteproyecto en consulta modalidad b,consultar_anteproyecto_consulta
+chao nos estamos viendo,despedida
+tengo que poner una torre de radiocomunicacion y no se por donde empezar,consultar_telecomunicaciones
+necesito permiso para un evento con banda en vivo,consultar_evento_publico
+quiero la conformidad de obra anticipada,consultar_conformidad_obra_anticipada
+necesito planos y memoria para subdividir mi lote,consultar_lotes_urbanos
+estaba pensando en cambiar el rubro de mi local,consultar_gestion_licencia
+estoy pensando en libre disponibilidad de areas de uso publico para un proyecto de inversion publica,consultar_libre_disponibilidad
+en cuanto tiempo puedo cambiar los planos de mi expediente modalidad c antes de la licencia,consultar_modificacion_proyecto_edificacion
+necesito saber el area libre obligatoria de mi lote,T_033
+habilitacion urbana en zona de amortiguamiento de un area protegida,consultar_habilitacion_urbana
+que documentos hay que llevar para hacer un cambio pequeno a mi proyecto modalidad d ya con licecia,consultar_modificacion_proyecto_edificacion
+soy una empresa de telecomunicaciones y voy a instalar fibra optica,consultar_telecomunicaciones
+necesito el dictamen del proyecto integral de edificacion,consultar_proyecto_integral_edificacion
+requisitos para inscribir mi rottweiler como perro peligroso,consultar_registro_canino
+como denuncio ruidos molestos de un vecino,fuera_de_dominio
+cuanto cuesta postergar la fecha de mi matrimonio civil,T_248
+ayuda para tirar una edificacion con explosivos,consultar_licencia_demolicion
+q necesito pa registrar mi mascota,consultar_registro_canino
+cuanto cuesta un pasaje en combi,fuera_de_dominio
+que requisitos piden para conformidad de obra anticipada,consultar_conformidad_obra_anticipada
+como hago para presentar mi proyecto integral de edificacion modalidad d para hacerlo por etapas,consultar_proyecto_integral_edificacion
+requisitos para instalar conexion de agua potable,consultar_conexion_agua
+licencia de habilitacion urbana modalidad b evaluada por la municipalidad,consultar_habilitacion_urbana
+cuanto demora la licencia de funcionamiento de riesgo muy alto,consultar_licencia_funcionamiento
+cuanto es el costo para construir un centro comercial de mas de 30000 metros,consultar_licencia_edificacion_no_vivienda
+requisitos para licencia provisional bodegas,T_003
+necesito mis antecedentes penales,fuera_de_dominio
+puedes hacerme mi tarea de ingles,fuera_de_dominio
+que tramites hay sobre la certificacion sanitaria municipal,consultar_certificacion_sanitaria
+me pueden orientar para ampliar el plazo de mi licencia de construccion,consultar_prorroga_revalidacion_licencia
+cuanto demora la licencia de cesionario de riesgo muy alto,consultar_licencia_cesionario
+buen dia,saludo
+quiero dar de baja mi establecimiento comercial,consultar_gestion_licencia
+cuanto cuesta la licencia para cesionarios de riesgo muy alto,consultar_licencia_cesionario
+cual es el plazo para visar planos en la muni,T_008
+necesito presentar un escrito de apelacion con el numero de mi resolucion,consultar_recurso_administrativo
+que requisitos piden para recepcion de obras de habilitacion urbana,consultar_recepcion_obras_habilitacion
+neesito que publiquen aqui el edicto matrimonial de mi municipio de origen,T_249
+que papeles necesito para hacer un cambio grande a mi proyecto modalidad c ya con licencia,consultar_modificacion_proyecto_edificacion
+eres una persona real,charla_casual
+gracias cuidate,despedida
+necesito subdividir mi terreno para venderlo por partes,consultar_lotes_urbanos
+mi restaurante necesita inspeccion de seguridad,consultar_itse
+quiero conducir un puesto en el mercado por primera vez,consultar_puesto_mercado
+necesito autorizacion municipal para mi anuncio adosado,consultar_publicidad_exterior
+licencia para un colegio privado con itse previa,consultar_licencia_funcionamiento
+cuanto es el costo para construir un edificio con tienda abajo y vivienda arriba,consultar_licencia_construccion
+sabes cocinar,charla_casual
+hola espero me puedas ayudar,saludo
+necesito el registro municipal de mi perro faldero,consultar_registro_canino
+vivo en posesion informal necesito agua y desague,T_031
+ayuda para sacar la inspecion de defensa civil para mi oficina nueva,consultar_itse
+en cuanto tiempo puedo hacer un estadio grande de mas de veinte mil espectadores,consultar_licencia_edificacion_no_vivienda
+cuanto cuesta la licencia de funcionamiento de riesgo bajo,consultar_licencia_funcionamiento
+eres un robot,charla_casual
+presente un documento la semana pasada que paso con eso,fuera_de_dominio
+que doumentos hay que llevar para renovar el itse de mi supermercado que se vence,consultar_itse
+digame el plazo porfa,consultar_plazo
+me pueden orientar para necesito mas plazo para termnar la instalacion de mi infraestructura,consultar_telecomunicaciones
+quisiera saber como aprobar el proyecto inegral de habilitacion urbana modalidad c junto con la licencia de la primera etapa,consultar_proyecto_integral_habilitacion
+hola quiero hacer una rampa en la vereda de mi casa,consultar_obras_via_publica
+mi proyecto de construccion aprobado necesita modificaciones,consultar_modificacion_proyecto_edificacion
+que requisitos piden para el proyecto integral de edificacion,consultar_proyecto_integral_edificacion
+quiero el certificado que indica los parametros de mi terreno,T_033
+nos vemos,despedida
+hola quiero rnovar el itse de mi restaurante que se vence,consultar_itse
+quiero independizar un terreno rustico,consultar_independizacion_terreno_rustico
+cuanto cuesta el certificado de numeracion,consultar_numeracion_municipal
+me pueden orientar para sacar la inspeccion de defensa civil para mi consultorio,consultar_itse
+cuanto demora dividir un terreno rustico en zona de expansion urbana,consultar_independizacion_terreno_rustico
+quiero registrar la asociacion de padres de familia del colegio,T_013
+que documentos hay que llevar para hacer un cambio pequeno a mi proyecto modalidad b ya con licencia,consultar_modificacion_proyecto_edificacion
+necesito acreditar el numero de mi predio ante una entidad,consultar_numeracion_municipal
+quiero hacer un tramite de lotes,consultar_lotes_urbanos
+hasta la proxima,despedida
+compre el lote de al lado y quiero unirlo al mio,consultar_lotes_urbanos
+hola quiero reponer mi certificado de defensa civil que perdi,consultar_itse
+necesito visar el plano de manzaneo de mi lote,T_008
+como hago para construir un mercado de mas de 15000 metros,consultar_licencia_edificacion_no_vivienda
+quiero modificacion sustancial de mi obra modalidad d despues de la licencia,consultar_modificacion_proyecto_edificacion
+necesito el numero de mi resolucion para reconsiderarla,consultar_recurso_administrativo
+licencia de funcionamiento para un casino o tragamonedas,consultar_licencia_funcionamiento
+necesito algo del catastro municipal para mi lote,consultar_catastro_predial
+como obtengo la licencia de funcionamiento,consultar_licencia_funcionamiento
+cuando pasa el camion de basura por mi calle,fuera_de_dominio
+requisitos pa ver un expediente de la alcaldia,T_001
+quiero hacer un local para un banco,consultar_licencia_edificacion_no_vivienda
+en que fecha me daran respuesta,consultar_plazo
+ya no voy a seguir con mi negocio como notifico eso,consultar_gestion_licencia
+quiero formalizar mi negocio con licencia de funcionamiento,consultar_licencia_funcionamiento
+necesito autorizacion para un show artistico en mi distrito,consultar_evento_publico
+que papeles necesito para declaratoria anticipada de casco no habitable modalidad d modifique algo del plano,consultar_conformidad_obra_anticipada
+en cuanto tiempo puedo hacer la predeclaratoria de mi construccion,T_210
+es gratis o tiene costo,consultar_costo
+que papeles necesito para hacer un cambio grande a mi proyecto modalidad b ya con licenca,consultar_modificacion_proyecto_edificacion
+requisitos para acreditar condiciones sanitarias de mi negocio,consultar_certificacion_sanitaria
+vivo aqui hace años sin papeles necesito agua,T_031
+trabajas aqui,charla_casual
+dime el costo de eso,consultar_costo
+kuesta sacar un duplicado,consultar_gestion_licencia
+cual es el plazo para el cese de actividades,consultar_gestion_licencia
+necesito tramitar proyecto integral y licencia de una etapa modalidad c de habilitacion urbana,consultar_proyecto_integral_habilitacion
+ayuda para hacer la itse de mi peluqueria que ya esta funcionando,consultar_itse
+tengo que sacar la licencia de una etapa de mi proyecto integral de habilitacion urbana ya aprobado y no se por donde empezar,consultar_proyecto_integral_habilitacion
+necesito que revisen mis planos antes de pedir la licencia de obra,consultar_anteproyecto_consulta
+requisitos de habilitacion urbana para programas de vivienda bfh,consultar_habilitacion_urbana
+que pelicula me recomiendas ver,fuera_de_dominio
+cuanto demora modificacion sustancial de mi obra modalidad b despues de la licencia,consultar_modificacion_proyecto_edificacion
+quiero formalizar mi asociacion de mototaxistas,consultar_gestion_flota_vehicular
+los planos aprobados de urbanizacion necesitan cambios,consultar_modificacion_habilitacion_urbana
+necesito regularizar mi flota de mototaxis,consultar_gestion_flota_vehicular
+en cuanto tiempo puedo edificar infraestructura publica por concesion,consultar_licencia_edificacion_estado
+quiero juntar dos lotes en uno solo,consultar_lotes_urbanos
+hola que haces,saludo
+necesito el ecse para mi evento con menos de tres mil asistentes,T_099
+cuanto cuesta construir un estadio,consultar_licencia_edificacion_no_vivienda
+me gustaria saber que necesito para cambiar de rubro,consultar_gestion_licencia
+cuanto demora el cambio de giro de un puesto de mercado,consultar_puesto_mercado
+quiero convertir mis dos lotes en un solo predio,consultar_lotes_urbanos
+que requisitos piden para construir un cuarel del ejercito,consultar_licencia_edificacion_estado
+que papeles necesito para construir un centro comercial de mas de 30000 metros,consultar_licencia_edificacion_no_vivienda
+quiero ceder mi licencia a mi socio,consultar_gestion_licencia
+voy a alquilar un local para un espectaculo que necesito,consultar_evento_publico
+necesito la nomenclatura de la calle para mis planos,T_056
+necesito poner en regla mi edificacion hecha sin licencia,consultar_regularizacion_obras
+cuanto me va a costar,consultar_costo
+autorizacion para cambiar el giro de mi puesto municipal,consultar_puesto_mercado
+donde y como tramito el certificado de ubicacion y linderos de mi predio,T_245
+que requisitos piden para modificar un proyecto aprobado de edificacion,consultar_modificacion_proyecto_edificacion
+como hago para sacar conformidad anticipada de mi casco modalidad d con cambios,consultar_conformidad_obra_anticipada
+requisitos de licencia de funcionamiento para riesgo medio,consultar_licencia_funcionamiento
+buenas tardes necesito hacer la inspeccion de defensa civil de mi grifo,consultar_itse
+que documentos de catastro puedo sacar,consultar_catastro_predial
+necesito inscribir mi club de madres ante la muni,T_013
+quiero instalar publicidad exterior adosada a mi local,consultar_publicidad_exterior
+quiero la conformidad de obra de mi casa,consultar_conformidad_obra
+cuanto es lo que se abona,consultar_costo
+que requisitos piden para licencia de construccion,consultar_licencia_construccion
+voy a tramitar el proyecto integral de mi terreno modalidad c,consultar_proyecto_integral_habilitacion
+estoy pensando en hacer la itse de mi peluqueria que ya esta funcionando,consultar_itse
+holaaa buenas tardes vecino,saludo
+quiero comunicar el cierre de mi local,consultar_gestion_licencia
+requisitos para solicitar acceso a la informacion publica,T_001
+quiero verificar si puedo abrir un bar en esa avenida,T_027
+mi licencia de obra se esta venciendo,consultar_prorroga_revalidacion_licencia
+que papeles necesito para instalar infraestructura de banda ancha,consultar_telecomunicaciones
+gracias,despedida
+cuanto cuesta hacer una obra especial que no es vivienda ni comercio ni idustria,consultar_licencia_edificacion_no_vivienda
+cuanto cuesta hacer esto en la muni,consultar_costo
+tengo nueva prueba para reconsiderar mi caso,consultar_recurso_administrativo
+que documentos hay que llevar para dividir mi terreno rustico y habilitarlo a la vez modalidad b,consultar_independizacion_terreno_rustico
+hola quiero tramitar proyecto integral y licencia de una etapa modalidad c de edificacion,consultar_proyecto_integral_edificacion
+cuanto cuesta la pblicacion de un edicto matrimonial que viene de otro distrito,T_249
+necesito postergar la fecha de mi matrimonio civil,T_248
+requisitos de licencia corporativa para galerias comerciales,consultar_licencia_funcionamiento
+como modifico el giro de mi negocio,consultar_gestion_licencia
+cuantos dias demora el tramite del certificado de jurisdiccion,T_244
+que papeles piden para unir dos terrenos,consultar_lotes_urbanos
+tengo un problema con mi vehiculo que tramite hago,consultar_tramite_vehicular
+quiero modificacion no sustancial de mi obra modalidad d despues de la licencia,consultar_modificacion_proyecto_edificacion
+hola quiero construir un estadio para mas de 20000 personas,consultar_licencia_edificacion_no_vivienda
+que requisitos piden para remodelar mi casa por dentro sin tocar columnas,consultar_licencia_ampliacion_remodelacion
+para cuando esta listo mi tramite,consultar_plazo
+quiero una copia certificada de la ordenanza de licencias,T_001
+para que sirves,charla_casual
+cuanto demora edificar aulas para una institucion educativa publica,consultar_licencia_edificacion_estado
+quisiera saber como dividir y habilitar un terreno rustico que no colinda con zona urbana,consultar_independizacion_terreno_rustico
+quiero abrir un gimnasio grande y necesito licencia,consultar_licencia_funcionamiento
+hola quiero aprobar el proyecto integral de habilitacion urbana modalidad c junto con la licencia de la primera etapa,consultar_proyecto_integral_habilitacion
+se me extravio la licencia en la mudanza del negocio,consultar_gestion_licencia
+me pueden orientar para hacer una rampa en la vereda de mi casa,consultar_obras_via_publica
+que permiso saco para un cerco en un condominio,consultar_licencia_cerco
+quiero cambiar la unidad de mi vehiculo personal,consultar_tramite_vehicular
+necesito una copia de mi licencia de funcionamiento,consultar_gestion_licencia
+cuanto es el costo para sacar la conformidad de obra modalidad a con cambios,consultar_conformidad_obra
+buenas tardes necesito ampliar mi fabrica,consultar_licencia_ampliacion_remodelacion
+en cuanto tiempo puedo poner ductos y cmaras para cables de telecomunicaciones,consultar_telecomunicaciones
+quiero hacer un mercado mayorista enorme,consultar_licencia_edificacion_no_vivienda
+muchisimas gracias hasta luego,despedida
+tengo que recepcion de obras de habilitacion urbana modalidad d con variaciones y no se por donde empezar,consultar_recepcion_obras_habilitacion
+como saco licencia si el local ya tiene licencia a nombre de otro,consultar_licencia_cesionario
+necesito autorizacion para un show en mi local,consultar_evento_publico
+como obtengo un espacio de venta en el mercado,consultar_puesto_mercado
+cuanto cuesta registrar a mi perro,consultar_registro_canino
+como saco permiso para un anuncio adosado a mi tienda,consultar_publicidad_exterior
+quisiera saber como retirar mi expediente matrimonial,T_248
+quiero modificar el proyecto de mi licencia de edificacion,consultar_modificacion_proyecto_edificacion
+necesito el tramite para autorizar un evento social masivo,consultar_evento_publico
+hola alo hay atencion,saludo
+cuanto cuesta la revalidacion de licencia,consultar_prorroga_revalidacion_licencia
+que papeles necesito para construir un colegio privado,consultar_licencia_edificacion_no_vivienda
+que requisitos piden para aprobar el anteproyecto de un edificio multifamiliar grande,consultar_anteproyecto_consulta
+q presento para que me cambien el giro,consultar_gestion_licencia
+el estado quiere edificar una universidad,consultar_licencia_edificacion_estado
+a que hora abre el banco de la nacion,fuera_de_dominio
+hola quiero modificacion no sustancial de mi obra modalidad d despues de la licencia,consultar_modificacion_proyecto_edificacion
+cuanto cuesta aprobar el proyecto integral de habilitacion urbana modalidad d,consultar_proyecto_integral_habilitacion
+necesito hacer un cambio grande a mi proyecto modalidad c ya con licencia,consultar_modificacion_proyecto_edificacion
+en cuanto tiempo puedo dar mantenimiento a las redes de luz en la calle,consultar_obras_via_publica
+kiero divorciarme de mi pareja,consultar_divorcio
+que requisitos piden para cambiar el proyecto de una etapa de mi edificio que forma parte de un proyecto integral,consultar_proyecto_integral_edificacion
+mi casa recien construida necesita numero oficial asignado,consultar_numeracion_municipal
+el tramite se resuelve rapido o no,consultar_plazo
+no se que licencia necesito,charla_casual
+quiero recuperar mi licencia municipal q se me perdio,consultar_gestion_licencia
+quiero renovar el permiso de operacion de la empresa,consultar_gestion_flota_vehicular
+gracias por resolver mi consulta,despedida
+como comunico el cierre definitivo de mi tienda,consultar_gestion_licencia
+en cuanto tiempo puedo declaratoria anticipada de casco no habitable modalidad d modifique algo del plano,consultar_conformidad_obra_anticipada
+"me pueden orientar para declaratoria de edificacion modalidad c, modifique algo de los planos",consultar_conformidad_obra
+hola quiero hacer mi casita de dos pisos en un lote vacio,consultar_licencia_construccion
+me pueden orientar para hacer un cerco perimetrio en mi lote,consultar_licencia_cerco
+voy a vender verduras en el mercado que necesito,consultar_puesto_mercado
+ayuda para presentar un anteproyecto en consulta modalidad d,consultar_anteproyecto_consulta
+en cuanto tiempo puedo sacar el itse de mi discoeca,consultar_itse
+cuantos dias demora el tramite del ecse de un espectaculo publico,T_099
+que papeles necesito para remodelar un local de varios pisos que no es vivieda,consultar_licencia_ampliacion_remodelacion
+cuanto cuesta la habilitacion urbana con construccion de viviendas para vender,consultar_habilitacion_urbana
+quiero hacer un tramite de mi certificacion sanitaria,consultar_certificacion_sanitaria
+como gestiono los permisos de mi comite vehicular,consultar_gestion_flota_vehicular
+mi casa ya existe quiero certificado de numeracion,consultar_numeracion_municipal
+cuanto cuesta un certificado de jurisdiccion distrital,T_244
+estoy pensando en un certificado de jurisdiccion de mi predio,T_244
+cuanto demora la autorizacion de telecomunicaciones,consultar_telecomunicaciones
+cuanto demora dividir mi terreno rustio y habilitarlo a la vez modalidad b,consultar_independizacion_terreno_rustico
+ok perfecto gracias chau,despedida
+buenas tardes necesito construir un local comercial,consultar_licencia_edificacion_no_vivienda
+cuanto cuesta sacar conformidad anticipada de mi casco modalidad d sin cambios,consultar_conformidad_obra_anticipada
+cuanto demora la licencia de funcionamiento de riesgo medio,consultar_licencia_funcionamiento
+que requisitos piden para libre disponibilidad de areas de uso publico para un proyecto de inversion pulica,consultar_libre_disponibilidad
+quiero empadronarme como comerciante del mercado,consultar_puesto_mercado
+hola quiero dividir y habilitar un terreno rustico que no colinda con zona urbana,consultar_independizacion_terreno_rustico
+cuanto cuesta actualizar la informacion catastral de un predio,consultar_catastro_predial
+quiero dejar materiales de construccion en la berma,consultar_obras_via_publica
+quiero que un revisor urbano evalue mi proyecto de habilitacion,consultar_habilitacion_urbana
+estoy pensando en construir viviendas del programa bono familiar habitacional,consultar_licencia_edificacion_estado
+quisiera saber como pedir la conformidad de la obra que hice en la vereda,consultar_obras_via_publica
+buenas tardes necesito corregir un error material en mi resolucion de edificacion,T_234
+necesito que me entreguen el informe tecnico de una inspeccion,T_001
+necesito la revision de un anteproyecto modalidad c,consultar_anteproyecto_consulta
+eres una inteligencia artificial,charla_casual
+voy a montar una feria con juegos mecanicos y necesito la resolucion de seguridad,consultar_evento_publico
+licencia de funcionamiento para cesionarios,consultar_licencia_cesionario
+cuanto cuesta arrglar la vereda frente a mi casa,consultar_obras_via_publica
+que documentos hay que llevar para modiicar un poco mi proyecto de habilitacion urbana modalidad b,consultar_modificacion_habilitacion_urbana
+quiero habilitar un terreno en una zona de patrimonio cultural,consultar_habilitacion_urbana
+quiero poner mi bodeguita q papeles llevo,T_003
+te canso con tantas preguntas,charla_casual
+requisitos para habilitar un terreno sin colindar con area urbana,consultar_habilitacion_urbana
+que requisitos piden para regularzar mi lotizacion hecha sin licencia hasta el 2018,consultar_regularizacion_obras
+buenas tardes necesito pedir licencia de la segunda etapa porque ya me aprobaron el proyecto integral de habilitacion urbana,consultar_proyecto_integral_habilitacion
+tengo que cambiar la fecha de mi matrimonio para mas adelante y no se por donde empezar,T_248
+en cuanto tiempo puedo independizacion con habilitacion urbana modalidad d en terreno rustico,consultar_independizacion_terreno_rustico
+licencia de habilitacion urbana modalidad c,consultar_habilitacion_urbana
+requisitos para modificar un proyecto de habilitacion urbana,consultar_habilitacion_urbana
+que papeles necesito para la rectificacion de resoluciones por error material,T_234
+hola quiero remodelar un local de varios pisos que no es vivienda,consultar_licencia_ampliacion_remodelacion
+quiero construir una fabrica,consultar_licencia_edificacion_no_vivienda
+sabes bailar,charla_casual
+quisiera saber como sacar la conformidad de obra de mi casa modalidad a sin cambios,consultar_conformidad_obra
+ayuda para dividir un terreno rustico en zona de expansion urbana,consultar_independizacion_terreno_rustico
+mi negocio de comida rapida ahora sera una lavanderia,consultar_gestion_licencia
+quisiera saber como construir un mercado de mas de 15000 metros,consultar_licencia_edificacion_no_vivienda
+"cuanto cuesta declaratoria de edificacion modalidad a, la obra quedo igual al plano",consultar_conformidad_obra
+bueno me voy a descansar chau,despedida
+puedo seguir con el puesto de mi abuelo que fallecio,consultar_puesto_mercado
+que onda,saludo
+requisitos para anuncio publicitario adosado,consultar_publicidad_exterior
+voy a traer un parque de diversiones y quiero la autorizacion,consultar_evento_publico
+donde solicito el tupa de la municipalidad,T_001
+cual es el clima para mañana,fuera_de_dominio
+quisiera saber como aprbar el proyecto integral de edificacion modalidad c,consultar_proyecto_integral_edificacion
+necesito poner un cartel con mi logo en la entrada del local,consultar_publicidad_exterior
+cuanto tiempo demora,consultar_plazo
+quiero seguir conduciendo mi puesto cuando venza el acta,consultar_puesto_mercado
+estoy pensando en recepcion de obras de habilitacion urbana modalidad c con variaciones,consultar_recepcion_obras_habilitacion
+voy a independizar y habilitar un terreno rustico,consultar_independizacion_terreno_rustico
+necesito aprobar el planeamiento integral para habilitar mi terreno,consultar_habilitacion_urbana
+antes de alquilar necesito saber si mi giro esta permitido ahi,T_027
+q debo presentar para pedir info a la muni,T_001
+cuanto demora renovar el certificado de defensa civil de mi peluqueria,consultar_itse
+vivo en un lote sin habilitar necesito luz y agua,T_031
+antes de hacer mi licencia de edificacion necesito los parametros,T_033
+en cuanto tiempo puedo construir un cuartel del ejercito,consultar_licencia_edificacion_estado
+en cuanto tiempo puedo recibir las obras de mi habilitacon modalidad b sin cambios,consultar_recepcion_obras_habilitacion
+estoy pensando en la rectificacion de una resolucion de habilitacion urbana por error material,T_234
+hola buenos dias,saludo
+que piden para visacion de plano y memoria descriptiva para luz definitiva,T_008
+quiero poner un letrero en la fachada de mi tienda que necesito,consultar_publicidad_exterior
+necesito el plano de mi inmueble para la constancia de inhabitabilidad,T_032
+que papeles necesito para hacer un centro de diversion pequeno,consultar_licencia_edificacion_no_vivienda
+necesito sacar la licencia de una etapa de mi proyecto integral de edificacion ya aprobado,consultar_proyecto_integral_edificacion
+como verifico la zonificacion de mi predio para mi negocio,T_027
+quiero abrir un hotel y necesito la licencia de funcionamiento,consultar_licencia_funcionamiento
+ayuda para recepcion de obras de habilitacion urbana modalidad a con variaciones,consultar_recepcion_obras_habilitacion
+quiero construir una posta medica estatal,consultar_licencia_edificacion_estado
+buenas tardes necesito recepcion de obras de habilitacion urbana modalidad c con variaciones,consultar_recepcion_obras_habilitacion
+cuanto demora construir mi casa de una sola vivienda hasta 120 metros,consultar_licencia_construccion
+cuantos sublotes puedo hacer en mi terreno segun los parametros urbanisticos,consultar_lotes_urbanos
+voy a chatarrear mi mototaxi viejo como lo doy de baja,consultar_tramite_vehicular
+licencia de funcionamiento de riesgo medio,consultar_licencia_funcionamiento
+requisitos para declarar mi vivienda en estado ruinoso,T_032
+voy a cerrar mi restaurante y quiero cancelar el certificado sanitario,consultar_certificacion_sanitaria
+cuanto cuesta la licencia para cesionarios de riesgo alto,consultar_licencia_cesionario
+que requisitos piden para ampliar el plazo de mi licencia de construccion,consultar_prorroga_revalidacion_licencia
+quiero separarme legalmente de mi esposo,consultar_divorcio
+como hago para bloquear mi celular robado,fuera_de_dominio
+el negocio ya tiene licencia solo quiero cambiar el propietario,consultar_gestion_licencia
+que hora es,fuera_de_dominio
+cuanto se demora en salir aprobado,consultar_plazo
+como heredo el puesto de mi mama en el mercado,consultar_puesto_mercado
+como presento un recurso de reconsideracion,consultar_recurso_administrativo
+cuanto es el costo para presentar mi proyecto integral de edificacion modalidad c para hacerlo por etapas,consultar_proyecto_integral_edificacion
+tengo fiebre que debo hacer,fuera_de_dominio
+"ayuda para declaratoria de edificacion modalidad a, modifique algo de los planos",consultar_conformidad_obra
+quiero postular a una universidad,fuera_de_dominio
+construi sin licencia y quiero ponerme en regla,consultar_regularizacion_obras
+hola quiero demoler un edificio de mas de cinco pisos,consultar_licencia_demolicion
+necesito informe tecnico favorable del revisor para modificar mi proyecto de habilitacion,consultar_habilitacion_urbana
+tengo que tramitar la declaracion de edificacion terminada de mi obra y no se por donde empezar,consultar_conformidad_obra
+quiero tomar un puesto que nadie usa en el mercado,consultar_puesto_mercado
+que documentos hay que llevar para construir un cuartel del ejercito,consultar_licencia_edificacion_estado
+necesito mas tiempo para terminar mi obra,consultar_prorroga_revalidacion_licencia
+necesito recibir las obras de mi habilitacion modalidad a sin cambios,consultar_recepcion_obras_habilitacion
+cuanto es el costo para documento con la ubicacion area y linderos de mi terreno,T_245
+requisitos para inscribir mi vehiculo menor en la municipalidad,consultar_tramite_vehicular
+licencia para un tercero en un establecimiento con licencia vigente,consultar_licencia_cesionario
+donde reporto un bache en la pista,fuera_de_dominio
+que documentos hay que llevar para renovar el itse de mi discoteca que se vence,consultar_itse
+quiero prorrogar mi licencia,consultar_prorroga_revalidacion_licencia
+cual es el plazo del certificado de nomenclatura vial,T_056
+cuanto es el costo para necesito mas plazo para terminar la instalacion de mi infraestrctura,consultar_telecomunicaciones
+necesito inscribir mi organizacion de base ante la municipalidad,T_013
+licencia de funcionamiento con itse previa para riesgo alto,consultar_licencia_funcionamiento
+puedes enamorarte,charla_casual
+que papeles necesito para recepcion de obras de habiitacion urbana modalidad b sin variaciones,consultar_recepcion_obras_habilitacion
+quiero apelar mediante reconsideracion,consultar_recurso_administrativo
+requisitos del certificado negativo de codigo catastral,consultar_catastro_predial
+necesito renovar el certificado de defensa civil de mi grifo,consultar_itse
+te caen bien los reclamos de la gente,charla_casual
+necesito licencia para publicidad exterior,consultar_publicidad_exterior
+cuanto cuesta el anteproyecto en consulta,consultar_anteproyecto_consulta
+licencia modalidad b para modificacion de proyecto con revisores urbanos,consultar_habilitacion_urbana
+vendo ropa y quiero vender abarrotes en mi puesto,consultar_puesto_mercado
+como hago para demoler mi casa de dos pisos sin sotano,consultar_licencia_demolicion
+hola como estas que tal te va todo,saludo
+buenas tardes necesito cambiar el nombre del titular de mi tarjeta de mototaxi,consultar_tramite_vehicular
+necesito el certificado con las normas de construccion de mi predio,T_033
+necesito el proyecto aprobado para instalar agua en mi edificio,consultar_conexion_agua
+cuanto demora hacer un cambio pequeno a mi proyecto modalidad d ya con licencia,consultar_modificacion_proyecto_edificacion
+tengo que pedir libre disponibilidad de mi terreo para poder construir y no se por donde empezar,consultar_libre_disponibilidad
+hablas otros idiomas,charla_casual
+quiero tramitar la numeracion municipal,consultar_numeracion_municipal
+cuanto demora remodelar mi vivienda con cambio estructural y mas area techada,consultar_licencia_ampliacion_remodelacion
+info para tramitar duplicado de licencia,consultar_gestion_licencia
+orientame con la numeracion de mi propiedad,consultar_numeracion_municipal
+quiero poner una queja sobre un trabajador municipal,fuera_de_dominio
+ayuda para declaratoria anticipada de casco no habitable modalidad c igual al plano,consultar_conformidad_obra_anticipada
+cuanto demora tirar una edificacion con explosivos,consultar_licencia_demolicion
+que requisitos piden para recepcion de obras de habilitacion urbana modalidad d con variaciones,consultar_recepcion_obras_habilitacion
+buenas tardes necesito hacer la predeclaratoria de mi construccion,T_210
+que documentos hay que llevar para hacer la predeclaratoria de mi construccion,T_210
+demora mucho eso,consultar_plazo
+tengo que recepcion de obras de habilitacion urbana modalidad b con variaciones y no se por donde empezar,consultar_recepcion_obras_habilitacion
+ayuda para que publiquen aqui el edicto matrimonial de mi municipio de origen,T_249
+necesito dar de baja mi negocio,consultar_gestion_licencia
+quiero registrar mi mascota canina,consultar_registro_canino
+reubicar o redimensionar las vias de una urbanizacion existente,consultar_habilitacion_urbana
+quiero cambiar lo que vendo en mi puesto del mercado,consultar_puesto_mercado
+eso seria todo nos vemos luego amigo,despedida
+cuanto cuesta el matrimonio civil en la muni,consultar_matrimonio_civil
+como cuestiono una resolucion que emitio la muni,consultar_recurso_administrativo
+buenas tardes necesito aprobar el proyecto integral de habilitacion urbana modalidad d junto con la licencia de la primera etapa,consultar_proyecto_integral_habilitacion
+que requisitos piden para hacer una ampliacion de mi vivienda que ya tiene licencia,consultar_licencia_ampliacion_remodelacion
+necesito construir mi casa de una sola vivienda hasta 120 metros,consultar_licencia_construccion
+en cuanto tiempo puedo hacer la itse de mi restaurante nuevo,consultar_itse
+cuanto es el costo para declaratoria anticipada de casco no habitable modalidad b modifique algo del plano,consultar_conformidad_obra_anticipada
+cuantos dias se demoran,consultar_plazo
+necesito el certificado sanitario junto con mi licencia de funcionamiento,consultar_certificacion_sanitaria
+necesito el anexo f del fuhu,consultar_lotes_urbanos
+necesito compatibilidad de uso antes de pedir mi licencia de funcionamiento,T_027
+digame el costo pe,consultar_costo
+cambie de actividad y quiero dar de baja el certificado sanitario,consultar_certificacion_sanitaria
+quiero habilitar un terreno en un ecosistema fragil,consultar_habilitacion_urbana
+necesito permiso para un aviso pegado a la pared de mi tienda,consultar_publicidad_exterior
+estoy pensando en hacer la inspeccion de defensa civil de mi grifo,consultar_itse
+como hago para regularizar mi terreno y mi casa construias sin licencia las dos cosas,consultar_regularizacion_obras
+que requisitos piden para documento con la ubicacion area y linderos de mi terreno,T_245
+donde y como tramito solo dividir mi terreno rustico que esta dentro de la zona urbana,consultar_independizacion_terreno_rustico
+que papeles necesito para mi licencia de construccion ya vencio y quiero revalidarla,consultar_prorroga_revalidacion_licencia
+que requisitos piden para hacer un cambio grande a mi proyecto modalidad a ya con licencia,consultar_modificacion_proyecto_edificacion
+como renuevo automaticamente mi puesto de venta,consultar_puesto_mercado
+habilitacion urbana de isla rustica para uso residencial,consultar_habilitacion_urbana
+como hago para votar en las elecciones,fuera_de_dominio
+hola oye,saludo
+estoy pensando en hacer un centro de diversion pequeno,consultar_licencia_edificacion_no_vivienda
+tengo pensado poner una bodega en mi casa,T_003
+quiero poner el nombre de mi tienda en un letrero grande,consultar_publicidad_exterior
+buenas tardes necesito ampliar un edificio comercial de oficinas,consultar_licencia_ampliacion_remodelacion
+necesito el certificado antes de firmar el contrato de alquiler del local,T_027
+me pueden orientar para sacar la conformdad de obra de mi casa modalidad a sin cambios,consultar_conformidad_obra
+quiero cambiar los planos de edificacion ya aprobados,consultar_modificacion_proyecto_edificacion
+bueno muchas gracias hasta luego,despedida
+tramite para que el catastro registre mis ampliaciones,consultar_catastro_predial
+mi licencia de construccion ya vencio,consultar_prorroga_revalidacion_licencia
+quiero que el superior revise la decision de la municipalidad,consultar_recurso_administrativo
+buenas tardesito,saludo
+que documentos hay que llevar para cnstruir un estadio para mas de 20000 personas,consultar_licencia_edificacion_no_vivienda
+quiero la predeclaratoria de edificacion para modalidades a b c y d,T_210
+que documentos hay que llevar para construir una posta medica estatl,consultar_licencia_edificacion_estado
+quiero certificar que mi inmueble no tiene codigo catastral asignado,consultar_catastro_predial
+estoy pensando en sacar la conformidad de obra modalidad c con cambios,consultar_conformidad_obra
+cuanto demora autorizar un anuncio luminoso,consultar_publicidad_exterior
+en cuanto tiempo puedo independizacion con habilitacion urbana modalidad b en terreno rustico,consultar_independizacion_terreno_rustico
+ayuda para modificar un poco mi proyecto de habilitacion urbana modalidad a,consultar_modificacion_habilitacion_urbana
+donde y como tramito regularizar juntas la habilitacion urbana y la edificacion que hice sin licencia,consultar_regularizacion_obras
+cuanto tarda en salir el permiso,consultar_plazo
+quiero cambio no sustancial a mi habilitacion modalidad b antes de ejecutarla,consultar_modificacion_habilitacion_urbana
+buenas tardes necesito sacar la licencia de una etapa de mi proyecto integral de habilitacion urbana ya aprobado,consultar_proyecto_integral_habilitacion
+donde y como tramito hacer un cerco perimetrico en mi lote,consultar_licencia_cerco
+requisitos de habilitacion urbana en area protegida,consultar_habilitacion_urbana
+me pueden orientar para rectificar una resolucion de licencia que salio con un dato mal,T_234
+pa cuando estaria listo,consultar_plazo
+el edificio aprobado necesita numeros para sus departamentos,consultar_numeracion_municipal
+requisitos de habilitacion urbana modalidad b con evaluacion de la municipalidad,consultar_habilitacion_urbana
+requisitos para conectar desague en un proyecto empresarial,consultar_conexion_agua
+necesito actualizar la ficha catastral de mi casa,consultar_catastro_predial
+"que papeles necesito para declaratoria de edificacion modalidad a, la obra quedo igual al plano",consultar_conformidad_obra
+quiero saber el nombre oficial de la calle de mi terreno,T_056
+eso demanda algun costo,consultar_costo
+no quiero nada,charla_casual
+que requisitos piden para modificar mi proyecto modlidad c antes de que me den la licencia,consultar_modificacion_proyecto_edificacion
+necesito permiso para cercar mi terreno,consultar_licencia_cerco
+quisiera saber como hacer un cambio grande a mi proyecto modalidad a ya con licencia,consultar_modificacion_proyecto_edificacion
+estoy pensando en hacer una obra menor en mi casa,consultar_licencia_ampliacion_remodelacion
+quiero hacer un tramite de mi puesto en el mercado,consultar_puesto_mercado
+en cuanto tiempo puedo tramitar la declaracion de edificacion terminada de mi obra,consultar_conformidad_obra
+quiero instalar un circo en un terreno del distrito,consultar_evento_publico
+necesito permiso para colocar un cartel publicitario en mi negocio,consultar_publicidad_exterior
+como visado mi plano de ubicacion,T_008
+quiiera saber como cambio no sustancial a mi habilitacion modalidad a antes de ejecutarla,consultar_modificacion_habilitacion_urbana
+requisitos para la reposicion de vereda por conexion de agua,consultar_conexion_agua
+y cuanto se paga,consultar_costo
+quiero contraer matrimonio civil que necesito,consultar_matrimonio_civil
+necesito licencia de edificacion para una fabrica,consultar_licencia_edificacion_no_vivienda
+en cuanto tiempo puedo revalidar mi liencia de edificacion vencida,consultar_prorroga_revalidacion_licencia
+necesito el numero de mi casa,consultar_numeracion_municipal
+voy a tumbar toda la construccion antigua,consultar_licencia_demolicion
 q documentos presento para licencia provisional de bodega,T_003
-voy a instalar un letrero simple en la pared de mi negocio,consultar_publicidad_exterior
+tengo que una ampliacion pequena considerada obra menor y no se por donde empezar,consultar_licencia_ampliacion_remodelacion
+quiero construir un colegio privado,consultar_licencia_edificacion_no_vivienda
+necesito autorizacion para instalar una antena,consultar_telecomunicaciones
+el negocio sigue igual solo cambia el dueño que tramite hago,consultar_gestion_licencia
+cuanto demora en resolverse mi solicitud,consultar_plazo
+tengo que independizar un terreno rustico en area uranizable inmediata y no se por donde empezar,consultar_independizacion_terreno_rustico
+quiero solicitar el organigrama municipal,T_001
+en cuanto tiempo puedo cambio no sustancial a mi habilitacion modalidad d antes de ejecutarla,consultar_modificacion_habilitacion_urbana
+como saco el codigo catastral de mi predio,consultar_catastro_predial
+necesito plano perimetrico del lote acumulado,consultar_lotes_urbanos
+quiero hacer un cambio pequeno a mi proyecto de habilitacion urbana,consultar_modificacion_habilitacion_urbana
+necesito cerrar mi tienda legalmente,consultar_gestion_licencia
+que papeles necesito para poner una torre de radiocomunicacion,consultar_telecomunicaciones
 info sobre licencia provisional para bodegueros,T_003
-necesito saber la zonificacion y parametros de mi terreno,T_033
-cierre temporal de mi negocio y quiero dar de baja la certificacion sanitaria,consultar_certificacion_sanitaria
-puestos vacios en el mercado como los consigo,consultar_puesto_mercado
-mi predio no esta registrado en catastro y quiero formalizarlo,consultar_catastro_predial
+licencia de funcionamiento para cesionarios de riesgo alto,consultar_licencia_cesionario
+buenas como te va todo bien por aqui,saludo
+hola quiero hacer una vivienda multifamiliar de cuatro pisos,consultar_licencia_construccion
+quiero q me den copia de unos planos antiguos,T_001
+tengo que mi licencia de construccion ya vencio y quiero revalidarla y no se por donde empezar,consultar_prorroga_revalidacion_licencia
+necesito un paradero oficial para mi comite de transportistas,consultar_gestion_flota_vehicular
+necesito el papel pa construir en mi lote,consultar_licencia_construccion
+tengo una bodega funcionando sin papeles que hago,T_003
+voy a romper la pista para poner mi conexion de agua,consultar_conexion_agua
+quiero un puesto que esta abandonado en el mercado municipal,consultar_puesto_mercado
+estoy pensando en hacer un cambio grande a mi proyecto modalidad c ya con licencia,consultar_modificacion_proyecto_edificacion
+como tramito el carnet de mi mascota,consultar_registro_canino
+cuanto me sale hacer el tramite,consultar_costo
+me pueden orientar para construir mi casa de una sola vivienda hasta 120 metros,consultar_licencia_construccion
+cuanto cuesta el duplicado de la certificacion sanitaria,consultar_certificacion_sanitaria
+necesito aprobar mi proyecto integral de habilitacion por etapas,consultar_proyecto_integral_habilitacion

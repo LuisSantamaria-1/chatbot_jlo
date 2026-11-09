@@ -1,5 +1,6 @@
 import pytest
 from app import app
+from backend.nlp import clasificador
 
 
 @pytest.fixture
@@ -12,7 +13,8 @@ def client():
 # ==============================================================================
 # GRUPO D: MANEJO DE CONTEXTO Y DIÁLOGO GUIADO (6 CASOS)
 # ==============================================================================
-def test_contexto_confirmacion_si(client, registrar):
+def test_contexto_confirmacion_si(client, registrar, monkeypatch):
+    monkeypatch.setattr(clasificador, "predecir_intencion", lambda texto: ("T_003", 0.45))
     # Activar zona de duda primero
     r1 = client.post("/api/chat", json={"mensaje": "ola qiero un permiso para mi bodega q hago"})
     d1 = r1.get_json()
@@ -29,7 +31,8 @@ def test_contexto_confirmacion_si(client, registrar):
     assert d2.get("id_tramite") == "T_003"
 
 
-def test_contexto_confirmacion_no(client, registrar):
+def test_contexto_confirmacion_no(client, registrar, monkeypatch):
+    monkeypatch.setattr(clasificador, "predecir_intencion", lambda texto: ("T_003", 0.45))
     # Activar zona de duda primero
     r1 = client.post("/api/chat", json={"mensaje": "ola qiero un permiso para mi bodega q hago"})
     d1 = r1.get_json()
@@ -54,9 +57,11 @@ def test_contexto_correccion_no_ese_no(client, registrar):
     d = r.get_json()
     obtenido = d.get("status")
     confianza = d.get("confianza", 0.0)
-    estado = "PASO" if obtenido == "correction" else "FALLO"
-    registrar("CHAT_D03", "contexto_dialogo", "no, ese no (con tramite activo)", "status=correction", f"status={obtenido}", confianza, estado)
-    assert obtenido == "correction"
+    estado = "PASO" if obtenido == "clarification" else "FALLO"
+    registrar("CHAT_D03", "contexto_dialogo", "no, ese no (con tramite activo)", "status=clarification, vuelve a macro", f"status={obtenido}", confianza, estado)
+    assert obtenido == "clarification"
+    assert d.get("intent") == "consultar_numeracion_municipal"
+    assert d.get("opciones") == []
 
 
 def test_contexto_despedida_real(client, registrar):
@@ -201,7 +206,8 @@ def test_api_chat_charla_casual(client, registrar):
     assert obtenido == "charla_casual"
 
 
-def test_api_chat_zona_duda_clarification(client, registrar):
+def test_api_chat_zona_duda_clarification(client, registrar, monkeypatch):
+    monkeypatch.setattr(clasificador, "predecir_intencion", lambda texto: ("T_003", 0.45))
     r = client.post("/api/chat", json={"mensaje": "ola qiero un permiso para mi bodega q hago"})
     d = r.get_json()
     obtenido = d.get("status")
@@ -227,7 +233,7 @@ def test_api_chat_macrointencion_clarification(client, registrar):
 # 5. PRUEBAS DE ACEPTACIÓN Y CALIDAD DE DATOS (FASE RC)
 # ==============================================================================
 def test_calidad_datos_tramites_csv_y_bd(registrar):
-    """(a) Calidad de datos: código T_XXX único, 40 trámites, sin requisitos vacíos, sin residuales y sincronía total CSV-BD."""
+    """(a) Calidad de datos: código T_XXX único, 239 trámites, sin requisitos vacíos, sin residuales y sincronía total CSV-BD."""
     import csv
     import re
     from config import CSV_TRAMITES_PATH
@@ -236,11 +242,11 @@ def test_calidad_datos_tramites_csv_y_bd(registrar):
     with open(CSV_TRAMITES_PATH, "r", encoding="utf-8") as f:
         csv_rows = list(csv.DictReader(f))
 
-    assert len(csv_rows) == 40, f"CSV debe tener exactamente 40 trámites (tiene {len(csv_rows)})"
+    assert len(csv_rows) == 239, f"CSV debe tener exactamente 239 trámites (tiene {len(csv_rows)})"
 
     with app.app_context():
         bd_tramites = Tramite.query.all()
-        assert len(bd_tramites) == 40, f"BD debe tener exactamente 40 trámites (tiene {len(bd_tramites)})"
+        assert len(bd_tramites) == 239, f"BD debe tener exactamente 239 trámites (tiene {len(bd_tramites)})"
         bd_map = {t.id_tramite: t for t in bd_tramites}
 
         codigos_csv = set()
@@ -272,8 +278,8 @@ def test_calidad_datos_tramites_csv_y_bd(registrar):
 
     registrar(
         "NUEVA_01", "calidad_datos", "Validación integral CSV vs BD",
-        "40 trámites, códigos T_XXX únicos, sin residuales y 100% sincronizados",
-        "40 trámites validados exitosamente en CSV y BD",
+        "239 trámites, códigos T_XXX únicos, sin residuales y 100% sincronizados",
+        "239 trámites validados exitosamente en CSV y BD",
         1.0, "PASO"
     )
 
@@ -300,7 +306,9 @@ def test_t001_costo_y_plazo_correctos(client, registrar):
     assert r3.status_code == 200
     assert d3.get("plazo") == "10 días hábiles"
     assert "10 días hábiles" in d3.get("mensaje", "")
-    assert "Copia S/0.10" not in d3.get("mensaje", "")
+    # El seguimiento de plazo solo muestra el plazo y el nombre correspondiente.
+    assert f'El plazo para «{d3["nombre"]}»' in d3['mensaje']
+    assert 'Copia S/0.10' not in d3['mensaje']
 
     registrar(
         "NUEVA_02", "t001_corregido", "T_001: seguimiento costo y plazo correcto",
@@ -362,16 +370,18 @@ def test_saludo_baja_confianza_no_se_responde_como_saludo(client, registrar):
 
 
 def test_regresion_escape_html_xss(client, registrar):
-    """Regresión XSS: plantillas incluyen función escapeHTML para entradas y salidas."""
+    """Regresión XSS: el recurso del chat renderiza mensajes con textContent."""
     r_index = client.get("/")
     assert r_index.status_code == 200
     html = r_index.get_data(as_text=True)
 
-    assert "function escapeHTML" in html
-    assert "&amp;" in html
-    assert "&lt;" in html
-    assert "&gt;" in html
-    assert "escapeHTML(texto)" in html
+    assert '/static/js/chat.js' in html
+    js = client.get('/static/js/chat.js')
+    assert js.status_code == 200
+    codigo = js.get_data(as_text=True)
+    assert "function escapeHTML" in codigo
+    assert 'elemento.textContent = texto' in codigo
+    assert '.innerHTML' not in codigo
 
     r_chat = client.post("/api/chat", json={"mensaje": "<script>alert('xss')</script>"})
     assert r_chat.status_code == 200
@@ -379,7 +389,7 @@ def test_regresion_escape_html_xss(client, registrar):
     registrar(
         "REG_04", "regresion_xss", "Verificación de escape HTML en portal y widget",
         "escapeHTML activo y manejo seguro de payloads con etiquetas",
-        "escapeHTML presente en plantilla y endpoint responde seguro HTTP 200",
+        "textContent activo en el recurso JS y endpoint responde seguro HTTP 200",
         1.0, "PASO"
     )
 

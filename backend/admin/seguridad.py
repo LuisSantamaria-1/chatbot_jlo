@@ -7,9 +7,13 @@ de intentos fallidos de autenticación (Rate Limiting para admin_login).
 
 import time
 import threading
+import hashlib
+import hmac
 from functools import wraps
 from collections import defaultdict
-from flask import session, jsonify
+from flask import session, jsonify, redirect, url_for, request, current_app, abort
+from sqlalchemy.exc import SQLAlchemyError
+from backend.models import db, Usuario
 
 MAX_INTENTOS_LOGIN = 5
 VENTANA_BLOQUEO_SEGUNDOS = 300  # 5 minutos
@@ -70,15 +74,47 @@ def registrar_login_exitoso(usuario: str, ip: str):
         _intentos_fallidos.pop(clave, None)
 
 
+def firma_credenciales(usuario):
+    """Invalida sesiones al cambiar la contraseña, sin exponer su hash en la cookie."""
+    clave = current_app.secret_key
+    if isinstance(clave, str):
+        clave = clave.encode("utf-8")
+    return hmac.new(clave, usuario.password_hash.encode("utf-8"), hashlib.sha256).hexdigest()
+
+
+def es_administrador(usuario):
+    return bool(usuario and usuario.rol and usuario.rol.nombre.strip().casefold() == "administrador")
+
+
+def usuario_admin_actual():
+    """Comprueba la sesión firmada y los permisos vigentes en cada petición."""
+    identificador = session.get("admin_user_id")
+    if type(identificador) is int:
+        usuario = db.session.get(Usuario, identificador)
+        firma = session.get("admin_auth", "")
+        if (es_administrador(usuario) and usuario.username == session.get("admin_user")
+                and isinstance(firma, str) and hmac.compare_digest(firma, firma_credenciales(usuario))):
+            return usuario
+    for clave in ("admin_user", "admin_user_id", "admin_auth"):
+        session.pop(clave, None)
+    return None
+
+
 def requiere_admin(f):
-    """
-    Exige que exista session["admin_user"] (seteado por /api/admin/login)
-    antes de ejecutar la ruta. Sin esto, cualquiera con la URL puede crear,
-    editar o borrar trámites sin haber iniciado sesión.
-    """
+    """Protege tanto el HTML del panel como las operaciones administrativas."""
     @wraps(f)
     def wrapper(*args, **kwargs):
-        if not session.get("admin_user"):
+        try:
+            usuario = usuario_admin_actual()
+        except SQLAlchemyError:
+            db.session.rollback()
+            current_app.logger.exception("No se pudo validar la sesión administrativa.")
+            if not request.path.startswith("/api/"):
+                abort(503)
+            return jsonify({"status": "error", "mensaje": "Servicio no disponible. Intenta nuevamente más tarde."}), 503
+        if usuario is None:
+            if not request.path.startswith("/api/"):
+                return redirect(url_for("admin.admin_login_page"))
             return jsonify({
                 "status": "error",
                 "mensaje": "No autorizado. Debes iniciar sesión como administrador."

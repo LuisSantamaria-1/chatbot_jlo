@@ -10,12 +10,7 @@ __pycache__/
 *$py.class
 *.so
 .pytest_cache/
-
-# Node.js y Frontend Next.js
-node_modules/
-frontend/node_modules/
-frontend/.next/
-.next/
+.pytest_catalogo_*/
 
 # Variables de entorno y secretos
 .env
@@ -29,9 +24,15 @@ logs/
 # Carpetas de trabajo temporal
 scratch/
 
+# Informes regenerables y respaldos de sincronización
+reports/
+backups/
+
 # Base de datos SQLite local
 *.db
 municipal.db
+*.sqlite
+*.sqlite3
 
 # Archivos del sistema y de editores
 .DS_Store

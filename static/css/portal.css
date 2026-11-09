@@ -1,0 +1,187 @@
+:root{--amarillo:#ffcc00;--azul:#063b67;--azul-oscuro:#073354;--texto:#243746;--borde:#dce3e8;--suave:#f5f7f9}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--texto);font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.5}
+a{color:inherit;text-decoration:none}
+button,input,textarea{font:inherit}
+button,a,input,textarea{touch-action:manipulation}
+button{cursor:pointer}
+button:disabled{cursor:wait;opacity:.55}
+a:focus-visible,button:focus-visible,textarea:focus-visible{outline:3px solid #0074b9;outline-offset:3px}
+.contenedor{width:min(1100px,calc(100% - 48px));margin-inline:auto}
+.solo-lectores{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.saltar-contenido{position:fixed;top:-80px;left:20px;padding:12px;background:#fff;z-index:100}
+.saltar-contenido:focus{top:10px}
+.barra-superior{background:var(--amarillo);color:#17527b;min-height:59px}
+.barra-superior .contenedor{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:59px}
+.sisgedo{display:flex;align-items:center;gap:12px;font-size:12px;font-weight:600;line-height:1.3}
+.sisgedo strong{font-size:16px;letter-spacing:-.8px}
+.sisgedo span{padding-left:12px;border-left:1px solid #a58f16}
+.enlaces-superiores{display:flex;align-items:center;gap:0;font-size:12px;font-weight:600}
+.enlaces-superiores a{padding:9px 13px;border-left:1px solid #d3af12}
+.enlaces-superiores a:first-child{border:0}
+.enlaces-superiores a:hover{text-decoration:underline}
+.enlaces-superiores .acceso-admin{margin-left:10px;padding:9px 13px;border:1px solid #063b67;border-radius:6px;background:var(--azul);color:#fff;white-space:nowrap}
+.enlaces-superiores .acceso-admin:hover{background:#0a527e;text-decoration:none}
+.cabecera{background:#fff}
+.cabecera .contenedor{min-height:142px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo-municipal{display:block;width:270px;height:121px;object-fit:contain;object-position:left center}
+.transparencia{display:flex;gap:9px;align-items:center;color:#0082c4;line-height:1.12;font-style:italic}
+.transparencia strong{display:block;font-size:25px;letter-spacing:-.6px}
+.transparencia small{display:block;text-align:right;color:#777;font-size:11px;margin-top:4px}
+.pte{border:3px solid #68bae7;border-radius:50%;font-size:14px;padding:9px 5px;font-weight:700;position:relative}
+.pte:after{content:'';position:absolute;width:15px;height:4px;background:#0082c4;transform:rotate(45deg);right:-11px;bottom:-4px}
+.navegacion{background:var(--amarillo);color:#073354;border-bottom:7px solid #063b67}
+.navegacion .contenedor{display:flex;gap:0;align-items:center;overflow:auto;scrollbar-width:none}
+.navegacion a{display:block;white-space:nowrap;padding:12px 22px 12px 0;margin-right:22px;font-family:'Arial Narrow',Arial,sans-serif;font-size:13px;font-weight:700;letter-spacing:.2px}
+.navegacion a:hover{color:#000;text-decoration:underline;text-underline-offset:5px}
+.recientes{background:#080808;color:#fff}
+.recientes .contenedor{min-height:43px;display:flex;align-items:center;gap:26px}
+.recientes strong{font-size:12px;letter-spacing:.6px}
+.recientes span{color:#c5ced6;font-size:12px;flex:1}
+.recientes a{font-size:12px;color:var(--amarillo)}
+.migas{font-size:11px;color:#74818d;padding-top:23px}
+.migas span{padding-inline:9px;color:#b9c2c9}
+.contenido{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:31px;align-items:start;margin-top:22px;margin-bottom:50px}
+.introduccion{margin:0 0 21px}
+.ceja{font-size:10px;color:#816a00;letter-spacing:1.5px;font-weight:700;margin:0 0 7px}
+.introduccion h1{font-size:29px;line-height:1.2;letter-spacing:-.8px;color:var(--azul);margin:0 0 9px}
+.introduccion p:not(.ceja){font-size:14px;color:#687784;max-width:590px;margin:0}
+.chat-panel{border:1px solid #d5dfe6;border-radius:12px;overflow:hidden;background:var(--suave);box-shadow:0 8px 26px #063b6708}
+.chat-cabecera{display:flex;align-items:center;gap:12px;padding:17px 20px;background:var(--azul);color:#fff}
+.avatar-leonardito{display:flex;align-items:center;justify-content:center;flex-shrink:0;width:39px;height:39px;border-radius:11px;background:var(--amarillo);color:var(--azul);font-weight:800;font-size:21px}
+.chat-identidad{flex:1;min-width:0}
+.chat-identidad strong{font-size:15px;display:block}
+.chat-identidad small{font-size:11px;color:#c5d9e8;display:block;margin-top:1px}
+.estado{font-size:10px;display:flex;align-items:center;gap:6px;color:#dfefeb}
+.estado:before{content:'';width:6px;height:6px;border-radius:50%;background:#8ce3b3}
+.chat-mensajes{height:475px;overflow:auto;overscroll-behavior:contain;padding:24px 22px;display:flex;flex-direction:column;gap:21px;scrollbar-width:thin;scrollbar-color:#cbd6df transparent}
+.separador-dia{font-size:10px;color:#8a98a3;text-align:center;letter-spacing:.4px;margin-bottom:1px}
+.mensaje{display:flex;align-items:flex-start;gap:9px;max-width:94%}
+.mensaje-usuario{margin-left:auto;flex-direction:row-reverse;max-width:86%}
+.mensaje-avatar{width:27px;height:27px;display:flex;align-items:center;justify-content:center;border-radius:8px;flex-shrink:0;font-size:11px;font-weight:700;background:#e6ecf1;color:#31566d;margin-top:3px}
+.mensaje-usuario .mensaje-avatar{display:none}
+.mensaje-contenido{min-width:0}
+.mensaje-burbuja{padding:13px 16px;background:#fff;color:#304452;border:1px solid #e2e8ed;border-radius:3px 13px 13px 13px;font-size:14px;line-height:1.65;overflow-wrap:anywhere}
+.mensaje-usuario .mensaje-burbuja{background:#e5eef6;border:1px solid #d5e3ef;color:#173e5e;border-radius:13px 3px 13px 13px}
+.mensaje-burbuja p{margin:0 0 10px;white-space:pre-line}
+.mensaje-burbuja p:last-child{margin-bottom:0}
+.mensaje-burbuja ul,.mensaje-burbuja ol{margin:9px 0 0;padding-left:19px}
+.mensaje-burbuja li{padding-left:2px;margin-bottom:6px}
+.mensaje-hora{display:block;font-size:9px;color:#94a0ab;margin-top:5px;padding-left:3px}
+.mensaje-usuario .mensaje-hora{text-align:right;padding-right:3px}
+.opciones-seguimiento{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.opcion-chat{font-size:11px;color:#345f7c;border:1px solid #cad9e5;background:#fff;border-radius:6px;padding:7px 10px}
+.opcion-chat:hover{background:#f6f9fc;border-color:#87a8c1}
+.chat-escribiendo{margin:0 22px 13px;padding:11px 14px;display:flex;align-items:center;gap:5px;align-self:flex-start;width:fit-content;max-width:calc(100% - 44px);color:#49677d;font-size:11px;background:#f2f7fb;border:1px solid #dce8f0;border-radius:12px 12px 12px 3px}
+.chat-escribiendo i{width:6px;height:6px;background:var(--azul);border-radius:50%;animation:latido 1.2s infinite;flex-shrink:0}
+.chat-escribiendo i:nth-child(2){animation-delay:.15s}
+.chat-escribiendo i:nth-child(3){animation-delay:.3s}
+.chat-escribiendo span{margin-left:5px}
+.oculto{display:none!important}
+.chat-compositor{background:#fff;border-top:1px solid var(--borde);padding:14px 15px 10px}
+.chat-form{display:flex;gap:10px;align-items:flex-end;border:1px solid #ccd8e2;border-radius:9px;padding:5px;background:#fff}
+.chat-form:focus-within{border-color:#447aa2;box-shadow:0 0 0 3px #0b669010}
+.chat-form textarea{resize:none;border:0;outline:none;min-height:40px;max-height:130px;padding:9px 8px;width:100%;flex:1;line-height:1.45;color:#29475e;font-size:13px;background:transparent}
+.chat-form textarea:focus-visible{outline:none}
+.chat-form textarea::placeholder{color:#8c9aa6}
+.boton-enviar{width:41px;height:39px;display:flex;align-items:center;justify-content:center;border:0;border-radius:6px;background:var(--azul);color:#fff;flex-shrink:0}
+.boton-enviar:hover{background:#0a527e}
+.boton-enviar svg{width:18px;height:18px}
+.pie-compositor{font-size:9px;color:#99a4ae;text-align:center;margin:8px 0 0}
+.ayuda-ejemplo{margin:13px 3px 0;font-size:11px;color:#7d8b96;line-height:1.7}
+.columna-lateral{padding-top:7px}
+.titulo-lateral{font-family:'Arial Narrow',Arial,sans-serif;font-size:19px;line-height:1.2;letter-spacing:-.5px;color:#172e42;margin:0 0 19px;padding-bottom:12px;border-bottom:3px solid var(--amarillo)}
+.tarjeta-lateral{margin-bottom:28px}
+.paso{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #e9edf0}
+.paso:last-child{border:0}
+.paso-numero{width:25px;height:25px;border:1px solid #dbe4ec;background:#f6f9fb;color:#59758a;border-radius:50%;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.paso strong{font-size:12px;color:#344e62;display:block}
+.paso p{font-size:11px;line-height:1.7;margin:4px 0 0;color:#81909c}
+.tramite-actual{border:1px solid #dde6ec;background:#f8fafb;border-radius:9px;padding:16px;margin-top:22px}
+.tramite-actual .ceja{font-size:9px;color:#698399;letter-spacing:1px}
+.tramite-actual h3{font-size:12px;color:#37566d;line-height:1.6;margin:0 0 12px;max-height:100px;overflow:auto}
+.tramite-dato{font-size:11px;color:#82929f;margin:8px 0}
+.tramite-dato strong{color:#344e62;font-weight:600;display:block;margin-top:2px}
+.enlace-municipal{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e2e8ed;padding:13px 0;font-size:12px;color:#426179}
+.enlace-municipal:hover{color:#00528b}
+.enlace-municipal b{font-size:16px;color:#8b9ba7}
+.nota-lateral{font-size:10px;line-height:1.8;color:#96a1a9;margin:12px 0 0}
+.pie-pagina{border-top:1px solid #e3e8eb;background:#fafbfc;font-size:10px;color:#85929e;padding:23px 0}
+.pie-pagina .contenedor{display:flex;justify-content:space-between;gap:20px;align-items:center}
+.pie-pagina strong{color:#536d80;font-weight:500}
+.lanzador-widget{position:fixed;bottom:23px;right:26px;border:0;background:var(--azul);color:#fff;border-radius:50%;width:57px;height:57px;box-shadow:0 4px 18px #063b6733;display:flex;align-items:center;justify-content:center;z-index:50}
+.lanzador-widget svg{width:27px;height:27px}
+.lanzador-widget:after{content:'';position:absolute;right:1px;top:0;width:11px;height:11px;background:var(--amarillo);border:2px solid #fff;border-radius:50%}
+.widget{position:fixed;bottom:92px;right:26px;width:390px;max-width:calc(100vw - 28px);height:565px;max-height:calc(100dvh - 115px);background:#fff;border:1px solid #d6e0e8;border-radius:13px;box-shadow:0 15px 60px #143d6a2b;z-index:51;overflow:hidden;display:flex;flex-direction:column}
+.widget .chat-cabecera{padding:13px 15px}
+.widget .avatar-leonardito{width:32px;height:32px;font-size:18px}
+.widget .chat-mensajes{height:auto;min-height:0;flex:1;padding:19px 13px;gap:17px}
+.widget .mensaje{max-width:97%;gap:6px}
+.widget .mensaje-usuario{max-width:88%}
+.widget .mensaje-burbuja{font-size:12px;padding:10px 12px}
+.widget .mensaje-avatar{width:23px;height:23px;font-size:10px}
+.widget .chat-compositor{padding:10px}
+.widget .chat-form textarea{font-size:12px}
+.cerrar-widget{border:0;background:transparent;color:#d6e5ef;font-size:24px;width:28px;height:30px;line-height:1;padding:0}
+.widget .pie-compositor{font-size:8px}
+.widget .chat-escribiendo{margin-left:15px;margin-right:15px;max-width:calc(100% - 30px)}
+.widget .opcion-chat{font-size:10px;padding:6px 8px}
+@keyframes latido{0%,70%,100%{opacity:.3;transform:translateY(0)}
+35%{opacity:1;transform:translateY(-3px)}
+}
+
+@media(max-width:900px){.contenedor{width:calc(100% - 36px)}
+.contenido{grid-template-columns:minmax(0,1fr) 250px;gap:22px}
+.enlaces-superiores a{padding:8px;font-size:10px}
+.sisgedo{font-size:10px}
+.navegacion a{margin-right:13px;padding-right:13px;font-size:11px}
+.introduccion h1{font-size:25px}
+.chat-mensajes{padding:20px 15px}
+}
+
+@media(max-width:700px){.barra-superior .contenedor{justify-content:center;min-height:40px}
+.barra-superior .sisgedo{display:none}
+.enlaces-superiores{flex-wrap:wrap;justify-content:center;padding-block:6px}
+.enlaces-superiores a{font-size:9px;padding:7px 9px}
+.enlaces-superiores a:nth-child(3){display:none}
+.cabecera .contenedor{min-height:116px;gap:8px}
+.logo-municipal{width:220px;height:100px;max-width:65vw}
+.transparencia{font-size:10px;gap:6px}
+.transparencia strong{font-size:16px}
+.transparencia small{font-size:8px}
+.pte{font-size:10px;padding:7px 3px;border-width:2px}
+.pte:after{width:10px;height:3px;right:-7px}
+.navegacion{border-bottom-width:5px}
+.navegacion a{padding:10px 8px 10px 0;font-size:10px;letter-spacing:.15px}
+.recientes .contenedor{min-height:36px;gap:15px}
+.recientes span{font-size:9px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.recientes strong{font-size:9px}
+.recientes a{display:none}
+.contenido{display:block;margin-top:19px}
+.columna-lateral{display:grid;grid-template-columns:1fr 1fr;gap:23px;margin-top:32px}
+.tarjeta-lateral{margin-bottom:0}
+.tramite-actual{grid-column:1/-1;margin-top:0}
+.introduccion h1{font-size:25px}
+.introduccion p:not(.ceja){font-size:13px}
+.migas{padding-top:18px;font-size:10px}
+.chat-mensajes{height:430px;padding:20px 13px}
+.chat-cabecera{padding:15px}
+.chat-identidad strong{font-size:14px}
+.chat-identidad small{font-size:10px}
+.chat-panel{border-radius:10px}
+.mensaje-burbuja{font-size:13px;padding:11px 13px}
+.mensaje{max-width:98%;gap:7px}
+.mensaje-avatar{width:24px;height:24px;font-size:10px}
+.mensaje-usuario{max-width:88%}
+.estado{font-size:9px}
+.chat-form textarea{font-size:13px}
+.pie-pagina .contenedor{align-items:flex-start;flex-direction:column;gap:7px}
+.lanzador-widget{width:51px;height:51px;right:16px;bottom:16px}
+.widget{right:14px;bottom:80px;max-height:calc(100dvh - 95px)}
+.pie-pagina{padding-bottom:70px}
+}
+
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important}
+}
+

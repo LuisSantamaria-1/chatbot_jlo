@@ -10,6 +10,9 @@ import pytest
 from app import app
 from backend.models import db, Tramite, Usuario
 from werkzeug.security import check_password_hash
+from werkzeug.security import generate_password_hash
+from datetime import timedelta
+from backend.models import Rol
 
 # Construir dinámicamente la contraseña antigua para no incluir el texto literal en el archivo
 _CLAVE_DEFECTO_ANTIGUA = "admin" + "123"
@@ -42,6 +45,110 @@ def auth_client():
         res = c.post("/api/admin/login", json={"usuario": "admin", "password": pwd})
         assert res.status_code == 200, f"Error en login de fixture: {res.get_json()}"
         yield c
+
+
+@pytest.mark.parametrize("ruta", ["/admin", "/admin/"])
+@pytest.mark.parametrize("metodo", ["get", "head"])
+def test_html_admin_exige_sesion_antes_de_enviar_panel(client, ruta, metodo):
+    respuesta = getattr(client, metodo)(ruta)
+    assert respuesta.status_code == 302
+    assert respuesta.headers["Location"] == "/admin/login"
+    assert b'id="tabla-tramites"' not in respuesta.data
+    assert "no-store" in respuesta.headers["Cache-Control"]
+
+
+def test_login_publico_no_expone_panel(client):
+    respuesta = client.get("/admin/login")
+    assert respuesta.status_code == 200
+    assert b'id="form-login"' in respuesta.data
+    assert b'id="tabla-tramites"' not in respuesta.data
+    assert b'id="form-tramite"' not in respuesta.data
+
+
+def test_login_con_sesion_valida_redirige_al_panel(auth_client):
+    assert auth_client.get("/admin/login").headers["Location"] == "/admin"
+    respuesta = auth_client.get("/admin")
+    assert respuesta.status_code == 200
+    assert b'id="tabla-tramites"' in respuesta.data
+    assert b'id="form-login"' not in respuesta.data
+    assert auth_client.get("/api/admin/sesion").get_json()["username"] == "admin"
+
+
+@pytest.mark.parametrize("valor", [[], ["admin"], "admin", 42])
+def test_login_rechaza_json_que_no_es_objeto(client, valor):
+    assert client.post("/api/admin/login", json=valor).status_code == 400
+
+
+def test_nombre_en_sesion_sin_identidad_verificada_no_da_acceso(client):
+    with client.session_transaction() as sesion:
+        sesion["admin_user"] = "admin"
+    assert client.get("/api/admin/tramites").status_code == 401
+    assert client.get("/admin").status_code == 302
+
+
+def test_sesion_expirada_no_permite_panel_ni_api(auth_client, monkeypatch):
+    monkeypatch.setitem(app.config, "PERMANENT_SESSION_LIFETIME", timedelta(seconds=-1))
+    assert auth_client.get("/api/admin/tramites").status_code == 401
+    assert auth_client.get("/admin").headers["Location"] == "/admin/login"
+
+
+def test_logout_bloquea_tambien_ruta_html(auth_client):
+    assert auth_client.post("/api/admin/logout").status_code == 200
+    assert auth_client.get("/admin").headers["Location"] == "/admin/login"
+    assert auth_client.get("/api/admin/sesion").status_code == 401
+
+
+@pytest.fixture
+def cuenta_temporal_admin():
+    with app.app_context():
+        rol = Rol.query.filter_by(nombre="Administrador").one()
+        usuario = Usuario(username="cuenta_revision_acceso", password_hash=generate_password_hash(" Acceso de prueba 2026 "), rol_id=rol.id)
+        db.session.add(usuario)
+        db.session.commit()
+        datos = {"id": usuario.id, "usuario": usuario.username, "password": " Acceso de prueba 2026 "}
+    yield datos
+    with app.app_context():
+        usuario = db.session.get(Usuario, datos["id"])
+        if usuario:
+            db.session.delete(usuario)
+        rol = Rol.query.filter_by(nombre="Consulta sin administración").first()
+        if rol:
+            db.session.delete(rol)
+        db.session.commit()
+
+
+def test_usuario_sin_rol_administrativo_no_inicia_sesion(client, cuenta_temporal_admin):
+    with app.app_context():
+        rol = Rol(nombre="Consulta sin administración")
+        usuario = db.session.get(Usuario, cuenta_temporal_admin["id"])
+        usuario.rol = rol
+        db.session.commit()
+    respuesta = client.post("/api/admin/login", json=cuenta_temporal_admin)
+    assert respuesta.status_code == 403
+    assert client.get("/api/admin/tramites").status_code == 401
+
+
+@pytest.mark.parametrize("cambio", ["rol", "password", "eliminar"])
+def test_se_revoca_acceso_si_cambia_la_cuenta(client, cuenta_temporal_admin, cambio):
+    assert client.post("/api/admin/login", json=cuenta_temporal_admin).status_code == 200
+    assert client.get("/admin").status_code == 200
+    with app.app_context():
+        usuario = db.session.get(Usuario, cuenta_temporal_admin["id"])
+        if cambio == "rol":
+            usuario.rol = Rol(nombre="Consulta sin administración")
+        elif cambio == "password":
+            usuario.password_hash = generate_password_hash("Nueva contraseña para la prueba")
+        else:
+            db.session.delete(usuario)
+        db.session.commit()
+    assert client.get("/api/admin/tramites").status_code == 401
+    assert client.get("/admin").headers["Location"] == "/admin/login"
+
+
+def test_cookie_modificada_no_autoriza_panel(client):
+    client.set_cookie(app.config["SESSION_COOKIE_NAME"], "sesion.alterada.sin_firma_valida")
+    assert client.get("/admin").status_code == 302
+    assert client.get("/api/admin/tramites").status_code == 401
 
 
 # ==============================================================================
@@ -234,23 +341,23 @@ def test_admin_delete_tramite_sin_sesion(client, registrar):
 # 3. ACCESO CON SESIÓN, LOGOUT Y SESIÓN PERMANENTE
 # ==============================================================================
 def test_admin_get_tramites_con_sesion(auth_client, registrar):
-    """Verifica que con sesión activa se listen correctamente los 40 trámites registrados."""
+    """Verifica que con sesión activa se listen correctamente los 239 trámites registrados."""
     res = auth_client.get("/api/admin/tramites")
     data = res.get_json() or {}
     tramites = data.get("tramites", [])
     total = data.get("total", 0)
     
-    estado = "PASO" if res.status_code == 200 and total == 40 and len(tramites) == 40 else "FALLO"
+    estado = "PASO" if res.status_code == 200 and total == 239 and len(tramites) == 239 else "FALLO"
     registrar(
         "ADM_11", "acceso_autorizado", "GET /api/admin/tramites (con sesion)",
-        "HTTP 200 total=40 tramites", f"HTTP {res.status_code} total={total} tramites",
+        "HTTP 200 total=239 tramites", f"HTTP {res.status_code} total={total} tramites",
         1.0, estado
     )
     
     assert res.status_code == 200
     assert data.get("status") == "success"
-    assert total == 40
-    assert len(tramites) == 40
+    assert total == 239
+    assert len(tramites) == 239
 
 
 def test_admin_logout_limpia_sesion_y_bloquea_tramites(auth_client, registrar):
@@ -374,23 +481,45 @@ def test_admin_post_codigo_duplicado(auth_client, registrar):
 
 
 def test_admin_post_nombre_demasiado_largo(auth_client, registrar):
-    """Verifica que un nombre mayor a 255 caracteres sea rechazado con HTTP 400."""
+    """Rechaza nombres que superan los 1024 caracteres admitidos por el catálogo."""
     payload = {
         "id_tramite": "T_981",
-        "nombre": "A" * 256,
+        "nombre": "A" * 1025,
         "requisitos": ["Requisito válido"]
     }
     res = auth_client.post("/api/admin/tramites", json=payload)
     data = res.get_json() or {}
     
-    estado = "PASO" if res.status_code == 400 and "255" in data.get("mensaje", "") else "FALLO"
+    estado = "PASO" if res.status_code == 400 and "1024" in data.get("mensaje", "") else "FALLO"
     registrar(
-        "ADM_17", "validacion_crud", "POST con nombre len=256",
-        "HTTP 400 excede 255 caracteres", f"HTTP {res.status_code} {data.get('mensaje')}",
+        "ADM_17", "validacion_crud", "POST con nombre len=1025",
+        "HTTP 400 excede 1024 caracteres", f"HTTP {res.status_code} {data.get('mensaje')}",
         1.0, estado
     )
     assert res.status_code == 400
-    assert "255" in data.get("mensaje", "")
+    assert "1024" in data.get("mensaje", "")
+
+
+def test_admin_conserva_nombres_largos_del_tupa(auth_client):
+    """Los títulos oficiales largos se pueden crear y editar sin recortar."""
+    codigo = "T_998"
+    nombre = "Procedimiento oficial " + "edificación " * 35
+    try:
+        respuesta = auth_client.post("/api/admin/tramites", json={
+            "id_tramite": codigo, "nombre": nombre.strip(),
+            "costo": "Gratuito", "plazo": "0 días hábiles",
+            "requisitos": ["Solicitud"],
+        })
+        assert respuesta.status_code == 201
+        nuevo_nombre = nombre.strip() + " y evaluación por revisores urbanos"
+        respuesta = auth_client.put(f"/api/admin/tramites/{codigo}", json={"nombre": nuevo_nombre})
+        assert respuesta.status_code == 200
+        assert Tramite.query.filter_by(id_tramite=codigo).one().nombre == nuevo_nombre
+    finally:
+        registro = Tramite.query.filter_by(id_tramite=codigo).first()
+        if registro:
+            db.session.delete(registro)
+            db.session.commit()
 
 
 def test_admin_post_tramite_sin_requisitos(auth_client, registrar):
@@ -502,7 +631,7 @@ def test_admin_put_y_delete_inexistente(auth_client, registrar):
 def test_admin_escritura_con_sesion_crud_y_limpieza(auth_client, registrar):
     """
     Verifica creación, edición y eliminación de un trámite temporal con formato válido T_990,
-    asegurando que al finalizar no se altere el catálogo real de 40 trámites.
+    asegurando que al finalizar no se altere el catálogo real de 239 trámites.
     """
     id_test = "T_990"
     payload_crear = {
@@ -515,7 +644,7 @@ def test_admin_escritura_con_sesion_crud_y_limpieza(auth_client, registrar):
     
     with app.app_context():
         conteo_inicial = Tramite.query.count()
-        assert conteo_inicial == 40, f"Debe haber 40 trámites antes de iniciar la prueba (hay {conteo_inicial})"
+        assert conteo_inicial == 239, f"Debe haber 239 trámites antes de iniciar la prueba (hay {conteo_inicial})"
 
     try:
         # 1. Crear trámite de prueba (POST con sesión)
@@ -550,15 +679,15 @@ def test_admin_escritura_con_sesion_crud_y_limpieza(auth_client, registrar):
                 db.session.commit()
             conteo_final = Tramite.query.count()
             
-    estado = "PASO" if conteo_final == 40 else "FALLO"
+    estado = "PASO" if conteo_final == 239 else "FALLO"
     registrar(
         "ADM_22", "crud_autorizado", "POST/PUT/DELETE tramite prueba con sesion",
-        "HTTP 201/200/200 y catalogo preservado en 40 tramites",
+        "HTTP 201/200/200 y catalogo preservado en 239 tramites",
         f"Conteo final={conteo_final} tramites reales intactos",
         1.0, estado
     )
     
-    assert conteo_final == 40, f"El catálogo final debe permanecer exactamente en 40 trámites reales (hay {conteo_final})"
+    assert conteo_final == 239, f"El catálogo final debe permanecer exactamente en 239 trámites reales (hay {conteo_final})"
 
 
 # ==============================================================================
@@ -684,8 +813,8 @@ def test_debug_por_defecto_es_false(monkeypatch, registrar):
     assert debug_val is False
 
 
-def test_admin_xss_tramite_con_script_se_guarda_y_catalogo_queda_en_40(auth_client, registrar):
-    """(e) Verifica que un trámite con inyecciones de script se guarde íntegro, se liste y se limpie a 40 trámites."""
+def test_admin_xss_tramite_con_script_se_guarda_y_catalogo_queda_en_239(auth_client, registrar):
+    """(e) Verifica que un trámite con inyecciones de script se guarde íntegro, se liste y se limpie a 239 trámites."""
     id_test = "T_985"
     payload = {
         "id_tramite": id_test,
@@ -696,7 +825,7 @@ def test_admin_xss_tramite_con_script_se_guarda_y_catalogo_queda_en_40(auth_clie
     }
 
     with app.app_context():
-        assert Tramite.query.count() == 40
+        assert Tramite.query.count() == 239
 
     try:
         # 1. Registrar trámite con carga útil XSS
@@ -715,7 +844,7 @@ def test_admin_xss_tramite_con_script_se_guarda_y_catalogo_queda_en_40(auth_clie
         estado = "PASO"
         registrar(
             "ADM_27", "seguridad_xss", "Trámite con carga <script>alert(1)</script>",
-            "Guardado íntegro en BD, listado en API y eliminado preservando 40 trámites",
+            "Guardado íntegro en BD, listado en API y eliminado preservando 239 trámites",
             f"HTTP {res_crear.status_code} nombre={creado['nombre']}",
             1.0, estado
         )
@@ -723,7 +852,7 @@ def test_admin_xss_tramite_con_script_se_guarda_y_catalogo_queda_en_40(auth_clie
         auth_client.delete(f"/api/admin/tramites/{id_test}")
         with app.app_context():
             conteo = Tramite.query.count()
-            assert conteo == 40, f"El catálogo debe quedar exactamente en 40 trámites (hay {conteo})"
+            assert conteo == 239, f"El catálogo debe quedar exactamente en 239 trámites (hay {conteo})"
 
 
 # ==============================================================================
@@ -847,7 +976,7 @@ def test_cabeceras_http_seguridad_presentes(client, registrar):
     assert "Content-Security-Policy" in headers
 
     # Comprobar Cache-Control no-store en rutas admin
-    res_admin = client.get("/admin")
+    res_admin = client.get("/admin", follow_redirects=True)
     assert res_admin.status_code == 200
     assert "no-store" in res_admin.headers.get("Cache-Control", "")
 
@@ -872,11 +1001,13 @@ def test_paginas_html_responden_200_con_csp(client, registrar):
     assert "https://cdn.tailwindcss.com" in csp_index
     assert "'unsafe-inline'" in csp_index
 
-    res_admin = client.get("/admin")
+    res_admin = client.get("/admin", follow_redirects=True)
     assert res_admin.status_code == 200
     csp_admin = res_admin.headers.get("Content-Security-Policy", "")
     assert "'self'" in csp_admin
-    assert "https://cdn.tailwindcss.com" in csp_admin
+    assert "script-src 'self'" in csp_admin
+    assert "https://cdn.tailwindcss.com" not in csp_admin
+    assert "'unsafe-inline'" not in csp_admin
 
     estado = "PASO"
     registrar(
@@ -903,25 +1034,33 @@ def test_ui_plantillas_accesibilidad_y_sin_artefactos_jsx(client, registrar):
     assert '{/*' not in html_index
     assert '*/}' not in html_index
     assert "Tramifácil" in html_index
-    assert "POR UNA TRANSFORMACIÓN" in html_index
-    assert "RESOLUCIÓN DE GERENCIA MUNICIPAL" in html_index
+    assert '/static/images/logo-mdjlo.png' in html_index
+    assert 'Municipalidad Distrital de José Leonardo Ortiz' in html_index
+    assert client.get('/static/images/logo-mdjlo.png').status_code == 200
+    assert client.get('/static/css/portal.css').status_code == 200
 
-    # 2. Panel Administrativo (admin.html)
+    # El acceso público no incluye los formularios ni la tabla del panel.
+    login = client.get("/admin/login").get_data(as_text=True)
+    assert '<label for="login-usuario"' in login
+    assert '<label for="login-password"' in login
+    assert 'id="tabla-tramites"' not in login
+    assert client.post("/api/admin/login", json={"usuario": "admin", "password": _get_admin_password()}).status_code == 200
     res_admin = client.get("/admin")
     assert res_admin.status_code == 200
     html_admin = res_admin.get_data(as_text=True)
-
     assert '<html lang="es">' in html_admin
-    assert '<label for="login-usuario"' in html_admin
-    assert '<label for="login-password"' in html_admin
     assert '<label for="tramite-codigo"' in html_admin
     assert '<label for="tramite-nombre"' in html_admin
     assert 'aria-label="Buscar trámites por código o nombre"' in html_admin
     assert 'className=' not in html_admin
     assert '{/*' not in html_admin
-    assert 'max-h-[90vh] overflow-y-auto' in html_admin
-    assert 'Tu sesión ha expirado' in html_admin
-    assert '¿Estás seguro de que deseas eliminar el trámite con código' in html_admin
+    assert '<dialog id="modal-tramite"' in html_admin
+    assert '/static/images/logo-mdjlo.png' in html_admin
+    assert '/static/css/admin.css' in html_admin
+    assert '/static/js/admin.js' in html_admin
+    assert 'id="tabla-scroll"' in html_admin
+    assert 'id="form-login"' not in html_admin
+    assert 'onclick=' not in html_admin
 
     registrar(
         "ADM_33", "plantillas_ui_accesibilidad", "Verificación de accesibilidad, atributos y sintaxis en HTML",

@@ -7,7 +7,7 @@ Entrenamiento y serialización del clasificador de intenciones (TF-IDF + LinearS
 import os
 import joblib
 import pandas as pd
-from sklearn.model_selection import train_test_split, StratifiedKFold, cross_val_score
+from sklearn.model_selection import StratifiedKFold, cross_val_score
 from sklearn.pipeline import Pipeline
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.svm import LinearSVC
@@ -102,9 +102,6 @@ if __name__ == "__main__":
     modelo_final = entrenar_y_evaluar(df)
 
     exportar_modelo(modelo_final)
-
-    # También actualizar copia en raíz si existe para compatibilidad
-    exportar_modelo(modelo_final, "modelo_intenciones.joblib")
 
     # Prueba rápida de inferencia
     ejemplos_prueba = [

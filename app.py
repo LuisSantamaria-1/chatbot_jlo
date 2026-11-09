@@ -9,6 +9,21 @@ Uso:
 """
 
 import os
+import socket
+
+# Comprobar antes de cargar el modelo: en Windows dos servidores de desarrollo
+# pueden retener el mismo puerto y entregar versiones distintas del proyecto.
+# El hijo del recargador reutiliza deliberadamente el socket de su padre.
+if __name__ == '__main__' and os.environ.get('WERKZEUG_RUN_MAIN') != 'true':
+    puerto_solicitado = int(os.environ.get('PORT', 5000))
+    try:
+        conexion_previa = socket.create_connection(('localhost', puerto_solicitado), timeout=.5)
+    except OSError:
+        pass
+    else:
+        conexion_previa.close()
+        raise SystemExit(f'El chatbot ya está abierto en http://localhost:{puerto_solicitado}/. Puedes usarlo allí. Si quieres reiniciarlo desde esta terminal, primero detén la instancia anterior con Ctrl+C en la terminal donde se inició.')
+
 from backend import create_app
 
 # En ejecución directa de desarrollo (python app.py), si no hay SECRET_KEY ni FLASK_DEBUG explícito,

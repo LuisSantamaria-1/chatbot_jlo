@@ -1,54 +1,29 @@
+"""Genera los conjuntos CSV de entrenamiento y prueba sin consultas compartidas."""
+
 import pandas as pd
 from sklearn.model_selection import train_test_split
-import os
 
-print("Cargando dataset_maestro.csv...")
-try:
-    # 1. Leemos el archivo maestro que has estado editando manualmente
-    df_maestro = pd.read_csv('data/dataset_nlp.csv')
-except FileNotFoundError:
-    print("Error: No se encontró dataset_maestro.csv en esta carpeta.")
-    exit()
-
-# 2. LIMPIEZA CRÍTICA: Eliminar espacios en blanco accidentales
-# Esto corrige el error de "least populated classes have only 1 member"
-# fusionando clases mal escritas como ' T_003' con 'T_003'
-df_maestro["intent"] = df_maestro["intent"].astype(str).str.strip()
-df_maestro["query"] = df_maestro["query"].astype(str).str.strip()
-
-# Limpiar posibles filas vacías que Excel a veces deja al final
-df_maestro = df_maestro.dropna(subset=["query", "intent"])
-df_maestro = df_maestro[df_maestro["query"] != ""]
-
-print(f"Total de ejemplos listos: {len(df_maestro)}")
-print(f"Clases detectadas: {list(df_maestro['intent'].unique())}")
-
-# 3. Split 80/20 Estratificado (misma proporción de clases)
-df_train, df_test = train_test_split(
-    df_maestro, 
-    test_size=0.20, 
-    random_state=42, 
-    stratify=df_maestro["intent"]
-)
+from backend.nlp.preprocesamiento import preprocesar_texto
+from config import CSV_DATASET_PATH, DATA_DIR
 
 
-if os.path.exists("data"):
-    df_train.to_csv("data/train_nlp.csv", index=False)
-    df_test.to_csv("data/test_nlp.csv", index=False)
-print(f"Split completado: train_nlp.csv ({len(df_train)} filas) y test_nlp.csv ({len(df_test)} filas).")
+def preparar():
+    df = pd.read_csv(CSV_DATASET_PATH).dropna(subset=["query", "intent"])
+    df["intent"] = df["intent"].astype(str).str.strip()
+    df["query"] = df["query"].astype(str).str.strip()
+    df = df[df["query"] != ""]
+    normalizados = df["query"].map(preprocesar_texto)
+    colisiones = df.assign(normalizado=normalizados).groupby("normalizado")["intent"].nunique()
+    if (colisiones > 1).any():
+        raise ValueError("Hay consultas normalizadas con intenciones distintas; corrige las etiquetas antes de dividir el dataset.")
+    df = df.loc[~normalizados.duplicated()].copy()
 
-# 4. Función para convertir CSV a YAML estructurado de Rasa
-def csv_to_rasa_yaml(df, yaml_path):
-    os.makedirs(os.path.dirname(yaml_path), exist_ok=True)
-    with open(yaml_path, 'w', encoding='utf-8') as f:
-        f.write('version: "3.1"\n\nnlu:\n')
-        for intent, grupo in df.groupby("intent"):
-            f.write(f"- intent: {intent}\n")
-            f.write(f"  examples: |\n")
-            for query in grupo["query"]:
-                f.write(f"    - {query}\n")
+    train, test = train_test_split(df, test_size=0.20, random_state=42, stratify=df["intent"])
+    assert not set(train["query"].map(preprocesar_texto)) & set(test["query"].map(preprocesar_texto)), "Hay fuga de consultas entre train y test."
+    train.to_csv(DATA_DIR / "train_nlp.csv", index=False)
+    test.to_csv(DATA_DIR / "test_nlp.csv", index=False)
+    print(f"Split completado: train_nlp.csv ({len(train)} filas), test_nlp.csv ({len(test)} filas), {df['intent'].nunique()} intenciones.")
 
-# 5. Generación de los archivos para Rasa
-csv_to_rasa_yaml(df_train, "data/nlu_train.yml")
-csv_to_rasa_yaml(df_test, "tests/nlu_test.yml")
-print("Archivos nlu_train.yml y nlu_test.yml generados exitosamente para Rasa.")
+
+if __name__ == "__main__":
+    preparar()

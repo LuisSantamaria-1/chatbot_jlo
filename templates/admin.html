@@ -1,594 +1,125 @@
+{% macro icon(name, size=20) -%}
+{% set paths = {
+'grid': 'M3 3h7v7H3z M14 3h7v7h-7z M3 14h7v7H3z M14 14h7v7h-7z',
+'arrow': 'M5 12h14 M13 6l6 6-6 6',
+'back': 'M19 12H5 M11 6l-6 6 6 6',
+'file': 'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z M14 2v6h6 M8 13h8 M8 17h5',
+'list': 'M9 6h12 M9 12h12 M9 18h12 M3 6h.01 M3 12h.01 M3 18h.01',
+'search': 'M21 21l-5-5 M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0',
+'plus': 'M12 5v14 M5 12h14',
+'close': 'M6 6l12 12 M6 18 18 6',
+'refresh': 'M20 7v5h-5 M4 17v-5h5 M6.1 7a7 7 0 0 1 11.5-1L20 9 M4 15l2.4 3A7 7 0 0 0 18 17',
+'lock': 'M5 10h14v11H5z M8 10V6a4 4 0 0 1 8 0v4 M12 14v3',
+'logout': 'M9 4H4v16h5 M9 12h12 M16 7l5 5-5 5',
+'eye': 'M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12 M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0',
+'chevron': 'M9 5l7 7-7 7',
+'shield': 'M12 2 3 6v6c0 5 9 10 9 10s9-5 9-10V6z M8 12l3 3 5-6'
+} %}<svg width="{{ size }}" height="{{ size }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{ paths[name] }}" /></svg>
+{%- endmacro %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Panel Administrativo TUPA | MDJLO</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏛️</text></svg>">
-  <style>
-    ::-webkit-scrollbar { width: 6px; height: 6px; }
-    ::-webkit-scrollbar-track { background: #f1f5f9; }
-    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
-    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-    @keyframes scaleUp {
-      from { opacity: 0; transform: scale(0.95) translateY(8px); }
-      to { opacity: 1; transform: scale(1) translateY(0); }
-    }
-    .animate-scaleUp { animation: scaleUp 0.2s ease-out forwards; }
-    .text-shadow-3d {
-      text-shadow: 1px 1px 0px #002654, 2px 2px 0px #001f44, 3px 3px 4px rgba(0,0,0,0.3);
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#103c5b" />
+  <title>{{ 'Acceso administrativo' if login else 'Gestión de trámites' }} | Municipalidad de José Leonardo Ortiz</title>
+  <link rel="icon" href="{{ url_for('static', filename='images/logo-mdjlo.png') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css', v='20261103') }}" />
+  <script src="{{ url_for('static', filename='js/admin.js', v='20261103') }}" defer></script>
 </head>
-<body class="min-h-screen flex flex-col bg-[#f4f6f9] text-slate-800 font-sans selection:bg-amber-100 selection:text-amber-900">
-
-  <!-- ===================================================================== -->
-  <!-- 1. BARRA SUPERIOR AMARILLA OFICIAL: SISGEDO Y ENLACES INSTITUCIONALES  -->
-  <!-- ===================================================================== -->
-  <header class="bg-[#ffc107] text-[#0d3b66] py-1.5 px-4 sm:px-8 border-b border-yellow-500 shadow-xs">
-    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
-      
-      <!-- Logo SISGEDO -->
-      <div class="flex items-center space-x-2">
-        <span class="font-black text-sm tracking-tight text-[#0a2540]">SISGEDO</span>
-        <span class="ml-2 hidden sm:inline font-normal text-[#1e3a5f] text-xs">Sistema de Gestión Documentario y TUPA</span>
+<body class="{{ 'login-page' if login else 'admin-page' }}" data-pagina="{{ 'login' if login else 'dashboard' }}">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  {% if login %}
+  <main class="login-layout" id="contenido">
+    <section class="login-brand" aria-label="Municipalidad Distrital de José Leonardo Ortiz">
+      <a class="brand-plate" href="/" aria-label="Ir al portal ciudadano"><img src="{{ url_for('static', filename='images/logo-mdjlo.png') }}" width="260" height="117" alt="Municipalidad Distrital de José Leonardo Ortiz" /></a>
+      <div class="login-story">
+        <span class="eyebrow light">ADMINISTRACIÓN MUNICIPAL</span>
+        <h2>Información clara.<br />Mejor atención.</h2>
+        <p>Un solo lugar para mantener al día los trámites y requisitos que consultan nuestros ciudadanos.</p>
+        <div class="brand-rule"></div>
+        <span class="brand-caption">Municipalidad Distrital<br /><strong>José Leonardo Ortiz</strong></span>
       </div>
-
-      <!-- Enlaces superiores -->
-      <div class="flex items-center space-x-3 text-xs text-[#0a2540] font-bold">
-        <a href="/" class="hover:underline flex items-center gap-1">
-          <span>🏛️ Ir al Portal Ciudadano</span>
-        </a>
-        <span class="text-yellow-700">|</span>
-        <span class="bg-[#0d3b66] text-white px-2.5 py-0.5 rounded shadow-xs font-black">
-          Panel de Control Admin
-        </span>
-        <div id="session-badge" class="hidden items-center space-x-2 bg-white border border-yellow-600 px-2 py-0.5 rounded text-xs shadow-xs">
-          <span>👤 <strong id="current-username" class="text-[#0d3b66]"></strong></span>
-          <button onclick="cerrarSesion()" class="bg-red-600 hover:bg-red-700 text-white text-[10px] font-bold px-2 py-0.5 rounded transition">
-            Salir
-          </button>
-        </div>
+      <div class="login-brand-footer">Catálogo de procedimientos administrativos <span>TUPA</span></div>
+    </section>
+    <section class="login-form-side">
+      <a class="back-link" href="/">{{ icon('back', 17) }} Volver al portal ciudadano</a>
+      <div class="login-card" id="pantalla-login">
+        <span class="login-lock">{{ icon('lock', 24) }}</span>
+        <span class="eyebrow">SOLO PERSONAL AUTORIZADO</span>
+        <h1>Acceso administrativo</h1>
+        <p class="login-description">Ingresa con tu cuenta para gestionar el catálogo de trámites municipales.</p>
+        <div id="login-error" class="inline-message error" role="alert" hidden></div>
+        {% if request.args.get('sesion') == 'expirada' %}<p class="inline-message info" role="status">Tu sesión ha expirado. Inicia sesión nuevamente.</p>{% endif %}
+        <form id="form-login">
+          <div class="field"><label for="login-usuario">Usuario administrativo</label><input id="login-usuario" name="usuario" autocomplete="username" placeholder="Ingresa tu usuario" required maxlength="50" autofocus /></div>
+          <div class="field"><label for="login-password">Contraseña</label><div class="password-field"><input type="password" id="login-password" name="password" autocomplete="current-password" placeholder="Ingresa tu contraseña" required /><button class="password-toggle" id="ver-password" type="button" aria-label="Mostrar contraseña" aria-pressed="false">{{ icon('eye') }}</button></div></div>
+          <button type="submit" class="button primary login-submit" id="login-submit"><span>Ingresar al panel</span>{{ icon('arrow', 18) }}</button>
+        </form>
+        <p class="login-note">{{ icon('shield', 17) }} Acceso exclusivo para cuentas con permisos de administración.</p>
+        <noscript><p class="inline-message error">Activa JavaScript para iniciar sesión.</p></noscript>
       </div>
-
-    </div>
-  </header>
-
-  <!-- ===================================================================== -->
-  <!-- 2. ENCABEZADO INSTITUCIONAL BLANCO CON ESCUDO 3D                      -->
-  <!-- ===================================================================== -->
-  <div class="bg-white border-b border-gray-200 py-3.5 px-4 sm:px-8 shadow-xs">
-    <div class="max-w-7xl mx-auto flex items-center justify-between flex-wrap gap-4">
-      
-      <div class="flex items-center space-x-4">
-        <!-- Escudo Heráldico MDJLO -->
-        <div class="relative flex-shrink-0 w-14 h-18 sm:w-16 sm:h-20">
-          <svg viewBox="0 0 100 120" class="w-full h-full drop-shadow-sm" role="img" aria-label="Escudo oficial de José Leonardo Ortiz">
-            <path d="M10 20 Q50 8 90 20 L86 28 Q50 18 14 28 Z" fill="#c0151a" stroke="#870a0e" stroke-width="1.5" />
-            <text x="50" y="22" font-size="5" font-weight="bold" fill="#ffffff" text-anchor="middle">MDJLO</text>
-            <ellipse cx="50" cy="70" rx="36" ry="42" fill="#ffffff" stroke="#c0151a" stroke-width="4" />
-            <ellipse cx="50" cy="70" rx="32" ry="38" fill="none" stroke="#ffd700" stroke-width="2" />
-            <circle cx="42" cy="48" r="8" fill="none" stroke="#ffd700" stroke-width="2.5" />
-            <circle cx="58" cy="48" r="8" fill="none" stroke="#ffd700" stroke-width="2.5" />
-            <path d="M50 58 L50 85" stroke="#004494" stroke-width="3" stroke-linecap="round" />
-            <circle cx="50" cy="56" r="4" fill="#ff4500" />
-            <text x="50" y="98" font-size="5.5" font-weight="bold" fill="#004494" text-anchor="middle">JOSÉ LEONARDO ORTIZ</text>
-          </svg>
-        </div>
-
-        <div>
-          <h1 class="text-xl sm:text-2xl font-black text-[#004494] tracking-tight leading-tight font-serif text-shadow-3d">
-            Municipalidad Distrital de José Leonardo Ortiz
-          </h1>
-          <p class="text-xs text-gray-500 font-medium">
-            Módulo de Administración de Trámites y Procedimientos Administrativos (TUPA 2026)
-          </p>
-        </div>
-      </div>
-
-      <div class="flex items-center space-x-2 bg-blue-50 border border-blue-200 rounded-xl px-3 py-1.5">
-        <div class="text-right leading-tight">
-          <span class="block text-[10px] font-bold text-[#004494] uppercase">Gestor de Datos</span>
-          <span class="block text-xs font-black text-[#004494]">MySQL (HeidiSQL) / SQLAlchemy</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ===================================================================== -->
-  <!-- 3. MENÚ DE NAVEGACIÓN AMARILLO                                        -->
-  <!-- ===================================================================== -->
-  <nav class="bg-[#ffc107] border-b-2 border-yellow-600 px-4 sm:px-8 py-2 text-[#0d3b66] font-extrabold text-xs uppercase tracking-wide shadow-xs">
-    <div class="max-w-7xl mx-auto flex items-center space-x-4">
-      <a href="/" class="hover:text-black transition">PORTAL CIUDADANO</a>
-      <span class="text-yellow-700/60 font-normal">|</span>
-      <span class="text-black font-black bg-yellow-400 px-2.5 py-0.5 rounded shadow-2xs">
-        GESTIÓN DE TRÁMITES TUPA
-      </span>
-    </div>
-  </nav>
-
-  <!-- Toast Alerta -->
-  <div class="max-w-7xl w-full mx-auto px-4 sm:px-6 pt-4">
-    <div id="alerta-box" class="hidden p-4 rounded-2xl shadow-md border flex items-center justify-between transition-all bg-white">
-      <div class="flex items-center space-x-3">
-        <span id="alerta-icono" class="text-lg">✅</span>
-        <span id="alerta-mensaje" class="text-xs sm:text-sm font-semibold text-slate-800"></span>
-      </div>
-      <button onclick="cerrarAlerta()" aria-label="Cerrar notificación" class="text-slate-400 hover:text-slate-700 text-xs font-bold ml-4">✕</button>
-    </div>
-  </div>
-
-  <!-- ===================================================================== -->
-  <!-- ESTADO 1: FORMULARIO DE LOGIN                                         -->
-  <!-- ===================================================================== -->
-  <div id="pantalla-login" class="flex-1 flex items-center justify-center p-4 sm:p-12">
-    <div class="bg-white border border-gray-200/90 rounded-2xl shadow-md p-6 sm:p-8 max-w-md w-full space-y-6">
-      
-      <div class="text-center space-y-2">
-        <div class="w-12 h-14 bg-gradient-to-b from-red-600 to-red-800 rounded-xl p-1 mx-auto flex flex-col items-center justify-between border border-amber-400/40 shadow-xs">
-          <span class="text-[10px] font-black text-amber-300">MDJLO</span>
-          <svg class="w-6 h-6 text-amber-300 my-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-          </svg>
-        </div>
-        <h2 class="text-xl font-bold text-[#004494] tracking-tight font-serif">Acceso Administrativo</h2>
-        <p class="text-xs text-slate-500">Panel de Gestión de Trámites y Requisitos TUPA</p>
-      </div>
-
-      <div id="login-error" class="hidden bg-red-50 border border-red-200 text-red-700 text-xs p-3 rounded-xl"></div>
-
-      <form id="form-login" onsubmit="ejecutarLogin(event)" class="space-y-4">
-        <div>
-          <label for="login-usuario" class="block text-xs font-semibold text-slate-700 mb-1">Usuario Administrativo</label>
-          <input
-            type="text"
-            id="login-usuario"
-            aria-label="Usuario administrativo"
-            required
-            placeholder="Ej. admin"
-            class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#004494]"
-          />
-        </div>
-
-        <div>
-          <label for="login-password" class="block text-xs font-semibold text-slate-700 mb-1">Contraseña</label>
-          <input
-            type="password"
-            id="login-password"
-            aria-label="Contraseña"
-            required
-            placeholder="••••••••"
-            class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#004494]"
-          />
-        </div>
-
-        <button
-          type="submit"
-          class="w-full py-2.5 bg-[#004494] hover:bg-blue-900 text-amber-300 font-bold rounded-xl text-xs sm:text-sm shadow-xs transition flex items-center justify-center gap-2"
-        >
-          <span>Iniciar Sesión</span>
-        </button>
-      </form>
-    </div>
-  </div>
-
-  <!-- ===================================================================== -->
-  <!-- ESTADO 2: DASHBOARD DE ADMINISTRACIÓN                                  -->
-  <!-- ===================================================================== -->
-  <main id="pantalla-dashboard" class="hidden flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-6 space-y-6">
-    
-    <!-- Encabezado -->
-    <div class="bg-white rounded-2xl border border-gray-200/90 p-5 shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-      <div>
-        <div class="flex items-center gap-2">
-          <span class="px-2.5 py-0.5 rounded-md bg-amber-100 text-amber-900 font-bold text-[10px] uppercase">Panel Admin</span>
-          <span class="text-xs text-slate-400">•</span>
-          <span class="text-xs text-slate-500 font-medium">Catálogo de Procedimientos TUPA</span>
-        </div>
-        <h2 class="text-xl font-bold text-slate-900 tracking-tight mt-1 font-serif">
-          Trámites y Requisitos Registrados
-        </h2>
-      </div>
-
-      <button
-        onclick="abrirModalNuevo()"
-        class="px-4 py-2 bg-[#ffc107] hover:bg-amber-400 text-slate-950 font-bold text-xs rounded-xl shadow-xs transition flex items-center gap-1.5"
-      >
-        <span>+ Nuevo Trámite</span>
-      </button>
-    </div>
-
-    <!-- Filtro -->
-    <div class="bg-white rounded-2xl border border-gray-200/90 p-4 shadow-xs">
-      <div class="relative">
-        <input
-          type="text"
-          id="filtro-busqueda"
-          aria-label="Buscar trámites por código o nombre"
-          onkeyup="filtrarTabla()"
-          placeholder="Buscar por código de trámite (ej. T_001) o nombre..."
-          class="w-full pl-9 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#004494]"
-        />
-        <svg class="w-4 h-4 text-slate-400 absolute left-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-        </svg>
-      </div>
-    </div>
-
-    <!-- Data Table -->
-    <div class="bg-white rounded-2xl border border-gray-200/90 shadow-xs overflow-hidden">
-      <div class="overflow-x-auto">
-        <table class="w-full text-left text-xs sm:text-sm border-collapse" id="tabla-tramites">
-          <thead>
-            <tr class="bg-slate-50 border-b border-slate-200 text-slate-500 font-semibold uppercase text-[11px] tracking-wider">
-              <th class="py-3.5 px-4">Código</th>
-              <th class="py-3.5 px-4">Nombre del Trámite</th>
-              <th class="py-3.5 px-4">Costo</th>
-              <th class="py-3.5 px-4">Plazo</th>
-              <th class="py-3.5 px-4">Requisitos</th>
-              <th class="py-3.5 px-4 text-right">Acciones</th>
-            </tr>
-          </thead>
-          <tbody id="tbody-tramites" class="divide-y divide-slate-100 text-slate-800">
-            <!-- Filas dinámicas -->
-          </tbody>
-        </table>
-      </div>
-    </div>
-
+      <p class="login-copyright">Municipalidad Distrital de José Leonardo Ortiz</p>
+    </section>
   </main>
-
-  <!-- MODAL EDITAR / CREAR TRÁMITE -->
-  <div id="modal-tramite" class="hidden fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-xs flex items-center justify-center p-4">
-    <div class="bg-white rounded-2xl shadow-xl border border-slate-200 max-w-lg w-full p-6 space-y-4 animate-scaleUp max-h-[90vh] overflow-y-auto">
-      <h3 id="modal-titulo" class="font-bold text-lg text-slate-900 border-b border-slate-100 pb-2">
-        Registrar Nuevo Trámite
-      </h3>
-
-      <form id="form-tramite" onsubmit="guardarTramite(event)" class="space-y-3 text-xs">
-        <input type="hidden" id="tramite-id-bd" />
-
-        <div>
-          <label for="tramite-codigo" class="font-semibold text-slate-700 block mb-1">Código del Trámite</label>
-          <input
-            type="text"
-            id="tramite-codigo"
-            required
-            placeholder="Ej. T_001"
-            class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#004494] focus:outline-none"
-          />
-        </div>
-
-        <div>
-          <label for="tramite-nombre" class="font-semibold text-slate-700 block mb-1">Nombre del Procedimiento</label>
-          <input
-            type="text"
-            id="tramite-nombre"
-            required
-            placeholder="Nombre completo según TUPA"
-            class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#004494] focus:outline-none"
-          />
-        </div>
-
-        <div class="grid grid-cols-2 gap-2">
-          <div>
-            <label for="tramite-costo" class="font-semibold text-slate-700 block mb-1">Costo (S/)</label>
-            <input
-              type="text"
-              id="tramite-costo"
-              placeholder="Ej. S/ 185.50 o Gratuito"
-              class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#004494] focus:outline-none"
-            />
+  {% else %}
+  <div class="admin-layout">
+    <aside class="sidebar" aria-label="Navegación administrativa">
+      <a class="brand-plate" href="/" aria-label="Ir al portal ciudadano"><img src="{{ url_for('static', filename='images/logo-mdjlo.png') }}" width="260" height="117" alt="Municipalidad Distrital de José Leonardo Ortiz" /></a>
+      <span class="sidebar-label">ESPACIO DE ADMINISTRACIÓN</span>
+      <nav class="sidebar-nav">
+        <a class="nav-item active" href="{{ url_for('admin.admin_page') }}" aria-current="page">{{ icon('grid') }}<span>Trámites municipales</span>{{ icon('chevron', 15) }}</a>
+        <a class="nav-item" href="/">{{ icon('back') }}<span>Portal ciudadano</span></a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-note">{{ icon('shield', 20) }}<p>Gestión responsable.<br /><span>Mejor orientación ciudadana.</span></p></div>
+        <div class="sidebar-session"><span class="avatar">{{ usuario.username[0]|upper }}</span><div><strong>{{ usuario.username }}</strong><span>Administrador</span></div></div>
+        <button type="button" class="logout-button" data-logout>{{ icon('logout', 18) }} Cerrar sesión</button>
+      </div>
+    </aside>
+    <div class="main-column">
+      <header class="admin-topbar">
+        <div class="topbar-title"><span class="mobile-mark">JLO</span><span>Administración <span class="breadcrumb-separator">/</span> <strong>Catálogo de trámites</strong></span></div>
+        <div class="topbar-account"><span class="session-dot"></span><span>Sesión de <strong>{{ usuario.username }}</strong></span><button type="button" class="icon-button mobile-logout" data-logout aria-label="Cerrar sesión">{{ icon('logout', 18) }}</button></div>
+      </header>
+      <main class="dashboard" id="contenido">
+        <section class="page-heading">
+          <div><span class="eyebrow">CATÁLOGO MUNICIPAL</span><h1>Gestión de trámites</h1><p>Organiza y actualiza la información que orienta a nuestros ciudadanos.</p></div>
+          <button type="button" class="button gold" id="nuevo-tramite">{{ icon('plus', 18) }} Nuevo trámite</button>
+        </section>
+        <section class="stats-grid" aria-label="Resumen del catálogo">
+          <article class="stat-card"><span class="stat-icon blue">{{ icon('file', 22) }}</span><div><span>Trámites registrados</span><strong id="total-tramites">—</strong></div><span class="stat-note">Catálogo TUPA</span></article>
+          <article class="stat-card"><span class="stat-icon amber">{{ icon('list', 22) }}</span><div><span>Requisitos documentados</span><strong id="total-requisitos">—</strong></div><span class="stat-note">Información disponible</span></article>
+          <article class="stat-card"><span class="stat-icon teal">{{ icon('search', 22) }}</span><div><span>Resultados en esta vista</span><strong id="total-resultados">—</strong></div><span class="stat-note">Según tu búsqueda</span></article>
+        </section>
+        <section class="catalog-card" aria-labelledby="catalog-title" id="pantalla-dashboard">
+          <div class="catalog-heading"><div><h2 id="catalog-title">Trámites y requisitos <span class="count-pill" id="catalog-count">—</span></h2><p>Consulta el catálogo o selecciona un trámite para editar su información.</p></div><button type="button" class="button subtle" id="actualizar-catalogo">{{ icon('refresh', 17) }} Actualizar</button></div>
+          <div class="catalog-toolbar">
+            <div class="search-field">{{ icon('search', 19) }}<label class="sr-only" for="filtro-busqueda">Buscar trámites por código o nombre</label><input id="filtro-busqueda" type="search" placeholder="Buscar por código o nombre del trámite…" aria-label="Buscar trámites por código o nombre" autocomplete="off" /></div>
+            <div class="sort-field"><label for="orden-tabla">Ordenar por</label><select id="orden-tabla"><option value="codigo-asc">Código: ascendente</option><option value="codigo-desc">Código: descendente</option><option value="nombre-asc">Nombre: A a Z</option><option value="nombre-desc">Nombre: Z a A</option></select></div>
           </div>
-          <div>
-            <label for="tramite-plazo" class="font-semibold text-slate-700 block mb-1">Plazo de Atención</label>
-            <input
-              type="text"
-              id="tramite-plazo"
-              placeholder="Ej. 3 días hábiles"
-              class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#004494] focus:outline-none"
-            />
+          <div class="table-scroll" id="tabla-scroll" role="region" aria-label="Catálogo de trámites con desplazamiento" tabindex="0" aria-describedby="table-hint">
+            <table id="tabla-tramites"><caption class="sr-only">Catálogo de trámites municipales y acciones de administración</caption><thead><tr><th scope="col">CÓDIGO</th><th scope="col">NOMBRE DEL TRÁMITE</th><th scope="col">COSTO</th><th scope="col">PLAZO</th><th scope="col">REQUISITOS</th><th scope="col" class="actions-column">ACCIONES</th></tr></thead><tbody id="tbody-tramites"><tr><td colspan="6" class="table-state" role="status">Cargando catálogo…</td></tr></tbody></table>
           </div>
-        </div>
-
-        <div>
-          <label for="tramite-requisitos" class="font-semibold text-slate-700 block mb-1">Requisitos (Uno por línea)</label>
-          <textarea
-            id="tramite-requisitos"
-            rows="4"
-            placeholder="Escribe cada requisito separado por un salto de línea..."
-            class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#004494] focus:outline-none"
-          ></textarea>
-        </div>
-
-        <div class="flex justify-end gap-2 pt-3 border-t border-slate-100">
-          <button
-            type="button"
-            onclick="cerrarModal()"
-            class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-xl"
-          >
-            Cancelar
-          </button>
-          <button
-            type="submit"
-            class="px-4 py-2 bg-[#ffc107] hover:bg-amber-400 text-slate-950 font-bold rounded-xl shadow-xs"
-          >
-            Guardar Trámite
-          </button>
-        </div>
-      </form>
+          <div class="catalog-footer"><p id="resultados-texto" role="status" aria-live="polite">Consultando trámites…</p><span id="table-hint">Desplázate dentro de la tabla para ver más registros.</span></div>
+        </section>
+        <footer class="dashboard-footer"><span>Municipalidad Distrital de José Leonardo Ortiz</span><span>Gestión de procedimientos administrativos</span></footer>
+      </main>
     </div>
   </div>
-
-  <footer class="bg-[#002244] text-slate-300 text-xs py-6 border-t border-blue-950 mt-auto">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-      <p>© 2026 Municipalidad Distrital de José Leonardo Ortiz. Todos los derechos reservados.</p>
-      <div class="flex items-center space-x-4 text-[11px]">
-        <span>TUPA Vigente</span>
-        <span>•</span>
-        <span>Mesa de Partes Virtual</span>
-        <span>•</span>
-        <span class="text-amber-400 font-semibold">Sistema Inteligente NLP</span>
-      </div>
-    </div>
-  </footer>
-
-  <!-- SCRIPT JS DEL DASHBOARD -->
-  <script>
-    let tramitesData = [];
-
-    async function ejecutarLogin(e) {
-      e.preventDefault();
-      const usuario = document.getElementById('login-usuario').value.trim();
-      const password = document.getElementById('login-password').value.trim();
-      const errorDiv = document.getElementById('login-error');
-      errorDiv.classList.add('hidden');
-
-      try {
-        const response = await fetch('/api/admin/login', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ usuario, password })
-        });
-        const data = await response.json();
-
-        if (response.ok && data.status === 'success') {
-          mostrarDashboard(data.username || usuario);
-        } else {
-          errorDiv.innerText = data.mensaje || 'Usuario o clave incorrecta';
-          errorDiv.classList.remove('hidden');
-        }
-      } catch (err) {
-        errorDiv.innerText = 'Error de conexión con el servidor. Intente nuevamente.';
-        errorDiv.classList.remove('hidden');
-      }
-    }
-
-    function mostrarDashboard(user) {
-      document.getElementById('pantalla-login').classList.add('hidden');
-      document.getElementById('pantalla-dashboard').classList.remove('hidden');
-      document.getElementById('session-badge').classList.remove('hidden');
-      document.getElementById('session-badge').classList.add('flex');
-      document.getElementById('current-username').innerText = user;
-      cargarTramites();
-    }
-
-    async function cerrarSesion() {
-      try {
-        await fetch('/api/admin/logout', { method: 'POST' });
-      } catch (_) {}
-      document.getElementById('pantalla-dashboard').classList.add('hidden');
-      document.getElementById('session-badge').classList.add('hidden');
-      document.getElementById('session-badge').classList.remove('flex');
-      document.getElementById('pantalla-login').classList.remove('hidden');
-    }
-
-    async function cargarTramites() {
-      try {
-        const res = await fetch('/api/admin/tramites');
-        if (res.status === 401) {
-          cerrarSesion();
-          mostrarAlerta('Tu sesión ha expirado. Por favor, inicia sesión nuevamente.', 'error');
-          return;
-        }
-        const data = await res.json();
-        if (res.ok && data.tramites) {
-          tramitesData = data.tramites;
-          renderTabla(tramitesData);
-        }
-      } catch (err) {
-        mostrarAlerta('No se pudo conectar al servidor.', 'error');
-      }
-    }
-
-    function renderTabla(lista) {
-      const tbody = document.getElementById('tbody-tramites');
-      tbody.innerHTML = '';
-
-      if (lista.length === 0) {
-        const query = (document.getElementById('filtro-busqueda').value || '').trim();
-        const msg = query ? 'No se encontraron trámites que coincidan con la búsqueda.' : 'No hay trámites registrados en el catálogo del TUPA.';
-        tbody.innerHTML = `<tr><td colspan="6" class="text-center py-8 text-slate-400 text-xs font-medium">${msg}</td></tr>`;
-        return;
-      }
-
-      lista.forEach(t => {
-        const reqCount = t.requisitos ? t.requisitos.length : 0;
-        const tr = document.createElement('tr');
-        tr.className = 'hover:bg-slate-50/80 transition-colors';
-
-        const tdId = document.createElement('td');
-        tdId.className = 'py-3.5 px-4 font-mono font-bold text-slate-900';
-        tdId.textContent = t.id_tramite;
-
-        const tdNombre = document.createElement('td');
-        tdNombre.className = 'py-3.5 px-4 font-medium max-w-xs';
-        tdNombre.textContent = t.nombre;
-
-        const tdCosto = document.createElement('td');
-        tdCosto.className = 'py-3.5 px-4';
-        const spanCosto = document.createElement('span');
-        spanCosto.className = 'inline-flex items-center px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-semibold';
-        spanCosto.textContent = t.costo || 'Gratuito';
-        tdCosto.appendChild(spanCosto);
-
-        const tdPlazo = document.createElement('td');
-        tdPlazo.className = 'py-3.5 px-4';
-        const spanPlazo = document.createElement('span');
-        spanPlazo.className = 'inline-flex items-center px-2 py-0.5 rounded-md bg-blue-50 text-blue-800 border border-blue-200 text-xs font-semibold';
-        spanPlazo.textContent = t.plazo || 'Inmediato';
-        tdPlazo.appendChild(spanPlazo);
-
-        const tdReq = document.createElement('td');
-        tdReq.className = 'py-3.5 px-4 text-xs text-slate-500';
-        tdReq.textContent = `${reqCount} requisitos`;
-
-        const tdAcciones = document.createElement('td');
-        tdAcciones.className = 'py-3.5 px-4 text-right space-x-1';
-
-        const btnEditar = document.createElement('button');
-        btnEditar.className = 'px-2.5 py-1 text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg text-xs font-semibold transition';
-        btnEditar.textContent = 'Editar';
-        btnEditar.setAttribute('aria-label', `Editar trámite ${t.id_tramite}`);
-        btnEditar.onclick = () => abrirModalEditar(t.id_tramite);
-
-        const btnEliminar = document.createElement('button');
-        btnEliminar.className = 'px-2.5 py-1 text-slate-600 hover:text-red-600 hover:bg-red-50 rounded-lg text-xs font-semibold transition';
-        btnEliminar.textContent = 'Eliminar';
-        btnEliminar.setAttribute('aria-label', `Eliminar trámite ${t.id_tramite}`);
-        btnEliminar.onclick = () => eliminarTramite(t.id_tramite);
-
-        tdAcciones.appendChild(btnEditar);
-        tdAcciones.appendChild(btnEliminar);
-
-        tr.appendChild(tdId);
-        tr.appendChild(tdNombre);
-        tr.appendChild(tdCosto);
-        tr.appendChild(tdPlazo);
-        tr.appendChild(tdReq);
-        tr.appendChild(tdAcciones);
-
-        tbody.appendChild(tr);
-      });
-    }
-
-    function filtrarTabla() {
-      const query = document.getElementById('filtro-busqueda').value.toLowerCase();
-      const filtrados = tramitesData.filter(t => t.nombre.toLowerCase().includes(query) || t.id_tramite.toLowerCase().includes(query));
-      renderTabla(filtrados);
-    }
-
-    function abrirModalNuevo() {
-      document.getElementById('modal-titulo').innerText = 'Registrar Nuevo Trámite';
-      document.getElementById('tramite-id-bd').value = '';
-      document.getElementById('tramite-codigo').value = '';
-      document.getElementById('tramite-nombre').value = '';
-      document.getElementById('tramite-costo').value = '';
-      document.getElementById('tramite-plazo').value = '';
-      document.getElementById('tramite-requisitos').value = '';
-      document.getElementById('modal-tramite').classList.remove('hidden');
-    }
-
-    function abrirModalEditar(id_tramite) {
-      const item = tramitesData.find(t => t.id_tramite === id_tramite);
-      if (!item) return;
-
-      document.getElementById('modal-titulo').innerText = 'Editar Trámite del TUPA';
-      document.getElementById('tramite-id-bd').value = item.id || item.id_tramite;
-      document.getElementById('tramite-codigo').value = item.id_tramite;
-      document.getElementById('tramite-nombre').value = item.nombre;
-      document.getElementById('tramite-costo').value = item.costo || '';
-      document.getElementById('tramite-plazo').value = item.plazo || '';
-      document.getElementById('tramite-requisitos').value = item.requisitos ? item.requisitos.join('\n') : '';
-      document.getElementById('modal-tramite').classList.remove('hidden');
-    }
-
-    function cerrarModal() {
-      document.getElementById('modal-tramite').classList.add('hidden');
-    }
-
-    async function guardarTramite(e) {
-      e.preventDefault();
-      const idBd = document.getElementById('tramite-id-bd').value;
-      const codigo = document.getElementById('tramite-codigo').value.trim();
-      const nombre = document.getElementById('tramite-nombre').value.trim();
-      const costo = document.getElementById('tramite-costo').value.trim();
-      const plazo = document.getElementById('tramite-plazo').value.trim();
-      const reqText = document.getElementById('tramite-requisitos').value.trim();
-      const requisitos = reqText ? reqText.split('\n').filter(r => r.trim() !== '') : [];
-
-      const body = { id_tramite: codigo, nombre, costo, plazo, requisitos };
-      const esEditar = Boolean(idBd);
-      const url = esEditar ? `/api/admin/tramites/${idBd}` : '/api/admin/tramites';
-      const method = esEditar ? 'PUT' : 'POST';
-
-      try {
-        const res = await fetch(url, {
-          method,
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(body)
-        });
-        if (res.status === 401) {
-          cerrarModal();
-          cerrarSesion();
-          mostrarAlerta('Tu sesión ha expirado. Por favor, inicia sesión nuevamente.', 'error');
-          return;
-        }
-        const data = await res.json();
-
-        if (res.ok && data.status === 'success') {
-          mostrarAlerta(data.mensaje || 'Guardado exitosamente', 'exito');
-          cerrarModal();
-          cargarTramites();
-        } else {
-          mostrarAlerta(data.mensaje || 'Error al guardar', 'error');
-        }
-      } catch (err) {
-        mostrarAlerta('Error en la comunicación con el servidor.', 'error');
-      }
-    }
-
-    async function eliminarTramite(id_tramite) {
-      if (!confirm(`¿Estás seguro de que deseas eliminar el trámite con código ${id_tramite}? Esta acción no se puede deshacer.`)) return;
-
-      try {
-        const res = await fetch(`/api/admin/tramites/${id_tramite}`, { method: 'DELETE' });
-        if (res.status === 401) {
-          cerrarSesion();
-          mostrarAlerta('Tu sesión ha expirado. Por favor, inicia sesión nuevamente.', 'error');
-          return;
-        }
-        const data = await res.json();
-        if (res.ok && data.status === 'success') {
-          mostrarAlerta(data.mensaje || 'Eliminado correctamente', 'exito');
-          cargarTramites();
-        } else {
-          mostrarAlerta(data.mensaje || 'No se pudo eliminar', 'error');
-        }
-      } catch (err) {
-        mostrarAlerta('Error al intentar eliminar.', 'error');
-      }
-    }
-
-    function mostrarAlerta(msg, tipo) {
-      const box = document.getElementById('alerta-box');
-      const icono = document.getElementById('alerta-icono');
-      const texto = document.getElementById('alerta-mensaje');
-
-      icono.innerText = tipo === 'exito' ? '✅' : '⚠️';
-      texto.innerText = msg;
-      box.className = `p-4 rounded-2xl shadow-md border flex items-center justify-between transition-all ${tipo === 'exito' ? 'bg-emerald-50 border-emerald-200 text-emerald-900' : 'bg-red-50 border-red-200 text-red-900'}`;
-      box.classList.remove('hidden');
-
-      setTimeout(() => cerrarAlerta(), 4000);
-    }
-
-    function cerrarAlerta() {
-      document.getElementById('alerta-box').classList.add('hidden');
-    }
-  </script>
+  <dialog id="modal-tramite" class="modal" aria-labelledby="modal-titulo" aria-describedby="modal-description">
+    <div class="modal-heading"><div><span class="eyebrow">CATÁLOGO MUNICIPAL</span><h2 id="modal-titulo">Nuevo trámite</h2><p id="modal-description">Completa la información tal como debe consultarla el ciudadano.</p></div><button type="button" class="icon-button" data-close="modal-tramite" aria-label="Cerrar formulario">{{ icon('close') }}</button></div>
+    <form id="form-tramite"><input type="hidden" id="tramite-id-bd" /><div class="modal-body">
+      <p class="required-note">Los campos con <span>*</span> son obligatorios.</p>
+      <div id="tramite-error" class="inline-message error" role="alert" hidden></div>
+      <div class="field"><label for="tramite-codigo">Código del trámite <span>*</span></label><input id="tramite-codigo" required pattern="T_[0-9]{3}" maxlength="5" placeholder="T_001" title="Usa el formato T_001" /><small>Formato: T_ seguido de tres números.</small></div>
+      <div class="field"><label for="tramite-nombre">Nombre del procedimiento <span>*</span></label><textarea id="tramite-nombre" rows="2" required maxlength="1024" placeholder="Nombre completo según el TUPA"></textarea></div>
+      <div class="field-row"><div class="field"><label for="tramite-costo">Costo</label><input id="tramite-costo" maxlength="100" placeholder="Ej. S/ 185.50 o Gratuito" /></div><div class="field"><label for="tramite-plazo">Plazo de atención</label><input id="tramite-plazo" maxlength="100" placeholder="Ej. 3 días hábiles" /></div></div>
+      <div class="field"><label for="tramite-requisitos">Requisitos <span>*</span></label><textarea id="tramite-requisitos" rows="6" required placeholder="Escribe un requisito por línea"></textarea><small>Cada línea se mostrará como un requisito independiente.</small></div>
+    </div><div class="modal-footer"><button type="button" class="button secondary" data-close="modal-tramite">Cancelar</button><button type="submit" class="button primary" id="guardar-tramite">Guardar trámite</button></div></form>
+  </dialog>
+  <dialog id="modal-eliminar" class="modal delete-modal" aria-labelledby="eliminar-titulo"><div class="modal-body"><span class="delete-symbol">{{ icon('file', 25) }}</span><h2 id="eliminar-titulo">¿Eliminar este trámite?</h2><p>Se eliminarán el trámite y sus requisitos asociados. Esta acción no se puede deshacer.</p><div class="delete-record"><strong id="eliminar-codigo"></strong><span id="eliminar-nombre"></span></div><p id="eliminar-error" class="inline-message error" role="alert" hidden></p></div><div class="modal-footer"><button type="button" class="button secondary" data-close="modal-eliminar" autofocus>Cancelar</button><button type="button" class="button danger" id="confirmar-eliminar">Sí, eliminar trámite</button></div></dialog>
+  <div id="alerta-box" class="toast" role="status" aria-live="polite" hidden><span id="alerta-mensaje"></span><button class="icon-button" id="cerrar-alerta" type="button" aria-label="Cerrar notificación">{{ icon('close', 18) }}</button></div>
+  {% endif %}
 </body>
 </html>

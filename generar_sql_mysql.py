@@ -54,7 +54,7 @@ lines = [
     "CREATE TABLE `tramites` (",
     "    `id` INT AUTO_INCREMENT PRIMARY KEY,",
     "    `id_tramite` VARCHAR(20) NOT NULL UNIQUE,",
-    "    `nombre` VARCHAR(255) NOT NULL,",
+    "    `nombre` VARCHAR(1024) NOT NULL,",
     "    `costo` VARCHAR(100) DEFAULT NULL,",
     "    `plazo` VARCHAR(100) DEFAULT NULL,",
     "    INDEX `idx_id_tramite` (`id_tramite`)",

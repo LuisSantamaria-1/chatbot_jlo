@@ -1,0 +1,458 @@
+{
+  "independientes": [
+    {
+      "numero": 1,
+      "consulta": "oe cuanto cuesta sacar la licensia pa mi bodega? es chiquita nomas"
+    },
+    {
+      "numero": 2,
+      "consulta": "kiero cambiar de giro mi tienda ya no vendo abarrotes ahora voi a vender ropa q tengo q hacer"
+    },
+    {
+      "numero": 3,
+      "consulta": "mi licencia de funcionamiento la perdi, me la robaron con la mochila, como saco otra"
+    },
+    {
+      "numero": 4,
+      "consulta": "ya cerre mi negocio, tengo q avisar a la muni o me siguen cobrando??"
+    },
+    {
+      "numero": 5,
+      "consulta": "le compre el local a un pata y quiero ponerlo a mi nombre, q papeles necesito"
+    },
+    {
+      "numero": 6,
+      "consulta": "cuanto sale la licencia para un restaurant grande, riesgo alto creo q es"
+    },
+    {
+      "numero": 7,
+      "consulta": "ya me demoro la licencia, cuantos dias son pe"
+    },
+    {
+      "numero": 8,
+      "consulta": "q es eso del ITSE, me dijeron q tengo q sacarlo para mi pollería"
+    },
+    {
+      "numero": 9,
+      "consulta": "mi certificado de defensa civil ya vencio, como lo renuevo y cuanto cuesta"
+    },
+    {
+      "numero": 10,
+      "consulta": "necesito el certificado de compatibilidad de uso antes de abrir mi negocio?"
+    },
+    {
+      "numero": 11,
+      "consulta": "quiero poner mi mototaxi en la asociacion, q requisitos piden"
+    },
+    {
+      "numero": 12,
+      "consulta": "mi tarjeta de operatividad del mototaxi se me perdio, cuanto cuesta el duplicado"
+    },
+    {
+      "numero": 13,
+      "consulta": "vendi mi moto y compre otra, como hago la baja y sustitucion"
+    },
+    {
+      "numero": 14,
+      "consulta": "hola, en cuanto tiempo renuevan la tarjeta de operatividad? ya casi se me vence"
+    },
+    {
+      "numero": 15,
+      "consulta": "quiero formar una empresa de mototaxis cuanto cuesta el permiso de operacion"
+    },
+    {
+      "numero": 16,
+      "consulta": "me equivoque en los datos de mi tarjeta de mototaxi q hago"
+    },
+    {
+      "numero": 17,
+      "consulta": "mi asociacion quiere ampliar la flota, q papeles pide la muni"
+    },
+    {
+      "numero": 18,
+      "consulta": "mi papa fallecio y tenia puesto en el mercado, puedo quedarme yo con el puesto??"
+    },
+    {
+      "numero": 19,
+      "consulta": "hay puestos abandonados en el mercado? como hago pa conseguir uno"
+    },
+    {
+      "numero": 20,
+      "consulta": "kiero cambiar lo q vendo en mi puesto del mercado, de frutas a abarrotes"
+    },
+    {
+      "numero": 21,
+      "consulta": "puedo arreglar el techo de mi puesto o necesito permiso"
+    },
+    {
+      "numero": 22,
+      "consulta": "como renuevo mi puesto del mercado, cuanto cuesta"
+    },
+    {
+      "numero": 23,
+      "consulta": "nos queremos casar mi novia y yo, q papeles hay q llevar"
+    },
+    {
+      "numero": 24,
+      "consulta": "cuanto sale casarse en la muni y q dias se demora todo"
+    },
+    {
+      "numero": 25,
+      "consulta": "kiero casarme en mi casa se puede? cuanto cuesta"
+    },
+    {
+      "numero": 26,
+      "consulta": "hay matrimonio comunitario? ese es mas barato verdad"
+    },
+    {
+      "numero": 27,
+      "consulta": "mi pareja es venezolana y nos queremos casar q documentos necesita"
+    },
+    {
+      "numero": 28,
+      "consulta": "quiero postergar mi matrimonio un mes se puede"
+    },
+    {
+      "numero": 29,
+      "consulta": "nos queremos divorciar los dos de acuerdo, q tenemos q hacer"
+    },
+    {
+      "numero": 30,
+      "consulta": "ya me separe hace 2 meses, como hago el divorcio final"
+    },
+    {
+      "numero": 31,
+      "consulta": "se puede casar el alcalde en persona? cuanto cobran"
+    },
+    {
+      "numero": 32,
+      "consulta": "tengo q registrar a mi perro en la muni? q piden"
+    },
+    {
+      "numero": 33,
+      "consulta": "mi perro es pitbull, hay q registrarlo de otra forma?"
+    },
+    {
+      "numero": 34,
+      "consulta": "voy a construir mi casita de 100 metros en mi lote, q licencia saco"
+    },
+    {
+      "numero": 35,
+      "consulta": "quiero hacer un segundo piso a mi casa"
+    },
+    {
+      "numero": 36,
+      "consulta": "mi casa la hice sin licencia hace años ahora la quiero regularizar"
+    },
+    {
+      "numero": 37,
+      "consulta": "me dieron licencia pero ya se vencio y no construi, la puedo renovar?"
+    },
+    {
+      "numero": 38,
+      "consulta": "cuanto cuesta la conformidad de obra, ya termine de construir"
+    },
+    {
+      "numero": 39,
+      "consulta": "kiero tumbar mi casa vieja de 2 pisos y hacer una nueva"
+    },
+    {
+      "numero": 40,
+      "consulta": "necesito cercar mi terreno de 30 metros q tramite es"
+    },
+    {
+      "numero": 41,
+      "consulta": "q es declaratoria de fabrica?"
+    },
+    {
+      "numero": 42,
+      "consulta": "quiero dividir mi terreno en 2 pa darle a mi hijo"
+    },
+    {
+      "numero": 43,
+      "consulta": "tengo 2 lotes juntos y los kiero unir en uno solo"
+    },
+    {
+      "numero": 44,
+      "consulta": "mi terreno es de chacra pero ya esta dentro de la ciudad, como lo lotizo"
+    },
+    {
+      "numero": 45,
+      "consulta": "cuanto demora aprobar una habilitacion urbana modalidad d"
+    },
+    {
+      "numero": 46,
+      "consulta": "necesito mi certificado de numeracion para tramitar la luz, cuanto es"
+    },
+    {
+      "numero": 47,
+      "consulta": "mi casa no tiene numero, como hago para q me pongan"
+    },
+    {
+      "numero": 48,
+      "consulta": "necesito papel de posesion pa que me instalen agua y desague"
+    },
+    {
+      "numero": 49,
+      "consulta": "q es el certificado de parametros urbanisticos y para q sirve"
+    },
+    {
+      "numero": 50,
+      "consulta": "quiero un certificado de jurisdiccion de mi terreno, mi terreno es de JLO o de otro distrito?"
+    },
+    {
+      "numero": 51,
+      "consulta": "cuanto cuesta el codigo catastral de mi casa"
+    },
+    {
+      "numero": 52,
+      "consulta": "mi casa esta toda rajada y se va caer, necesito algun papel q lo diga"
+    },
+    {
+      "numero": 53,
+      "consulta": "quiero conectar el agua y desague a mi casa, q permiso necesito"
+    },
+    {
+      "numero": 54,
+      "consulta": "voi a romper la pista para poner tuberias, necesito permiso?"
+    },
+    {
+      "numero": 55,
+      "consulta": "puedo dejar arena y ladrillos en la vereda mientras construyo"
+    },
+    {
+      "numero": 56,
+      "consulta": "quiero poner un letrero en mi tienda cuanto es el permiso"
+    },
+    {
+      "numero": 57,
+      "consulta": "mi letrero es con luces led, es el mismo tramite?"
+    },
+    {
+      "numero": 58,
+      "consulta": "voy a hacer una fiesta con orquesta en el local, q permiso necesito"
+    },
+    {
+      "numero": 59,
+      "consulta": "va venir un circo al distrito, q tiene q hacer el dueño"
+    },
+    {
+      "numero": 60,
+      "consulta": "q necesito pa el carnet sanitario de mi restaurante"
+    },
+    {
+      "numero": 61,
+      "consulta": "kiero pedir informacion publica, cuanto cobran por las copias"
+    },
+    {
+      "numero": 62,
+      "consulta": "somos un comite del vaso de leche, como nos registramos en la muni"
+    },
+    {
+      "numero": 63,
+      "consulta": "no estoy de acuerdo con lo q me resolvieron, puedo reclamar?"
+    },
+    {
+      "numero": 64,
+      "consulta": "q diferencia hay entre reconsideracion y apelacion"
+    },
+    {
+      "numero": 65,
+      "consulta": "hola buenas"
+    },
+    {
+      "numero": 66,
+      "consulta": "cuanto cuesta"
+    },
+    {
+      "numero": 67,
+      "consulta": "quiero un tramite"
+    },
+    {
+      "numero": 68,
+      "consulta": "donde queda la muni y hasta q hora atienden"
+    },
+    {
+      "numero": 69,
+      "consulta": "ps oe necesito una licencia"
+    },
+    {
+      "numero": 70,
+      "consulta": "kuanto tiempo demora todo eso"
+    },
+    {
+      "numero": 71,
+      "consulta": "como pago los arbitrios"
+    },
+    {
+      "numero": 72,
+      "consulta": "mi vecino construyo sin permiso, donde lo denuncio"
+    },
+    {
+      "numero": 73,
+      "consulta": "LICENSIA D FUNCIONAMIENTO URJENTEEE"
+    },
+    {
+      "numero": 74,
+      "consulta": "una licencia de construccion para un edificio de 6 pisos"
+    },
+    {
+      "numero": 75,
+      "consulta": "xfa necesito saber los requisitos para ser dueño de un puesto en el mercado y tbm cuanto cuesta el matrimonio civil"
+    },
+    {
+      "numero": 76,
+      "consulta": "cuantos dias tarda el matrimonio civil?"
+    },
+    {
+      "numero": 77,
+      "consulta": "es gratis el cese de actividades?"
+    },
+    {
+      "numero": 78,
+      "consulta": "cuanto cuesta el duplicado de la licencia"
+    },
+    {
+      "numero": 79,
+      "consulta": "la licencia provisional pa bodegas es gratis o se paga"
+    },
+    {
+      "numero": 80,
+      "consulta": "en q tiempo me entregan el certificado de numeracion"
+    }
+  ],
+  "conversacion": [
+    "hola quiero dividir un lote",
+    "quiero dividir un lote",
+    "quiero subdividir un lote",
+    "a cuanto vale eso?",
+    "quiero un tramite para hu",
+    "proyecto del estado",
+    "no mejor uno residencial",
+    "si",
+    "hu",
+    "uno residencial",
+    "terreno residencial",
+    "por etapas",
+    "por etapas",
+    "modificar por etapas",
+    "si",
+    "no me confundi es por residencial",
+    "hu por residencial",
+    "residencial",
+    "tmr",
+    "residencial",
+    "residenciaaaaaaaaaaaaaaaaaal",
+    "hu",
+    "ya no quiero nada",
+    "chau",
+    "tramite para hu",
+    "oe cuanto cuesta sacar la licensia pa mi bodega? es chiquita nomas",
+    "kiero cambiar de giro mi tienda ya no vendo abarrotes ahora voi a vender ropa q tengo q hacer",
+    "mi licencia de funcionamiento la perdi, me la robaron con la mochila, como saco otra",
+    "ya cerre mi negocio, tengo q avisar a la muni o me siguen cobrando?",
+    "si",
+    "le compre el local a un pata y quiero ponerlo a mi nombre, q papeles necesito",
+    "le compre el local a un pata y quiero ponerlo a mi nombre, q papeles necesito",
+    "cuanto sale la licencia para un restaurant grande, riesgo alto creo q es",
+    "ya me demoro la licencia, cuantos dias son pe",
+    "q es eso del ITSE, me dijeron q tengo q sacarlo para mi pollería",
+    "mi certificado de defensa civil ya vencio, como lo renuevo y cuanto cuesta",
+    "bajo",
+    "necesito el certificado de compatibilidad de uso antes de abrir mi negocio?",
+    "quiero poner mi mototaxi en la asociacion, q requisitos piden",
+    "mi tarjeta de operatividad del mototaxi se me perdio, cuanto cuesta el duplicado",
+    "vendi mi moto y compre otra, como hago la baja y sustitucion",
+    "hola, en cuanto tiempo renuevan la tarjeta de operatividad? ya casi se me vence",
+    "si",
+    "quiero formar una empresa de mototaxis cuanto cuesta el permiso de operacion",
+    "me equivoque en los datos de mi tarjeta de mototaxi q hago",
+    "mi asociacion quiere ampliar la flota, q papeles pide la muni",
+    "mi papa fallecio y tenia puesto en el mercado, puedo quedarme yo con el puesto??",
+    "hay puestos abandonados en el mercado? como hago pa conseguir uno",
+    "conseguir puesro",
+    "obtener pe",
+    "kiero cambiar lo q vendo en mi puesto del mercado, de frutas a abarrotes”",
+    "puedo arreglar el techo de mi puesto o necesito permiso",
+    "como renuevo mi puesto del mercado, cuanto cuesta",
+    "nos queremos casar mi novia y yo, q papeles hay q llevar",
+    "en la muni",
+    "cuanto sale casarse en la muni y q dias se demora todo",
+    "kiero casarme en mi casa se puede? cuanto cuesta",
+    "hay matrimonio comunitario? ese es mas barato verdad",
+    "mi pareja es venezolana y nos queremos casar q documentos necesita",
+    "quiero postergar mi matrimonio un mes se puede",
+    "nos queremos divorciar los dos de acuerdo, q tenemos q hacer",
+    "ya me separe hace 2 meses, como hago el divorcio final",
+    "se puede casar el alcalde en persona? cuanto cobran",
+    "tengo q registrar a mi perro en la muni? q piden",
+    "peligroso muerde mucho",
+    "mi perro es pitbull, hay q registrarlo de otra forma?",
+    "pelgoroso pe",
+    "peligroso",
+    "voy a construir mi casita de 100 metros en mi lote, q licencia saco",
+    "4",
+    "una sola",
+    "quiero hacer un segundo piso a mi casa",
+    "quiero dividir mi terreno en 2 pa darle a mi hijo",
+    "otro cosa",
+    "dividir el terreno pe",
+    "tengo 2 lotes juntos y los kiero unir en uno solo",
+    "mi terreno es de chacra pero ya esta dentro de la ciudad, como lo lotizo",
+    "cuanto demora aprobar una habilitacion urbana modalidad d",
+    "sin colindancia urbana",
+    "si",
+    "necesito mi certificado de numeracion para tramitar la luz, cuanto es",
+    "mi casa no tiene numero, como hago para q me pongan",
+    "asignar",
+    "necesito papel de posesion pa que me instalen agua y desague",
+    "q es el certificado de parametros urbanisticos y para q sirve",
+    "urbanisiticos",
+    "quiero un certificado de jurisdiccion de mi terreno, mi terreno es de JLO o de otro distrito?",
+    "cuanto cuesta el codigo catastral de mi casa",
+    "mi casa esta toda rajada y se va caer, necesito algun papel q lo diga",
+    "quiero conectar el agua y desague a mi casa, q permiso necesito",
+    "voi a romper la pista para poner tuberias, necesito permiso",
+    "puedo dejar arena y ladrillos en la vereda mientras construyo",
+    "quiero poner un letrero en mi tienda cuanto es el permiso",
+    "mi letrero es con luces led, es el mismo tramite?",
+    "voy a hacer una fiesta con orquesta en el local, q permiso necesito",
+    "si",
+    "va venir un circo al distrito, q tiene q hacer el dueño",
+    "q necesito pa el carnet sanitario de mi restaurante",
+    "kiero pedir informacion publica, cuanto cobran por las copias",
+    "somos un comite del vaso de leche, como nos registramos en la muni",
+    "no estoy de acuerdo con lo q me resolvieron, puedo reclamar?",
+    "si",
+    "q diferencia hay entre reconsideracion y apelacion",
+    "hola buenas",
+    "cuanto cuesta",
+    "chau",
+    "hola",
+    "cuanto cuesta",
+    "casarme",
+    "muni",
+    "muni",
+    "en la muni",
+    "quiero un tramite",
+    "donde queda la muni y hasta q hora atienden",
+    "ps oe necesito una licenci",
+    "kuanto tiempo demora todo eso",
+    "chau",
+    "hola",
+    "kuanto tiempo demora todo eso",
+    "como pago los arbitrios",
+    "mi vecino construyo sin permiso, donde lo denuncio",
+    "LICENSIA D FUNCIONAMIENTO URJENTEEE",
+    "una licencia de construccion para un edificio de 6 pisos",
+    "xfa necesito saber los requisitos para ser dueño de un puesto en el mercado y tbm cuanto cuesta el matrimonio civil",
+    "muni",
+    "en la muni",
+    "cuantos dias tarda el matrimonio civil?",
+    "en la muni",
+    "es gratis el cese de actividades?",
+    "cuanto cuesta el duplicado de la licencia",
+    "la licencia provisional pa bodegas es gratis o se paga",
+    "en q tiempo me entregan el certificado de numeracion"
+  ]
+}

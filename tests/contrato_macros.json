@@ -1,0 +1,673 @@
+{
+  "consultar_matrimonio_civil": {
+    "a": {
+      "id_tramite": "T_016"
+    },
+    "b": {
+      "id_tramite": "T_017"
+    },
+    "c": {
+      "id_tramite": "T_018"
+    },
+    "d": {
+      "id_tramite": "T_019"
+    },
+    "e": {
+      "id_tramite": "T_020"
+    },
+    "f": {
+      "id_tramite": "T_021"
+    },
+    "g": {
+      "id_tramite": "T_022"
+    }
+  },
+  "consultar_conexion_agua": {
+    "natural": {
+      "id_tramite": "T_025"
+    },
+    "juridica": {
+      "id_tramite": "T_026"
+    }
+  },
+  "consultar_publicidad_exterior": {
+    "a": {
+      "id_tramite": "T_007"
+    },
+    "b": {
+      "id_tramite": "T_060"
+    }
+  },
+  "consultar_certificacion_sanitaria": {
+    "a": {
+      "id_tramite": "T_028"
+    },
+    "b": {
+      "id_tramite": "T_063"
+    },
+    "c": {
+      "id_tramite": "T_064"
+    }
+  },
+  "consultar_registro_canino": {
+    "a": {
+      "id_tramite": "T_023"
+    },
+    "b": {
+      "id_tramite": "T_024"
+    }
+  },
+  "consultar_evento_publico": {
+    "a": {
+      "id_tramite": "T_030"
+    },
+    "b": {
+      "id_tramite": "T_062"
+    }
+  },
+  "consultar_tramite_vehicular": {
+    "a": {
+      "id_tramite": "T_045"
+    },
+    "b": {
+      "id_tramite": "T_011"
+    },
+    "c": {
+      "id_tramite": "T_049"
+    },
+    "d": {
+      "id_tramite": "T_012"
+    },
+    "e": {
+      "id_tramite": "T_247"
+    }
+  },
+  "consultar_gestion_flota_vehicular": {
+    "a": {
+      "id_tramite": "T_010"
+    },
+    "b": {
+      "id_tramite": "T_048"
+    },
+    "c": {
+      "id_tramite": "T_047"
+    },
+    "d": {
+      "id_tramite": "T_046"
+    }
+  },
+  "consultar_divorcio": {
+    "a": {
+      "id_tramite": "T_009"
+    },
+    "b": {
+      "id_tramite": "T_034"
+    }
+  },
+  "consultar_puesto_mercado": {
+    "a": {
+      "id_tramite": "T_014"
+    },
+    "b": {
+      "id_tramite": "T_050"
+    },
+    "c": {
+      "id_tramite": "T_051"
+    },
+    "d": {
+      "id_tramite": "T_052"
+    },
+    "e": {
+      "id_tramite": "T_053"
+    },
+    "f": {
+      "id_tramite": "T_054"
+    }
+  },
+  "consultar_numeracion_municipal": {
+    "a": {
+      "id_tramite": "T_015"
+    },
+    "b": {
+      "id_tramite": "T_055"
+    }
+  },
+  "consultar_catastro_predial": {
+    "a": {
+      "id_tramite": "T_057"
+    },
+    "b": {
+      "id_tramite": "T_058"
+    },
+    "c": {
+      "id_tramite": "T_059"
+    }
+  },
+  "consultar_recurso_administrativo": {
+    "a": {
+      "id_tramite": "T_029"
+    },
+    "b": {
+      "id_tramite": "T_070"
+    }
+  },
+  "consultar_habilitacion_urbana": {
+    "a": {
+      "id_tramite": "T_075"
+    },
+    "b": {
+      "id_tramite": "T_076"
+    },
+    "c": {
+      "id_tramite": "T_077",
+      "id_revisor": "T_078"
+    },
+    "d": {
+      "id_tramite": "T_079",
+      "id_revisor": "T_080"
+    },
+    "e": {
+      "id_tramite": "T_081",
+      "id_revisor": "T_082"
+    },
+    "f": {
+      "id_tramite": "T_083",
+      "id_revisor": "T_084"
+    },
+    "g": {
+      "id_tramite": "T_085",
+      "id_revisor": "T_086"
+    },
+    "h": {
+      "id_tramite": "T_087"
+    },
+    "i": {
+      "id_tramite": "T_088"
+    },
+    "j": {
+      "id_tramite": "T_089",
+      "id_revisor": "T_090"
+    },
+    "k": {
+      "id_tramite": "T_091",
+      "id_revisor": "T_092"
+    }
+  },
+  "consultar_lotes_urbanos": {
+    "a": {
+      "id_tramite": "T_074"
+    },
+    "b": {
+      "id_tramite": "T_061"
+    }
+  },
+  "consultar_licencia_cesionario": {
+    "a": {
+      "id_tramite": "T_071"
+    },
+    "b": {
+      "id_tramite": "T_072"
+    },
+    "c": {
+      "id_tramite": "T_073"
+    }
+  },
+  "consultar_itse": {
+    "a": {
+      "id_tramite": "T_100"
+    },
+    "b": {
+      "id_tramite": "T_101"
+    },
+    "c": {
+      "id_tramite": "T_093"
+    },
+    "d": {
+      "id_tramite": "T_094"
+    },
+    "e": {
+      "id_tramite": "T_095"
+    },
+    "f": {
+      "id_tramite": "T_096"
+    },
+    "g": {
+      "id_tramite": "T_097"
+    },
+    "h": {
+      "id_tramite": "T_098"
+    },
+    "i": {
+      "id_tramite": "T_102"
+    }
+  },
+  "consultar_licencia_construccion": {
+    "a": {
+      "id_tramite": "T_103"
+    },
+    "b": {
+      "id_tramite": "T_115",
+      "id_revisor": "T_116"
+    },
+    "c": {
+      "id_tramite": "T_127",
+      "id_revisor": "T_128"
+    },
+    "d": {
+      "id_tramite": "T_131",
+      "id_revisor": "T_132"
+    },
+    "e": {
+      "id_tramite": "T_133",
+      "id_revisor": "T_134"
+    }
+  },
+  "consultar_licencia_ampliacion_remodelacion": {
+    "a": {
+      "id_tramite": "T_104"
+    },
+    "b": {
+      "id_tramite": "T_105"
+    },
+    "c": {
+      "id_tramite": "T_108"
+    },
+    "d": {
+      "id_tramite": "T_119",
+      "id_revisor": "T_120"
+    },
+    "e": {
+      "id_tramite": "T_145",
+      "id_revisor": "T_146"
+    },
+    "f": {
+      "id_tramite": "T_157",
+      "id_revisor": "T_158"
+    }
+  },
+  "consultar_licencia_demolicion": {
+    "a": {
+      "id_tramite": "T_107"
+    },
+    "b": {
+      "id_tramite": "T_123",
+      "id_revisor": "T_124"
+    },
+    "c": {
+      "id_tramite": "T_141",
+      "id_revisor": "T_142"
+    },
+    "d": {
+      "id_tramite": "T_121",
+      "id_revisor": "T_122"
+    }
+  },
+  "consultar_licencia_cerco": {
+    "a": {
+      "id_tramite": "T_106"
+    },
+    "b": {
+      "id_tramite": "T_117",
+      "id_revisor": "T_118"
+    }
+  },
+  "consultar_licencia_edificacion_no_vivienda": {
+    "a": {
+      "id_tramite": "T_135",
+      "id_revisor": "T_136"
+    },
+    "b": {
+      "id_tramite": "T_149",
+      "id_revisor": "T_150"
+    },
+    "c": {
+      "id_tramite": "T_137",
+      "id_revisor": "T_138"
+    },
+    "d": {
+      "id_tramite": "T_151",
+      "id_revisor": "T_152"
+    },
+    "e": {
+      "id_tramite": "T_139",
+      "id_revisor": "T_140"
+    },
+    "f": {
+      "id_tramite": "T_153",
+      "id_revisor": "T_154"
+    },
+    "g": {
+      "id_tramite": "T_147",
+      "id_revisor": "T_148"
+    },
+    "h": {
+      "id_tramite": "T_155",
+      "id_revisor": "T_156"
+    },
+    "i": {
+      "id_tramite": "T_129",
+      "id_revisor": "T_130"
+    },
+    "j": {
+      "id_tramite": "T_143",
+      "id_revisor": "T_144"
+    }
+  },
+  "consultar_licencia_edificacion_estado": {
+    "a": {
+      "id_tramite": "T_109"
+    },
+    "b": {
+      "id_tramite": "T_110"
+    },
+    "c": {
+      "id_tramite": "T_111"
+    },
+    "d": {
+      "id_tramite": "T_112"
+    },
+    "e": {
+      "id_tramite": "T_113"
+    },
+    "f": {
+      "id_tramite": "T_114"
+    }
+  },
+  "consultar_modificacion_proyecto_edificacion": {
+    "a": {
+      "id_tramite": "T_190"
+    },
+    "b": {
+      "id_tramite": "T_191"
+    },
+    "c": {
+      "id_tramite": "T_192"
+    },
+    "d": {
+      "id_tramite": "T_193"
+    },
+    "e": {
+      "id_tramite": "T_194",
+      "id_revisor": "T_195"
+    },
+    "f": {
+      "id_tramite": "T_196",
+      "id_revisor": "T_197"
+    },
+    "g": {
+      "id_tramite": "T_198",
+      "id_revisor": "T_199"
+    },
+    "h": {
+      "id_tramite": "T_200"
+    },
+    "i": {
+      "id_tramite": "T_201",
+      "id_revisor": "T_202"
+    },
+    "j": {
+      "id_tramite": "T_203",
+      "id_revisor": "T_204"
+    },
+    "k": {
+      "id_tramite": "T_205",
+      "id_revisor": "T_206"
+    }
+  },
+  "consultar_anteproyecto_consulta": {
+    "a": {
+      "id_tramite": "T_207"
+    },
+    "b": {
+      "id_tramite": "T_208"
+    },
+    "c": {
+      "id_tramite": "T_209"
+    }
+  },
+  "consultar_conformidad_obra": {
+    "a": {
+      "id_tramite": "T_218"
+    },
+    "b": {
+      "id_tramite": "T_219"
+    },
+    "c": {
+      "id_tramite": "T_220"
+    },
+    "d": {
+      "id_tramite": "T_221"
+    },
+    "e": {
+      "id_tramite": "T_222"
+    },
+    "f": {
+      "id_tramite": "T_223"
+    },
+    "g": {
+      "id_tramite": "T_217"
+    }
+  },
+  "consultar_conformidad_obra_anticipada": {
+    "a": {
+      "id_tramite": "T_211"
+    },
+    "b": {
+      "id_tramite": "T_212"
+    },
+    "c": {
+      "id_tramite": "T_213"
+    },
+    "d": {
+      "id_tramite": "T_214"
+    },
+    "e": {
+      "id_tramite": "T_215"
+    },
+    "f": {
+      "id_tramite": "T_216"
+    }
+  },
+  "consultar_proyecto_integral_edificacion": {
+    "a": {
+      "id_tramite": "T_225"
+    },
+    "b": {
+      "id_tramite": "T_226"
+    },
+    "c": {
+      "id_tramite": "T_227"
+    },
+    "d": {
+      "id_tramite": "T_228"
+    },
+    "e": {
+      "id_tramite": "T_229"
+    },
+    "f": {
+      "id_tramite": "T_125",
+      "id_revisor": "T_126"
+    }
+  },
+  "consultar_proyecto_integral_habilitacion": {
+    "a": {
+      "id_tramite": "T_183"
+    },
+    "b": {
+      "id_tramite": "T_184"
+    },
+    "c": {
+      "id_tramite": "T_185"
+    },
+    "d": {
+      "id_tramite": "T_186"
+    },
+    "e": {
+      "id_tramite": "T_187"
+    }
+  },
+  "consultar_prorroga_revalidacion_licencia": {
+    "a": {
+      "id_tramite": "T_230"
+    },
+    "b": {
+      "id_tramite": "T_231"
+    },
+    "c": {
+      "id_tramite": "T_188"
+    },
+    "d": {
+      "id_tramite": "T_189"
+    }
+  },
+  "consultar_modificacion_habilitacion_urbana": {
+    "a": {
+      "id_tramite": "T_159"
+    },
+    "b": {
+      "id_tramite": "T_160",
+      "id_revisor": "T_161"
+    },
+    "c": {
+      "id_tramite": "T_162",
+      "id_revisor": "T_163"
+    },
+    "d": {
+      "id_tramite": "T_164",
+      "id_revisor": "T_165"
+    }
+  },
+  "consultar_independizacion_terreno_rustico": {
+    "a": {
+      "id_tramite": "T_166"
+    },
+    "b": {
+      "id_tramite": "T_167"
+    },
+    "c": {
+      "id_tramite": "T_168"
+    },
+    "d": {
+      "id_tramite": "T_169"
+    },
+    "e": {
+      "id_tramite": "T_170"
+    },
+    "f": {
+      "id_tramite": "T_171"
+    }
+  },
+  "consultar_recepcion_obras_habilitacion": {
+    "a": {
+      "id_tramite": "T_172"
+    },
+    "b": {
+      "id_tramite": "T_173"
+    },
+    "c": {
+      "id_tramite": "T_174"
+    },
+    "d": {
+      "id_tramite": "T_175"
+    },
+    "e": {
+      "id_tramite": "T_176"
+    },
+    "f": {
+      "id_tramite": "T_177"
+    },
+    "g": {
+      "id_tramite": "T_178"
+    },
+    "h": {
+      "id_tramite": "T_179"
+    },
+    "i": {
+      "id_tramite": "T_180"
+    }
+  },
+  "consultar_regularizacion_obras": {
+    "a": {
+      "id_tramite": "T_181"
+    },
+    "b": {
+      "id_tramite": "T_182"
+    },
+    "c": {
+      "id_tramite": "T_224"
+    }
+  },
+  "consultar_libre_disponibilidad": {
+    "a": {
+      "id_tramite": "T_232"
+    },
+    "b": {
+      "id_tramite": "T_246"
+    }
+  },
+  "consultar_obras_via_publica": {
+    "a": {
+      "id_tramite": "T_233"
+    },
+    "b": {
+      "id_tramite": "T_240"
+    },
+    "c": {
+      "id_tramite": "T_241"
+    },
+    "d": {
+      "id_tramite": "T_242"
+    },
+    "e": {
+      "id_tramite": "T_243"
+    }
+  },
+  "consultar_telecomunicaciones": {
+    "a": {
+      "id_tramite": "T_235"
+    },
+    "b": {
+      "id_tramite": "T_236"
+    },
+    "c": {
+      "id_tramite": "T_237"
+    },
+    "d": {
+      "id_tramite": "T_238"
+    },
+    "e": {
+      "id_tramite": "T_239"
+    }
+  },
+  "consultar_licencia_funcionamiento": {
+    "a": {
+      "id_tramite": "T_065"
+    },
+    "b": {
+      "id_tramite": "T_066"
+    },
+    "c": {
+      "id_tramite": "T_067"
+    },
+    "d": {
+      "id_tramite": "T_068"
+    },
+    "e": {
+      "id_tramite": "T_069"
+    }
+  },
+  "consultar_gestion_licencia": {
+    "a": {
+      "id_tramite": "T_002"
+    },
+    "b": {
+      "id_tramite": "T_004"
+    },
+    "c": {
+      "id_tramite": "T_005"
+    },
+    "d": {
+      "id_tramite": "T_006"
+    }
+  }
+}

@@ -5,7 +5,7 @@ class Tramite(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     id_tramite = db.Column(db.String(20), unique=True, nullable=False, index=True)
-    nombre = db.Column(db.String(255), nullable=False)
+    nombre = db.Column(db.String(1024), nullable=False)
     costo = db.Column(db.String(100), nullable=True)
     plazo = db.Column(db.String(100), nullable=True)
 

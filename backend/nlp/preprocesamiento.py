@@ -41,17 +41,54 @@ sys.modules["__main__"].preprocesar_texto = preprocesar_texto
 # ---------------------------------------------------------------------------
 # Palabras clave de costo y plazo (subintenciones directas)
 # ---------------------------------------------------------------------------
-PALABRAS_CLAVE_COSTO = {"costo", "cuanto", "cuánto", "cuesta", "precio", "pago", "tasa", "monto", "valor", "arancel"}
-PALABRAS_CLAVE_PLAZO = {"plazo", "dias", "días", "tiempo", "demora", "tarda", "duracion", "duración", "cuando", "cuándo"}
+PALABRAS_CLAVE_COSTO = {"costo", "costos", "cuesta", "cuestan", "precio", "pago", "pagar", "tasa", "monto", "valor", "arancel", "tarifa", "cobran"}
+PALABRAS_CLAVE_PLAZO = {"plazo", "plazos", "demora", "demoran", "tarda", "tardan", "duracion"}
+
+
+def detectar_campos_consulta(texto_preprocesado):
+    """Campos solicitados, con límites de palabra y soporte para preguntas dobles."""
+    palabras = set(texto_preprocesado.split())
+    campos = []
+    pide_plazo = bool(palabras & PALABRAS_CLAVE_PLAZO or re.search(r"\b(?:cuanto tiempo|en que tiempo|que tiempo|cuantos dias|que dias|en cuantos dias|cuando (?:sale|entregan|me entregan|estara))\b", texto_preprocesado))
+    costo_explicito = (palabras & (PALABRAS_CLAVE_COSTO | {'gratis', 'gratuito', 'gratuita', 'barato', 'barata', 'paga'})
+                      or re.search(r'\bcuanto(?:\s+me)?\s+(?:sale|vale|costaria|saldria)\b', texto_preprocesado))
+    if costo_explicito or (not pide_plazo and re.search(r"\bcuanto(?:\s+me)?\s+(?:es|seria)\b", texto_preprocesado)):
+        campos.append("costo")
+    if pide_plazo:
+        campos.append("plazo")
+    if palabras & {"requisito", "requisitos", "documentos", "papeles", "piden", "documentacion"} or re.search(r'\b(?:que necesito|que documento|que debo llevar|que llevo|que presento)\b', texto_preprocesado):
+        campos.append("requisitos")
+    return tuple(campos)
+
+
+# Solo se reutiliza el trámite activo cuando la pregunta es elíptica.
+# Cualquier tema adicional (incluso ajeno a la muni) debe pasar por clasificación.
+_PALABRAS_SEGUIMIENTO = set("""
+y el la los las un una de del para por en a al que cual cuales cuanto cuantos
+me mi se es son sera seria lo le te tu usted con sin favor porfa porfis
+ese esa este esta esto eso esos esas mismo misma tramite tramites municipal
+puedes podria podrias puede decir decirme indicar indicarme saber dime dar dame
+quiero quisiera deseo necesito conocer ver mostrar muestrame repite repetir
+requisitos requisito documentos documento papeles piden necesitan necesario
+costo costos cuesta cuestan precio pago pagar tasa monto valor arancel tarifa
+cobran sale plazo plazos demora demoran tarda tardan duracion tiempo dias
+cuando entregan entreguen entregarme estara cuanto hola buenas gracias tambien
+entonces ahora nuevamente otra vez hola buenos dias tardes noches
+""".split())
+
+
+def es_seguimiento_contextual(texto_preprocesado):
+    return bool(detectar_campos_consulta(texto_preprocesado)) and set(texto_preprocesado.split()) <= _PALABRAS_SEGUIMIENTO
 
 
 def detectar_subintencion_directa(texto_preprocesado):
     """
     Intercepta palabras clave directas en la consulta.
     """
-    if any(palabra in texto_preprocesado for palabra in PALABRAS_CLAVE_PLAZO):
+    campos = detectar_campos_consulta(texto_preprocesado)
+    if "plazo" in campos:
         return "plazo"
-    if any(palabra in texto_preprocesado for palabra in PALABRAS_CLAVE_COSTO):
+    if "costo" in campos:
         return "costo"
     return None
 
@@ -93,10 +130,12 @@ def interpretar_confirmacion(texto_preprocesado):
     Devuelve "si", "no" o None para resolver sugerencias en zona de duda.
     """
     palabras = set(texto_preprocesado.split())
-    if palabras & PALABRAS_AFIRMATIVAS:
-        return "si"
     if palabras & PALABRAS_NEGATIVAS:
         return "no"
+    # "Sí, pero quiero otro trámite" no confirma la sugerencia anterior.
+    permitidas = PALABRAS_AFIRMATIVAS | {"es", "ese", "esa", "el", "la", "tramite", "por", "favor", "gracias"}
+    if palabras & PALABRAS_AFIRMATIVAS and palabras <= permitidas:
+        return "si"
     return None
 
 

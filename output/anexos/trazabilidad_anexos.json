@@ -1,0 +1,835 @@
+{
+  "fecha": "03/11/2026",
+  "suite_aprobada": 3556,
+  "casos": [
+    {
+      "tipo": "CN",
+      "codigo": "CN-01",
+      "requisito": "R-ANX-01",
+      "titulo": "Acceso al portal ciudadano",
+      "modulo": "Portal web municipal",
+      "descripcion": "El sistema debe entregar la página ciudadana y permitir localizar el acceso administrativo.",
+      "funcionalidad": "Disponibilidad funcional del portal y enlace de administración.",
+      "entradas": "GET / y consulta del enlace de acceso administrativo.",
+      "esperado": "HTTP 200 en la página principal; enlace de administración dirigido a /admin.",
+      "pasos": [
+        "Solicitar la página principal del sistema.",
+        "Comprobar el código HTTP y la presencia del enlace administrativo."
+      ],
+      "obtenido": "La página principal respondió HTTP 200 y se verificó el enlace /admin.",
+      "pruebas": [
+        "test_admin.py::test_paginas_html_responden_200_con_csp",
+        "test_politica_general.py::test_licencia_ambigua_y_acceso_admin"
+      ],
+      "observacion": "La prueba verifica la entrega HTTP del portal. No constituye una evaluación visual entre navegadores.",
+      "restriccion": "",
+      "ramas": "",
+      "tipo_requisito": "Funcional",
+      "instancias": 2
+    },
+    {
+      "tipo": "CN",
+      "codigo": "CN-02",
+      "requisito": "R-ANX-02",
+      "titulo": "Saludo y presentación del asistente",
+      "modulo": "Chat ciudadano",
+      "descripcion": "El asistente debe responder a saludos y consultas de presentación con mensajes comprensibles.",
+      "funcionalidad": "Interacción inicial y presentación de Leonardito.",
+      "entradas": "POST /api/chat con «hola» y «como te llamas».",
+      "esperado": "HTTP 200; respuesta de saludo o charla casual con un mensaje de presentación.",
+      "pasos": [
+        "Iniciar una sesión ciudadana nueva.",
+        "Enviar cada mensaje y revisar el estado y el texto recibido."
+      ],
+      "obtenido": "Las consultas devolvieron HTTP 200 y las categorías saludo y charla_casual correspondientes.",
+      "pruebas": [
+        "test_chat.py::test_api_chat_saludo",
+        "test_chat.py::test_api_chat_charla_casual"
+      ],
+      "observacion": "No se observaron diferencias respecto al resultado esperado en los escenarios ejecutados.",
+      "restriccion": "",
+      "ramas": "",
+      "tipo_requisito": "Funcional",
+      "instancias": 2
+    },
+    {
+      "tipo": "CN",
+      "codigo": "CN-03",
+      "requisito": "R-ANX-03",
+      "titulo": "Consulta de requisitos de un trámite",
+      "modulo": "Orientación sobre el TUPA",
+      "descripcion": "El chatbot debe identificar el trámite consultado y presentar sus requisitos.",
+      "funcionalidad": "Identificación de numeración municipal y consulta de requisitos.",
+      "entradas": "«requisitos para certificado de numeracion municipal».",
+      "esperado": "HTTP 200; status=success y trámite T_015.",
+      "pasos": [
+        "Abrir una sesión nueva.",
+        "Enviar la consulta completa.",
+        "Revisar el identificador y la respuesta."
+      ],
+      "obtenido": "Se identificó T_015 y se obtuvo una respuesta success con HTTP 200.",
+      "pruebas": [
+        "test_chat.py::test_api_chat_requisitos_tramite"
+      ],
+      "observacion": "No se observaron diferencias respecto al resultado esperado en los escenarios ejecutados.",
+      "restriccion": "",
+      "ramas": "",
+      "tipo_requisito": "Funcional",
+      "instancias": 1
+    },
+    {
+      "tipo": "CN",
+      "codigo": "CN-04",
+      "requisito": "R-ANX-03",
+      "titulo": "Lenguaje cotidiano y errores de escritura",
+      "modulo": "Comprensión de consultas ciudadanas",
+      "descripcion": "El chatbot debe admitir expresiones cotidianas y errores frecuentes sin exigir el título del trámite.",
+      "funcionalidad": "Comprensión de «casita», «tamos remodelando» y errores en «edificio».",
+      "entradas": "«en mi casita pe»; «tamos remodelando el edifcio multifamiliar» y variantes de «edifcio».",
+      "esperado": "Matrimonio a domicilio: T_020. Remodelación de edificio multifamiliar: T_145.",
+      "pasos": [
+        "Consultar un matrimonio y responder con el lugar en lenguaje cotidiano.",
+        "Consultar una ampliación y describir la remodelación con las variantes de escritura.",
+        "Comparar los trámites devueltos."
+      ],
+      "obtenido": "Las variantes ejecutadas conservaron T_020 para domicilio y T_145 para remodelación multifamiliar.",
+      "pruebas": [
+        "test_contexto_catalogo.py::test_transcripcion_del_ciudadano",
+        "test_contexto_catalogo.py::test_erratas_largas_sin_exigir_frase_exacta"
+      ],
+      "observacion": "No se observaron diferencias respecto al resultado esperado en los escenarios ejecutados.",
+      "restriccion": "",
+      "ramas": "",
+      "tipo_requisito": "Funcional",
+      "instancias": 4
+    },
+    {
+      "tipo": "CN",
+      "codigo": "CN-05",
+      "requisito": "R-ANX-04",
+      "titulo": "Aclaración de una consulta ambigua",
+      "modulo": "Diálogo sobre matrimonio civil",
+      "descripcion": "Cuando falte información para distinguir una alternativa, el chatbot debe formular una pregunta de aclaración.",
+      "funcionalidad": "Consulta ambigua y presentación sin opciones obligatorias por número.",
+      "entradas": "«quiero casarme» y «que?».",
+      "esperado": "Respuesta clarification; pregunta sobre el caso sin exigir números ni mostrar un trámite arbitrario.",
+      "pasos": [
+        "Enviar la solicitud general de matrimonio.",
+        "Revisar la pregunta de aclaración.",
+        "Pedir una explicación y verificar que continúe la aclaración."
+      ],
+      "obtenido": "Se obtuvo clarification; la respuesta no exigió «Respóndeme con» ni mostró una lista numerada.",
+      "pruebas": [
+        "test_dialogo_natural.py::test_aclaraciones_sin_numeros"
+      ],
+      "observacion": "No se observaron diferencias respecto al resultado esperado en los escenarios ejecutados.",
+      "restriccion": "",
+      "ramas": "",
+      "tipo_requisito": "Funcional",
+      "instancias": 1
+    },
+    {
+      "tipo": "CN",
+      "codigo": "CN-06",
+      "requisito": "R-ANX-05",
+      "titulo": "Costo y plazo con contexto conversacional",
+      "modulo": "Seguimiento de consultas",
+      "descripcion": "El asistente debe conservar el trámite activo para responder consultas posteriores de costo y plazo.",
+      "funcionalidad": "Seguimiento de numeración municipal sin repetir su nombre.",
+      "entradas": "Consultar numeración; después «cuanto cuesta», «gracias» y «y cuanto demora».",
+      "esperado": "T_015 se conserva; costo S/ 90.30; plazo 0 días hábiles, válido como atención inmediata.",
+      "pasos": [
+        "Consultar requisitos de numeración municipal.",
+        "Preguntar el costo.",
+        "Agradecer y preguntar el plazo sin repetir el trámite."
+      ],
+      "obtenido": "Se mantuvo T_015; el costo fue S/ 90.30 y el plazo registrado fue 0 días hábiles.",
+      "pruebas": [
+        "test_conversacion_ciudadana.py::test_conversacion_completa_y_cambio_de_tramite",
+        "test_chat.py::test_plazo_t015_se_muestra_como_dato_valido"
+      ],
+      "observacion": "No se observaron diferencias respecto al resultado esperado en los escenarios ejecutados.",
+      "restriccion": "",
+      "ramas": "",
+      "tipo_requisito": "Funcional",
+      "instancias": 2
+    },
+    {
+      "tipo": "CN",
+      "codigo": "CN-07",
+      "requisito": "R-ANX-05",
+      "titulo": "Consulta de costo sin trámite previo",
+      "modulo": "Seguimiento sin contexto",
+      "descripcion": "El chatbot debe solicitar el trámite cuando el ciudadano pregunta un costo sin contexto previo.",
+      "funcionalidad": "Recuperación de una consulta incompleta.",
+      "entradas": "Sesión nueva: «cuanto cuesta»; después «certificado de numeracion municipal».",
+      "esperado": "Primero solicita identificar el trámite; luego responde el costo S/ 90.30 de T_015.",
+      "pasos": [
+        "Abrir una sesión sin consultas anteriores.",
+        "Preguntar el costo sin indicar el trámite.",
+        "Indicar numeración municipal y comprobar el dato devuelto."
+      ],
+      "obtenido": "La primera respuesta fue fallback sin trámite definido; al precisarlo se respondió T_015 con S/ 90.30.",
+      "pruebas": [
+        "test_conversacion_ciudadana.py::test_sin_contexto_conserva_pregunta"
+      ],
+      "observacion": "No se observaron diferencias respecto al resultado esperado en los escenarios ejecutados.",
+      "restriccion": "",
+      "ramas": "",
+      "tipo_requisito": "Funcional",
+      "instancias": 1
+    },
+    {
+      "tipo": "CN",
+      "codigo": "CN-08",
+      "requisito": "R-ANX-06",
+      "titulo": "Rectificación de una alternativa elegida",
+      "modulo": "Diálogo sobre habilitación urbana",
+      "descripcion": "El ciudadano debe poder corregir su caso sin reiniciar la conversación ni escribir una letra de menú.",
+      "funcionalidad": "Cambio entre inversión pública, vivienda estatal y concesión.",
+      "entradas": "«inversion publica»; «nooo, era vivienda estatal me confundi»; «era por concesion».",
+      "esperado": "La secuencia resuelve T_075, T_076 y nuevamente T_075 dentro del contexto de habilitación urbana.",
+      "pasos": [
+        "Iniciar la consulta de habilitación urbana y precisar proyecto del Estado.",
+        "Indicar inversión pública.",
+        "Corregir a vivienda estatal y luego a concesión."
+      ],
+      "obtenido": "La conversación devolvió T_075 → T_076 → T_075, conservando el tema municipal.",
+      "pruebas": [
+        "test_contexto_catalogo.py::test_transcripcion_del_ciudadano"
+      ],
+      "observacion": "No se observaron diferencias respecto al resultado esperado en los escenarios ejecutados.",
+      "restriccion": "",
+      "ramas": "",
+      "tipo_requisito": "Funcional",
+      "instancias": 1
+    },
+    {
+      "tipo": "CN",
+      "codigo": "CN-09",
+      "requisito": "R-ANX-06",
+      "titulo": "Cambio de tema durante la conversación",
+      "modulo": "Diálogo entre trámites distintos",
+      "descripcion": "El chatbot debe permitir consultar otro trámite y actualizar el asunto de la conversación.",
+      "funcionalidad": "Transición de puesto de mercado a autorización de feria.",
+      "entradas": "«quiero tomar el puesto del mercado porque se murio mi tio el dueño»; después «como saco permiso para un puesto de feria?».",
+      "esperado": "Primera consulta: T_051. Nueva consulta: T_062, sin repetir el trámite anterior.",
+      "pasos": [
+        "Describir la sucesión del puesto de mercado.",
+        "Consultar su costo.",
+        "Solicitar después el permiso relacionado con una feria."
+      ],
+      "obtenido": "Se resolvió la sucesión como T_051 y la consulta de feria como T_062.",
+      "pruebas": [
+        "test_contexto_catalogo.py::test_transcripcion_del_ciudadano"
+      ],
+      "observacion": "No se observaron diferencias respecto al resultado esperado en los escenarios ejecutados.",
+      "restriccion": "",
+      "ramas": "",
+      "tipo_requisito": "Funcional",
+      "instancias": 1
+    },
+    {
+      "tipo": "CN",
+      "codigo": "CN-10",
+      "requisito": "R-ANX-07",
+      "titulo": "Explicación de un término del trámite",
+      "modulo": "Orientación sobre separación y divorcio",
+      "descripcion": "El asistente debe explicar términos del procedimiento sin interpretar la pregunta como una elección.",
+      "funcionalidad": "Explicación de separación y divorcio ulterior.",
+      "entradas": "«quiero divorciarme»; «que es eso»; «no se que es divorcio ulterior»; «no».",
+      "esperado": "Las preguntas reciben una explicación sin id_tramite; la respuesta posterior «no» resuelve T_009.",
+      "pasos": [
+        "Iniciar la consulta de divorcio.",
+        "Pedir las explicaciones indicadas.",
+        "Responder que no se tiene la separación aprobada."
+      ],
+      "obtenido": "Se recibieron respuestas explicar_concepto sin seleccionar un trámite; después se resolvió T_009.",
+      "pruebas": [
+        "test_respuestas_claras.py::test_explicar_conceptos_no_selecciona_el_tramite"
+      ],
+      "observacion": "No se observaron diferencias respecto al resultado esperado en los escenarios ejecutados.",
+      "restriccion": "",
+      "ramas": "",
+      "tipo_requisito": "Funcional",
+      "instancias": 1
+    },
+    {
+      "tipo": "CN",
+      "codigo": "CN-11",
+      "requisito": "R-ANX-08",
+      "titulo": "Atención de consultas fuera del ámbito municipal",
+      "modulo": "Límite temático del chatbot",
+      "descripcion": "El chatbot debe mantener su alcance en trámites y servicios del catálogo municipal.",
+      "funcionalidad": "Rechazo de consultas ajenas, con y sin trámite activo.",
+      "entradas": "«cuanto cuesta una pizza», «precio de bitcoin», «cuando juega peru» y consultas de receta o poema.",
+      "esperado": "Respuesta fallback sin datosTramite ni una ficha municipal tomada por error.",
+      "pasos": [
+        "Probar cada consulta en una sesión nueva.",
+        "Repetir las consultas después de activar un trámite municipal.",
+        "Verificar la ausencia de datos de un trámite en las respuestas."
+      ],
+      "obtenido": "Las diez combinaciones de consulta y contexto devolvieron fallback sin datosTramite.",
+      "pruebas": [
+        "test_conversacion_ciudadana.py::test_limite_municipal"
+      ],
+      "observacion": "No se observaron diferencias respecto al resultado esperado en los escenarios ejecutados.",
+      "restriccion": "",
+      "ramas": "",
+      "tipo_requisito": "Funcional",
+      "instancias": 10
+    },
+    {
+      "tipo": "CN",
+      "codigo": "CN-12",
+      "requisito": "R-ANX-09",
+      "titulo": "Respuesta ante frustración del ciudadano",
+      "modulo": "Atención conversacional",
+      "descripcion": "Las expresiones de molestia deben recibir una respuesta empática y permitir continuar la consulta municipal.",
+      "funcionalidad": "Detección de frustración y continuidad de un trámite anterior.",
+      "entradas": "Activar T_015; iniciar una consulta de licencia; «no me ayudas en nada, pesimo servicio»; «y cuanto cuesta».",
+      "esperado": "Respuesta frustration; el seguimiento del costo conserva T_015.",
+      "pasos": [
+        "Consultar numeración municipal.",
+        "Plantear una consulta de licencia y expresar frustración.",
+        "Preguntar el costo del trámite anterior."
+      ],
+      "obtenido": "Se obtuvo frustration y el seguimiento volvió a responder sobre T_015.",
+      "pruebas": [
+        "test_conversacion_ciudadana.py::test_frustracion_interrumpe_menu_y_conserva_tramite"
+      ],
+      "observacion": "No se observaron diferencias respecto al resultado esperado en los escenarios ejecutados.",
+      "restriccion": "",
+      "ramas": "",
+      "tipo_requisito": "Funcional",
+      "instancias": 1
+    },
+    {
+      "tipo": "CN",
+      "codigo": "CN-13",
+      "requisito": "R-ANX-10",
+      "titulo": "Validación de solicitudes vacías o incompletas",
+      "modulo": "API del chat",
+      "descripcion": "El sistema debe rechazar solicitudes sin un mensaje válido mediante respuestas controladas.",
+      "funcionalidad": "Tratamiento de mensaje vacío y cuerpo JSON sin mensaje.",
+      "entradas": "POST /api/chat con {\"mensaje\":\"\"} y con {}.",
+      "esperado": "HTTP 400; el mensaje vacío produce fallback y el cuerpo vacío produce error.",
+      "pasos": [
+        "Enviar una cadena vacía como mensaje.",
+        "Enviar un objeto JSON vacío.",
+        "Comprobar los códigos HTTP y los estados de respuesta."
+      ],
+      "obtenido": "Ambas solicitudes devolvieron HTTP 400; sus estados fueron fallback y error respectivamente.",
+      "pruebas": [
+        "test_chat.py::test_api_chat_mensaje_vacio",
+        "test_chat.py::test_api_chat_payload_invalido"
+      ],
+      "observacion": "No se observaron diferencias respecto al resultado esperado en los escenarios ejecutados.",
+      "restriccion": "",
+      "ramas": "",
+      "tipo_requisito": "Funcional",
+      "instancias": 2
+    },
+    {
+      "tipo": "CN",
+      "codigo": "CN-14",
+      "requisito": "R-ANX-11",
+      "titulo": "Despedida y cierre del contexto activo",
+      "modulo": "Cierre de conversación",
+      "descripcion": "La despedida debe cerrar la consulta y evitar reutilizar el trámite en una pregunta posterior sin contexto.",
+      "funcionalidad": "Finalización de la conversación y nueva consulta de costo.",
+      "entradas": "Completar una consulta; «adios»; después «cuanto cuesta».",
+      "esperado": "La despedida devuelve despedida; la nueva pregunta de costo no responde con el trámite cerrado.",
+      "pasos": [
+        "Realizar una conversación municipal.",
+        "Enviar la despedida.",
+        "Preguntar un costo sin volver a indicar el trámite."
+      ],
+      "obtenido": "Se obtuvo despedida y la consulta posterior de costo devolvió fallback.",
+      "pruebas": [
+        "test_conversacion_ciudadana.py::test_conversacion_completa_y_cambio_de_tramite"
+      ],
+      "observacion": "No se observaron diferencias respecto al resultado esperado en los escenarios ejecutados.",
+      "restriccion": "",
+      "ramas": "",
+      "tipo_requisito": "Funcional",
+      "instancias": 1
+    },
+    {
+      "tipo": "CN",
+      "codigo": "CN-15",
+      "requisito": "R-ANX-03",
+      "titulo": "Exactitud de los datos en los 239 trámites",
+      "modulo": "Catálogo municipal y respuestas del chat",
+      "descripcion": "Requisitos, costo y plazo deben corresponder al trámite consultado y mostrarse según la información solicitada.",
+      "funcionalidad": "Separación de campos y concordancia con el catálogo fuente.",
+      "entradas": "Cada uno de los 239 códigos del TUPA; luego «cuanto cuesta» y «cuanto demora».",
+      "esperado": "Nombre y requisitos correctos al inicio; costo y plazo correctos en sus consultas, sin añadir los otros campos.",
+      "pasos": [
+        "Recorrer los 239 registros del catálogo fuente.",
+        "Solicitar cada ficha y contrastar nombre y requisitos.",
+        "Preguntar costo y plazo por separado y compararlos con el mismo registro."
+      ],
+      "obtenido": "Los 239 casos parametrizados aprobaron la concordancia de datos y la separación de requisitos, costo y plazo.",
+      "pruebas": [
+        "test_respuestas_claras.py::test_campos_separados_para_cada_tramite"
+      ],
+      "observacion": "No se observaron diferencias respecto al resultado esperado en los escenarios ejecutados.",
+      "restriccion": "El CSV local validado es el oráculo de datos. Esta prueba verifica exactitud de fichas, no comprensión de toda frase posible.",
+      "ramas": "",
+      "tipo_requisito": "Funcional",
+      "instancias": 239
+    },
+    {
+      "tipo": "CN",
+      "codigo": "CN-16",
+      "requisito": "R-ANX-12",
+      "titulo": "Autenticación administrativa válida e inválida",
+      "modulo": "Administración y autenticación",
+      "descripcion": "Solo las credenciales administrativas válidas deben permitir iniciar una sesión.",
+      "funcionalidad": "Inicio de sesión con contraseña correcta e incorrecta.",
+      "entradas": "POST /api/admin/login con usuario admin y contraseña efímera del entorno de pruebas; repetir con contraseña incorrecta.",
+      "esperado": "Credenciales válidas: HTTP 200 y success. Contraseña incorrecta: HTTP 401 y error.",
+      "pasos": [
+        "Enviar las credenciales de la cuenta administrativa temporal.",
+        "Comprobar el inicio de sesión.",
+        "Repetir el envío con una contraseña incorrecta."
+      ],
+      "obtenido": "El acceso válido devolvió HTTP 200 y el intento con contraseña incorrecta devolvió HTTP 401.",
+      "pruebas": [
+        "test_admin.py::test_admin_login_correcto",
+        "test_admin.py::test_admin_login_password_incorrecto"
+      ],
+      "observacion": "No se observaron diferencias respecto al resultado esperado en los escenarios ejecutados.",
+      "restriccion": "Usar únicamente la cuenta efímera de pruebas. Las contraseñas y sus hashes no se incluyen en el anexo.",
+      "ramas": "",
+      "tipo_requisito": "Funcional",
+      "instancias": 2
+    },
+    {
+      "tipo": "CN",
+      "codigo": "CN-17",
+      "requisito": "R-ANX-12",
+      "titulo": "Bloqueo de acceso administrativo sin sesión",
+      "modulo": "Protección del panel y de la API",
+      "descripcion": "El panel y las operaciones administrativas deben exigir una sesión administrativa válida.",
+      "funcionalidad": "Acceso directo al panel y a operaciones CRUD sin autenticación.",
+      "entradas": "GET /admin; GET, POST, PUT y DELETE a rutas /api/admin/tramites sin sesión.",
+      "esperado": "El panel redirige a /admin/login; las operaciones de la API responden HTTP 401.",
+      "pasos": [
+        "Abrir un cliente sin sesión.",
+        "Solicitar directamente el panel.",
+        "Intentar listar, crear, editar y eliminar un trámite por API."
+      ],
+      "obtenido": "El panel no se entregó sin sesión y las operaciones administrativas probadas devolvieron HTTP 401.",
+      "pruebas": [
+        "test_admin.py::test_html_admin_exige_sesion_antes_de_enviar_panel",
+        "test_admin.py::test_admin_get_tramites_sin_sesion",
+        "test_admin.py::test_admin_post_tramite_sin_sesion",
+        "test_admin.py::test_admin_put_tramite_sin_sesion",
+        "test_admin.py::test_admin_delete_tramite_sin_sesion"
+      ],
+      "observacion": "No se observaron diferencias respecto al resultado esperado en los escenarios ejecutados.",
+      "restriccion": "",
+      "ramas": "",
+      "tipo_requisito": "Funcional",
+      "instancias": 8
+    },
+    {
+      "tipo": "CN",
+      "codigo": "CN-18",
+      "requisito": "R-ANX-13",
+      "titulo": "Creación edición y eliminación de un trámite",
+      "modulo": "Administración del catálogo TUPA",
+      "descripcion": "El administrador autenticado debe poder gestionar los registros del catálogo.",
+      "funcionalidad": "Operaciones CRUD sobre un trámite temporal.",
+      "entradas": "T_990, nombre de prueba, costo 15.00 soles, plazo 2 días hábiles y dos requisitos; actualizar nombre y costo a 25.00 soles.",
+      "esperado": "Creación HTTP 201; actualización HTTP 200; eliminación HTTP 200. El catálogo vuelve a 239 registros.",
+      "pasos": [
+        "Iniciar sesión administrativa.",
+        "Crear T_990 con sus datos de prueba.",
+        "Actualizar su nombre y costo.",
+        "Eliminar T_990 y comprobar el conteo final."
+      ],
+      "obtenido": "Se obtuvo la secuencia HTTP 201/200/200; el catálogo terminó con 239 trámites.",
+      "pruebas": [
+        "test_admin.py::test_admin_escritura_con_sesion_crud_y_limpieza"
+      ],
+      "observacion": "No se observaron diferencias respecto al resultado esperado en los escenarios ejecutados.",
+      "restriccion": "El alta y la eliminación se ejecutan en SQLite temporal; no se modifica el catálogo MySQL de uso real.",
+      "ramas": "",
+      "tipo_requisito": "Funcional",
+      "instancias": 1
+    },
+    {
+      "tipo": "CN",
+      "codigo": "CN-19",
+      "requisito": "R-ANX-13",
+      "titulo": "Rechazo de datos administrativos inválidos",
+      "modulo": "Validación del catálogo",
+      "descripcion": "El sistema debe impedir el registro de códigos inválidos o duplicados y de trámites sin requisitos.",
+      "funcionalidad": "Validaciones de alta administrativa.",
+      "entradas": "Alta con código de formato inválido; código TUPA existente; nombre mayor de 1024 caracteres; lista de requisitos vacía.",
+      "esperado": "HTTP 400 en formato, longitud o requisitos inválidos; HTTP 409 en código duplicado.",
+      "pasos": [
+        "Iniciar sesión administrativa.",
+        "Enviar cada variante inválida por separado.",
+        "Comparar los códigos de rechazo y comprobar que no se registra un trámite válido a partir del envío."
+      ],
+      "obtenido": "Las validaciones devolvieron HTTP 400 y el intento duplicado devolvió HTTP 409.",
+      "pruebas": [
+        "test_admin.py::test_admin_post_id_formato_invalido",
+        "test_admin.py::test_admin_post_codigo_duplicado",
+        "test_admin.py::test_admin_post_nombre_demasiado_largo",
+        "test_admin.py::test_admin_post_tramite_sin_requisitos"
+      ],
+      "observacion": "No se observaron diferencias respecto al resultado esperado en los escenarios ejecutados.",
+      "restriccion": "",
+      "ramas": "",
+      "tipo_requisito": "Funcional",
+      "instancias": 4
+    },
+    {
+      "tipo": "CN",
+      "codigo": "CN-20",
+      "requisito": "R-ANX-14",
+      "titulo": "Consulta administrativa del historial de conversaciones",
+      "modulo": "Monitoreo de conversaciones",
+      "descripcion": "El historial de conversaciones debe estar disponible para el administrador y protegido frente a consultas sin sesión.",
+      "funcionalidad": "Acceso autenticado al historial y respuesta paginada.",
+      "entradas": "GET /api/admin/conversaciones sin sesión; repetir autenticado con ?page=1&limit=10.",
+      "esperado": "Sin sesión: HTTP 401. Con sesión: HTTP 200, lista de conversaciones y metadatos del total.",
+      "pasos": [
+        "Solicitar el historial sin autenticación.",
+        "Iniciar sesión administrativa.",
+        "Solicitar la primera página y revisar la lista y los metadatos."
+      ],
+      "obtenido": "Se verificó HTTP 401 sin sesión y HTTP 200 con lista y total cuando la sesión fue válida.",
+      "pruebas": [
+        "test_log.py::test_admin_conversaciones_requiere_autenticacion",
+        "test_log.py::test_admin_conversaciones_con_sesion_paginado"
+      ],
+      "observacion": "No se observaron diferencias respecto al resultado esperado en los escenarios ejecutados.",
+      "restriccion": "",
+      "ramas": "",
+      "tipo_requisito": "Funcional",
+      "instancias": 2
+    },
+    {
+      "tipo": "CB",
+      "codigo": "CB-01",
+      "requisito": "R-ANX-03",
+      "titulo": "Normalización de texto y jerga peruana",
+      "modulo": "NLP / preprocesamiento de texto",
+      "descripcion": "La función preprocesar_texto debe producir una representación uniforme para las variantes léxicas previstas.",
+      "funcionalidad": "backend/nlp/preprocesamiento.py: preprocesar_texto; traducción de jerga.",
+      "entradas": "Diez entradas, entre ellas «trámite de numeración», «kiero lisencia altoke pa mi tienda» y «ayuda xfa».",
+      "esperado": "«tramite de numeracion»; «quiero licencia rapido para mi tienda»; «ayuda por favor», según cada entrada.",
+      "pasos": [
+        "Revisar la secuencia de normalización de la función.",
+        "Ejecutar los diez casos parametrizados.",
+        "Comparar cada cadena devuelta con su salida exacta esperada."
+      ],
+      "obtenido": "Los diez casos de normalización aprobaron sus comparaciones exactas.",
+      "pruebas": [
+        "test_nlp.py::test_preprocesamiento_y_jerga"
+      ],
+      "observacion": "No se observaron diferencias respecto al resultado esperado en los escenarios ejecutados.",
+      "restriccion": "",
+      "ramas": "Conversión a minúsculas; eliminación de tildes y puntuación; traducción de jerga y errores frecuentes.",
+      "tipo_requisito": "Funcional",
+      "instancias": 10
+    },
+    {
+      "tipo": "CB",
+      "codigo": "CB-02",
+      "requisito": "R-ANX-05",
+      "titulo": "Selección de campos de consulta",
+      "modulo": "NLP / interpretación de costo y plazo",
+      "descripcion": "La detección de subintenciones debe distinguir solicitudes de plazo, costo y textos que no piden esos datos.",
+      "funcionalidad": "backend/nlp/preprocesamiento.py: detectar_campos_consulta y detectar_subintencion_directa.",
+      "entradas": "«cuantos dias demora»; «cual es el horario de atencion de mesa de partes»; consulta de plazo de T_023.",
+      "esperado": "La primera entrada se interpreta como plazo; horario no activa plazo; la consulta de plazo de T_023 no añade costo.",
+      "pasos": [
+        "Identificar las condiciones léxicas de cada campo.",
+        "Ejecutar las consultas positivas y los fragmentos sin subintención.",
+        "Comprobar la respuesta de plazo sin precio adicional."
+      ],
+      "obtenido": "Se verificó plazo en la consulta de duración, ausencia de subintención para horario y separación del costo.",
+      "pruebas": [
+        "test_nlp.py::test_regla_costo_vs_plazo",
+        "test_nlp.py::test_regla_horario_no_activa_plazo",
+        "test_conversacion_ciudadana.py::test_fragmentos_no_activan_costo_o_plazo",
+        "test_respuestas_claras.py::test_nombre_y_valor_explicitos"
+      ],
+      "observacion": "No se observaron diferencias respecto al resultado esperado en los escenarios ejecutados.",
+      "restriccion": "",
+      "ramas": "Detección positiva de plazo; ausencia de coincidencias; prioridad del plazo sobre una interpretación genérica de costo.",
+      "tipo_requisito": "Funcional",
+      "instancias": 8
+    },
+    {
+      "tipo": "CB",
+      "codigo": "CB-03",
+      "requisito": "R-ANX-04",
+      "titulo": "Resolución estricta de intenciones macro",
+      "modulo": "NLP / resolver de alternativas",
+      "descripcion": "El resolver estricto debe resolver una única coincidencia y conservar la ambigüedad cuando no exista una elección inequívoca.",
+      "funcionalidad": "backend/nlp/clasificador.py: coincidencias_intencion_macro y resolver_intencion_macro.",
+      "entradas": "925 frases de 185 alternativas; consultas ambiguas de matrimonio; luz/luces; lotes/sublotes; otro/otra; error «subdividr».",
+      "esperado": "Las 925 frases resuelven su opción esperada; las entradas ambiguas permanecen sin resolución; no se invoca difflib en modo estricto.",
+      "pasos": [
+        "Revisar las ramas de selección explícita, coincidencia única y ambigüedad.",
+        "Ejecutar las frases de todas las alternativas.",
+        "Bloquear difflib mediante un control de prueba y verificar que el resolver estricto no lo utilice."
+      ],
+      "obtenido": "Aprobaron las 925 resoluciones y las comprobaciones de ambigüedad y límites de palabra sin difflib.",
+      "pruebas": [
+        "test_macros_dialogo.py::test_cada_opcion_con_resolver_real",
+        "test_macros_dialogo.py::test_ambiguedad_y_limites_sin_difflib"
+      ],
+      "observacion": "No se observaron diferencias respecto al resultado esperado en los escenarios ejecutados.",
+      "restriccion": "",
+      "ramas": "Cero coincidencias; coincidencia única; varias coincidencias; límites de palabra; desactivación de similitud difusa.",
+      "tipo_requisito": "Funcional",
+      "instancias": 926
+    },
+    {
+      "tipo": "CB",
+      "codigo": "CB-04",
+      "requisito": "R-ANX-06",
+      "titulo": "Acumulación de atributos en varios turnos",
+      "modulo": "Motor de diálogo / estado del caso",
+      "descripcion": "comprender debe acumular los datos compatibles y reducir los candidatos sin elegir por orden.",
+      "funcionalidad": "backend/chatbot/entendimiento.py: comprender y filtrar.",
+      "entradas": "Matrimonio: «fuera del local», «dentro del distrito», «en un salón».",
+      "esperado": "Candidatos b/d/e; después b/e; finalmente opción b, local público dentro del distrito.",
+      "pasos": [
+        "Crear el marco de matrimonio sin atributos.",
+        "Aplicar las tres entradas sucesivamente al mismo marco.",
+        "Comprobar candidatos intermedios y opción final."
+      ],
+      "obtenido": "Los candidatos fueron b/d/e y b/e; la tercera entrada resolvió la opción b.",
+      "pruebas": [
+        "test_dialogo_natural.py::test_comprension_acumula_atributos_sin_elegir_por_azar"
+      ],
+      "observacion": "No se observaron diferencias respecto al resultado esperado en los escenarios ejecutados.",
+      "restriccion": "",
+      "ramas": "Inicialización del marco; actualización de atributos; filtrado parcial; resolución por un único candidato.",
+      "tipo_requisito": "Funcional",
+      "instancias": 1
+    },
+    {
+      "tipo": "CB",
+      "codigo": "CB-05",
+      "requisito": "R-ANX-04",
+      "titulo": "Comparadores numéricos y condiciones especiales",
+      "modulo": "Motor de diálogo / clasificación de obras",
+      "descripcion": "Los límites de área o pisos deben conservar su sentido y respetar las condiciones explícitas del proyecto.",
+      "funcionalidad": "backend/chatbot/entendimiento.py: extraer_atributos y comprender.",
+      "entradas": "Demolición de más de cinco pisos, dos pisos con explosivos, dos pisos con sótano, demolición parcial; mercado con más de 1000 m² y luego 16000.",
+      "esperado": "T_141, T_141, T_123 y T_121 respectivamente. Para el mercado se pide precisión y después se resuelve T_151.",
+      "pasos": [
+        "Revisar la extracción del comparador «mayor».",
+        "Ejecutar las cuatro variantes de demolición.",
+        "Probar el límite inferior insuficiente del mercado y aportar el área concreta."
+      ],
+      "obtenido": "Las cuatro demoliciones y la aclaración de área del mercado produjeron los resultados esperados.",
+      "pruebas": [
+        "test_contexto_catalogo.py::test_medidas_no_anulan_condiciones_especiales",
+        "test_contexto_catalogo.py::test_limite_inferior_no_equivale_a_medida_exacta"
+      ],
+      "observacion": "No se observaron diferencias respecto al resultado esperado en los escenarios ejecutados.",
+      "restriccion": "",
+      "ramas": "Mayor que el límite; área insuficiente para decidir; prioridad de explosivos, sótano y alcance parcial.",
+      "tipo_requisito": "Funcional",
+      "instancias": 5
+    },
+    {
+      "tipo": "CB",
+      "codigo": "CB-06",
+      "requisito": "R-ANX-04",
+      "titulo": "Valores frontera de confianza del clasificador",
+      "modulo": "Motor de diálogo / política de decisión",
+      "descripcion": "Las decisiones de confianza deben comparar los valores originales sin redondearlos antes de decidir.",
+      "funcionalidad": "backend/chatbot/dialogo.py: procesar_mensaje_chat; umbrales de config.py.",
+      "entradas": "Confianzas controladas: 0.3499, 0.35, 0.5399, 0.54, 0.5499, 0.695, 0.6999 y 0.70; intención T_003.",
+      "esperado": "Estados: fallback, clarification, clarification, fallback, fallback, fallback, fallback y success, respectivamente.",
+      "pasos": [
+        "Sustituir temporalmente la predicción por intención y confianza controladas.",
+        "Desactivar solo en esta prueba la corroboración léxica independiente.",
+        "Ejecutar los ocho valores y contrastar los estados."
+      ],
+      "obtenido": "Los ocho valores frontera devolvieron los estados esperados sin redondeo previo.",
+      "pruebas": [
+        "test_conversacion_ciudadana.py::test_umbrales_sin_redondear"
+      ],
+      "observacion": "Se aísla la política de confianza de ML. La recuperación contextual o léxica tiene pruebas separadas; esto no mide la exactitud del modelo.",
+      "restriccion": "",
+      "ramas": "Confianza <0.35; intervalo [0.35,0.54); intervalo [0.54,0.70); confianza >=0.70.",
+      "tipo_requisito": "Funcional",
+      "instancias": 8
+    },
+    {
+      "tipo": "CB",
+      "codigo": "CB-07",
+      "requisito": "R-ANX-04",
+      "titulo": "Confirmación de una paráfrasis recuperada",
+      "modulo": "Recuperación de alternativas",
+      "descripcion": "La recuperación por similitud debe proponer una confirmación antes de mostrar datos de un trámite.",
+      "funcionalidad": "backend/chatbot/recuperacion.py: proponer; entendimiento.py y dialogo.py.",
+      "entradas": "Macro de lotes activa; «los lotes quiero que terminen fusionados»; después «sí, eso quiero».",
+      "esperado": "El resolver estricto no encuentra coincidencia. Se guarda propuesta b sin datosTramite; la confirmación resuelve T_061.",
+      "pasos": [
+        "Desactivar el sugeridor semántico para aislar la recuperación léxica.",
+        "Comprobar la ausencia de coincidencia estricta.",
+        "Revisar propuesta y datos antes de confirmar.",
+        "Confirmar y verificar T_061."
+      ],
+      "obtenido": "Se guardó propuesta b sin entregar ficha; la confirmación posterior resolvió T_061.",
+      "pruebas": [
+        "test_contexto_catalogo.py::test_indice_lexico_solo_propone_nunca_resuelve"
+      ],
+      "observacion": "No se observaron diferencias respecto al resultado esperado en los escenarios ejecutados.",
+      "restriccion": "",
+      "ramas": "Ausencia de coincidencia estricta; propuesta léxica; espera de confirmación; confirmación positiva.",
+      "tipo_requisito": "Funcional",
+      "instancias": 1
+    },
+    {
+      "tipo": "CB",
+      "codigo": "CB-08",
+      "requisito": "R-ANX-11",
+      "titulo": "Aislamiento y limpieza del estado de sesión",
+      "modulo": "Sesiones conversacionales",
+      "descripcion": "Cada sesión debe mantener su propio trámite y eliminar el contexto activo cuando se cancela una consulta.",
+      "funcionalidad": "backend/chatbot/dialogo.py: gestión de tramite_actual, macro_pendiente y cancelaciones.",
+      "entradas": "Cliente A activa T_015; cliente B pregunta costo sin contexto. En otra sesión se inicia «licencia» y se envía «cancelar».",
+      "esperado": "B no hereda T_015 de A; A conserva T_015. Tras cancelar no existen macro_pendiente ni tramite_actual.",
+      "pasos": [
+        "Abrir dos clientes independientes.",
+        "Consultar T_015 en el primero y un costo en el segundo.",
+        "Comprobar la independencia del seguimiento.",
+        "Cancelar una macro y revisar la eliminación de las claves activas."
+      ],
+      "obtenido": "Se verificaron sesiones independientes y la eliminación de las claves de contexto después de cancelar.",
+      "pruebas": [
+        "test_conversacion_ciudadana.py::test_sesiones_independientes",
+        "test_conversacion_ciudadana.py::test_macro_permite_cambiar_tema_y_cancelar"
+      ],
+      "observacion": "No se observaron diferencias respecto al resultado esperado en los escenarios ejecutados.",
+      "restriccion": "",
+      "ramas": "Sesión con trámite; sesión sin trámite; cancelación y limpieza de estado.",
+      "tipo_requisito": "Funcional",
+      "instancias": 2
+    },
+    {
+      "tipo": "CB",
+      "codigo": "CB-09",
+      "requisito": "R-ANX-12",
+      "titulo": "Hash de contraseña y control del rol administrativo",
+      "modulo": "Seguridad de la administración",
+      "descripcion": "La autenticación debe validar un hash seguro y denegar el acceso a cuentas sin rol administrativo.",
+      "funcionalidad": "backend/admin/routes.py: admin_login; backend/admin/seguridad.py: es_administrador.",
+      "entradas": "Cuenta admin temporal con hash scrypt; cuenta temporal sin rol Administrador; credenciales correctas para cada cuenta.",
+      "esperado": "El hash no equivale a la contraseña en claro y check_password_hash lo valida. La cuenta sin rol recibe HTTP 403 y no obtiene acceso a la API.",
+      "pasos": [
+        "Inspeccionar el hash almacenado de la cuenta de pruebas.",
+        "Verificar algoritmo y validación con Werkzeug.",
+        "Asignar a otra cuenta temporal un rol no administrativo.",
+        "Intentar iniciar sesión y acceder a trámites."
+      ],
+      "obtenido": "Se comprobó hash scrypt válido y distinto del texto plano; la cuenta sin rol fue rechazada y no obtuvo autorización.",
+      "pruebas": [
+        "test_admin.py::test_password_hash_no_es_texto_plano",
+        "test_admin.py::test_usuario_sin_rol_administrativo_no_inicia_sesion"
+      ],
+      "observacion": "Se verifica hashing de contraseñas, no cifrado reversible. No se imprimen contraseñas ni hashes completos.",
+      "restriccion": "",
+      "ramas": "Validación del hash; cuenta sin rol administrativo; denegación del acceso.",
+      "tipo_requisito": "No funcional",
+      "instancias": 2
+    },
+    {
+      "tipo": "CB",
+      "codigo": "CB-10",
+      "requisito": "R-ANX-15",
+      "titulo": "Tratamiento de excepciones de persistencia",
+      "modulo": "Administración y auditoría",
+      "descripcion": "Las excepciones deben producir respuestas controladas sin exponer detalles técnicos ni interrumpir innecesariamente el chat.",
+      "funcionalidad": "backend/admin/routes.py: manejo except; backend/chatbot/conversaciones.py: registrar_conversacion.",
+      "entradas": "Excepciones controladas en consultas administrativas y commit de auditoría; saludo ciudadano durante el fallo simulado.",
+      "esperado": "Administración: HTTP 500 con mensaje genérico, sin OperationalError. Login: HTTP 503. Fallo de auditoría: el saludo conserva HTTP 200.",
+      "pasos": [
+        "Inyectar excepciones mediante monkeypatch en las operaciones previstas.",
+        "Ejecutar lectura y escritura administrativa y el inicio de sesión.",
+        "Comprobar la omisión de detalles internos en los mensajes.",
+        "Simular el fallo de commit de auditoría y enviar un saludo."
+      ],
+      "obtenido": "Se verificaron HTTP 500/503 controlados y HTTP 200 para el saludo pese al fallo simulado de auditoría.",
+      "pruebas": [
+        "test_admin.py::test_admin_error_bd_no_expone_excepcion",
+        "test_admin.py::test_admin_login_con_bd_caida_devuelve_503",
+        "test_log.py::test_log_falla_no_interrumpe_respuesta_ciudadano"
+      ],
+      "observacion": "Las excepciones son simuladas en pruebas. No se detuvo MySQL ni se deduce un porcentaje de disponibilidad productiva.",
+      "restriccion": "",
+      "ramas": "Captura de excepción; mensaje genérico; rollback de auditoría y continuidad de la respuesta.",
+      "tipo_requisito": "No funcional",
+      "instancias": 3
+    },
+    {
+      "tipo": "CB",
+      "codigo": "CB-11",
+      "requisito": "R-ANX-14",
+      "titulo": "Anonimización previa al registro de conversaciones",
+      "modulo": "Auditoría y privacidad",
+      "descripcion": "La auditoría debe anonimizar identificadores frecuentes, limitar el mensaje y utilizar un identificador de sesión no expuesto en claro.",
+      "funcionalidad": "backend/chatbot/conversaciones.py: anonimizar_mensaje y obtener_sesion_id_anonimo.",
+      "entradas": "DNI 12345678, RUC 20123456789, teléfono +51 987 654 321, correo vecino@example.com y mensaje de más de 500 caracteres.",
+      "esperado": "Sustitución por [DOCUMENTO], [TELEFONO] y [CORREO]; mensaje <=500 caracteres; identificador hexadecimal de 64 caracteres.",
+      "pasos": [
+        "Revisar el orden de anonimización anterior a la persistencia.",
+        "Enviar los datos sintéticos de prueba.",
+        "Consultar el registro temporal y comprobar que no contiene los valores originales.",
+        "Verificar longitud de mensaje e identificador de sesión."
+      ],
+      "obtenido": "Los identificadores originales no se conservaron en el mensaje registrado; se verificaron los marcadores y límites previstos.",
+      "pruebas": [
+        "test_conversacion_ciudadana.py::test_anonimizacion_antes_de_persistir",
+        "test_log.py::test_log_campos_correctos_y_anonimizacion"
+      ],
+      "observacion": "Los valores de entrada son sintéticos. La prueba se limita a los patrones de anonimización implementados.",
+      "restriccion": "",
+      "ramas": "Patrón de correo; teléfono; documento; truncamiento del mensaje; generación del identificador de sesión.",
+      "tipo_requisito": "No funcional",
+      "instancias": 2
+    },
+    {
+      "tipo": "CB",
+      "codigo": "CB-12",
+      "requisito": "R-ANX-12",
+      "titulo": "Límite de intentos de autenticación",
+      "modulo": "Seguridad / limitador de acceso",
+      "descripcion": "El sistema debe bloquear temporalmente una combinación de usuario e IP después de alcanzar el límite de intentos fallidos.",
+      "funcionalidad": "backend/admin/seguridad.py: verificar_bloqueo_login, registrar_intento_fallido y reset_intentos_login.",
+      "entradas": "Usuario sintético admin_test_lockout con contraseña incorrecta en seis intentos; reinicio del contador y acceso válido de la cuenta de pruebas.",
+      "esperado": "Intentos 1 a 5: HTTP 401. Intento 6: HTTP 429 con Retry-After positivo. Tras reiniciar, acceso válido HTTP 200.",
+      "pasos": [
+        "Limpiar el contador del entorno de prueba.",
+        "Enviar cinco accesos incorrectos y comprobar HTTP 401.",
+        "Enviar el sexto intento y revisar HTTP 429 y Retry-After.",
+        "Reiniciar el contador y comprobar el acceso administrativo válido."
+      ],
+      "obtenido": "Se obtuvieron cinco respuestas 401 y una 429 con Retry-After; el acceso válido tras el reinicio devolvió HTTP 200.",
+      "pruebas": [
+        "test_admin.py::test_limite_intentos_login_bloquea_sexto_y_reinicia"
+      ],
+      "observacion": "La recuperación se verifica mediante reinicio explícito del contador de pruebas; no se afirma haber esperado el vencimiento natural de cinco minutos.",
+      "restriccion": "",
+      "ramas": "Contador bajo el límite; límite alcanzado; bloqueo; reinicio explícito y acceso posterior.",
+      "tipo_requisito": "No funcional",
+      "instancias": 1
+    }
+  ]
+}

@@ -14,6 +14,7 @@ import config
 from backend.models import db
 from backend.chatbot import chatbot_bp
 from backend.admin import admin_bp
+from backend.version import revision_codigo
 
 
 def create_app(config_object=None):
@@ -25,6 +26,7 @@ def create_app(config_object=None):
         template_folder=str(config.TEMPLATES_DIR),
         static_folder=str(config.STATIC_DIR),
     )
+    app.config['CODIGO_REVISION'] = revision_codigo()
 
     if config_object:
         app.config.from_object(config_object)
@@ -80,6 +82,12 @@ def create_app(config_object=None):
     app.register_blueprint(chatbot_bp)
     app.register_blueprint(admin_bp)
 
+    # La carga local es opcional y no retrasa el arranque ni la primera respuesta.
+    from backend.chatbot.semantica import iniciar_semantica
+    es_proceso_recargador = is_debug and os.environ.get("WERKZEUG_RUN_MAIN") != "true"
+    if not app.config.get("TESTING") and not es_proceso_recargador:
+        iniciar_semantica()
+
     # Configuración de Logging Estándar con RotatingFileHandler (logs/chatbot.log)
     logs_dir = config.BASE_DIR / "logs"
     logs_dir.mkdir(exist_ok=True)
@@ -109,6 +117,7 @@ def create_app(config_object=None):
     # Cabeceras de Seguridad HTTP (after_request)
     @app.after_request
     def agregar_cabeceras_seguridad(response):
+        response.headers['X-Leonardito-Revision'] = app.config['CODIGO_REVISION']
         response.headers["X-Content-Type-Options"] = "nosniff"
         response.headers["X-Frame-Options"] = "SAMEORIGIN"
         response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
@@ -133,6 +142,12 @@ def create_app(config_object=None):
             "font-src 'self' data:; "
             "frame-ancestors 'self'"
         )
+        if request.path == "/admin" or request.path.startswith("/admin/"):
+            response.headers["Content-Security-Policy"] = (
+                "default-src 'self'; script-src 'self'; style-src 'self'; "
+                "img-src 'self' data:; connect-src 'self'; font-src 'self'; "
+                "object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
+            )
         return response
 
     return app

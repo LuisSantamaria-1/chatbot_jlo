@@ -6,7 +6,7 @@ Endpoints RESTful del Módulo Administrativo (RF06) y renderizado del panel web.
 
 import logging
 import re
-from flask import Blueprint, request, jsonify, render_template, session
+from flask import Blueprint, request, jsonify, render_template, session, redirect, url_for
 from werkzeug.security import check_password_hash
 from backend.models import db, Tramite, Requisito, Usuario, ConversacionLog
 from backend.admin.seguridad import (
@@ -14,6 +14,9 @@ from backend.admin.seguridad import (
     verificar_bloqueo_login,
     registrar_intento_fallido,
     registrar_login_exitoso,
+    usuario_admin_actual,
+    es_administrador,
+    firma_credenciales,
 )
 
 logger = logging.getLogger(__name__)
@@ -21,12 +24,20 @@ logger = logging.getLogger(__name__)
 admin_bp = Blueprint("admin", __name__)
 
 
-@admin_bp.route("/admin", methods=["GET"])
+@admin_bp.route("/admin", methods=["GET"], strict_slashes=False)
+@requiere_admin
 def admin_page():
     """
     Ruta del Panel Administrativo de Trámites.
     """
-    return render_template("admin.html")
+    return render_template("admin.html", login=False, usuario=usuario_admin_actual())
+
+
+@admin_bp.route("/admin/login", methods=["GET"], strict_slashes=False)
+def admin_login_page():
+    if usuario_admin_actual():
+        return redirect(url_for("admin.admin_page"))
+    return render_template("admin.html", login=True)
 
 
 @admin_bp.route("/api/admin/login", methods=["POST"])
@@ -37,9 +48,13 @@ def admin_login():
     Aplica límite de intentos fallidos (Rate Limiting en memoria).
     """
     try:
-        data = request.get_json(silent=True) or {}
+        data = request.get_json(silent=True)
+        if data is None:
+            data = {}
+        if not isinstance(data, dict):
+            return jsonify({"status": "error", "mensaje": "Se requiere un cuerpo JSON válido."}), 400
         usuario = str(data.get("usuario") or data.get("username") or "").strip()
-        password = str(data.get("password") or "").strip()
+        password = str(data.get("password") or "")
         ip = request.remote_addr or "127.0.0.1"
 
         if usuario:
@@ -65,9 +80,14 @@ def admin_login():
             try:
                 usuario_db = Usuario.query.filter_by(username=usuario).first()
                 if usuario_db and check_password_hash(usuario_db.password_hash, password):
+                    if not es_administrador(usuario_db):
+                        return jsonify({"status": "error", "mensaje": "Esta cuenta no tiene permisos de administración."}), 403
                     registrar_login_exitoso(usuario, ip)
+                    session.clear()
                     session.permanent = True
                     session["admin_user"] = usuario_db.username
+                    session["admin_user_id"] = usuario_db.id
+                    session["admin_auth"] = firma_credenciales(usuario_db)
                     return jsonify({
                         "status": "success",
                         "mensaje": "Autenticación exitosa",
@@ -105,6 +125,12 @@ def admin_logout():
         "status": "success",
         "mensaje": "Sesión cerrada correctamente"
     }), 200
+
+
+@admin_bp.route("/api/admin/sesion", methods=["GET"])
+@requiere_admin
+def admin_sesion():
+    return jsonify({"status": "success", "username": session["admin_user"]}), 200
 
 
 @admin_bp.route("/api/admin/tramites", methods=["GET"])
@@ -182,10 +208,10 @@ def admin_crear_tramite():
                 "mensaje": "El nombre del trámite es obligatorio."
             }), 400
 
-        if len(nombre) > 255:
+        if len(nombre) > 1024:
             return jsonify({
                 "status": "error",
-                "mensaje": "El nombre del trámite no puede exceder los 255 caracteres."
+                "mensaje": "El nombre del trámite no puede exceder los 1024 caracteres."
             }), 400
 
         if not isinstance(requisitos, list):
@@ -304,10 +330,10 @@ def admin_actualizar_tramite(id):
                     "status": "error",
                     "mensaje": "El nombre del trámite no puede estar vacío."
                 }), 400
-            if len(nombre) > 255:
+            if len(nombre) > 1024:
                 return jsonify({
                     "status": "error",
-                    "mensaje": "El nombre del trámite no puede exceder los 255 caracteres."
+                    "mensaje": "El nombre del trámite no puede exceder los 1024 caracteres."
                 }), 400
             tramite.nombre = nombre
 

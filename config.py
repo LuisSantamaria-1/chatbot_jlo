@@ -11,6 +11,7 @@ from pathlib import Path
 # Directorios base y rutas de datos
 BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "data"
+REPORTS_DIR = BASE_DIR / "reports"
 
 # Rutas de archivos y artefactos
 MODEL_PATH = DATA_DIR / "modelo_intenciones.joblib"
